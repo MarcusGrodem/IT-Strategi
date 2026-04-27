@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analysegrunnlag: Coop App, Lobyco og IT-strategi</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #637083;
+      --line: #d9e2ef;
+      --navy: #12355b;
+      --blue: #2563eb;
+      --blue-soft: #e7efff;
+      --cyan: #0891b2;
+      --green: #0f9f6e;
+      --green-soft: #e7f8f0;
+      --amber: #d97706;
+      --amber-soft: #fff4df;
+      --red: #dc2626;
+      --red-soft: #fff0f0;
+      --purple: #6d28d9;
+      --purple-soft: #f1eaff;
+      --shadow: 0 18px 45px rgba(18, 53, 91, 0.10);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.15), transparent 34rem),
+        radial-gradient(circle at top right, rgba(15, 159, 110, 0.12), transparent 32rem),
+        var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .page {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 34px 28px 70px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #102a43 0%, #12355b 48%, #174a7c 100%);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 54px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      right: -180px;
+      top: -220px;
+      background: radial-gradient(circle, rgba(255,255,255,0.20), transparent 65%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px;
+      color: rgba(255,255,255,0.86);
+      background: rgba(255,255,255,0.08);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      max-width: 900px;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .hero p {
+      max-width: 790px;
+      font-size: 20px;
+      color: rgba(255,255,255,0.83);
+      margin: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-metric {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.10);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .hero-metric strong {
+      display: block;
+      font-size: 29px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-metric span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255,255,255,0.73);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 22px;
+      margin: 28px 0;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid rgba(217, 226, 239, 0.9);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 12px 32px rgba(18, 53, 91, 0.06);
+    }
+
+    .section {
+      margin-top: 28px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(217, 226, 239, 0.95);
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      box-shadow: 0 14px 40px rgba(18, 53, 91, 0.055);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 31px;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      color: var(--navy);
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+      color: #1d3557;
+    }
+
+    h4 {
+      margin: 18px 0 8px;
+      color: #1d3557;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    p { margin: 0 0 13px; }
+    ul { margin: 8px 0 0 20px; padding: 0; }
+    li { margin-bottom: 7px; }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 900px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .pill.green { background: var(--green-soft); color: var(--green); }
+    .pill.amber { background: var(--amber-soft); color: var(--amber); }
+    .pill.red { background: var(--red-soft); color: var(--red); }
+    .pill.purple { background: var(--purple-soft); color: var(--purple); }
+
+    .callout {
+      border-left: 5px solid var(--blue);
+      background: var(--blue-soft);
+      padding: 18px 20px;
+      border-radius: 16px;
+      margin: 20px 0;
+    }
+
+    .callout.warning { border-left-color: var(--amber); background: var(--amber-soft); }
+    .callout.good { border-left-color: var(--green); background: var(--green-soft); }
+    .callout.risk { border-left-color: var(--red); background: var(--red-soft); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 5px;
+      font-size: 17px;
+    }
+
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; color: var(--muted); }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: white;
+      margin: 18px 0 4px;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 14px 15px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      background: #edf4ff;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .svg-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(18,53,91,0.055);
+    }
+
+    svg { max-width: 100%; height: auto; display: block; }
+    .axis-label { font: 700 13px var(--font); fill: #475569; }
+    .svg-title { font: 850 18px var(--font); fill: #12355b; }
+    .svg-note { font: 500 12px var(--font); fill: #637083; }
+    .svg-text { font: 650 13px var(--font); fill: #172033; }
+    .svg-small { font: 500 11px var(--font); fill: #637083; }
+    .svg-num { font: 850 20px var(--font); fill: #12355b; }
+
+    .bar-bg { fill: #e9eef6; }
+    .bar-blue { fill: #2563eb; }
+    .bar-green { fill: #0f9f6e; }
+    .bar-amber { fill: #d97706; }
+    .bar-red { fill: #dc2626; }
+    .bar-purple { fill: #6d28d9; }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 28px;
+      left: 8%;
+      right: 8%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      opacity: .45;
+    }
+
+    .t-item {
+      position: relative;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 52px 14px 16px;
+      min-height: 180px;
+    }
+
+    .dot {
+      position: absolute;
+      top: 18px;
+      left: 16px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: 4px solid white;
+      box-shadow: 0 0 0 1px var(--line);
+      z-index: 2;
+    }
+
+    .t-item:nth-child(4) .dot, .t-item:nth-child(5) .dot, .t-item:nth-child(6) .dot { background: var(--green); }
+    .t-year { font-size: 18px; font-weight: 850; color: var(--navy); }
+    .t-text { font-size: 13px; color: var(--muted); line-height: 1.42; margin-top: 6px; }
+
+    .option-card {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .option-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--blue);
+    }
+    .option-card.green::before { background: var(--green); }
+    .option-card.amber::before { background: var(--amber); }
+    .option-card.red::before { background: var(--red); }
+    .option-card.purple::before { background: var(--purple); }
+
+    .score {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 130px 1fr 36px;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .scorebar {
+      height: 9px;
+      background: #e9eef6;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .scorebar span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: var(--blue);
+    }
+    .green .scorebar span { background: var(--green); }
+    .amber .scorebar span { background: var(--amber); }
+    .red .scorebar span { background: var(--red); }
+    .purple .scorebar span { background: var(--purple); }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .source-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .source-card h3 { margin-top: 0; }
+
+    .tagline {
+      font-family: var(--serif);
+      font-size: 24px;
+      line-height: 1.35;
+      color: #27415f;
+      border-left: 5px solid var(--green);
+      padding-left: 18px;
+      margin: 18px 0;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding: 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px) {
+      .hero { padding: 34px; }
+      .hero-grid, .grid-2, .grid-3, .grid-4, .toc, .source-grid, .timeline {
+        grid-template-columns: 1fr;
+      }
+      .timeline::before { display: none; }
+      .section { padding: 24px; }
+    }
+
+    @media print {
+      body { background: white; }
+      .page { max-width: none; padding: 0; }
+      .hero, .section, .card, .svg-card { box-shadow: none; break-inside: avoid; }
+      .section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <span class="eyebrow">IT-strategi eksamen 2026 · Analysegrunnlag</span>
+      <h1>Coop App, Lobyco og strategisk digitalisering</h1>
+      <p>En visuell og kildekritisk rapport som kobler eksamensoppgaven, teknologisk gjeld, digital verdiskaping, app-lojalitet, retail media og strategiske anbefalinger.</p>
+
+      <div class="hero-grid">
+        <div class="hero-metric">
+          <strong>2–5</strong>
+          <span>strategiske anbefalinger skal utvikles i eksamensbesvarelsen</span>
+        </div>
+        <div class="hero-metric">
+          <strong>1–2</strong>
+          <span>teoretiske perspektiver fra undervisningen skal brukes</span>
+        </div>
+        <div class="hero-metric">
+          <strong>2026</strong>
+          <span>casen vurderer om Coop fortsatt bør være app-ledende</span>
+        </div>
+        <div class="hero-metric">
+          <strong>232m</strong>
+          <span>DKK underskudd i 2025 ifølge oppgaveteksten</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="toc">
+      <div class="card">
+        <h2>Hovedkonklusjon</h2>
+        <p class="lead">Coop App bør ikke vurderes som et isolert digitalt produkt, men som en strategisk bro mellom fysiske butikker, kundedata, lojalitet, leverandørfinansiert retail media og kjedespesifikk differensiering.</p>
+        <div class="callout good">
+          <strong>Anbefalt posisjon:</strong> Behold én felles app- og dataplattform, men differensier opplevelse, tilbud, spill, kommunikasjon og kundereiser per kjede. Ikke bygg separate apper.
+        </div>
+      </div>
+      <div class="card">
+        <h2>Eksamen må vise</h2>
+        <ul>
+          <li>Strategisk analyse av Coops situasjon i 2026.</li>
+          <li>Klart valg av hvem i direksjonen som rådgis.</li>
+          <li>Bevisst bruk av 1–2 teorier, ikke teoridumping.</li>
+          <li>Kildekritikk, særlig for leverandør- og markedsføringskilder.</li>
+          <li>Konkrete anbefalinger som balanserer digital verdi og økonomisk press.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. Strategisk tidslinje</h2>
+      <p class="lead">Kildene viser ikke én enkel suksesshistorie. De viser en utvikling fra legacy og teknologisk gjeld, via app-basert digital verdiskaping, til et 2026-dilemma der Coop må prioritere hardere.</p>
+
+      <div class="timeline">
+        <div class="t-item">
+          <span class="dot"></span>
+          <div class="t-year">2012–2015</div>
+          <div class="t-text">Coop arbeider med teknologisk gjeld, SAP, stabilitet og modernisering av fragmentert IT-landskap.</div>
+        </div>
+        <div class="t-item">
+          <span class="dot"></span>
+          <div class="t-year">2016</div>
+          <div class="t-text">Coop App utvikles som del av nytt medlemsprogram og digital kundeorientering.</div>
+        </div>
+        <div class="t-item">
+          <span class="dot"></span>
+          <div class="t-year">2019</div>
+          <div class="t-text">Appen blir grunnlag for datterselskapet Lobyco og kan forstås som mer enn en intern Coop-løsning.</div>
+        </div>
+        <div class="t-item">
+          <span class="dot"></span>
+          <div class="t-year">2020</div>
+          <div class="t-text">DVC-artikkelen beskriver Coop App som et sterkt eksempel på digitale kunderelasjoner.</div>
+        </div>
+        <div class="t-item">
+          <span class="dot"></span>
+          <div class="t-year">2023</div>
+          <div class="t-text">Coop lukker coop.dk på grunn av manglende inntjening. Fysiske butikker blir tydeligere kjerne.</div>
+        </div>
+        <div class="t-item">
+          <span class="dot"></span>
+          <div class="t-year">2025–2026</div>
+          <div class="t-text">Underskudd, fallende omsetning og spørsmål om app-investeringer, Lobyco og strategisk fokus.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. Kildenes verdi og risiko</h2>
+      <p class="lead">En sterk besvarelse må bruke kildene ulikt. Ikke alle kilder har samme formål eller troverdighet.</p>
+
+      <div class="svg-card">
+        <svg viewBox="0 0 1100 560" role="img" aria-label="Kildekritisk matrise">
+          <rect x="0" y="0" width="1100" height="560" rx="22" fill="#ffffff"/>
+          <text x="30" y="42" class="svg-title">Kildekritisk matrise: oppdaterthet vs. uavhengighet</text>
+          <line x1="110" y1="475" x2="1010" y2="475" stroke="#9fb0c5" stroke-width="2"/>
+          <line x1="110" y1="475" x2="110" y2="85" stroke="#9fb0c5" stroke-width="2"/>
+          <text x="430" y="525" class="axis-label">Mer oppdatert / nærmere 2026</text>
+          <text x="18" y="300" class="axis-label" transform="rotate(-90 18,300)">Mer uavhengig / mindre markedsføring</text>
+
+          <line x1="110" y1="280" x2="1010" y2="280" stroke="#e2e8f0" stroke-dasharray="7 7"/>
+          <line x1="560" y1="85" x2="560" y2="475" stroke="#e2e8f0" stroke-dasharray="7 7"/>
+
+          <rect x="640" y="120" width="250" height="66" rx="16" fill="#edf4ff" stroke="#2563eb"/>
+          <text x="662" y="147" class="svg-text">Eksamensoppgaven 2026</text>
+          <text x="662" y="168" class="svg-small">Mest styrende. Definerer problem, rolle og krav.</text>
+
+          <rect x="220" y="330" width="250" height="74" rx="16" fill="#fff4df" stroke="#d97706"/>
+          <text x="242" y="357" class="svg-text">Hedman & Bjørn-Andersen 2016</text>
+          <text x="242" y="378" class="svg-small">Sterk for historisk IT-arv, men gammel.</text>
+
+          <rect x="485" y="260" width="250" height="74" rx="16" fill="#f1eaff" stroke="#6d28d9"/>
+          <text x="507" y="287" class="svg-text">DVC Framework 2020</text>
+          <text x="507" y="308" class="svg-small">God teori, men positivt og før 2023/2025.</text>
+
+          <rect x="770" y="340" width="250" height="74" rx="16" fill="#fff0f0" stroke="#dc2626"/>
+          <text x="792" y="367" class="svg-text">Lobyco / Playable / Shortcut 2026</text>
+          <text x="792" y="388" class="svg-small">Oppdatert, men tydelig markedsføringspreg.</text>
+
+          <circle cx="760" cy="153" r="7" fill="#2563eb"/>
+          <circle cx="345" cy="367" r="7" fill="#d97706"/>
+          <circle cx="610" cy="297" r="7" fill="#6d28d9"/>
+          <circle cx="895" cy="377" r="7" fill="#dc2626"/>
+
+          <text x="130" y="102" class="svg-note">Bruk som styrende premiss</text>
+          <text x="130" y="462" class="svg-note">Lavere kritisk trygghet</text>
+          <text x="824" y="462" class="svg-note">Oppdatert, men må faktasjekkes/nyanseres</text>
+        </svg>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Kilde</th>
+            <th>Best brukt til</th>
+            <th>Kildekritisk advarsel</th>
+            <th>Eksamenstolkning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Opgavebeskrivelse 2026</td>
+            <td>Definerer casen, spørsmålet, rådgiverrollen og kravet om 1–2 perspektiver.</td>
+            <td>Må leses som oppdraget, ikke som en full analyse.</td>
+            <td>Alt i besvarelsen bør peke tilbake på dette dilemmaet.</td>
+          </tr>
+          <tr>
+            <td>Teknologisk gjeld 2016</td>
+            <td>Historisk bakgrunn: legacy, kompleksitet, IT-stabilitet, governance, SAP og modernisering.</td>
+            <td>Gammel kilde. Ikke bruk som bevis på dagens systemtilstand.</td>
+            <td>Brukes til å vise at Coop har en arv som gjør digital strategi krevende.</td>
+          </tr>
+          <tr>
+            <td>DVC Framework 2020</td>
+            <td>Teoretisk analyse av digital verdi: experiences, relationships, evolution og relevance.</td>
+            <td>Skrevet før coop.dk stengte og før 2025-underskuddet.</td>
+            <td>God som analyseverktøy, men må oppdateres med 2026-situasjonen.</td>
+          </tr>
+          <tr>
+            <td>Lobyco 2026</td>
+            <td>Appens brukeromfang, Scan & Pay, bonus, personalisering, shoppingatferd.</td>
+            <td>Leverandør-/casepreg. Tall må behandles som indikasjoner.</td>
+            <td>Viser potensiell verdi, ikke nødvendigvis lønnsomhet for Coop-konsernet.</td>
+          </tr>
+          <tr>
+            <td>Playable 2026</td>
+            <td>Gamification, retail media, footfall, leverandørfinansierte kampanjer.</td>
+            <td>Kommersiell suksesshistorie. Mangler full kost-/nytteanalyse.</td>
+            <td>Nyttig for å vise appens rolle som butikktrafikk- og mediekanal.</td>
+          </tr>
+          <tr>
+            <td>Shortcut 2026</td>
+            <td>Utviklingshistorikk, appfunksjoner, teknisk leveranse, OEM-spor.</td>
+            <td>Leverandørpresentasjon. Kan overdrive suksess.</td>
+            <td>Brukes til å vise at appen er blitt en plattformkapabilitet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>3. Strategisk situasjonsbilde</h2>
+      <p class="lead">Coop har et dobbelt problem: Appen ser strategisk sterk ut, men konsernet står samtidig i en økonomisk snuoperasjon. Eksamen bør analysere dette som en prioriteringskonflikt, ikke som et ja/nei-spørsmål.</p>
+
+      <div class="grid-4">
+        <div class="mini-card">
+          <strong>Digital styrke</strong>
+          Appen gir lojalitet, data, personlige tilbud, Scan & Pay, spill og retail media.
+        </div>
+        <div class="mini-card">
+          <strong>Fysisk kjerne</strong>
+          Coop selger i dag primært gjennom butikker etter nedleggelsen av coop.dk.
+        </div>
+        <div class="mini-card">
+          <strong>Økonomisk press</strong>
+          Fallende omsetning og underskudd gjør kapitalallokering kritisk.
+        </div>
+        <div class="mini-card">
+          <strong>Strategisk spørsmål</strong>
+          Skal appen reduseres, styrkes, differensieres eller skilles ut via Lobyco?
+        </div>
+      </div>
+
+      <div class="svg-card">
+        <svg viewBox="0 0 1100 620" role="img" aria-label="Strategisk spenningsmodell">
+          <rect x="0" y="0" width="1100" height="620" rx="22" fill="#ffffff"/>
+          <text x="30" y="42" class="svg-title">Strategisk spenningsmodell for Coop 2026</text>
+          <text x="30" y="66" class="svg-note">Rapportens hovedpoeng: appen må vurderes ut fra hvordan den styrker butikkøkonomien og kundegrunnlaget.</text>
+
+          <circle cx="550" cy="315" r="122" fill="#edf4ff" stroke="#2563eb" stroke-width="3"/>
+          <text x="488" y="285" class="svg-num">Coop App</text>
+          <text x="462" y="310" class="svg-text">Felles kundegrensesnitt</text>
+          <text x="470" y="333" class="svg-small">lojalitet · data · betaling</text>
+          <text x="484" y="352" class="svg-small">retail media · spill</text>
+
+          <rect x="65" y="135" width="260" height="130" rx="22" fill="#e7f8f0" stroke="#0f9f6e" stroke-width="2"/>
+          <text x="95" y="175" class="svg-num">Fysiske butikker</text>
+          <text x="95" y="204" class="svg-text">Kjernen i merkevaren</text>
+          <text x="95" y="229" class="svg-small">footfall · lokal relevans · kurvverdi</text>
+
+          <rect x="775" y="135" width="260" height="130" rx="22" fill="#fff4df" stroke="#d97706" stroke-width="2"/>
+          <text x="805" y="175" class="svg-num">Økonomisk snu</text>
+          <text x="805" y="204" class="svg-text">Prioritering og lønnsomhet</text>
+          <text x="805" y="229" class="svg-small">kostnad · effektmåling · kapital</text>
+
+          <rect x="65" y="390" width="260" height="130" rx="22" fill="#f1eaff" stroke="#6d28d9" stroke-width="2"/>
+          <text x="95" y="430" class="svg-num">Lobyco</text>
+          <text x="95" y="459" class="svg-text">Plattform og opsjon</text>
+          <text x="95" y="484" class="svg-small">OEM · B2B · kompetanse · IP</text>
+
+          <rect x="775" y="390" width="260" height="130" rx="22" fill="#fff0f0" stroke="#dc2626" stroke-width="2"/>
+          <text x="805" y="430" class="svg-num">Risiko</text>
+          <text x="805" y="459" class="svg-text">Ny teknologisk gjeld</text>
+          <text x="805" y="484" class="svg-small">fragmentering · kompleksitet · bias</text>
+
+          <path d="M325 205 C390 230 425 252 455 280" fill="none" stroke="#0f9f6e" stroke-width="4" marker-end="url(#arrow)"/>
+          <path d="M775 205 C710 230 675 252 645 280" fill="none" stroke="#d97706" stroke-width="4" marker-end="url(#arrow)"/>
+          <path d="M325 455 C390 425 425 390 460 355" fill="none" stroke="#6d28d9" stroke-width="4" marker-end="url(#arrow)"/>
+          <path d="M775 455 C710 425 675 390 640 355" fill="none" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow)"/>
+
+          <text x="354" y="202" class="svg-small">må drive trafikk</text>
+          <text x="704" y="202" class="svg-small">må forsvare investering</text>
+          <text x="350" y="505" class="svg-small">må utnytte kapabilitet</text>
+          <text x="694" y="505" class="svg-small">må styre kompleksitet</text>
+
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="callout warning">
+        <strong>Nøkkelnyansering:</strong> Det er ikke nok å si at appen har mange brukere. Eksamensanalysen bør spørre om appen faktisk øker lønnsomhet, butikktrafikk, kundelojalitet og strategisk fleksibilitet nok til å forsvare videre investeringer.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. DVC-modellen anvendt på Coop</h2>
+      <p class="lead">DVC Framework passer godt som ett av de 1–2 teoretiske perspektivene. Det gjør det mulig å analysere appen som verdiskaping, ikke bare som teknologi.</p>
+
+      <div class="svg-card">
+        <svg viewBox="0 0 1100 650" role="img" aria-label="DVC modell anvendt på Coop">
+          <rect width="1100" height="650" rx="22" fill="#ffffff"/>
+          <text x="30" y="42" class="svg-title">DVC Framework oversatt til Coop-casen</text>
+          <text x="30" y="66" class="svg-note">Relevance i midten: appen må være relevant for kunder, butikker, leverandører og konsernøkonomi.</text>
+
+          <circle cx="550" cy="320" r="84" fill="#12355b"/>
+          <text x="505" y="312" font-family="Inter, sans-serif" font-size="23" font-weight="850" fill="white">Relevance</text>
+          <text x="492" y="340" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="rgba(255,255,255,.78)">riktig verdi · riktig øyeblikk</text>
+
+          <circle cx="315" cy="255" r="112" fill="#edf4ff" stroke="#2563eb" stroke-width="3"/>
+          <text x="260" y="230" class="svg-num">Experiences</text>
+          <text x="238" y="258" class="svg-text">Scan & Pay, spill, tilbud,</text>
+          <text x="240" y="280" class="svg-text">oppskrifter, kvitteringer</text>
+
+          <circle cx="785" cy="255" r="112" fill="#e7f8f0" stroke="#0f9f6e" stroke-width="3"/>
+          <text x="728" y="230" class="svg-num">Relationships</text>
+          <text x="715" y="258" class="svg-text">bonus, personalisering,</text>
+          <text x="720" y="280" class="svg-text">kundedata, lojalitet</text>
+
+          <circle cx="550" cy="505" r="112" fill="#f1eaff" stroke="#6d28d9" stroke-width="3"/>
+          <text x="505" y="480" class="svg-num">Evolution</text>
+          <text x="471" y="508" class="svg-text">Lobyco, retail media,</text>
+          <text x="483" y="530" class="svg-text">OEM og ny forretning</text>
+
+          <line x1="420" y1="270" x2="480" y2="300" stroke="#2563eb" stroke-width="4"/>
+          <line x1="680" y1="270" x2="620" y2="300" stroke="#0f9f6e" stroke-width="4"/>
+          <line x1="550" y1="392" x2="550" y2="420" stroke="#6d28d9" stroke-width="4"/>
+
+          <rect x="70" y="92" width="960" height="62" rx="16" fill="#f8fafc" stroke="#d9e2ef"/>
+          <text x="100" y="124" class="svg-text">Ytre kapabiliteter: digitale kompetanser · digital infrastruktur · digitale outputs · governance · dataarkitektur</text>
+
+          <rect x="140" y="570" width="820" height="44" rx="14" fill="#fff4df" stroke="#d97706"/>
+          <text x="174" y="598" class="svg-text">Eksamen bør vurdere om DVC faktisk konverteres til økonomisk verdi i butikkene.</text>
+        </svg>
+      </div>
+
+      <div class="grid-3">
+        <div class="mini-card">
+          <strong>Experiences</strong>
+          Appen forbedrer kundereisen gjennom betaling, skanning, tilbud, kvitteringer, spill og inspirasjon.
+        </div>
+        <div class="mini-card">
+          <strong>Relationships</strong>
+          Appen kan styrke relasjonen gjennom bonus, personaliserte tilbud og kundestyrt engasjement.
+        </div>
+        <div class="mini-card">
+          <strong>Evolution</strong>
+          Lobyco og retail media gjør at appen kan bli en plattformkapabilitet, ikke bare en kanal.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. Fem strategiske alternativer</h2>
+      <p class="lead">Oppgaven ber ikke om en enkel oppsummering. Den ber om kvalifisert rådgivning. Figuren under sammenligner mulige valg.</p>
+
+      <div class="svg-card">
+        <svg viewBox="0 0 1100 610" role="img" aria-label="Strategiske alternativer scorekort">
+          <rect width="1100" height="610" rx="22" fill="#ffffff"/>
+          <text x="30" y="42" class="svg-title">Scorekort: strategiske alternativer for Coop App og Lobyco</text>
+          <text x="30" y="66" class="svg-note">Skala 1–5. Vurderingene er analytiske estimater basert på kildene, ikke fasit.</text>
+
+          <text x="330" y="110" class="axis-label">Kundeverdi</text>
+          <text x="455" y="110" class="axis-label">Butikkverdi</text>
+          <text x="580" y="110" class="axis-label">Kostkontroll</text>
+          <text x="725" y="110" class="axis-label">Strategisk opsjon</text>
+          <text x="900" y="110" class="axis-label">Risiko</text>
+
+          <text x="40" y="155" class="svg-text">A. Reduser app-investeringer</text>
+          <rect x="330" y="140" width="70" height="12" rx="6" class="bar-bg"/><rect x="330" y="140" width="42" height="12" rx="6" class="bar-amber"/>
+          <rect x="455" y="140" width="70" height="12" rx="6" class="bar-bg"/><rect x="455" y="140" width="35" height="12" rx="6" class="bar-amber"/>
+          <rect x="580" y="140" width="70" height="12" rx="6" class="bar-bg"/><rect x="580" y="140" width="63" height="12" rx="6" class="bar-green"/>
+          <rect x="725" y="140" width="70" height="12" rx="6" class="bar-bg"/><rect x="725" y="140" width="28" height="12" rx="6" class="bar-red"/>
+          <rect x="900" y="140" width="70" height="12" rx="6" class="bar-bg"/><rect x="900" y="140" width="49" height="12" rx="6" class="bar-amber"/>
+
+          <text x="40" y="220" class="svg-text">B. Styrk appen kraftig</text>
+          <rect x="330" y="205" width="70" height="12" rx="6" class="bar-bg"/><rect x="330" y="205" width="63" height="12" rx="6" class="bar-green"/>
+          <rect x="455" y="205" width="70" height="12" rx="6" class="bar-bg"/><rect x="455" y="205" width="56" height="12" rx="6" class="bar-green"/>
+          <rect x="580" y="205" width="70" height="12" rx="6" class="bar-bg"/><rect x="580" y="205" width="28" height="12" rx="6" class="bar-red"/>
+          <rect x="725" y="205" width="70" height="12" rx="6" class="bar-bg"/><rect x="725" y="205" width="63" height="12" rx="6" class="bar-green"/>
+          <rect x="900" y="205" width="70" height="12" rx="6" class="bar-bg"/><rect x="900" y="205" width="63" height="12" rx="6" class="bar-red"/>
+
+          <text x="40" y="285" class="svg-text">C. Én plattform, kjedespesifikk opplevelse</text>
+          <rect x="330" y="270" width="70" height="12" rx="6" class="bar-bg"/><rect x="330" y="270" width="63" height="12" rx="6" class="bar-green"/>
+          <rect x="455" y="270" width="70" height="12" rx="6" class="bar-bg"/><rect x="455" y="270" width="63" height="12" rx="6" class="bar-green"/>
+          <rect x="580" y="270" width="70" height="12" rx="6" class="bar-bg"/><rect x="580" y="270" width="49" height="12" rx="6" class="bar-green"/>
+          <rect x="725" y="270" width="70" height="12" rx="6" class="bar-bg"/><rect x="725" y="270" width="56" height="12" rx="6" class="bar-green"/>
+          <rect x="900" y="270" width="70" height="12" rx="6" class="bar-bg"/><rect x="900" y="270" width="35" height="12" rx="6" class="bar-amber"/>
+
+          <text x="40" y="350" class="svg-text">D. Selg Lobyco</text>
+          <rect x="330" y="335" width="70" height="12" rx="6" class="bar-bg"/><rect x="330" y="335" width="28" height="12" rx="6" class="bar-red"/>
+          <rect x="455" y="335" width="70" height="12" rx="6" class="bar-bg"/><rect x="455" y="335" width="28" height="12" rx="6" class="bar-red"/>
+          <rect x="580" y="335" width="70" height="12" rx="6" class="bar-bg"/><rect x="580" y="335" width="56" height="12" rx="6" class="bar-green"/>
+          <rect x="725" y="335" width="70" height="12" rx="6" class="bar-bg"/><rect x="725" y="335" width="21" height="12" rx="6" class="bar-red"/>
+          <rect x="900" y="335" width="70" height="12" rx="6" class="bar-bg"/><rect x="900" y="335" width="49" height="12" rx="6" class="bar-amber"/>
+
+          <text x="40" y="415" class="svg-text">E. Separate apper per kjede</text>
+          <rect x="330" y="400" width="70" height="12" rx="6" class="bar-bg"/><rect x="330" y="400" width="49" height="12" rx="6" class="bar-amber"/>
+          <rect x="455" y="400" width="70" height="12" rx="6" class="bar-bg"/><rect x="455" y="400" width="42" height="12" rx="6" class="bar-amber"/>
+          <rect x="580" y="400" width="70" height="12" rx="6" class="bar-bg"/><rect x="580" y="400" width="21" height="12" rx="6" class="bar-red"/>
+          <rect x="725" y="400" width="70" height="12" rx="6" class="bar-bg"/><rect x="725" y="400" width="35" height="12" rx="6" class="bar-amber"/>
+          <rect x="900" y="400" width="70" height="12" rx="6" class="bar-bg"/><rect x="900" y="400" width="70" height="12" rx="6" class="bar-red"/>
+
+          <rect x="30" y="480" width="1040" height="88" rx="18" fill="#e7f8f0" stroke="#0f9f6e"/>
+          <text x="58" y="516" class="svg-num">Anbefalt hovedvalg: C</text>
+          <text x="58" y="545" class="svg-text">Én felles teknologisk og datamessig plattform, men med kjedespesifikk opplevelse, prioritering og måling.</text>
+        </svg>
+      </div>
+
+      <div class="grid-3">
+        <div class="option-card green">
+          <h3>Best balansert</h3>
+          <p><strong>Én plattform, differensiert opplevelse.</strong> Gir skala, datakonsistens og lavere teknologisk risiko, samtidig som kjedene kan posisjoneres forskjellig.</p>
+        </div>
+        <div class="option-card amber">
+          <h3>Mulig, men krevende</h3>
+          <p><strong>Styrk appen kraftig.</strong> Kan gi digital ledelse, men er risikabelt hvis effekten på butikkøkonomi ikke er dokumentert.</p>
+        </div>
+        <div class="option-card red">
+          <h3>Svakere valg</h3>
+          <p><strong>Separate apper per kjede.</strong> Kan gi lokal tilpasning, men øker risikoen for fragmentering, kostnad og ny teknologisk gjeld.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. Anbefalt teorikombinasjon</h2>
+      <p class="lead">Velg få perspektiver og bruk dem dypt. Den sterkeste kombinasjonen er trolig DVC Framework + teknologisk gjeld / IT-governance.</p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Perspektiv 1: Digital Value Creation</h3>
+          <p>Brukes til å vise hvordan appen skaper verdi gjennom kundeopplevelser, relasjoner og evolusjon av forretningsmodellen.</p>
+          <ul>
+            <li>Godt for app, lojalitet, personalisering og retail media.</li>
+            <li>Gir språk for hvorfor digital investering kan være strategisk.</li>
+            <li>Må suppleres med økonomisk og organisatorisk realisme.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Perspektiv 2: Teknologisk gjeld / IT-governance</h3>
+          <p>Brukes til å vise at digital ambisjon må styres slik at Coop ikke skaper ny kompleksitet, fragmentering og kostnad.</p>
+          <ul>
+            <li>Godt for arkitektur, plattformvalg og Lobyco.</li>
+            <li>Forklarer hvorfor separate apper kan være risikabelt.</li>
+            <li>Kobler historisk IT-arv til dagens strategiske valg.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svg-card">
+        <svg viewBox="0 0 1100 430" role="img" aria-label="Teorikombinasjon">
+          <rect width="1100" height="430" rx="22" fill="#ffffff"/>
+          <text x="30" y="42" class="svg-title">Teori som analysebro: verdi på forsiden, styring på baksiden</text>
+
+          <rect x="70" y="120" width="360" height="170" rx="24" fill="#edf4ff" stroke="#2563eb" stroke-width="3"/>
+          <text x="115" y="170" class="svg-num">DVC Framework</text>
+          <text x="115" y="202" class="svg-text">Hvordan skaper appen digital verdi?</text>
+          <text x="115" y="230" class="svg-small">kundeopplevelse · relasjon · relevans · evolusjon</text>
+
+          <rect x="670" y="120" width="360" height="170" rx="24" fill="#fff4df" stroke="#d97706" stroke-width="3"/>
+          <text x="715" y="170" class="svg-num">Teknologisk gjeld</text>
+          <text x="715" y="202" class="svg-text">Hvordan unngår Coop ny kompleksitet?</text>
+          <text x="715" y="230" class="svg-small">legacy · governance · arkitektur · kostnad</text>
+
+          <circle cx="550" cy="205" r="74" fill="#e7f8f0" stroke="#0f9f6e" stroke-width="3"/>
+          <text x="512" y="198" class="svg-num">Strategi</text>
+          <text x="497" y="222" class="svg-small">prioritert verdiskaping</text>
+
+          <path d="M430 205 L470 205" stroke="#64748b" stroke-width="4" marker-end="url(#arrow2)"/>
+          <path d="M630 205 L670 205" stroke="#64748b" stroke-width="4" marker-end="url(#arrow2)"/>
+
+          <rect x="205" y="338" width="690" height="48" rx="16" fill="#f8fafc" stroke="#d9e2ef"/>
+          <text x="235" y="368" class="svg-text">Hovedargument: Coop bør videreutvikle appen selektivt, styrt av dokumentert butikkverdi og robust plattformstyring.</text>
+
+          <defs>
+            <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. Strategiske anbefalinger</h2>
+      <p class="lead">Disse anbefalingene er skrevet slik de kan omformes direkte til eksamensbesvarelsen, men de må knyttes til valgt rådgiverrolle.</p>
+
+      <div class="grid-2">
+        <div class="option-card green">
+          <h3>1. Behold én felles appplattform</h3>
+          <p><strong>Anbefaling:</strong> Coop bør beholde én felles app-, data- og teknologiplattform, men differensiere brukeropplevelse og kampanjer per kjede.</p>
+          <p><strong>Begrunnelse:</strong> Dette balanserer konsernsynergier med kjedenes ulike posisjonering.</p>
+        </div>
+
+        <div class="option-card green">
+          <h3>2. Knytt app-investeringer til butikkøkonomi</h3>
+          <p><strong>Anbefaling:</strong> Videre investering bør prioriteres der appen øker footfall, kurvverdi, frekvens, lojalitet eller leverandørinntekter.</p>
+          <p><strong>Begrunnelse:</strong> Appen må være et virkemiddel for bricks-and-mortar, ikke et separat prestisjeprosjekt.</p>
+        </div>
+
+        <div class="option-card purple">
+          <h3>3. Ikke selg Lobyco uten opsjonsanalyse</h3>
+          <p><strong>Anbefaling:</strong> Lobyco bør vurderes som strategisk opsjon, ikke bare som salgsobjekt.</p>
+          <p><strong>Begrunnelse:</strong> Lobyco kan representere digital kompetanse, IP, B2B-inntekter og plattformlæring.</p>
+        </div>
+
+        <div class="option-card amber">
+          <h3>4. Innfør streng digital porteføljestyring</h3>
+          <p><strong>Anbefaling:</strong> Coop bør innføre klare investeringskriterier for apputvikling: kundeverdi, butikkverdi, lønnsomhet og teknisk kompleksitet.</p>
+          <p><strong>Begrunnelse:</strong> Reduserer risiko for ny teknologisk gjeld og digitale tiltak uten effekt.</p>
+        </div>
+
+        <div class="option-card blue">
+          <h3>5. Bygg retail media med tillit</h3>
+          <p><strong>Anbefaling:</strong> Retail media og gamification bør videreutvikles, men med transparens, relevans og effektmåling.</p>
+          <p><strong>Begrunnelse:</strong> Leverandørfinansierte kampanjer kan gi verdi, men kan også svekke tillit hvis de oppleves som støy.</p>
+        </div>
+
+        <div class="option-card red">
+          <h3>6. Unngå separate apper</h3>
+          <p><strong>Anbefaling:</strong> Coop bør ikke utvikle separate apper for hver kjede.</p>
+          <p><strong>Begrunnelse:</strong> Det kan skape fragmentering, høyere kostnader og ny teknologisk gjeld. Differensiering bør skje innenfor felles plattform.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8. Rådgiverrolle: hvilken vinkel er sterkest?</h2>
+
+      <div class="grid-3">
+        <div class="option-card green">
+          <h3>Adm. direktør</h3>
+          <p><strong>Styrke:</strong> Gir best helhet: kapitalallokering, Lobyco, app vs. butikk, snuoperasjon.</p>
+          <div class="score green">
+            <div class="score-row"><span>Analytisk kraft</span><div class="scorebar"><span style="width: 92%"></span></div><strong>5</strong></div>
+            <div class="score-row"><span>Teoribruk</span><div class="scorebar"><span style="width: 88%"></span></div><strong>5</strong></div>
+            <div class="score-row"><span>Risiko</span><div class="scorebar"><span style="width: 58%"></span></div><strong>3</strong></div>
+          </div>
+        </div>
+
+        <div class="option-card purple">
+          <h3>Digital/Marketing-direktør</h3>
+          <p><strong>Styrke:</strong> Passer svært godt til DVC, lojalitet, data, retail media og kundeopplevelse.</p>
+          <div class="score purple">
+            <div class="score-row"><span>Analytisk kraft</span><div class="scorebar"><span style="width: 82%"></span></div><strong>4</strong></div>
+            <div class="score-row"><span>Teoribruk</span><div class="scorebar"><span style="width: 90%"></span></div><strong>5</strong></div>
+            <div class="score-row"><span>Risiko</span><div class="scorebar"><span style="width: 45%"></span></div><strong>2</strong></div>
+          </div>
+        </div>
+
+        <div class="option-card amber">
+          <h3>Kjededirektør</h3>
+          <p><strong>Styrke:</strong> Gir god konkretisering av hvordan appen bør støtte 365discount, Brugsen eller Kvickly/SuperBrugsen.</p>
+          <div class="score amber">
+            <div class="score-row"><span>Analytisk kraft</span><div class="scorebar"><span style="width: 72%"></span></div><strong>4</strong></div>
+            <div class="score-row"><span>Teoribruk</span><div class="scorebar"><span style="width: 62%"></span></div><strong>3</strong></div>
+            <div class="score-row"><span>Risiko</span><div class="scorebar"><span style="width: 65%"></span></div><strong>3</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout good">
+        <strong>Anbefalt eksamensvinkel:</strong> Rådgiv adm. direktør Thor Skov Jørgensen. Det gir størst rom for å diskutere hele dilemmaet: videre appinvestering, Lobyco, økonomisk snuoperasjon, fysisk butikkjerne og teknologisk styring.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>9. Modell for selve eksamensbesvarelsen</h2>
+      <p class="lead">Denne disposisjonen holder analysen tett på oppgaven og unngår at besvarelsen blir en generell tekst om digitalisering.</p>
+
+      <div class="svg-card">
+        <svg viewBox="0 0 1100 500" role="img" aria-label="Besvarelsesstruktur">
+          <rect width="1100" height="500" rx="22" fill="#ffffff"/>
+          <text x="30" y="42" class="svg-title">Foreslått struktur: fra oppgaveforståelse til anbefaling</text>
+
+          <g>
+            <rect x="55" y="115" width="145" height="100" rx="18" fill="#edf4ff" stroke="#2563eb"/>
+            <text x="88" y="150" class="svg-num">1</text>
+            <text x="82" y="178" class="svg-text">Innledning</text>
+          </g>
+          <g>
+            <rect x="225" y="115" width="145" height="100" rx="18" fill="#edf4ff" stroke="#2563eb"/>
+            <text x="258" y="150" class="svg-num">2</text>
+            <text x="250" y="178" class="svg-text">Rollevalg</text>
+          </g>
+          <g>
+            <rect x="395" y="115" width="145" height="100" rx="18" fill="#f1eaff" stroke="#6d28d9"/>
+            <text x="428" y="150" class="svg-num">3</text>
+            <text x="425" y="178" class="svg-text">Teori</text>
+          </g>
+          <g>
+            <rect x="565" y="115" width="145" height="100" rx="18" fill="#fff4df" stroke="#d97706"/>
+            <text x="598" y="150" class="svg-num">4</text>
+            <text x="590" y="178" class="svg-text">Kildekritikk</text>
+          </g>
+          <g>
+            <rect x="735" y="115" width="145" height="100" rx="18" fill="#e7f8f0" stroke="#0f9f6e"/>
+            <text x="768" y="150" class="svg-num">5</text>
+            <text x="774" y="178" class="svg-text">Analyse</text>
+          </g>
+          <g>
+            <rect x="905" y="115" width="145" height="100" rx="18" fill="#e7f8f0" stroke="#0f9f6e"/>
+            <text x="938" y="150" class="svg-num">6</text>
+            <text x="920" y="178" class="svg-text">Anbefalinger</text>
+          </g>
+
+          <path d="M200 165 L225 165" stroke="#64748b" stroke-width="3" marker-end="url(#arrow3)"/>
+          <path d="M370 165 L395 165" stroke="#64748b" stroke-width="3" marker-end="url(#arrow3)"/>
+          <path d="M540 165 L565 165" stroke="#64748b" stroke-width="3" marker-end="url(#arrow3)"/>
+          <path d="M710 165 L735 165" stroke="#64748b" stroke-width="3" marker-end="url(#arrow3)"/>
+          <path d="M880 165 L905 165" stroke="#64748b" stroke-width="3" marker-end="url(#arrow3)"/>
+
+          <rect x="90" y="295" width="920" height="108" rx="20" fill="#f8fafc" stroke="#d9e2ef"/>
+          <text x="125" y="332" class="svg-num">Rød tråd</text>
+          <text x="125" y="363" class="svg-text">Coop bør videreutvikle appen selektivt som strategisk støtte for fysiske butikker, kundelojalitet og retail media,</text>
+          <text x="125" y="389" class="svg-text">men bare innenfor tydelig governance som hindrer ny teknologisk gjeld og udokumenterte investeringer.</text>
+
+          <defs>
+            <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Del</th>
+            <th>Hva bør du gjøre?</th>
+            <th>Hva bør unngås?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Innledning</td>
+            <td>Presenter dilemmaet: app-lederskap vs. butikkjerne og økonomisk snuoperasjon.</td>
+            <td>Ikke start med generell digitaliseringsteori.</td>
+          </tr>
+          <tr>
+            <td>Rollevalg</td>
+            <td>Forklar hvem du rådgir og hvorfor denne rollen er relevant.</td>
+            <td>Ikke skriv anbefalinger uten tydelig mottaker.</td>
+          </tr>
+          <tr>
+            <td>Teori</td>
+            <td>Velg 1–2 perspektiver og forklar kort hvordan de brukes.</td>
+            <td>Ikke forklar hele pensum.</td>
+          </tr>
+          <tr>
+            <td>Kildekritikk</td>
+            <td>Skill mellom historiske kilder, teoriartikler og markedsføringscase.</td>
+            <td>Ikke behandle leverandørkilder som nøytral dokumentasjon.</td>
+          </tr>
+          <tr>
+            <td>Analyse</td>
+            <td>Koble app, Lobyco, butikknett, økonomi, teknologi og kundeinnsikt.</td>
+            <td>Ikke beskriv appfunksjoner uten strategisk tolkning.</td>
+          </tr>
+          <tr>
+            <td>Anbefaling</td>
+            <td>Gi 2–5 konkrete anbefalinger med risiko og forutsetninger.</td>
+            <td>Ikke anbefal “mer digitalisering” uten prioritering.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>10. Key takeaways per kilde</h2>
+
+      <div class="source-grid">
+        <div class="source-card">
+          <h3>Opgavebeskrivelse 2026</h3>
+          <p>Oppgaven handler om strategisk rådgivning til Coops direksjon. Studenten skal analysere situasjonen og gi 2–5 anbefalinger om Coop App, Lobyco og investeringer.</p>
+          <p><strong>Bruk:</strong> Styrende ramme for hele besvarelsen.</p>
+        </div>
+
+        <div class="source-card">
+          <h3>Hedman & Bjørn-Andersen 2016</h3>
+          <p>Viser at Coop historisk hadde stor teknologisk kompleksitet, legacy-systemer, høy driftsbelastning og behov for modernisering.</p>
+          <p><strong>Bruk:</strong> Bakgrunn for teknologisk gjeld og governance.</p>
+        </div>
+
+        <div class="source-card">
+          <h3>DVC Framework 2020</h3>
+          <p>Gir et rammeverk for digital verdiskaping gjennom experiences, relationships og evolution, med relevance som kjerne.</p>
+          <p><strong>Bruk:</strong> Teoretisk analyse av hvordan appen kan skape strategisk verdi.</p>
+        </div>
+
+        <div class="source-card">
+          <h3>Lobyco 2026</h3>
+          <p>Fremhever appens utbredelse, Scan & Pay, økt frekvens, personalisering og kundelojalitet.</p>
+          <p><strong>Bruk:</strong> Indikasjon på appens kommersielle og kundeorienterte verdi.</p>
+        </div>
+
+        <div class="source-card">
+          <h3>Playable 2026</h3>
+          <p>Beskriver gamification som strategisk verktøy for lojalitet, butikktrafikk, retail media og leverandørsamarbeid.</p>
+          <p><strong>Bruk:</strong> Viser hvordan appen kan monetiseres og aktivere fysiske butikker.</p>
+        </div>
+
+        <div class="source-card">
+          <h3>Shortcut 2026</h3>
+          <p>Beskriver appens utvikling, funksjoner og transformasjon til OEM-løsning gjennom Lobyco.</p>
+          <p><strong>Bruk:</strong> Viser at appen kan forstås som plattform og kapabilitet.</p>
+        </div>
+      </div>
+
+      <div class="callout risk">
+        <strong>Kildekritisk sluttpoeng:</strong> De nyeste kildene gir mest oppdatert informasjon, men også størst risiko for positiv bias. Den beste eksamensbruken er å kombinere dem med oppgavens økonomiske realitet og 2016-kildens advarsel om teknologisk kompleksitet.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>11. Kort eksamensargument du kan bygge videre på</h2>
+      <p class="tagline">
+        Coop bør ikke spørre om appen skal være viktig eller uviktig. Det riktige spørsmålet er hvordan appen kan gjøres til et mer disiplinert strategisk virkemiddel for fysiske butikker, kundelojalitet og lønnsomhet, uten å skape ny teknologisk gjeld.
+      </p>
+
+      <div class="grid-3">
+        <div class="mini-card">
+          <strong>Strategisk logikk</strong>
+          Appen er verdifull hvis den gjør Coop mer relevant for kundene og mer lønnsom i butikk.
+        </div>
+        <div class="mini-card">
+          <strong>Operasjonell logikk</strong>
+          Én plattform gir skala, lavere kompleksitet og bedre datagrunnlag.
+        </div>
+        <div class="mini-card">
+          <strong>Økonomisk logikk</strong>
+          Investeringer må måles mot effekt på frekvens, kurv, footfall, retail media og kostnad.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>12. Kilder</h2>
+      <ul>
+        <li>Eksamen: Opgavebeskrivelse, IT-strategi 2026, CBS.</li>
+        <li>Bjørn-Andersen, N. & Hedman, J. (2016): <em>The Challenge of Technological Debt – Coop</em>.</li>
+        <li>Duus, R. & Cooray, M. (2020): <em>DVC Framework: Accelerating Digital Value Creation</em>.</li>
+        <li>Lobyco (2026): <em>Helping 25% of Danish households shop smarter</em>.</li>
+        <li>Playable (2026): <em>How Coop fueled loyalty and retail media</em>.</li>
+        <li>Shortcut (2026): <em>Digital transformation for den moderne detailkæde</em>.</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      Visuell HTML-rapport · Analysegrunnlag for IT-strategi eksamen · Laget for videre arbeid med egen besvarelse
+    </footer>
+  </main>
+</body>
+</html>
