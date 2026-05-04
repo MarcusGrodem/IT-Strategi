@@ -73,7 +73,8 @@ The user must eventually choose one of these exact case actors:
 ## Exam Constraints
 
 - The paper should be 5-25 pages.
-- It may be written in Danish or English.
+- The assignment material states that the paper may be written in Danish or English.
+- User decision for this project: write drafts and LLM outputs in Norwegian unless later changed. Before final hand-in, confirm whether Norwegian is accepted by the course/exam rules.
 - It must analyse a real company where digital opportunities are central.
 - It must apply 1-2 selected course perspectives.
 - The selected perspectives can be theories, concepts or selected parts of broader course perspectives.

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DVC + Digital Business Model — Coop Analyse og Strategiforslag</title>
+<style>
+:root {
+  --bg: #0e1218;
+  --surface: #161b22;
+  --surface-2: #1c2330;
+  --border: #2a3441;
+  --text: #e8edf3;
+  --muted: #8b96a8;
+  --accent: #4a9eff;
+  --accent-warm: #ffb454;
+  --good: #4ade80;
+  --warn: #fb923c;
+  --bad: #f87171;
+  --link: #79c0ff;
+  --dvc: #c084fc;
+  --dbm: #34d399;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+.layout { display: grid; grid-template-columns: 290px 1fr; min-height: 100vh; }
+nav.sidebar {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 1.5rem 1rem;
+  position: sticky; top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+nav.sidebar h1 { font-size: 0.95rem; margin: 0; color: var(--accent); letter-spacing: -0.01em; }
+nav.sidebar h2 { font-size: 0.78rem; margin: 1.2rem 0 0.4rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+nav.sidebar .meta { font-size: 0.78rem; color: var(--muted); margin: 0.4rem 0 1rem; }
+nav.sidebar ol { list-style: none; padding: 0; margin: 0; counter-reset: section; }
+nav.sidebar li { counter-increment: section; margin: 0.1rem 0; }
+nav.sidebar a {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.83rem;
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+}
+nav.sidebar a:hover { background: var(--surface-2); border-left-color: var(--accent); color: var(--accent); }
+main { padding: 2.5rem 3.2rem; max-width: 1120px; }
+h1.page-title { font-size: 2.1rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
+.subtitle { color: var(--muted); margin-bottom: 2.5rem; font-size: 1.05rem; }
+section { margin-bottom: 3.5rem; padding-bottom: 1rem; }
+section h2 {
+  font-size: 1.55rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  color: var(--accent);
+}
+section h3 { font-size: 1.18rem; color: var(--accent-warm); margin-top: 2rem; }
+section h4 { font-size: 1.02rem; color: var(--text); margin-top: 1.5rem; }
+p, li { font-size: 0.95rem; }
+code {
+  background: var(--surface-2);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.85em;
+  color: var(--accent-warm);
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 0.86rem;
+}
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+th { background: var(--surface-2); color: var(--accent); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+tr:last-child td { border-bottom: none; }
+tr:hover { background: var(--surface-2); }
+.callout {
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  padding: 0.85rem 1.1rem;
+  margin: 1rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.callout.warn { border-color: var(--warn); }
+.callout.bad { border-color: var(--bad); }
+.callout.good { border-color: var(--good); }
+.callout.dvc { border-color: var(--dvc); }
+.callout.dbm { border-color: var(--dbm); }
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tag-dvc { background: rgba(192,132,252,0.18); color: var(--dvc); }
+.tag-dbm { background: rgba(52,211,153,0.18); color: var(--dbm); }
+.tag-fact { background: rgba(74,222,128,0.18); color: var(--good); }
+.tag-claim { background: rgba(74,158,255,0.18); color: var(--accent); }
+.tag-mkt { background: rgba(248,113,113,0.18); color: var(--bad); }
+.tag-inf { background: rgba(255,180,84,0.18); color: var(--accent-warm); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 6px;
+}
+.kpi .num { font-size: 1.6rem; color: var(--accent); font-weight: 600; display: block; }
+.kpi .lbl { color: var(--muted); font-size: 0.82rem; }
+ul.tight li { margin: 0.25rem 0; }
+.dim { color: var(--muted); font-size: 0.85rem; }
+hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+a { color: var(--link); }
+.score { display: inline-block; min-width: 1.5em; text-align: center; padding: 0.05rem 0.4rem; border-radius: 3px; background: var(--surface-2); font-weight: 600; }
+.score.high { color: var(--good); }
+.score.med { color: var(--warn); }
+.score.low { color: var(--bad); }
+.flow {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--accent-warm);
+  white-space: pre;
+  overflow-x: auto;
+}
+.framework-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+}
+.framework-card h4 { margin-top: 0; color: var(--accent); }
+.dvc-ring {
+  border-color: var(--dvc);
+}
+.dbm-ring {
+  border-color: var(--dbm);
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  nav.sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+  main { padding: 1.5rem 1rem; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+  <h1>DVC + DBM</h1>
+  <div class="meta">Coop App / Lobyco · 2026-05-04</div>
+
+  <h2>Innhold</h2>
+  <ol>
+    <li><a href="#sammendrag">Sammendrag</a></li>
+    <li><a href="#hvorfor">Hvorfor DVC + DBM</a></li>
+    <li><a href="#dvc-rammeverk">DVC-rammeverket</a></li>
+    <li><a href="#dbm-rammeverk">DBM-perspektivet</a></li>
+    <li><a href="#integrasjon">Integrert linse</a></li>
+    <li><a href="#dvc-coop">DVC anvendt på Coop</a></li>
+    <li><a href="#dbm-coop">DBM anvendt på Coop</a></li>
+    <li><a href="#diagnose">Strategisk diagnose</a></li>
+    <li><a href="#stances">Stance-implikasjoner</a></li>
+    <li><a href="#anbefalinger">Strategiforslag (R1-R10)</a></li>
+    <li><a href="#caseperson">Tilpasning per caseperson</a></li>
+    <li><a href="#kpi">Måling og KPI-modell</a></li>
+    <li><a href="#kildekritikk">Kildekritikk</a></li>
+    <li><a href="#begrensninger">Begrensninger</a></li>
+    <li><a href="#oppsummering">Oppsummering</a></li>
+  </ol>
+</nav>
+
+<main>
+<h1 class="page-title">DVC + Digital Business Model</h1>
+<div class="subtitle">Hvordan Digital Value Creation-rammeverket og Digital Business Model-perspektivet kan brukes til å analysere Coops strategiske situasjon i 2026 — og hvilke strategiforslag som faller naturlig ut av analysen.</div>
+
+<!-- ======================== -->
+<section id="sammendrag">
+<h2>1. Sammendrag</h2>
+
+<div class="callout dvc">
+<strong>DVC (Duus & Cooray 2020)</strong> spør: <em>Hvilken digital verdi opplever kunden?</em> — gjennom Experiences, Relationships, Evolution, med Relevance som bindeledd og en ytre ring av Digital Competences, Digital Infrastructure og Digital Outputs.
+</div>
+<div class="callout dbm">
+<strong>Digital Business Model (DBM)</strong> spør: <em>Hvordan skaper og fanger virksomheten verdi?</em> — gjennom value proposition, value creation, value capture, key resources, channels, governance/KPI-er.
+</div>
+
+<p>De to perspektivene er komplementære. DVC gir kundebrillene; DBM gir forretningsbrillene. Sammen gir de en analyse som verken overdriver Coop App som suksess (DVC alene risikerer det) eller reduserer den til et regnskap (DBM alene risikerer det). For Coop er kombinasjonen særlig potent fordi case-spørsmålet handler om hvorvidt Coop App og Lobyco skal <em>styrkes, reduseres, selges eller differensieres</em> — en avgjørelse som krever både kunde- og forretnings-evidens.</p>
+
+<div class="grid-3">
+  <div class="kpi"><span class="num">3+1+3</span><span class="lbl">DVC-elementer (Exp · Rel · Evo + Relevance + Comp · Infra · Outputs)</span></div>
+  <div class="kpi"><span class="num">6</span><span class="lbl">DBM-byggeklosser anvendt på Coop</span></div>
+  <div class="kpi"><span class="num">10</span><span class="lbl">strategiforslag generert (R1–R10)</span></div>
+</div>
+
+<p><strong>Hovedfunn:</strong> Den foreløpige analysen peker mot at Coop bør beholde Coop App og Lobyco, men styre dem som butikkstøttende digital infrastruktur med eksplisitte KPI-gates. DVC viser at appens kunde-relevans er reell, men ikke dokumentert som lønnsomhet. DBM viser at value capture-mekanismene (butikktrafikk, kurv, retail media, Lobyco ekstern inntekt) er <em>mulige</em>, ikke <em>dokumenterte</em>. Den naturlige stance-kombinasjonen er <strong>hybrid governance</strong> med <strong>kjedespesifikk modulering</strong>.</p>
+</section>
+
+<!-- ======================== -->
+<section id="hvorfor">
+<h2>2. Hvorfor DVC + DBM passer Coop-casen</h2>
+
+<h3>Det offisielle case-spørsmålet</h3>
+<div class="callout">
+Skal Coop fortsette å være markedsledende på Coop App når Coops fysiske butikker er kjernen i merkevaren? Skal app-investering reduseres, Lobyco selges, app-investering styrkes, eller skal Coop "gå dypt" med ulike apper for ulike kjeder?
+</div>
+
+<h3>Hvorfor begge perspektivene trengs</h3>
+<table>
+<tr><th>Spørsmål casen reiser</th><th>Hva DVC alene kan svare</th><th>Hva DBM alene kan svare</th><th>Hvorfor kombinasjonen er sterkere</th></tr>
+<tr><td>Skaper appen verdi for kunden?</td><td>Ja — direkte gjennom Experiences/Relationships/Relevance</td><td>Bare indirekte (value proposition)</td><td>DVC gir konkret kunde-evidens</td></tr>
+<tr><td>Fanger Coop økonomisk verdi fra appen?</td><td>Svakt — DVC handler primært om verdi-skaping, ikke value capture</td><td>Ja — value capture er kjernen i DBM</td><td>DBM kompenserer DVCs blindsone</td></tr>
+<tr><td>Bør Lobyco selges, beholdes eller skaleres?</td><td>DVC kan ikke vurdere kapabilitet/eierskap direkte</td><td>Ja — gjennom key resources og governance</td><td>DBM håndterer eierskaps-/strategi-spørsmålet</td></tr>
+<tr><td>Bør appen differensieres per kjede?</td><td>Delvis — gjennom Relevance</td><td>Delvis — gjennom value proposition per segment</td><td>Begge bidrar; kombinasjonen er rikere</td></tr>
+<tr><td>Hvordan skal investering måles?</td><td>Digital Outputs gir indikatorer</td><td>Governance/KPI-er gir struktur</td><td>DVC + DBM gir både outputs og outcomes</td></tr>
+</table>
+
+<h3>Eksamenskravet</h3>
+<p>Eksamenskravet er 1–2 selvvalgte perspektiver, og <em>utvalgte deler</em> kan brukes hvis det er begrunnet og transparent. Det betyr at oppgaven ikke skal forklare hele DVC og hele DBM generelt — bare de delene som er diagnostisk relevante for Coop App og Lobyco. Denne rapporten følger den disiplinen.</p>
+</section>
+
+<!-- ======================== -->
+<section id="dvc-rammeverk">
+<h2>3. DVC-rammeverket — kort intro</h2>
+
+<p>Duus & Cooray (2020) presenterer DVC som en evaluativ metode for å skape, styrke og konsolidere digital verdi. Det består av tre kjerneelementer, ett bindeledd og en ytre ring.</p>
+
+<div class="grid-2">
+<div class="framework-card dvc-ring">
+  <h4 style="color: var(--dvc)">Tre kjerneelementer</h4>
+  <ul class="tight">
+    <li><strong>Experiences</strong> — set vs. situational; emotive vs. utilitarian; customer journey mapping</li>
+    <li><strong>Relationships</strong> — tillit, multi-partner, organisation-driven vs. customer-led affiliation</li>
+    <li><strong>Evolution</strong> — forced vs. proactive; co-creation; partnerskap</li>
+  </ul>
+</div>
+<div class="framework-card dvc-ring">
+  <h4 style="color: var(--dvc)">Bindeledd og ytre ring</h4>
+  <ul class="tight">
+    <li><strong>Relevance</strong> (kjerne) — det som binder Experiences, Relationships og Evolution sammen</li>
+    <li><strong>Digital Competences</strong> — interne ferdigheter</li>
+    <li><strong>Digital Infrastructure</strong> — "stackable" plattform</li>
+    <li><strong>Digital Outputs</strong> — målbare resultater (NB: outputs ≠ outcomes)</li>
+  </ul>
+</div>
+</div>
+
+<h3>Sentrale DVC-distinksjoner som kommer til å gjøre arbeid i Coop-analysen</h3>
+<table>
+<tr><th>Distinksjon</th><th>Hva det betyr</th><th>Coop-relevans</th></tr>
+<tr><td>Set vs. situational experience</td><td>Forventet vs. uventet kundeopplevelse</td><td>Scan & Betal er set; Lobyco-nedetid eller kassakø er situational</td></tr>
+<tr><td>Emotive vs. utilitarian</td><td>Følelse vs. nytte</td><td>Spill = emotive; bonus/Scan & Betal = utilitarian</td></tr>
+<tr><td>Organisation-driven vs. customer-led affiliation</td><td>Hvem driver relasjonen</td><td>Coop initierte Coop App, men kontinuerlig appbruk er customer-led — det er sterkest digital verdi</td></tr>
+<tr><td>Forced vs. proactive evolution</td><td>Drevet av krise vs. data</td><td>coop.dk-lukking var forced; Lobyco-spin-out kan analyseres som proactive</td></tr>
+<tr><td>Outputs vs. outcomes</td><td>Aktivitet vs. resultat</td><td>1,8m brukere og 880k MAU er outputs; butikktrafikk/margin er outcomes</td></tr>
+</table>
+
+<div class="callout dvc">
+<strong>Coop-relevans:</strong> DVC-artikkelen bruker selv Coop som case for "Relationships". Det gir en spesielt kraftig kobling — men også en fallgruve: artikkelen er fra 2020, før coop.dk-lukking og 2025-tap. Den må kontekstualiseres, ikke siteres som dagens fasit.
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="dbm-rammeverk">
+<h2>4. Digital Business Model-perspektivet — kort intro</h2>
+
+<p>DBM-perspektivet (kursmateriale) analyserer hvordan en digital virksomhet skaper og fanger verdi. Sentrale byggeklosser:</p>
+
+<table>
+<tr><th>Byggekloss</th><th>Spørsmål</th><th>Coop-spesifikk vinkel</th></tr>
+<tr><td>Value proposition</td><td>Hvilken verdi loves hvilken kunde?</td><td>Bonus, bekvemmelighet, relevans, identitet, ansvarlighet — for hvilken kjede?</td></tr>
+<tr><td>Value creation</td><td>Hvordan skapes verdien, og for hvem?</td><td>Kunder, butikker, kjeder, leverandører, Lobyco</td></tr>
+<tr><td>Value capture</td><td>Hvordan fanges økonomisk verdi?</td><td>Butikktrafikk, kurv, frekvens, retail media, supplier-funded campaigns, Lobyco-inntekt</td></tr>
+<tr><td>Key resources / capabilities</td><td>Hva er sjeldent og verdifullt?</td><td>536/900 butikker, 2m+ medlemmer, Lobyco-kapabilitet, private labels, leverandørnettverk</td></tr>
+<tr><td>Channels</td><td>Hvordan når verdien kunden?</td><td>Fysiske butikker (hovedkanal) → app → medlemskommunikasjon</td></tr>
+<tr><td>Governance / KPI-er</td><td>Hvordan styres og måles modellen?</td><td>Mangler — sentralt evidensgap</td></tr>
+</table>
+
+<div class="callout dbm">
+<strong>DBM-styrke i Coop-casen:</strong> DBM gjør "skaper appen verdi?" mer presis. Det er ikke ett spørsmål, det er seks: én per byggekloss. Det gjør analysen mindre normativ og mer diagnostisk.
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="integrasjon">
+<h2>5. Integrert DVC + DBM-linse</h2>
+
+<p>De to rammeverkene overlapper, men de overlapper i en produktiv retning: DVC peker på <em>hva</em> som er digital verdi for kunden, DBM peker på <em>hvordan</em> Coop kan fange og styre den verdien.</p>
+
+<table>
+<tr><th>DVC-element</th><th>Beslektet DBM-byggekloss</th><th>Felles diagnostisk spørsmål for Coop</th></tr>
+<tr><td>Experiences</td><td>Value proposition</td><td>Hvilken konkret kundeopplevelse lover Coop App per kjede, og er den utilitarian nok?</td></tr>
+<tr><td>Relationships</td><td>Value proposition + Channels</td><td>Er forholdet customer-led nok til å være en "earned relationship", eller er det organisation-pushed?</td></tr>
+<tr><td>Relevance (kjerne)</td><td>Value proposition (kjedespesifikk)</td><td>Er én felles app-logikk relevant for både 365discount-kunder og Kvickly-kunder?</td></tr>
+<tr><td>Evolution</td><td>Key resources + Governance</td><td>Er Lobyco proactive evolution eller forced kompleksitet?</td></tr>
+<tr><td>Digital Competences</td><td>Key resources</td><td>Hva har Coop bygget som er sjeldent, verdifullt og hard å imitere?</td></tr>
+<tr><td>Digital Infrastructure</td><td>Key resources + Channels</td><td>Er Lobyco "stackable" på en måte som muliggjør kjedemoduler?</td></tr>
+<tr><td>Digital Outputs</td><td>Value capture</td><td>Hvilke outputs (reach, MAU, frekvens) konverteres faktisk til outcomes (margin, retention, supplier-revenue)?</td></tr>
+</table>
+
+<h3>Den integrerte analysetraseen</h3>
+<div class="flow">DVC (kundebriller)        DBM (forretningsbriller)
+─────────────────         ────────────────────────
+Experiences      ──────►  Value proposition
+Relationships    ──────►  Channels + Governance
+Evolution        ──────►  Key resources
+Relevance        ──┐
+                   ├─────► Strategisk diagnose
+Digital Outputs  ──┘       (gap mellom outputs og outcomes)
+                           │
+                           ▼
+Digital Infra/Comp ────►  Implementeringsevne
+                           │
+                           ▼
+                          Stance + 2-5 anbefalinger</div>
+</section>
+
+<!-- ======================== -->
+<section id="dvc-coop">
+<h2>6. DVC anvendt på Coop App og Lobyco</h2>
+
+<h3>6.1 Experiences</h3>
+<table>
+<tr><th>Set / Situational</th><th>Konkret Coop-funksjon</th><th>Type</th><th>Evidens</th></tr>
+<tr><td>Set</td><td>Personlige tilbud, bonus, Scan & Betal, kvitteringer, handleliste</td><td>Utilitarian</td><td>E032 (Coop offisielle sider)</td></tr>
+<tr><td>Set</td><td>Spill, klimaavtrykk, kjede-/butikk-kommunikasjon</td><td>Emotive</td><td>E032, E036</td></tr>
+<tr><td>Situational</td><td>Lobyco-nedetid, payment-feil i Scan & Betal, premie-feil i butikk</td><td>Risiko</td><td>Inferens fra E041 (Google Play feilet) + driftsrisiko</td></tr>
+</table>
+
+<div class="callout dvc">
+<strong>Diagnose:</strong> Set experiences er bredt dokumentert. Situational experience-håndtering er underanalysert i kildene — en typisk svakhet i marketing-kilder. Dette er en analytisk åpning: hvor god er Coop på <em>recovery</em> når digital butikkstøtte feiler?
+</div>
+
+<h3>6.2 Relationships</h3>
+<p>DVC-artikkelens egen Coop-case (s. 4-5) hevder at Coop App "redefinerer Coops relasjon med kunder" og at relasjonen er <em>customer-led affiliation</em> snarere enn ren organisation-driven. Det er det sterkeste kvalitetsstempelet en akademisk kilde gir Coop App. Men:</p>
+<table>
+<tr><th>DVC-claim (2020)</th><th>2026-virkelighet</th><th>Konsekvens for analyse</th></tr>
+<tr><td>"Earned relationship" via app</td><td>Lobyco hevder 1,8m brukere, 25% reach, 880k MAU (E034)</td><td>Reach er sterk, men er det fortsatt customer-led, eller har bonus blitt en ren transaksjons-driver?</td></tr>
+<tr><td>Driver lokal butikktrafikk</td><td>Ingen interne KPI-er offentlig (VP-A13)</td><td>Claim er plausibelt men udokumentert i 2026-evidensen</td></tr>
+<tr><td>Personlige tilbud + recipes</td><td>Funksjoner finnes fortsatt (E032)</td><td>Set experience er kontinuerlig</td></tr>
+<tr><td>Inkluderte coop.dk Shopping og MAD</td><td>Begge nedlagt (2023, 2025) (E033)</td><td>Relasjons-bredden er smalere i 2026</td></tr>
+</table>
+
+<h3>6.3 Evolution</h3>
+<table>
+<tr><th>Evolusjonshendelse</th><th>Forced eller proactive?</th><th>Strategisk lesing</th></tr>
+<tr><td>Coop App lansert 2016 som mobile-first økosystem</td><td>Proactive</td><td>Coop var tidlig — DVC-artikkelens premiss</td></tr>
+<tr><td>Lobyco etablert som spin-out (datterselskap)</td><td>Proactive (kapabilitets-uthuling)</td><td>Indikerer ambisjon om OEM/plattformrolle</td></tr>
+<tr><td>coop.dk MAD lukket 2023</td><td>Forced (lønnsomhet)</td><td>Online grocery-modellen feilet</td></tr>
+<tr><td>Coop.dk-webshop lukket 31.01.2025</td><td>Forced (fokus)</td><td>Konsolidering tilbake til fysisk kjerne</td></tr>
+<tr><td>2025-resultatforbedring (EBITDA +313m)</td><td>Forced turnaround</td><td>Investeringsdisiplin er pålagt</td></tr>
+</table>
+
+<div class="callout dvc">
+<strong>Diagnose:</strong> Coop er i en <em>blandet evolusjonsmodus</em>: proaktiv på app/Lobyco, forced på online grocery og finanser. Dette er en analytisk verdifull spenning — det er nettopp den kombinasjonen som gjør hybrid governance til den naturlige stancen.
+</div>
+
+<h3>6.4 Relevance (kjerne)</h3>
+<p>Relevance er DVC-rammeverkets kjerne. For Coop oversettes det til ett presist diagnostisk spørsmål:</p>
+<div class="callout dvc">
+<strong>Er Coop Apps verdi-løfte like relevant for en 365discount-kunde og en Kvickly-kunde?</strong> Hvis ikke, må enten appen modulariseres, eller Coop må akseptere at appens relevans er ulikt fordelt — og styrke der den er sterk.
+</div>
+
+<h3>6.5 Digital Competences, Infrastructure og Outputs</h3>
+<table>
+<tr><th>Ytre ring</th><th>Coop-evidens</th><th>Vurdering</th></tr>
+<tr><td>Digital Competences</td><td>Lobyco som spin-out (E005); historisk Shortcut-utvikling (E011, E035)</td><td>Reell, men kvantifisering mangler</td></tr>
+<tr><td>Digital Infrastructure</td><td>Coop App + Lobyco-plattform; Scan & Betal; medlemsdata; retail-media-flater (E032, E036)</td><td>"Stackable" hvis Lobyco virkelig er OEM-klar</td></tr>
+<tr><td>Digital Outputs</td><td>1,8m brukere, 880k MAU, 25% reach, 50% høyere frekvens (Lobyco), 9% kurv-uplift (Playable), 4,25m game plays</td><td>Stort, men eier outputs, ikke outcomes</td></tr>
+</table>
+
+<div class="callout warn">
+<strong>Kjerneproblem (DVC):</strong> Outputs er sterkt dokumentert; outcomes er udokumentert. DVC alene risikerer å lese outputs som suksess. Det er nettopp her DBM trengs.
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="dbm-coop">
+<h2>7. Digital Business Model anvendt på Coop</h2>
+
+<h3>7.1 Value Proposition</h3>
+<table>
+<tr><th>Verditype</th><th>Hvem mottar</th><th>Coop-mekanisme</th></tr>
+<tr><td>Økonomisk</td><td>Medlem/kunde</td><td>1% bonus, FordelsKonto 5-15%, personlige tilbud, frukt/grønt 5%</td></tr>
+<tr><td>Bekvemmelighet</td><td>Kunde</td><td>Scan & Betal, digitale kvitteringer, handleliste</td></tr>
+<tr><td>Relevans</td><td>Kunde</td><td>Personalisering basert på kjøpsdata, lokal butikkkommunikasjon</td></tr>
+<tr><td>Identitet/eierskap</td><td>Medlem</td><td>2m+ medeiere, ingen aksjonærer, Samvirke, lokal påvirkning</td></tr>
+<tr><td>Ansvarlighet</td><td>Medlem</td><td>Klimaavtrykk, økologisk andel, Änglamark</td></tr>
+<tr><td>Underholdning</td><td>Kunde</td><td>Spill (Playable-finansierte), kampanjer</td></tr>
+<tr><td>Eksponering / kampanjeflate</td><td>Leverandør</td><td>Branded prizes, retail media, supplier-funded campaigns</td></tr>
+<tr><td>OEM-kapasitet</td><td>Eksterne retailers</td><td>Lobyco som plattform-/lojalitetsleverandør</td></tr>
+</table>
+
+<div class="callout dbm">
+<strong>Diagnose:</strong> Value proposition er bred, kanskje for bred. Bredden er en strategisk svakhet hvis den ikke er kjedespesifikk: en 365discount-kunde verdsetter sannsynligvis bonus + personlige tilbud, mens en Kvickly-kunde kanskje verdsetter recipes og Änglamark mer. Spill og klimaavtrykk er tvetydig fordelt.
+</div>
+
+<h3>7.2 Value Creation</h3>
+<table>
+<tr><th>Mottaker</th><th>Mulig verdi</th><th>Evidensstyrke</th></tr>
+<tr><td>Kunder</td><td>Bonus, tilbud, enklere butikkbesøk, oversikt</td><td><span class="tag tag-fact">Sterk</span> (offisielle sider)</td></tr>
+<tr><td>Butikker</td><td>Trafikk, raskere checkout, lokal kommunikasjon, premieinnløsning</td><td><span class="tag tag-claim">Plausibelt</span></td></tr>
+<tr><td>Coop-kjeder</td><td>Felles infrastruktur + mulig differensiering</td><td><span class="tag tag-inf">Inferens</span></td></tr>
+<tr><td>Leverandører</td><td>Kampanjer, branded prizes, retail media, produktprøver</td><td><span class="tag tag-mkt">Vendor</span> (Playable)</td></tr>
+<tr><td>Lobyco</td><td>OEM-/plattform-inntekt, ekstern gjenbruk</td><td><span class="tag tag-mkt">Vendor</span> (Lobyco/Shortcut)</td></tr>
+<tr><td>Coop konsernet</td><td>Datakapital, medlemsbinding, brand</td><td><span class="tag tag-inf">Inferens</span></td></tr>
+</table>
+
+<h3>7.3 Value Capture (kritisk seksjon)</h3>
+<p>Dette er DBMs viktigste bidrag til Coop-analysen — fordi det er her DVC svikter. Mulige value capture-mekanismer:</p>
+<ol>
+<li>Inkrementell butikktrafikk fra appbrukere</li>
+<li>Inkrementell kurvverdi (Playable hevder 9% — men premieinnløsere er en seleksjonsbiased gruppe)</li>
+<li>Høyere handlefrekvens (Lobyco hevder 50% — samme bias-risiko)</li>
+<li>Lavere friksjon i butikk (Scan & Betal sparer kassetid)</li>
+<li>Supplier-funded campaigns (leverandører finansierer premier/kampanjer)</li>
+<li>Retail media-inntekt (annonseflate i appen)</li>
+<li>Bedre segmentering → bedre marginstyring</li>
+<li>Sterkere medlems-retention</li>
+<li>Lobyco ekstern OEM-inntekt</li>
+</ol>
+
+<div class="callout bad">
+<strong>Kritisk poeng:</strong> Ingen av disse er offentlig dokumentert som <em>nettoeffekt</em> for Coop. Vendor-claims (Lobyco, Playable, Shortcut) er ikke uavhengige. Det betyr at en "styrke appen"-stance som hviler på value capture er evidens-svak — mens en "selg Lobyco"-stance som hviler på fravær av value capture er minst like svak.
+</div>
+
+<h3>7.4 Key Resources / Capabilities</h3>
+<table>
+<tr><th>Ressurs</th><th>Sjelden?</th><th>Verdifull?</th><th>Hard å imitere?</th><th>VRIO-vurdering</th></tr>
+<tr><td>Fysisk butikknettverk (536/900)</td><td>Delvis</td><td>Ja</td><td>Ja</td><td>Sterk</td></tr>
+<tr><td>2m+ medlemmer / medeiere</td><td>Ja (kooperativt)</td><td>Ja</td><td>Veldig</td><td>Strukturell fordel</td></tr>
+<tr><td>Coop App + brukerdata</td><td>Delvis</td><td>Ja</td><td>Delvis (Lidl Plus, Salling Scan&Go imiterer)</td><td>Middels</td></tr>
+<tr><td>Lobyco-kapabilitet</td><td>Mulig (OEM-claim)</td><td>Uklar (mangler økonomi)</td><td>Mulig</td><td>Uavklart — sentralt evidensgap</td></tr>
+<tr><td>Private labels (Coop, Änglamark)</td><td>Ja</td><td>Ja</td><td>Ja</td><td>Sterk</td></tr>
+<tr><td>Coop Trading + leverandørnettverk (700+)</td><td>Delvis</td><td>Ja</td><td>Delvis</td><td>Middels</td></tr>
+<tr><td>Kjedeporteføljen (4 kjeder)</td><td>Delvis</td><td>Ja</td><td>Delvis</td><td>Middels</td></tr>
+</table>
+
+<h3>7.5 Channels</h3>
+<div class="flow">Hovedkanal:    Fysiske butikker (536/900, EBITDA 313m, EBIT -215m)
+Sekundær:      Coop App (1,8m brukere) ← Coop App er en LAYER på butikken
+Tertiær:       Medlemskommunikasjon, kjedesider, tilbudsaviser
+Kampanjeflate: Retail media, gamification (Playable)
+Historisk:     coop.dk MAD (2023 lukket), coop.dk-webshop (2025 lukket)</div>
+
+<div class="callout dbm">
+<strong>Diagnose:</strong> Coop er ikke omnichannel i klassisk forstand etter coop.dk-lukking. Coop er <em>store-first med digital støttelag</em>. Denne kanalhierarkiet er den sterkeste argument-baseren i hele analysen.
+</div>
+
+<h3>7.6 Governance / KPI-er</h3>
+<p>Sentrale governance-mangler i nåværende offentlige evidens:</p>
+<ul class="tight">
+<li>Inkrementell handlefrekvens vs. seleksjonsbias-kontroll</li>
+<li>Inkrementell kurvverdi og margin (ikke bare omsetning)</li>
+<li>Effekt per kjede og kundesegment</li>
+<li>Aktiveringsrate og innløsning av personlige tilbud</li>
+<li>Kostnad per appfunksjon og kampanje</li>
+<li>Scan & Betal-effekt på kø, bemanning, kundetilfredshet</li>
+<li>Gamification-effekt etter premiekostnader og leverandørbetaling</li>
+<li>Retail-media-inntekt og kundetillits-risiko</li>
+<li>Lobyco ekstern inntekt, kostnad, kundebase</li>
+</ul>
+</section>
+
+<!-- ======================== -->
+<section id="diagnose">
+<h2>8. Strategisk diagnose</h2>
+
+<p>Når DVC og DBM appliseres samlet, peker analysen mot ett gjennomgående mønster:</p>
+
+<div class="callout">
+<strong>Sentral påstand:</strong> Coop App og Lobyco skaper plausibel digital verdi for kunder, butikker og leverandører (DVC: outputs er sterke, set experiences er bredt dokumentert), men Coop fanger ikke offentlig dokumentert økonomisk verdi (DBM: value capture er hypotetisk). Strategien bør derfor ikke handle om <em>mer eller mindre app</em>, men om <em>tettere kobling mellom app og value capture</em>.
+</div>
+
+<h3>Diagnostisk matrise: hva sier DVC + DBM om hver case-option?</h3>
+<table>
+<tr><th>Case-option</th><th>DVC-vurdering</th><th>DBM-vurdering</th><th>Samlet</th></tr>
+<tr><td>Reduser app-investering</td><td>Risiko: ødelegger customer-led affiliation; svekker Relevance</td><td>Mulig: reduserer kostnad uten value capture-tap (siden capture er udokumentert)</td><td><span class="score low">Svakt</span> — anti-digitalt i kursfag</td></tr>
+<tr><td>Selg/afhænde Lobyco</td><td>Risiko: ødelegger Digital Infrastructure</td><td>Mulig: men key resources-vurdering mangler data</td><td><span class="score low">Spekulativt</span></td></tr>
+<tr><td>Styrke app-investering</td><td>Mulig hvis Relevance differensieres</td><td>Risikabelt: investerer mot udokumentert value capture</td><td><span class="score med">Risikabelt</span></td></tr>
+<tr><td>Gå dypt med kjedeapper</td><td>Sterkt: Relevance per kjede, ulike Experiences</td><td>Sterkt: ulike value propositions per kjede</td><td><span class="score high">Sterkt</span></td></tr>
+<tr><td>Hybrid governance</td><td>Sterkt: bevarer Relationships og Infrastructure</td><td>Sterkest: krever value capture-bevis før investering</td><td><span class="score high">Sterkest</span></td></tr>
+<tr><td>Selektiv forenkling</td><td>Sterkt: kutter weak Experiences</td><td>Sterkt: reduserer feature-kostnad</td><td><span class="score high">Sterkt</span></td></tr>
+<tr><td>Lobyco kontrollert kapasitet</td><td>Bevarer Digital Competences</td><td>Krever klart mandat: Coop først</td><td><span class="score med">Middels-sterkt</span></td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<section id="stances">
+<h2>9. Stance-implikasjoner</h2>
+
+<p>Den foreløpig sterkeste kombinasjonen som faller direkte ut av en DVC + DBM-analyse:</p>
+
+<div class="callout good">
+<strong>Hybrid governance + selektiv kjedespesifikk modulering</strong>: Coop beholder Coop App og Lobyco som strategisk infrastruktur, men knytter videre investering til (i) målbar value capture per funksjon og kjede, (ii) kjedespesifikk Relevance, og (iii) Lobyco-mandat som først skal støtte Coop, dernest ekstern OEM-vekst.
+</div>
+
+<h3>Hvorfor denne stancen er den naturlige DVC + DBM-konklusjonen</h3>
+<ul class="tight">
+<li><strong>DVC:</strong> Coop App har dokumentert customer-led affiliation, men kanvas-bredden risikerer å fortynne Relevance per kjede.</li>
+<li><strong>DBM:</strong> Value capture-mekanismene er mulige, men ikke målte — derfor må videre investering være KPI-betinget.</li>
+<li><strong>Begge:</strong> coop.dk-lukking + finansielt press gjør det irrasjonelt å hverken selge digital infrastruktur eller skalere udokumentert verdi.</li>
+</ul>
+</section>
+
+<!-- ======================== -->
+<section id="anbefalinger">
+<h2>10. Strategiforslag — 10 kandidater (R1–R10)</h2>
+
+<p>Disse er ikke valgte anbefalinger — de er kandidater som faller naturlig ut av DVC + DBM-analysen. Eksamen krever 2-5; brukeren velger. Hver er linket til DVC-element, DBM-byggekloss og evidens.</p>
+
+<table>
+<tr><th>#</th><th>Forslag</th><th>DVC</th><th>DBM</th><th>Evidens</th><th>Risiko</th><th>Score</th></tr>
+<tr><td>R1</td><td><strong>Innfør tre-nivå KPI-modell</strong>: Outputs (reach/MAU) → Behaviour (frekvens, kurv) → Outcomes (margin, retention). Stage-gates på hver overgang før investering frigjøres.</td><td>Outputs vs. outcomes-skille</td><td>Governance + Value capture</td><td>VP-A13 (manglende KPI), E013 (output ≠ outcome)</td><td>Krever data Coop ikke offentlig har</td><td><span class="score high">9</span></td></tr>
+<tr><td>R2</td><td><strong>Modulariser Coop App per kjede</strong>: behold felles plattform, men lever differensierte feature-pakker for 365discount (savings-first), Kvickly (recipes/inspirasjon), SuperBrugsen (lokal/medlem), Brugsen (community/lokal).</td><td>Relevance + Experiences</td><td>Value proposition + Channels</td><td>E038 (kjedeløfter ulike), E018-E021 (konkurrent-fit)</td><td>Kompleksitet og kost</td><td><span class="score high">9</span></td></tr>
+<tr><td>R3</td><td><strong>Lobyco kontrollert mandat</strong>: definer eksplisitt at Lobyco først skal styrke Coop, deretter forfølge OEM-vekst kun hvis det ikke svekker Coop-leveransen. Årlig mandate review.</td><td>Evolution + Digital Competences</td><td>Key resources + Governance</td><td>E005, E034-E035 (Lobyco/Shortcut-claims)</td><td>Krever Lobyco-økonomi som mangler</td><td><span class="score high">9</span></td></tr>
+<tr><td>R4</td><td><strong>Selektiv feature-forenkling</strong>: gjennomgå alle app-funksjoner i en use-cost matrix; behold kun de som har dokumentert butikknytte eller savings-effekt. Pilot på 365discount.</td><td>Set Experiences + Relevance</td><td>Value capture + Channels</td><td>E019, E021 (REMA/Lidl simplicity-fit)</td><td>Risiko for å fjerne emotive features som faktisk binder</td><td><span class="score high">8</span></td></tr>
+<tr><td>R5</td><td><strong>Retail-media governance-rammer</strong>: definer trust-grenser, måle på supplier-revenue, supplier-NPS og kundetillits-impact (ikke bare engagement).</td><td>Relationships</td><td>Value capture + Governance</td><td>E010, E036-E037 (Playable retail media-claim)</td><td>Avhenger av at retail media faktisk er materielt</td><td><span class="score med">7</span></td></tr>
+<tr><td>R6</td><td><strong>Situational experience-recovery</strong>: bygg eksplisitt response-protokoll for app-/Scan & Betal-feil og Lobyco-nedetid (DVC: situational experiences svekker investert set-verdi).</td><td>Situational Experiences</td><td>Value proposition (forsvar)</td><td>Inferens fra DVC-rammeverket; E041 (Google Play feilet) som driftsindikator</td><td>Lavere kostnad, men trenger eierskap</td><td><span class="score med">7</span></td></tr>
+<tr><td>R7</td><td><strong>Customer-led affiliation-måling</strong>: skill mellom organisation-driven app-bruk (push-tilbud) og customer-led app-bruk (uoppfordret retur). Sistnevnte er den verdifulle metricen.</td><td>Relationships (kjerne)</td><td>Value capture (lojalitets-proxy)</td><td>Direkte fra DVC-artikkelen (Cooray & Duus 2020)</td><td>Krever ny måleinfrastruktur</td><td><span class="score med">8</span></td></tr>
+<tr><td>R8</td><td><strong>Stage-gate for "go deep" 365discount-mod</strong>: pilot kjedespesifikk app-modul med klare exit-kriterier (margin/kurv/retention vs. nåværende app).</td><td>Relevance + Evolution</td><td>Value proposition + Implementation</td><td>E019, E021, E022 (discount-fit)</td><td>Kompleksitet; krever 365discount-data</td><td><span class="score high">8</span></td></tr>
+<tr><td>R9</td><td><strong>Bevar physical-store-prioritet i investeringsrammeverk</strong>: app/Lobyco får aldri prioritet over investeringer som direkte støtter butikk-EBIT-turnaround.</td><td>Digital Outputs (kontekstualisering)</td><td>Channels-hierarki + Governance</td><td>E001-E002, E016, E027-E029, E033 (butikkjerne + finansielt press)</td><td>Risiko for at man undertrykker langsiktig kapabilitet</td><td><span class="score high">9</span></td></tr>
+<tr><td>R10</td><td><strong>Kildekritisk kommunikasjon internt</strong>: Coop-styret må skille mellom Lobyco/Playable-claims og uavhengig dokumentert effekt i alle investeringsbeslutninger.</td><td>Hele DVC-rammeverket (output ≠ outcome)</td><td>Governance + Implementation</td><td>Kildekritikk-filer; alle marketing-claims</td><td>Lett å si, vanskelig å institusjonalisere</td><td><span class="score med">7</span></td></tr>
+</table>
+
+<h3>Anbefalt 2-5 utvalg</h3>
+<div class="callout good">
+For en hybrid governance-stance med Martin/CEO som caseperson: <strong>R1, R2, R3, R9</strong> er den sterkeste minimum-kombinasjonen. Legg til <strong>R4</strong> hvis selektiv forenkling skal være eksplisitt; legg til <strong>R5</strong> hvis retail media skal være sentralt.
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="caseperson">
+<h2>11. Tilpasning per caseperson</h2>
+
+<p>Samme analyse, ulike vinkler. Her er hvordan DVC + DBM tilpasses hver av de fem case-aktørene:</p>
+
+<table>
+<tr><th>Caseperson</th><th>DVC-fokus</th><th>DBM-fokus</th><th>Naturlige anbefalinger</th></tr>
+<tr><td><strong>Thor (CEO)</strong></td><td>Evolution + Digital Outputs (på konsernnivå)</td><td>Key resources + Governance + Value capture</td><td>R1, R3, R9, R10</td></tr>
+<tr><td><strong>Rikke (SuperBrugsen/Kvickly)</strong></td><td>Experiences + Relationships + Relevance</td><td>Value proposition + Channels (kjedespesifikk)</td><td>R2, R6, R7</td></tr>
+<tr><td><strong>Torben (Brugsen)</strong></td><td>Relationships (medlem/lokal) + Relevance</td><td>Value proposition (lokal identitet)</td><td>R2 (lokal-modul), R7</td></tr>
+<tr><td><strong>Michael (365discount)</strong></td><td>Set Experiences (utilitarian) + Relevance</td><td>Value proposition (savings-first) + Implementation</td><td>R2, R4, R8</td></tr>
+<tr><td><strong>Martin (Komm./Mkt./Digital)</strong></td><td>Hele DVC-rammeverket — som digital eier</td><td>Hele DBM-rammeverket — som governance-eier</td><td>R1, R2, R3, R5, R10</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<section id="kpi">
+<h2>12. Måling og KPI-modell</h2>
+
+<p>Kjernen i en DVC + DBM-analyse av Coop er at <strong>outputs er kjent, outcomes er ikke</strong>. En operasjonalisering krever derfor en tre-nivå KPI-modell:</p>
+
+<table>
+<tr><th>Nivå</th><th>DVC-tilknytning</th><th>DBM-tilknytning</th><th>Konkrete Coop-KPIer</th></tr>
+<tr><td><strong>Nivå 1: Outputs</strong></td><td>Digital Outputs</td><td>Value creation (aktivitet)</td><td>MAU, downloads, sessions, gameplay-deltakelser, Scan & Betal-bruk, premie-innløsninger</td></tr>
+<tr><td><strong>Nivå 2: Behaviour</strong></td><td>Relationships + Experiences</td><td>Value capture (proxy)</td><td>Inkrementell besøksfrekvens (med kontrollgruppe), basket size, kategori-mix-skift, tilbuds-aktiveringsrate</td></tr>
+<tr><td><strong>Nivå 3: Outcomes</strong></td><td>Relevance (sluttmål)</td><td>Value capture (faktisk)</td><td>Inkrementell margin, retention/churn, supplier-revenue netto kostnad, retail-media revenue, Lobyco ekstern revenue, EBIT-bidrag per funksjon</td></tr>
+</table>
+
+<h3>Stage-gate-logikk</h3>
+<div class="flow">
+Funksjon X foreslås
+        │
+        ▼
+[Gate 1] Genererer den outputs (engagement, bruk)? → JA → fortsett
+        │
+        ▼
+[Gate 2] Endrer den behaviour (frekvens, kurv) målt mot kontrollgruppe? → JA → fortsett
+        │
+        ▼
+[Gate 3] Skaper den outcome (margin, retention, supplier-rev) etter kostnader? → JA → skaler
+        │
+        ▼
+[Gate 4] Er outcome bedre per krone enn alternativ butikk-investering? → JA → behold prioritet
+</div>
+
+<div class="callout">
+<strong>Coop-spesifikk konsekvens:</strong> Mesteparten av offentlig vendor-evidens (Lobyco/Playable/Shortcut) stopper ved Gate 1. Gate 2-3 krever interne KPIer Coop sannsynligvis har, men ikke deler offentlig. Det er nettopp dette gapet anbefalingsstrukturen må adressere — ikke maskere.
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="kildekritikk">
+<h2>13. Kildekritikk i DVC + DBM-anvendelsen</h2>
+
+<table>
+<tr><th>Kilde</th><th>DVC-bruk</th><th>DBM-bruk</th><th>Hovedrisiko</th></tr>
+<tr><td>Duus & Cooray (2020) — DVC</td><td>Primær teorikilde</td><td>—</td><td>Egen Coop-case fra 2020 er pre-coop.dk-lukking; må kontekstualiseres</td></tr>
+<tr><td>Lobyco</td><td>Indikator på Digital Outputs (vendor-rapportert)</td><td>Indikator på key resources (claim)</td><td>Subsidiary, marketing-bias, selection bias i frekvens-claim</td></tr>
+<tr><td>Playable</td><td>Indikator på engagement-Experiences</td><td>Indikator på supplier-funded value capture</td><td>Supplier marketing; gamification ≠ profitability</td></tr>
+<tr><td>Shortcut</td><td>Historisk Digital Competences</td><td>Historisk key resources</td><td>Developer-perspektiv; teknisk leveranse ≠ strategisk suksess</td></tr>
+<tr><td>Coop årsrapport 2025</td><td>—</td><td>Sterkest finansiell baseline</td><td>Promotional framing; bevar metric-navn presis</td></tr>
+<tr><td>Coop offisielle sider</td><td>Set Experiences (funksjonsbeskrivelse)</td><td>Value proposition (selvpresentasjon)</td><td>Selvpresentasjon, ikke uavhengig effekt-måling</td></tr>
+<tr><td>Konkurrent-scrape</td><td>Sammenligningsgrunnlag for Relevance</td><td>Konkurrent-fit i value proposition</td><td>Sekundær syntese; spore til original-URL</td></tr>
+</table>
+
+<div class="callout warn">
+<strong>Skriveregel:</strong> Bruk "Lobyco hevder ...", "Playable rapporterer ...", "Kildene indikerer ...". Aldri "Appen beviser ...", "Coop App er lønnsom", eller "Lobyco er konkurransefortrinn".
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="begrensninger">
+<h2>14. Begrensninger ved DVC + DBM for Coop</h2>
+
+<table>
+<tr><th>Begrensning</th><th>Hvorfor</th><th>Hvordan håndtere</th></tr>
+<tr><td>DVC kan overdrive digital verdi</td><td>Rammeverket er normativt positivt om digital transformasjon</td><td>Kombinere med DBM value capture og kildekritikk</td></tr>
+<tr><td>DBM kan bli abstrakt</td><td>Byggeklossene er generiske</td><td>Anker hver byggekloss i konkret Coop-evidens</td></tr>
+<tr><td>Verken DVC eller DBM beviser lønnsomhet</td><td>Begge er analytiske rammer, ikke regnskapsverktøy</td><td>Eksplisitt evidensgap-statement; KPI-anbefaling</td></tr>
+<tr><td>DVC-artikkelen er fra 2020</td><td>Pre-coop.dk-lukking, pre-Lobyco-spin-out, pre-2025-tap</td><td>Bruk artikkelen som teori, ikke som dagens Coop-fasit</td></tr>
+<tr><td>Manglende competitor-positioning-perspektiv</td><td>DVC + DBM er Coop-internt</td><td>Tillegg av Porter selektivt der konkurrent-fit er sentral</td></tr>
+<tr><td>Manglende implementeringslinse</td><td>Begge sier hva, ikke hvordan</td><td>Stage-gate-anbefalinger (R1, R8) bygger inn implementering</td></tr>
+<tr><td>Ingen direkte håndtering av teknologisk gjeld</td><td>Hedman & Bjørn-Andersen 2016 trengs som backdrop</td><td>Bruk historisk IT-debt som kontekst i Evolution-seksjonen</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<section id="oppsummering">
+<h2>15. Oppsummering</h2>
+
+<div class="callout dvc">
+<strong>DVC bidrar:</strong> Konkret kunde-evidens på Experiences, Relationships, Evolution; Relevance som diagnostisk kjerne; output-vs-outcome-skille.
+</div>
+<div class="callout dbm">
+<strong>DBM bidrar:</strong> Forretningslogikk på value proposition, value creation, value capture, key resources, channels og governance.
+</div>
+<div class="callout good">
+<strong>Sammen gir de:</strong> En analyse som ser Coop App som en strategisk asset hvis verdi avhenger av kjedespesifikk relevans og dokumentert value capture — og som leder direkte til stansen <em>hybrid governance + selektiv kjedespesifikk modulering</em>, med Lobyco som kontrollert kapasitet og en tre-nivå KPI-modell.
+</div>
+
+<h3>Den ene setningen</h3>
+<div class="callout">
+Coop bør beholde Coop App og Lobyco som strategisk digital infrastruktur, men styre dem gjennom en KPI-betinget hybrid governance som differensierer Relevance per kjede, måler value capture før skalering, og rangerer all videre app-investering bak butikk-EBIT-turnaround inntil outcome-data dokumenterer noe annet.
+</div>
+
+<hr>
+<p class="dim">Generert 2026-05-04 basert på DVC-rammeverket (Duus & Cooray 2020), Digital Business Model-perspektivet, Coop business model-scrape (E027–E041), konkurrent-scrape (Salling, REMA, Lidl, Dagrofa, Nemlig, DI), og strategic situation analysis. Strategiforslagene R1–R10 er kandidater, ikke valgte anbefalinger.</p>
+</section>
+</main>
+</div>
+</body>
+</html>

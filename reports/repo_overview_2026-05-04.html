@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coop IT-Strategi — Komplett Repo-Oversikt (2026-05-04)</title>
+<style>
+:root {
+  --bg: #0f1419;
+  --surface: #161b22;
+  --surface-2: #1c2330;
+  --border: #2a3441;
+  --text: #e8edf3;
+  --muted: #8b96a8;
+  --accent: #4a9eff;
+  --accent-warm: #ffb454;
+  --good: #4ade80;
+  --warn: #fb923c;
+  --bad: #f87171;
+  --link: #79c0ff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.layout { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+nav.sidebar {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 1.5rem 1rem;
+  position: sticky; top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+nav.sidebar h1 { font-size: 0.95rem; margin: 0 0 0.5rem 0; color: var(--accent); }
+nav.sidebar .meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.2rem; }
+nav.sidebar ol { list-style: none; padding: 0; margin: 0; counter-reset: section; }
+nav.sidebar li { counter-increment: section; margin: 0.15rem 0; }
+nav.sidebar a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+}
+nav.sidebar a::before { content: counter(section) ". "; color: var(--muted); }
+nav.sidebar a:hover { background: var(--surface-2); border-left-color: var(--accent); color: var(--accent); }
+main { padding: 2.5rem 3rem; max-width: 1100px; }
+h1.page-title { font-size: 2rem; margin: 0 0 0.5rem 0; color: var(--text); letter-spacing: -0.02em; }
+h1.page-title + .subtitle { color: var(--muted); margin-bottom: 2.5rem; font-size: 1.05rem; }
+section { margin-bottom: 3.5rem; padding-bottom: 1rem; }
+section h2 {
+  font-size: 1.55rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  color: var(--accent);
+}
+section h3 { font-size: 1.15rem; color: var(--accent-warm); margin-top: 2rem; }
+section h4 { font-size: 1rem; color: var(--text); margin-top: 1.5rem; }
+p, li { font-size: 0.95rem; }
+code {
+  background: var(--surface-2);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.85em;
+  color: var(--accent-warm);
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 0.86rem;
+}
+th, td {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+th { background: var(--surface-2); color: var(--accent); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+tr:last-child td { border-bottom: none; }
+tr:hover { background: var(--surface-2); }
+.callout {
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.callout.warn { border-color: var(--warn); }
+.callout.bad { border-color: var(--bad); }
+.callout.good { border-color: var(--good); }
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.tag-open { background: rgba(251,146,60,0.18); color: var(--warn); }
+.tag-eval { background: rgba(74,158,255,0.18); color: var(--accent); }
+.tag-locked { background: rgba(74,222,128,0.18); color: var(--good); }
+.tag-fact { background: rgba(74,222,128,0.18); color: var(--good); }
+.tag-claim { background: rgba(74,158,255,0.18); color: var(--accent); }
+.tag-mkt { background: rgba(248,113,113,0.18); color: var(--bad); }
+.tag-inf { background: rgba(255,180,84,0.18); color: var(--accent-warm); }
+.tag-asm { background: rgba(139,150,168,0.25); color: var(--muted); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 6px;
+}
+.kpi .num { font-size: 1.6rem; color: var(--accent); font-weight: 600; display: block; }
+.kpi .lbl { color: var(--muted); font-size: 0.82rem; }
+ul.tight li { margin: 0.2rem 0; }
+.dim { color: var(--muted); font-size: 0.85rem; }
+hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+a { color: var(--link); }
+.toc-mini { background: var(--surface); padding: 0.8rem 1.2rem; border-radius: 6px; border: 1px solid var(--border); }
+.toc-mini ul { margin: 0.2rem 0 0.2rem 1rem; padding: 0; }
+.toc-mini ul li { font-size: 0.85rem; }
+.toc-mini ul li a { color: var(--text); text-decoration: none; }
+.toc-mini ul li a:hover { color: var(--accent); }
+.score { display: inline-block; min-width: 1.6em; text-align: center; padding: 0.05rem 0.4rem; border-radius: 3px; background: var(--surface-2); font-weight: 600; }
+.score.high { color: var(--good); }
+.score.med { color: var(--warn); }
+.score.low { color: var(--bad); }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  nav.sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+  main { padding: 1.5rem 1rem; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+  <h1>Coop IT-Strategi</h1>
+  <div class="meta">Komplett repo-oversikt<br>2026-05-04</div>
+  <ol>
+    <li><a href="#sammendrag">Sammendrag</a></li>
+    <li><a href="#repo-struktur">Repo-struktur</a></li>
+    <li><a href="#prosjektkontekst">Prosjektkontekst</a></li>
+    <li><a href="#oppgave">Eksamensoppgaven</a></li>
+    <li><a href="#beslutninger">Beslutningssystem</a></li>
+    <li><a href="#dagslogger">Daglige logger</a></li>
+    <li><a href="#optionbanks">Option banks</a></li>
+    <li><a href="#evidens">Evidenssystem</a></li>
+    <li><a href="#analyser">Analyser</a></li>
+    <li><a href="#angles">15 case-angles</a></li>
+    <li><a href="#verifikasjon">Kildeverifikasjon</a></li>
+    <li><a href="#synthesis">Syntese 2026-05-04</a></li>
+    <li><a href="#scrape">Webscraping-runner</a></li>
+    <li><a href="#assets">Eksterne assets</a></li>
+    <li><a href="#risiko">Risiko og åpne valg</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+  </ol>
+</nav>
+
+<main>
+<h1 class="page-title">Coop IT-Strategi 2026 — Komplett Repo-Oversikt</h1>
+<div class="subtitle">Samlet rapport over alt innhold i repoet på et gitt tidspunkt: case, evidens, analyser, options, beslutningsstatus og neste steg. Generert 2026-05-04.</div>
+
+<!-- ============================================================ -->
+<section id="sammendrag">
+<h2>1. Sammendrag</h2>
+
+<div class="callout">
+<strong>North star:</strong> "Analyse Coop's strategic situation first; on that basis, develop 2-5 relevant strategic recommendations in continuation of the analysis."
+</div>
+
+<p>Repoet inneholder et strukturert eksamensprosjekt om <strong>Coop Danmarks IT-strategi for 2026</strong>, sentrert rundt Coop App og Lobyco. Prosjektet drives som en human-in-the-loop-arbeidsflyt der agenter genererer alternativer, brukeren velger, og beslutninger logges. Per 2026-05-04 er <strong>ingen av kjernevalgene (caseperson, teori, strategisk stance) låst</strong>, og alle option banks holdes åpne.</p>
+
+<div class="grid-2">
+  <div class="kpi"><span class="num">5</span><span class="lbl">case-aktører i option bank</span></div>
+  <div class="kpi"><span class="num">7</span><span class="lbl">strategiske stances</span></div>
+  <div class="kpi"><span class="num">6</span><span class="lbl">teorikombinasjoner</span></div>
+  <div class="kpi"><span class="num">15</span><span class="lbl">angles mappet (3 per aktør)</span></div>
+  <div class="kpi"><span class="num">41</span><span class="lbl">evidence-IDer (E001–E041)</span></div>
+  <div class="kpi"><span class="num">10+</span><span class="lbl">beslutningsgater</span></div>
+</div>
+
+<h3>Hovedpunkter per status</h3>
+<ul>
+<li><strong>Case-spørsmål:</strong> Skal Coop redusere/styrke/selge Lobyco/gå dypt med kjedeapper — gitt fysisk butikkjerne, økonomisk press og kjedediversitet?</li>
+<li><strong>Foreløpig topp 3 retninger:</strong> Martin/hybrid governance (D1), Michael/365discount go-deep (M1), Thor/portfolio discipline (T1).</li>
+<li><strong>Største enkeltrisiko:</strong> Lobyco-marketingclaims (S1) bærer 12 av 15 angles. Manglende interne Coop-KPI-er er reelt evidensgap.</li>
+<li><strong>Metric-konflikt ikke avklart:</strong> 232m DKK loss (case) vs. -215m DKK EBIT (årsrapport) — pre-decisional blocker.</li>
+<li><strong>Sterkest evidens:</strong> Coop 2025-finans (E016, E027–E029), butikknettverk (536/900), coop.dk-lukking (2023/2025).</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<section id="repo-struktur">
+<h2>2. Repo-struktur</h2>
+
+<p>Repoet har to hovedlag: <strong>kildemateriale og rapporter på topp-nivå</strong>, og en <strong>strukturert agent-arbeidsflyt</strong> under <code>LLM/agent-setup/coop-it-strategy-agent-project/</code>.</p>
+
+<pre>IT-Strategi/
+├── Offical Exam Docs/                  ← Originale PDF-er (oppgavetekst + tilleggskilder)
+│   ├── Opgavebeskrivelse_Eksamen_IT-strategi 2026.pdf
+│   └── Additional context/              (DVC, Hedman, Lobyco, Playable, Shortcut PDF-er)
+├── slides/                              Forelesningsslides (Lektion 4, 5, 9)
+├── scripts/                             coop_business_model_scrape.py
+├── reports/
+│   ├── webscraping_runs/                Crawl4AI-output (kompetent + Coop business model)
+│   ├── *.pdf                            Genererte rapporter
+│   ├── key_takeaways_summary.html
+│   ├── multi_angle_case_overview.html
+│   └── repo_overview_2026-05-04.html   ← (denne filen)
+├── LLM/
+│   ├── CONTEXT.md                      Repo-kontekst for LLM-er
+│   ├── HTML/                           Tidligere genererte rapporter (Claude, Chat)
+│   ├── Markdown/                       Alle PDF-er konvertert til markdown + bilder
+│   ├── Prompts/                        Webscraping-prompt
+│   ├── Webscraping/                    Scripts og data
+│   └── agent-setup/coop-it-strategy-agent-project/
+│       ├── 00_project_brief.md
+│       ├── 01_decision_board.md
+│       ├── 02_decision_register.md
+│       ├── 03_daily_logs/              (2026-05-03, 2026-05-04)
+│       ├── 04_option_banks/            (executive, theory, stance, comp., recom., struktur)
+│       ├── 05_evidence/                (register, sources, criticism, reliability, key#, packet)
+│       ├── 06_analysis/                (situation, DVC, DBM, competitor, theory→evidence)
+│       ├── 08_final_report/            (multi_angle HTML, AI-statement, quality check)
+│       ├── 09_codex_prompts/           (multi_angle prompt, exam quality prompt)
+│       └── 10_project_context/         (handoff, alignment, workflow policy, imports)
+└── 05_evidence/, 10_project_context/   (tomme topp-nivå-stubs)</pre>
+</section>
+
+<!-- ============================================================ -->
+<section id="prosjektkontekst">
+<h2>3. Prosjektkontekst</h2>
+
+<h3>Hva repoet er</h3>
+<p>Kildemateriale, analyser og arbeidsdokumenter for CBS-eksamen <em>BINTO2011U.LA_F25 IT-strategi</em>, utstedt 20. april 2026 av Ulrik Røhl. Prosjektet er ikke ment å produsere en automatisk LLM-rapport — det skal bygge et kontrollert beslutningsgrunnlag der brukeren tar de viktige valgene selv.</p>
+
+<h3>Casen — Coop Danmark</h3>
+<table>
+<tr><th>Faktum</th><th>Detalj</th></tr>
+<tr><td>Konsern</td><td>Coop Danmark — kjedene Kvickly, SuperBrugsen, Brugsen, 365discount</td></tr>
+<tr><td>Markedsposisjon</td><td>Historisk største aktør i dansk dagligvare</td></tr>
+<tr><td>Finansiell situasjon</td><td>Fallende omsetning og strukturelle underskudd flere år; 2025: ~1,0 mrd DKK omsetningsfall, 232 mill. DKK nettotap (case-tall)</td></tr>
+<tr><td>2025-årsrapport</td><td>Coop Danmark A/S: 32,565 mrd DKK omsetning (44,756 mrd inkl. brugsforeninger), EBITDA 313m DKK, EBIT -215m DKK, 536 butikker (900 inkl. brugsforeninger)</td></tr>
+<tr><td>Online-historikk</td><td>coop.dk MAD lukket 2023; Coop.dk-webshop lukket 31. januar 2025</td></tr>
+<tr><td>Coop App</td><td>~1,8 mill brukere (Lobyco-claim), 25 % husholdningsreach, 880k MAU; Scan & Betal, personlige tilbud, gamification, retail media</td></tr>
+<tr><td>Lobyco</td><td>Spin-out fra intern apputvikling, eid datterselskap; presenteres som plattform med eksterne kunder</td></tr>
+</table>
+
+<h3>Sentrale spenninger</h3>
+<table>
+<tr><th>Spenning</th><th>Hvorfor det er uavklart</th></tr>
+<tr><td>App som verdi vs. kostnad</td><td>Marketing-kilder fremstiller appen som suksess; finanstall viser press. Ingen interne KPI-er for app→butikk-effekt.</td></tr>
+<tr><td>Lobyco som plattform vs. salgsobjekt</td><td>Kan leses som B2B-plattform eller kapitalintensiv distraksjon.</td></tr>
+<tr><td>Felles app vs. kjedespesifikke apper</td><td>365discount og Kvickly har ulike kundeløfter og kundeprofiler.</td></tr>
+<tr><td>Digital ambisjon vs. fysisk kjerne</td><td>Coops kjerneøkonomi er fysisk butikk; bør digital markedslederrolle prioriteres?</td></tr>
+<tr><td>Teknologisk gjeld</td><td>Hedman & Bjørn-Andersen 2016 dokumenterer historisk IT-gjeld; samme risiko gjelder dagens app-investeringer.</td></tr>
+<tr><td>Kildevintage-mismatch</td><td>DVC-artikkelen er fra før coop.dk-lukking og 2025-tap; må kontekstualiseres.</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<section id="oppgave">
+<h2>4. Eksamensoppgaven</h2>
+
+<h3>Kjernelogikk</h3>
+<div class="callout good">
+<strong>I)</strong> Analyser virksomhetens strategiske situation. <strong>II)</strong> Udarbejd 2–5 relevante strategiske anbefalinger i forlængelse af analysen.
+</div>
+
+<h3>Krav</h3>
+<ul class="tight">
+<li>5–25 sider (DK eller EN)</li>
+<li>Anvende 1–2 selvvalgte kursperspektiver — utvalgte deler tillatt hvis begrunnet</li>
+<li>Råde én av fem navngitte casepersoner</li>
+<li>Tradisjonell struktur: case → perspektiver → analyse → anbefalinger</li>
+<li>Dybde over bredde; ett overordnet overbevisende argument</li>
+<li>Kildekritikk eksplisitt påkrevd</li>
+<li>APA 7 anbefalt, AI-bruk-statement</li>
+</ul>
+
+<h3>De fem casepersonene</h3>
+<table>
+<tr><th>#</th><th>Aktør</th><th>Hva oppgaven blir om</th></tr>
+<tr><td>1</td><td>Thor Skov Jørgensen <span class="dim">— Adm. direktør</span></td><td>Konsernstrategi, investeringsstyring, Lobyco-eierskap, app-ambisjon vs. turnaround</td></tr>
+<tr><td>2</td><td>Rikke Krause <span class="dim">— SuperBrugsen og Kvickly</span></td><td>Hvordan app/Lobyco støtter supermarked, butikktrafikk, kundeopplevelse</td></tr>
+<tr><td>3</td><td>Torben B. Andersen <span class="dim">— Brugsen</span></td><td>Lokal/medlemseid identitet, community, app som lokal relevansmotor</td></tr>
+<tr><td>4</td><td>Michael Tilsted <span class="dim">— 365discount</span></td><td>Trenger 365discount enklere/distinkt, prisfokusert app-logikk?</td></tr>
+<tr><td>5</td><td>Martin Hasgard Olesen <span class="dim">— Komm., Marketing og Digital</span></td><td>Customer-facing digital governance, lojalitet, retail media på tvers av kjeder</td></tr>
+</table>
+
+<h3>Strategisk option-rom (fra casen)</h3>
+<ul class="tight">
+<li>Redusere appinvestering</li>
+<li>Selge eller delvis afhænde Lobyco</li>
+<li>Styrke appinvestering</li>
+<li>"Go deep" — vesentlig ulike apper for ulike kjeder</li>
+<li>Andre muligheter: hybrid governance, KPI-disiplin, retail-media-grenser, selektiv forenkling, kjedespesifikke moduler</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<section id="beslutninger">
+<h2>5. Beslutningssystem</h2>
+
+<h3>Decision Board (status)</h3>
+<table>
+<tr><th>Beslutning</th><th>Status</th><th>Eier</th><th>Frist</th></tr>
+<tr><td>Case assignment alignment</td><td><span class="tag tag-locked">Locked</span></td><td>Project</td><td>Now</td></tr>
+<tr><td>Executive to advise</td><td><span class="tag tag-eval">Under evaluation</span></td><td>User</td><td>Etter angle-comparison</td></tr>
+<tr><td>Strategic stance på Coop App/Lobyco</td><td><span class="tag tag-eval">Under evaluation</span></td><td>User</td><td>Etter evidens/teori</td></tr>
+<tr><td>Course perspectives</td><td><span class="tag tag-eval">Under evaluation</span></td><td>User</td><td>Etter evidens/teori</td></tr>
+<tr><td>Competitor focus</td><td><span class="tag tag-eval">Under evaluation</span></td><td>User</td><td>Etter sourced evidens</td></tr>
+<tr><td>Final recommendations</td><td><span class="tag tag-open">Open</span></td><td>User</td><td>—</td></tr>
+<tr><td>Final report structure</td><td><span class="tag tag-open">Open</span></td><td>User</td><td>—</td></tr>
+<tr><td>Language (DK/EN)</td><td><span class="tag tag-open">Open</span></td><td>User</td><td>—</td></tr>
+<tr><td>Citation style</td><td><span class="tag tag-eval">Proposed (APA 7)</span></td><td>User</td><td>—</td></tr>
+<tr><td>AI-use statement</td><td><span class="tag tag-eval">Proposed</span></td><td>User</td><td>—</td></tr>
+</table>
+
+<div class="callout warn">
+<strong>Eksplisitt brukerregel:</strong> Brukeren ønsker IKKE å låse executive, teori eller strategisk stance ennå. Option banks skal forbli åpne mens evidensgrunnlaget bygges. Decision register er fortsatt tom.
+</div>
+
+<h3>Workflow-policy</h3>
+<pre>Generate options → explain pros/cons → recommend → user chooses → log decision → continue</pre>
+<p>Ingen finalrapport skrives før de store beslutningsgatene er gjennomført. Anbefalte alternativer skal ikke behandles som valgte alternativer.</p>
+</section>
+
+<!-- ============================================================ -->
+<section id="dagslogger">
+<h2>6. Daglige logger</h2>
+
+<h3>2026-05-03 — Setup-dag</h3>
+<ul class="tight">
+<li>Opprettet folder-struktur, control-filer, option banks, comparison-filer</li>
+<li>Bygde startversjon av evidence-system, source criticism, claim reliability matrix</li>
+<li>Importerte konkurrent-scrape (Salling, REMA, Lidl, Dagrofa, Nemlig + DI)</li>
+<li>Re-aligned prosjektet til offisiell oppgaveformulering</li>
+<li>Opprettet startanalyser: DVC, Digital Business Model, theory-to-evidence-matrix</li>
+<li>Opprettet multi-angle HTML-prompt</li>
+<li>Bygde strategic_situation_analysis-starter</li>
+</ul>
+
+<h3>2026-05-04 — Analyse-/red-team-dag</h3>
+<p>Flere parallelle agent-passes på samme dag, alle dokumentert i samme fil:</p>
+<ol>
+<li><strong>Strategic situation analysis utvidelse</strong> — 7 analytiske temaer pluss en åttende seksjon basert på Coop business model-importen</li>
+<li><strong>Red Team / Option Mapping pass</strong> — 15 angles (T1-T3, R1-R3, B1-B3, M1-M3, D1-D3) generert som HTML-rapport</li>
+<li><strong>Decision preparation</strong> — norsk beslutningsforberedende fil med 8 sterkeste kombinasjoner</li>
+<li><strong>Evidence verification plan</strong> — A/B/C/D-prioritering av claims</li>
+<li><strong>Coop business model evidence import</strong> — 14 nye evidence-IDer (E027–E041), årsrapport-funn</li>
+<li><strong>Source verification packet</strong> — 20 A-prioriterte claims med trygge/utrygge formuleringer</li>
+<li><strong>Synthesis 2026-05-04</strong> — denne sesjonens syntese, rangering og red-team</li>
+</ol>
+</section>
+
+<!-- ============================================================ -->
+<section id="optionbanks">
+<h2>7. Option banks</h2>
+
+<h3>7.1 Executive option bank</h3>
+<table>
+<tr><th>#</th><th>Aktør</th><th>Score</th><th>Anbefalt?</th><th>Beste fit</th></tr>
+<tr><td>1</td><td>Thor Skov Jørgensen (CEO)</td><td><span class="score high">9</span></td><td>Possible</td><td>Konsernstrategisk investerings-paper</td></tr>
+<tr><td>2</td><td>Rikke Krause (SuperBrugsen/Kvickly)</td><td><span class="score med">8</span></td><td>Possible</td><td>Bricks-and-mortar / kundeopplevelse-paper</td></tr>
+<tr><td>3</td><td>Torben B. Andersen (Brugsen)</td><td><span class="score med">7</span></td><td>Possible</td><td>Lokal/medlems-identitet-paper</td></tr>
+<tr><td>4</td><td>Michael Tilsted (365discount)</td><td><span class="score med">8</span></td><td>Possible</td><td>Discount/pris/konkurrent-paper</td></tr>
+<tr><td>5</td><td>Martin Hasgard Olesen (Komm./Mkt./Digital)</td><td><span class="score high">9</span></td><td>Possible</td><td>App/loyalitet/governance-paper</td></tr>
+</table>
+
+<h3>7.2 Strategic stance option bank</h3>
+<table>
+<tr><th>#</th><th>Stance</th><th>Score</th><th>Anbefalt?</th></tr>
+<tr><td>1</td><td>Redusere appinvestering</td><td><span class="score low">6</span></td><td>No</td></tr>
+<tr><td>2</td><td>Selge/afhænde Lobyco</td><td><span class="score low">5</span></td><td>No</td></tr>
+<tr><td>3</td><td>Styrke appinvestering</td><td><span class="score low">6</span></td><td>No</td></tr>
+<tr><td>4</td><td>Gå dypt med ulike kjedeapper</td><td><span class="score high">9</span></td><td>Possible</td></tr>
+<tr><td>5</td><td>Hybrid governance</td><td><span class="score high">10</span></td><td>Possible</td></tr>
+<tr><td>6</td><td>Selektiv appforenkling</td><td><span class="score med">8</span></td><td>Possible</td></tr>
+<tr><td>7</td><td>Lobyco som kontrollert strategisk kapasitet</td><td><span class="score med">8</span></td><td>Possible</td></tr>
+</table>
+
+<h3>7.3 Theory option bank</h3>
+<table>
+<tr><th>#</th><th>Kombinasjon</th><th>Score</th><th>Anbefalt?</th></tr>
+<tr><td>1</td><td>DVC Framework only</td><td><span class="score med">8</span></td><td>No</td></tr>
+<tr><td>2</td><td>DVC + Digital Business Model</td><td><span class="score high">10</span></td><td>Yes (foreløpig sterkest)</td></tr>
+<tr><td>3</td><td>DVC + Platform/ecosystem</td><td><span class="score med">8</span></td><td>Possible</td></tr>
+<tr><td>4</td><td>Digital Business Model + Implementation</td><td><span class="score med">7</span></td><td>No</td></tr>
+<tr><td>5</td><td>Porter/positioning + DVC</td><td><span class="score med">7</span></td><td>Possible</td></tr>
+<tr><td>6</td><td>Resource-based view + DVC</td><td><span class="score low">6</span></td><td>No</td></tr>
+</table>
+
+<h3>7.4 Competitor insight options</h3>
+<table>
+<tr><th>#</th><th>Vinkel</th><th>Score</th><th>Anbefalt?</th></tr>
+<tr><td>1</td><td>Discount-konkurrenter (REMA, Lidl, Netto)</td><td><span class="score med">8</span></td><td>Possible</td></tr>
+<tr><td>2</td><td>Digital lojalitet/app-konkurrenter</td><td><span class="score low">6</span></td><td>No</td></tr>
+<tr><td>3</td><td>Balansert: digital fit med business model</td><td><span class="score high">10</span></td><td>Yes</td></tr>
+<tr><td>4</td><td>Kjede-posisjonering-sammenligning</td><td><span class="score high">9</span></td><td>Possible</td></tr>
+<tr><td>5</td><td>Online grocery-kontrast (Nemlig)</td><td><span class="score med">7</span></td><td>No</td></tr>
+</table>
+
+<h3>7.5 Sterkeste kombinasjoner (decision_preparation.md)</h3>
+<table>
+<tr><th>Kombinasjon</th><th>Foreløpig styrke</th></tr>
+<tr><td>Martin + DVC/DBM + hybrid governance</td><td>Medium-eksamensrisiko, høy passform</td></tr>
+<tr><td>Michael + DVC/Porter + go-deep for 365discount</td><td>Skarpest case-svar, konkurrentevidens</td></tr>
+<tr><td>Thor + DBM/Implementation + investment governance</td><td>Sterkest finansielt, men risiko for bredde</td></tr>
+<tr><td>Martin + DVC/Platform + Lobyco kontrollert kapasitet</td><td>Tredje vei, krever retail-media-evidens</td></tr>
+<tr><td>Rikke + DVC/DBM + kjedespesifikke moduler SuperBrugsen/Kvickly</td><td>God DVC-fit, mindre Lobyco-direkte</td></tr>
+<tr><td>Torben + DVC/Porter + lokal/medlemsorientert apprelevans</td><td>Smalest evidensgrunnlag</td></tr>
+<tr><td>Thor + DBM/RBV + Lobyco-afhændelse</td><td>Modig men spekulativ uten Lobyco-data</td></tr>
+<tr><td>Martin/Michael + DVC/Implementation + selektiv appforenkling</td><td>Pragmatisk, kildekritisk</td></tr>
+</table>
+
+<h3>7.6 Recommendation options</h3>
+<p class="dim">Tom mal. Skal fylles ut etter de tre kjernevalgene er låst. Format: Option | Recommendation | Strategic logic | Evidence link | Theory link | Risk | Score.</p>
+
+<h3>7.7 Final structure options</h3>
+<table>
+<tr><th>#</th><th>Struktur</th><th>Status</th></tr>
+<tr><td>1</td><td>Tradisjonell (separat teori- og analyseseksjon)</td><td>Pending</td></tr>
+<tr><td>2</td><td>Sammenflettet teori og analyse</td><td>Pending</td></tr>
+<tr><td>3</td><td>Anbefalingsledet</td><td>Pending</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<section id="evidens">
+<h2>8. Evidenssystem</h2>
+
+<h3>8.1 Evidence Register (E001–E041)</h3>
+<p>41 strukturerte evidens-IDer fordelt på fakta, claims, marketing claims, assumptions og inferences. Et utvalg:</p>
+<table>
+<tr><th>ID</th><th>Claim (kort)</th><th>Kilde</th><th>Label</th><th>Reliability</th></tr>
+<tr><td>E001</td><td>Coop closed coop.dk in 2023 due to lack of profitability</td><td>Exam case</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E002</td><td>Coop sells only through physical stores today</td><td>Exam case</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E003</td><td>Coop is financially pressured</td><td>Exam case</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E004</td><td>Lobyco presenterer Coop App som suksess (adoption/engagement)</td><td>Lobyco</td><td><span class="tag tag-mkt">Marketing</span></td><td>Medium</td></tr>
+<tr><td>E005</td><td>Coop App utviklet internt, senere skilt ut som Lobyco</td><td>Case + Shortcut/Lobyco</td><td><span class="tag tag-claim">Claim</span></td><td>Medium</td></tr>
+<tr><td>E007</td><td>Coop revenue fell ~1,0bn DKK i 2025</td><td>Exam case</td><td><span class="tag tag-fact">Fact</span></td><td>High *</td></tr>
+<tr><td>E008</td><td>Coop hadde 232m DKK loss i 2025</td><td>Exam case</td><td><span class="tag tag-fact">Fact</span></td><td>High *</td></tr>
+<tr><td>E013</td><td>App adoption/engagement beviser ikke automatisk profitability</td><td>Source critique</td><td><span class="tag tag-inf">Inference</span></td><td>High</td></tr>
+<tr><td>E015</td><td>Konkurrenters digitale verktøy passer kjernen i forretningsmodellen</td><td>Local scrape</td><td><span class="tag tag-inf">Inference</span></td><td>Medium/High</td></tr>
+<tr><td>E016</td><td>Coop 2025: 32,5bn DKK revenue, EBITDA 313m DKK, EBIT -215m DKK</td><td>Coop offisiell</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E017</td><td>Salling 2025: 83,168bn DKK revenue, 1,990bn DKK profit</td><td>Salling Group</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E020</td><td>REMA market share 18,2% (bestridt av Salling)</td><td>Ritzau/NI</td><td><span class="tag tag-claim">Contested</span></td><td>Medium</td></tr>
+<tr><td>E027</td><td>Coop Danmark A/S nettoomsetning 2025: 32,565bn (44,756bn inkl. brugsforeninger)</td><td>Coop årsrapport 2025</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E028</td><td>536 Coop-butikker (900 inkl. brugsforeninger)</td><td>Coop årsrapport 2025</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E029</td><td>EBITDA 313m DKK, EBIT -215m DKK (2025)</td><td>Coop årsrapport 2025</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E033</td><td>coop.dk MAD lukket 2023; webshop lukket 31.01.2025</td><td>Coop kundeservice + Ritzau</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+<tr><td>E034</td><td>Lobyco hevder &gt;1,8m brukere, 25% reach, 880k MAU, 50% høyere frekvens</td><td>Lobyco</td><td><span class="tag tag-mkt">Marketing</span></td><td>Medium</td></tr>
+<tr><td>E037</td><td>Playable: +100k unike spillere/spill, 9% høyere kurv for premieinnløsere, 4,25m plays, 500k premier i butikk</td><td>Playable</td><td><span class="tag tag-mkt">Marketing</span></td><td>Med/Low</td></tr>
+<tr><td>E041</td><td>Google Play-scrapet feilet ("requested URL was not found")</td><td>Failed scrape</td><td><span class="tag tag-fact">Fact</span></td><td>High</td></tr>
+</table>
+<p class="dim">* — High pending eksakt sitering. Total: 41 evidence-IDer i registeret.</p>
+
+<h3>8.2 Source Register</h3>
+<p>Klassifiserte kilder med bias-risiko og hvordan de skal brukes:</p>
+<table>
+<tr><th>Kilde</th><th>Type</th><th>Bias</th><th>Hovedbruk</th></tr>
+<tr><td>Eksamenscase</td><td>Offisiell</td><td>Low</td><td>Faktagrunnlag</td></tr>
+<tr><td>Lobyco</td><td>Subsidiary/marketing</td><td>High</td><td>Self-presentation, ikke nøytralt bevis</td></tr>
+<tr><td>Playable</td><td>Supplier marketing</td><td>High</td><td>Intendert verdi, ikke profitability</td></tr>
+<tr><td>Shortcut</td><td>Supplier/developer marketing</td><td>High</td><td>Apputviklingshistorikk</td></tr>
+<tr><td>DVC Framework (Duus & Cooray 2020)</td><td>Course theory</td><td>Medium</td><td>Mulig teoriperspektiv</td></tr>
+<tr><td>Hedman & Bjørn-Andersen (2016)</td><td>Akademisk case</td><td>Medium</td><td>Historisk IT-debt; aldersrisiko HØY</td></tr>
+<tr><td>Coop årsrapport 2025</td><td>Årsrapport</td><td>Low/Med</td><td>Finansielle fakta, butikkfotavtrykk</td></tr>
+<tr><td>Salling Group key figures</td><td>Offisiell</td><td>Low</td><td>Konkurrent-benchmark</td></tr>
+<tr><td>Lidl Plus / Lidl Ritzau</td><td>Offisiell + presse</td><td>High</td><td>Discount-fit; survey-claim med caveat</td></tr>
+<tr><td>Dagrofa / MENY</td><td>Offisiell + presse</td><td>Med/High</td><td>Kjede-identitet</td></tr>
+<tr><td>Nemlig / Proff</td><td>Pressemelding + sek.database</td><td>Medium</td><td>Online grocery-kontrast</td></tr>
+<tr><td>DI e-commerce tracker</td><td>Bransjerapport</td><td>Low/Med</td><td>Generell digital kontekst</td></tr>
+<tr><td>Loyalty Group BrancheIndex</td><td>Survey</td><td>Medium</td><td>Customer perception m/method-caveat</td></tr>
+<tr><td>Google Play Coop App</td><td>App-store, mislykket</td><td>—</td><td>Skal ikke brukes nå</td></tr>
+</table>
+
+<h3>8.3 Claim Reliability Matrix (utvalg)</h3>
+<table>
+<tr><th>Claim-område</th><th>Reliability</th><th>Bias</th><th>Causality</th></tr>
+<tr><td>Coop closed coop.dk 2023</td><td>High</td><td>Low</td><td>Low</td></tr>
+<tr><td>Coop kun fysiske butikker</td><td>High</td><td>Low</td><td>Low</td></tr>
+<tr><td>Coop App har høy adoption</td><td>Medium</td><td>High (Lobyco)</td><td>Medium</td></tr>
+<tr><td>Appbrukere handler oftere</td><td>Medium/Low</td><td>High</td><td>High</td></tr>
+<tr><td>Gamification øker engasjement</td><td>Medium/Low</td><td>High</td><td>Med/High</td></tr>
+<tr><td>Retail media skaper supplier-funded value</td><td>Medium pending</td><td>Med/High</td><td>Medium</td></tr>
+<tr><td>Konkurrenter vinner gjennom pris/enkelhet</td><td>Unknown</td><td>Unknown</td><td>Medium</td></tr>
+<tr><td>Strong competitors' digital tools fit business models</td><td>Medium/High</td><td>Medium</td><td>Medium</td></tr>
+<tr><td>Salling profitabel scale + store-integrert digital</td><td>High/Med</td><td>Low/Med</td><td>Medium</td></tr>
+</table>
+
+<h3>8.4 Key Numbers (utvalg)</h3>
+<table>
+<tr><th>Tall</th><th>Claim</th><th>Status</th></tr>
+<tr><td>2023</td><td>coop.dk lukket</td><td>Needs exact citation</td></tr>
+<tr><td>~1,0bn DKK</td><td>Coop revenue-fall 2025</td><td>Needs exact citation</td></tr>
+<tr><td>232m DKK</td><td>Coop loss 2025 (case-tall)</td><td>⚠ Avklar mot EBIT</td></tr>
+<tr><td>32,565bn DKK</td><td>Coop nettoomsetning 2025</td><td>Verifisert (årsrapport)</td></tr>
+<tr><td>44,756bn DKK</td><td>Inkl. brugsforeninger</td><td>Verifisert</td></tr>
+<tr><td>536 / 900</td><td>Butikker</td><td>Verifisert</td></tr>
+<tr><td>313m DKK</td><td>EBITDA 2025</td><td>Verifisert</td></tr>
+<tr><td>-215m DKK</td><td>EBIT 2025</td><td>Verifisert ⚠ ulik fra 232m</td></tr>
+<tr><td>83,168bn DKK</td><td>Salling revenue 2025</td><td>Source URL</td></tr>
+<tr><td>1,990bn DKK</td><td>Salling profit 2025</td><td>Source URL</td></tr>
+<tr><td>1,8m+</td><td>Coop App brukere (Lobyco)</td><td>Vendor-rapportert</td></tr>
+<tr><td>880k</td><td>MAU (Lobyco)</td><td>Vendor-rapportert</td></tr>
+<tr><td>25%</td><td>Husholdningsreach (Lobyco)</td><td>Vendor-rapportert</td></tr>
+<tr><td>50%</td><td>Høyere frekvens appbrukere</td><td>Vendor / kausalitetsrisiko</td></tr>
+<tr><td>9%</td><td>Høyere kurv (Playable, premieinnløsere)</td><td>Vendor / kausalitetsrisiko</td></tr>
+<tr><td>2m+</td><td>Coop medlemmer</td><td>Source URL</td></tr>
+<tr><td>49%</td><td>Mobile share av online purchases (DI)</td><td>Generell, ikke grocery</td></tr>
+</table>
+
+<h3>8.5 Source Criticism</h3>
+<div class="callout warn">
+<strong>Kjerneprinsipp:</strong> En kilde kan støtte ÉN av {adoption, engagement, loyalty, traffic, revenue, profitability, differentiation, advantage} uten å bevise de andre.
+</div>
+<ul class="tight">
+<li><strong>Lobyco</strong>: bruk som "Lobyco hevder ...", aldri som "appen beviser ..."</li>
+<li><strong>Playable</strong>: intendert kampanjeverdi, ikke profitability</li>
+<li><strong>Shortcut</strong>: apputviklingshistorikk, ikke nøytral evaluering</li>
+<li><strong>Coop egne sider</strong>: selvpresentasjon, sterk for funksjoner, svakere for effekt</li>
+<li><strong>Konkurrent-scrape</strong>: sekundær syntese, claims må spores til original-URLer</li>
+<li><strong>App-store</strong>: Google Play-scrapet feilet — skal ikke brukes</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<section id="analyser">
+<h2>9. Analyser</h2>
+
+<h3>9.1 Strategic Situation Analysis (06_analysis/)</h3>
+<p>Hovedanalyse-base, åtte temaer:</p>
+<ol>
+<li><strong>Financial Pressure And Investment Scarcity</strong> — opportunity cost-logikk (E003, E006-E008, E016)</li>
+<li><strong>Bricks-And-Mortar As The Strategic Core</strong> — coop.dk-lukking gjør app til store-linked digital asset (E001, E002)</li>
+<li><strong>Coop App og Lobyco som digital kapasitet</strong> — kapabilitet vs. distraksjon, marketing-bias-warning (E005)</li>
+<li><strong>App reach vs. strategisk/økonomisk verdi</strong> — Adoption/engagement → behaviour → store economics → profitability (E004, E009, E013)</li>
+<li><strong>Chain Differences and "Go Deep" Possibility</strong> — full separate apps vs. shared platform med moduler (E018, E021, E024)</li>
+<li><strong>Competitor Pressure and Digital Fit</strong> — konkurrenter vinner ikke fordi de er "mer digitale", men fordi de passer business model (E015)</li>
+<li><strong>Source Uncertainty, Marketing Bias and Assumptions</strong> — manglende interne KPI-er er evidensgap</li>
+<li><strong>Importert Coop Business Model Evidence</strong> — bricks-and-mortar, kjedeheterogenitet, digital verdilogikk (E027–E040)</li>
+</ol>
+
+<h3>9.2 DVC Analysis (starter)</h3>
+<p>DVC-konseptene mappet til Coop:</p>
+<table>
+<tr><th>DVC-konsept</th><th>Coop-observasjon</th><th>Strategisk implikasjon</th></tr>
+<tr><td>Experiences</td><td>Tilbud, Scan & Pay, spill, kvitteringer</td><td>Vurder etter kundeutility og butikkimpakt</td></tr>
+<tr><td>Relationships</td><td>App, medlemskap, lojalitet, personlige tilbud</td><td>Unngå å behandle engagement som lojalitet</td></tr>
+<tr><td>Relevance</td><td>Ulike kjeder, ulike kundebehov</td><td>Vurder kjedespesifikke value propositions</td></tr>
+<tr><td>Digital infrastructure</td><td>Lobyco + appkapabilitet</td><td>Hold kapabilitet kun hvis governet av tydelig business value</td></tr>
+<tr><td>Digital outputs</td><td>Reach, MAU, gamification metrics</td><td>Skill outputs fra outcomes</td></tr>
+<tr><td>Evolution</td><td>Intern→Lobyco; coop.dk lukket</td><td>Analyser som store-linked, ikke generisk online transformasjon</td></tr>
+</table>
+
+<h3>9.3 Digital Business Model Analysis</h3>
+<p>Bredere "value logic"-perspektiv. Sentrale elementer:</p>
+<ul class="tight">
+<li><strong>Value proposition:</strong> bonus, bekvemmelighet, relevans, identitet, ansvarlighet, supplier-funded value</li>
+<li><strong>Value creation:</strong> kunder, butikker, kjeder, leverandører, Lobyco</li>
+<li><strong>Value capture:</strong> butikktrafikk, kurv, frekvens, supplier-funded campaigns, retail media — men ingen offentlig dokumentert nettoeffekt</li>
+<li><strong>Key resources:</strong> butikknettverk (536/900), 2m+ medlemmer, app, Lobyco, private labels (3000+ Coop, 1200+ Änglamark), Coop Trading (700+ leverandører)</li>
+<li><strong>Channels:</strong> fysiske butikker (hovedkanal) → app → medlemskommunikasjon → retail media; coop.dk-historikk som kontrast</li>
+<li><strong>Governance/KPI-problem:</strong> ingen interne KPI-er for app→inkrementell butikkverdi</li>
+</ul>
+
+<h3>9.4 Competitor Analysis</h3>
+<table>
+<tr><th>Hypotese</th><th>Coop-implikasjon</th></tr>
+<tr><td>H1: Discount-konkurrenter presser via pris/enkelhet</td><td>App må støtte savings og enkelhet</td></tr>
+<tr><td>H2: Apper er hygienefaktorer, ikke differensiatorer</td><td>Ikke overdriv app-unikhet</td></tr>
+<tr><td>H3: Kjedediversitet krever differensiert digital verdi</td><td>App-strategi bør differ etter kjede/shopping mission</td></tr>
+<tr><td>H4: Retail media kan skape supplier-finansiert verdi</td><td>Bygg retail media med tillit/governance-safeguards</td></tr>
+<tr><td>H5: coop.dk-lukking gjør butikkimpakt til den sentrale digital-KPI</td><td>App/Lobyco evalueres gjennom store economics</td></tr>
+</table>
+
+<h3>9.5 Theory-to-Evidence Matrix</h3>
+<p>Strongest current candidate: <strong>DVC + Digital Business Model</strong>. Alternativer: DVC + Platform/ecosystem (hvis retail media blir sentral), DVC + Porter/positioning (hvis konkurrent-vinkel dominerer).</p>
+</section>
+
+<!-- ============================================================ -->
+<section id="angles">
+<h2>10. 15 case-angles (multi-angle map)</h2>
+
+<p>Generert ved Red Team / Option Mapping pass. 3 angles per aktør × 5 aktører = 15. Lagret i <code>08_final_report/multi_angle_case_overview.html</code>.</p>
+
+<h3>Angle codes</h3>
+<table>
+<tr><th>Aktør</th><th>Kode</th><th>Angle</th></tr>
+<tr><td rowspan="3">Thor (CEO)</td><td>T1</td><td>Portfolio discipline & opportunity cost</td></tr>
+<tr><td>T2</td><td>Lobyco divestment</td></tr>
+<tr><td>T3</td><td>Conditional strengthening</td></tr>
+<tr><td rowspan="3">Rikke (SuperBrugsen / Kvickly)</td><td>R1</td><td>Inspiration & basket</td></tr>
+<tr><td>R2</td><td>Loyalty → store traffic</td></tr>
+<tr><td>R3</td><td>Chain-specific modules</td></tr>
+<tr><td rowspan="3">Torben (Brugsen)</td><td>B1</td><td>Local-identity layer</td></tr>
+<tr><td>B2</td><td>Selective simplification</td></tr>
+<tr><td>B3</td><td>Local retail media</td></tr>
+<tr><td rowspan="3">Michael (365discount)</td><td>M1</td><td>Discount-specific app logic ("go deep")</td></tr>
+<tr><td>M2</td><td>Reduce 365discount app</td></tr>
+<tr><td>M3</td><td>Price-perception defence</td></tr>
+<tr><td rowspan="3">Martin (Komm./Mkt./Digital)</td><td>D1</td><td>Hybrid governance</td></tr>
+<tr><td>D2</td><td>Lobyco as controlled capability</td></tr>
+<tr><td>D3</td><td>Retail media as core argument</td></tr>
+</table>
+
+<h3>Most-defensible angles (current snapshot)</h3>
+<ul class="tight">
+<li><strong>D1</strong> Hybrid governance — best balance under finansielt press og kildekritikk</li>
+<li><strong>R3</strong> Chain-specific modules + <strong>M1</strong> Discount-specific app logic — direkte fit med "go deep"</li>
+<li><strong>T1</strong> Portfolio discipline — sterkest CEO-frame</li>
+<li><strong>D2</strong> Lobyco as controlled capability — beste "tredje vei" på sell/keep</li>
+</ul>
+
+<h3>Source-use observations</h3>
+<table>
+<tr><th>Kilde</th><th>Bruk i 15 angles</th><th>Konsekvens</th></tr>
+<tr><td>S1 Lobyco</td><td>12/15</td><td>Kildekritikk-disiplin må holde gjennom hele oppgaven</td></tr>
+<tr><td>S2 Playable</td><td>R2, B3, D2, D3, M3</td><td>Mest nyttig for retail media/personalisation</td></tr>
+<tr><td>S3 Shortcut</td><td>0/15</td><td>Underbrukt — eget angle på app-utviklingskapabilitet kan trengs</td></tr>
+<tr><td>S4 DVC</td><td>~50%</td><td>Brukt som selected concepts</td></tr>
+<tr><td>S5 Hedman & Bjørn-Andersen</td><td>T2, R3</td><td>Reference uverifisert</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<section id="verifikasjon">
+<h2>11. Kildeverifikasjon</h2>
+
+<h3>11.1 Evidence Verification Plan — A-prioriterte claims</h3>
+<table>
+<tr><th>ID</th><th>Claim</th><th>Hvorfor blokkerende</th></tr>
+<tr><td>VP-A01</td><td>Coop 2025: 32,565bn revenue, EBITDA 313m, EBIT -215m</td><td>Bærer alle finansielle argumenter</td></tr>
+<tr><td>VP-A02</td><td>232m DKK loss vs. -215m EBIT — metric-mismatch</td><td>Synlig eksamensfeil hvis blandet</td></tr>
+<tr><td>VP-A03</td><td>coop.dk MAD 2023 / webshop 31.01.2025</td><td>Grunnlag for app som butikkstøtte-frame</td></tr>
+<tr><td>VP-A04</td><td>Coop primært fysisk butikkbasert</td><td>Hele bricks-and-mortar-rammen</td></tr>
+<tr><td>VP-A05</td><td>1,8m brukere / 25% reach / 880k MAU</td><td>App-rekkevidde vs. profitability</td></tr>
+<tr><td>VP-A06</td><td>Appbrukere handler 50% oftere</td><td>Selection bias / kausalitetsrisiko</td></tr>
+<tr><td>VP-A07</td><td>Lobyco organisasjonsstatus, eierskap</td><td>Avgjør sell/keep/govern-spørsmålet</td></tr>
+<tr><td>VP-A08</td><td>Retail media / supplier-funded value</td><td>Kritisk for D2/D3-retning</td></tr>
+<tr><td>VP-A09</td><td>Kjedene har ulike kundeløfter</td><td>Bærer "go deep" og kjedemoduler</td></tr>
+<tr><td>VP-A10</td><td>Konkurrent-fit-inferens</td><td>Bærer hybrid governance og go-deep</td></tr>
+<tr><td>VP-A11</td><td>Salling: revenue/profit + Scan&amp;Go</td><td>Konkurrent-benchmark</td></tr>
+<tr><td>VP-A12</td><td>Lidl Plus + REMA Scan Selv</td><td>Bærer Michael/365discount-vinkelen</td></tr>
+<tr><td>VP-A13</td><td>Ingen interne Coop-KPI-er for app→butikk-effekt</td><td>Evidence gap som må eies eksplisitt</td></tr>
+</table>
+
+<h3>11.2 Source Verification Packet — trygge formuleringer</h3>
+<div class="callout good">
+<strong>Trygge:</strong> "Coop rapporterer ...", "Lobyco hevder ...", "Kildene indikerer ...", "Dette støtter app-adopsjon, men ikke nødvendigvis lønnsomhet."
+</div>
+<div class="callout bad">
+<strong>Utrygge:</strong> "Coop App er lønnsom", "Lobyco beviser konkurransefortrinn", "Appen øker handlefrekvensen med 50%", "Coop bør selge Lobyco" (uten data), "Konkurrentene vinner fordi de har apper".
+</div>
+
+<h3>11.3 Klassifisering før Opus-syntese</h3>
+<table>
+<tr><th>Klasse</th><th>Hva</th></tr>
+<tr><td>Sterkt nok</td><td>Coop 2025-finans, fysisk butikkjerne, coop.dk-lukking, Salling/Lidl/REMA/Dagrofa/Nemlig som konkurrent-kontekst</td></tr>
+<tr><td>Usikkert</td><td>App-rekkevidde, Lobyco-tall, Playable-effekt, retail media, Lobyco som salgs-/governance-objekt</td></tr>
+<tr><td>Bør IKKE bære hovedargumentet</td><td>"Appbrukere er mer profitable", 1,8m / 25% reach, Playable kurv-claim, Shortcut downloads, REMA market share, Lidl value-for-money, Lobyco sell/keep/govern</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<section id="synthesis">
+<h2>12. Syntese 2026-05-04</h2>
+
+<p>Lagret i <code>04_option_banks/synthesis_2026-05-04.md</code>. Sentral oversikt nedenfor.</p>
+
+<h3>12.1 Rangerte kombinasjoner (caseperson × teori × stance)</h3>
+<table>
+<tr><th>#</th><th>Caseperson</th><th>Teori</th><th>Stance</th><th>Foreløpig styrke</th></tr>
+<tr><td>1</td><td>Martin Hasgard Olesen</td><td>DVC + Digital Business Model</td><td>Hybrid governance (D1)</td><td><span class="score high">Høy</span></td></tr>
+<tr><td>2</td><td>Michael Tilsted</td><td>DVC + Porter/positioning</td><td>Go deep / selektiv forenkling (M1)</td><td><span class="score high">Høy</span></td></tr>
+<tr><td>3</td><td>Thor Skov Jørgensen</td><td>DBM + Implementation</td><td>Portfolio/investment discipline (T1)</td><td><span class="score high">Med/Høy</span></td></tr>
+<tr><td>4</td><td>Martin</td><td>DVC + Platform/ecosystem</td><td>Lobyco kontrollert kapasitet (D2)</td><td><span class="score med">Medium</span></td></tr>
+<tr><td>5</td><td>Rikke Krause</td><td>DVC + DBM</td><td>Kjedespesifikke moduler (R3)</td><td><span class="score med">Medium</span></td></tr>
+<tr><td>6</td><td>Thor</td><td>DBM + RBV</td><td>Lobyco-afhændelse (T2)</td><td><span class="score low">Lav/Med</span></td></tr>
+<tr><td>7</td><td>Torben B. Andersen</td><td>DVC + Porter</td><td>Lokal app-relevans (B1)</td><td><span class="score low">Lav</span></td></tr>
+</table>
+
+<h3>12.2 Red team — største svakheter</h3>
+<div class="callout bad">
+<strong>Evidensbase:</strong> S1 Lobyco bærer 12/15 angles. Ingen interne Coop-KPI-er. Metric-mismatch 232m vs. -215m. S3 Shortcut underbrukt. S5 Hedman uverifisert.
+</div>
+<div class="callout warn">
+<strong>Argumentstruktur:</strong> Hybrid governance kan leses som kompromiss uten KPI-gates. Platform/ecosystem-stier risikerer å overdrive Coop som plattform. Go-deep risikerer å bli konkurrent-benchmark. CEO-vinkelen kan miste digital-konkretisering.
+</div>
+<div class="callout">
+<strong>Eksamensformat:</strong> Mange kandidater, ingen er spisset. Risiko for bredde over dybde. Risiko for teori som generell forklaring i stedet for diagnostisk verktøy.
+</div>
+
+<h3>12.3 Anbefalt låserekkefølge</h3>
+<ol>
+<li>Avklar 232m vs. -215m + lås Coop 2025-finanstall (pre-decisional)</li>
+<li>Lås caseperson — Martin (D1) eller Michael (M1) som primære, Thor (T1) reserve</li>
+<li>Lås strategisk stance (1–2 naturlige per caseperson)</li>
+<li>Lås teorikombinasjon (skal tjene stance + caseperson, ikke styre dem)</li>
+<li>Lås competitor focus parallelt (3–4 sterke konkurrentkilder)</li>
+<li>Språk og APA 7 kan låses tidlig</li>
+</ol>
+</section>
+
+<!-- ============================================================ -->
+<section id="scrape">
+<h2>13. Webscraping-runner</h2>
+
+<h3>13.1 Run 1: Coop competitor analysis (2026-05-03 16:19)</h3>
+<p>Path: <code>reports/webscraping_runs/2026-05-03_1619_coop_competitor_analysis</code></p>
+<ul class="tight">
+<li><strong>Final outputs:</strong> <code>competitor_analysis.md</code>, <code>key_takeaways_summary.md</code></li>
+<li><strong>Data:</strong> <code>source_register.csv</code>, <code>competitor_findings.csv</code></li>
+<li><strong>Raw sources:</strong> Salling key figures, Netto+, Bilka Scan&amp;Go, føtex Scan&amp;Go, REMA Scan Selv, Paqle, Ritzau/NI, Lidl Plus, Lidl/Ritzau, Dagrofa, MENY, Loyalty Group, Nemlig/Ritzau, Proff, DI e-commerce</li>
+<li><strong>Sentral imported insight:</strong> Konkurrenter er sterke når digitale verktøy passer kjernen i forretningsmodellen — ikke fordi de er "mer digitale"</li>
+</ul>
+
+<h3>13.2 Run 2: Coop business model analysis (2026-05-03 18:13)</h3>
+<p>Path: <code>reports/webscraping_runs/2026-05-03_1813_coop_business_model_analysis</code></p>
+<ul class="tight">
+<li><strong>Final outputs:</strong> <code>coop_business_model_analysis.md</code>, <code>coop_business_model_one_page.md</code>, <code>coop_key_takeaways_summary.pdf</code></li>
+<li><strong>Data:</strong> <code>coop_business_model_findings.csv/.json</code>, <code>source_register.csv</code></li>
+<li><strong>Raw sources:</strong> Coop årsrapport 2025 (PDF ekstrahert), Coop Medlem, kjedesider (Kvickly/SuperBrugsen/Brugsen/365discount), Coop App-sider, Coop.dk MAD-/lukke-sider, Coop pressemeldinger 2023-2025, Lobyco, Playable, Shortcut, Coop Trading, Apple App Store, Google Play (failed)</li>
+<li><strong>Genererte 14 nye evidence-IDer:</strong> E027–E041</li>
+</ul>
+
+<h3>13.3 Crawl4AI-script</h3>
+<p>Generelt scraping-rammeverk i <code>scripts/coop_business_model_scrape.py</code> og <code>LLM/Webscraping/scripts/</code>. Bruker Crawl4AI med Playwright. Lokal state under <code>.crawl4ai-state/</code>.</p>
+</section>
+
+<!-- ============================================================ -->
+<section id="assets">
+<h2>14. Eksterne assets og rapporter</h2>
+
+<h3>14.1 Offisielle eksamens-PDF-er</h3>
+<table>
+<tr><th>Fil</th><th>Type</th></tr>
+<tr><td>Opgavebeskrivelse_Eksamen_IT-strategi 2026.pdf</td><td>Oppgavetekst</td></tr>
+<tr><td>TEBR_MarApr_DVC Framework (Final).pdf</td><td>Duus & Cooray 2020 — DVC Framework</td></tr>
+<tr><td>How Coop fueled loyalty and retail media _ Playable.pdf</td><td>Playable case</td></tr>
+<tr><td>Digital transformation for den moderne detailkæde _ Coop.pdf</td><td>Shortcut case</td></tr>
+<tr><td>Helping 25% Danish households shop smarter (Lobyco)</td><td>Lobyco case (kun markdown)</td></tr>
+<tr><td>Hedman & Bjørn-Andersen: Challenge of Technological Debt — Coop</td><td>2016 akademisk case (kun markdown)</td></tr>
+</table>
+
+<h3>14.2 Markdown-konverteringer</h3>
+<p>Alle PDF-er konvertert til markdown i <code>LLM/Markdown/Additional context markdown/</code> med ekstraherte side-bilder i <code>LLM/Markdown/assets/</code>.</p>
+
+<h3>14.3 Forelesningsslides</h3>
+<table>
+<tr><th>Lektion</th><th>Tema</th></tr>
+<tr><td>4 (260305)</td><td>Digital transformation_IT-strategi</td></tr>
+<tr><td>5 (10032026)</td><td>Digital innovation, disruption og strategier</td></tr>
+<tr><td>9 (260421)</td><td>Opsummering mv.</td></tr>
+</table>
+
+<h3>14.4 Tidligere genererte rapporter</h3>
+<table>
+<tr><th>Fil</th><th>Type</th></tr>
+<tr><td>reports/Analyse- og innsiktsrapport_Coop IT-strategi 2026.pdf</td><td>Tidlig analyse-PDF</td></tr>
+<tr><td>reports/Analysegrunnlag_Coop App, Lobyco og IT-strategi.pdf</td><td>Analysegrunnlag</td></tr>
+<tr><td>reports/Strategisk vinkling alternativer.pdf</td><td>Vinkling-alternativer</td></tr>
+<tr><td>reports/multi_angle_case_overview.html</td><td>15-angle red team-rapport</td></tr>
+<tr><td>reports/key_takeaways_summary.html</td><td>Konkurrent-takeaways</td></tr>
+<tr><td>LLM/HTML/claude_coop_report.html</td><td>Tidligere Claude-rapport</td></tr>
+<tr><td>LLM/HTML/chat_coop_report.html</td><td>Tidligere Chat-rapport</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<section id="risiko">
+<h2>15. Risiko og åpne valg</h2>
+
+<h3>15.1 Åpne beslutninger</h3>
+<table>
+<tr><th>Gate</th><th>Status</th><th>Kritikalitet</th></tr>
+<tr><td>Caseperson</td><td><span class="tag tag-eval">Under evaluation</span></td><td>BLOKKERER alt</td></tr>
+<tr><td>Strategisk stance</td><td><span class="tag tag-eval">Under evaluation</span></td><td>Avhenger av caseperson</td></tr>
+<tr><td>Teorikombinasjon</td><td><span class="tag tag-eval">Under evaluation</span></td><td>Avhenger av stance</td></tr>
+<tr><td>Competitor focus</td><td><span class="tag tag-eval">Under evaluation</span></td><td>Parallel</td></tr>
+<tr><td>Final recommendations</td><td><span class="tag tag-open">Open</span></td><td>Etter de tre over</td></tr>
+<tr><td>Final structure</td><td><span class="tag tag-open">Open</span></td><td>Etter de tre over</td></tr>
+<tr><td>Språk DK/EN</td><td><span class="tag tag-open">Open</span></td><td>Kan låses tidlig</td></tr>
+</table>
+
+<h3>15.2 Risikoregister</h3>
+<table>
+<tr><th>Risiko</th><th>Mitigering</th></tr>
+<tr><td>Lobyco-marketingclaims bærer for mye</td><td>Bruk "Lobyco hevder ...", aldri som profitability-bevis</td></tr>
+<tr><td>Manglende interne Coop-KPI-er</td><td>Eier evidensgapet eksplisitt; bygg governance/KPI-anbefaling rundt det</td></tr>
+<tr><td>232m vs. -215m metric-mismatch</td><td>Avklar regnskapsmål før noe annet låses</td></tr>
+<tr><td>S5 Hedman uverifisert referanse</td><td>Lukk APA-referansen før teori-seksjonen skrives</td></tr>
+<tr><td>S3 Shortcut underbrukt</td><td>Bestem om eget angle skal opprettes, ellers utelukk eksplisitt</td></tr>
+<tr><td>Hybrid governance leses som kompromiss</td><td>Konkretiser KPI-gates, terskler og beslutningskriterier</td></tr>
+<tr><td>Platform/ecosystem overdriver Coop</td><td>Krev sterkere retail-media-evidens før D2/D3 velges</td></tr>
+<tr><td>Go-deep blir konkurrent-benchmark</td><td>Krev 365discount-spesifikk evidens før M1 velges</td></tr>
+<tr><td>Teori som generell forklaring</td><td>Bruk strukturen Selected part → why relevant → how applied → reveals → limitation → recommendation</td></tr>
+<tr><td>Bredde over dybde</td><td>Spiss til ett overordnet argument; bruk competitor-evidens kun selektivt</td></tr>
+</table>
+
+<h3>15.3 Hva man IKKE bør gjøre</h3>
+<ul class="tight">
+<li>Ikke skriv anbefalinger før strategisk situasjon og option space er analysert</li>
+<li>Ikke velg caseperson/teori/stance implisitt gjennom språket</li>
+<li>Ikke bruk mer enn 1–2 teoriperspektiver</li>
+<li>Ikke skriv generiske teoriseksjoner</li>
+<li>Ikke behandle Lobyco-/Playable-/Shortcut-claims som fakta</li>
+<li>Ikke bruk apprekkevidde, engasjement eller gamification som lønnsomhetsbevis</li>
+<li>Ikke gjør oppgaven til bred digital transformation-essay</li>
+<li>Ikke bruk Google Play-scrapet</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<section id="roadmap">
+<h2>16. Roadmap — neste steg</h2>
+
+<h3>16.1 Blokkerende (gjøres før låsing)</h3>
+<ol>
+<li>Avklar 232m vs. -215m metric-mismatch (les årsrapport-PDF)</li>
+<li>Verifiser Lobyco organisasjonsstatus + eksterne kunder</li>
+<li>Verifiser eksakt eksamenscaseformulering (tall + fem aktørene)</li>
+<li>Lukk APA-referanser for DVC og Hedman & Bjørn-Andersen</li>
+<li>Hvis Michael velges: skaff 365discount-spesifikk kundedata/appbruk</li>
+</ol>
+
+<h3>16.2 Før finalrapport</h3>
+<ol>
+<li>3–4 utvalgte konkurrentclaims med originalkilder (Salling, Lidl Plus, REMA Scan Selv, Dagrofa/MENY)</li>
+<li>Eksplisitt formulert evidence gap om manglende Coop-interne KPI-er</li>
+<li>Verifiser Playable-tall (kun hvis D2/D3-retning velges)</li>
+<li>Verifiser eksakt 2025 revenue-fall (1,0bn DKK)</li>
+<li>Avklar at DI e-commerce-tall ikke gjelder dagligvarer</li>
+</ol>
+
+<h3>16.3 Sekvens</h3>
+<pre>1. Pre-decisional: finanstall + Lobyco-status
+            ↓
+2. Lås caseperson:  Martin (D1) | Michael (M1) | Thor (T1)
+            ↓
+3. Lås strategisk stance (1-2 naturlige per caseperson)
+            ↓
+4. Lås teorikombinasjon (DVC + DBM | DVC + Porter | DVC + Platform)
+            ↓
+5. Lås competitor focus (parallelt)
+            ↓
+6. Generer 8-12 anbefalingsalternativer → bruker velger 2-5
+            ↓
+7. Lås final structure
+            ↓
+8. Skriv draft → red team → revisjon → submit</pre>
+
+<h3>16.4 Anbefalt umiddelbar handling</h3>
+<div class="callout good">
+<ol style="margin: 0">
+<li>Les <code>05_evidence/coop-danmark-aarsrapport-2025.pdf</code> og noter eksakt regnskapspost for 232m vs. -215m</li>
+<li>Søk etter Lobyco organisatorisk/eierskap (norsk/dansk register, eventuelt Coop amba-årsrapport)</li>
+<li>Bestem mellom Martin (D1) og Michael (M1) som første finalkandidat — basert på hvilken oppgave brukeren faktisk vil skrive (digital governance-bredde vs. discount-dybde)</li>
+</ol>
+</div>
+</section>
+
+<hr>
+<p class="dim">Generert 2026-05-04 av Claude Code agent-syntese. Dekker 41 evidence-IDer, 15 angles, 7 stances, 6 teorikombinasjoner, 5 caseaktører, 10+ beslutningsgater. Filer lest: 00–10-strukturen, alle option banks, alle evidens-filer, alle analyser, alle daglige logger, eksterne kontekstkilder, scraping-runner og tidligere genererte rapporter.</p>
+
+</main>
+</div>
+</body>
+</html>

@@ -23,6 +23,31 @@ This file tracks numerical claims. Do not use numbers in final writing before th
 | 35.3m DKK | Nemlig reported adjusted EBITDA for 2024/2025 | Nemlig/Ritzau, imported from scraping run | Source URL available | Adjusted metric; distinguish from profit |
 | -28.090m DKK | Proff lists Nemlig.com profit for year in 2025 | Proff, imported from scraping run | Secondary source | Useful contrast with adjusted EBITDA |
 | 49% | DI reports mobile share of online purchases in 2025 | Dansk Industri, imported from scraping run | Source URL available | General e-commerce, not grocery-specific |
+| 32.565bn DKK | Coop Danmark A/S nettoomsetning i 2025 | Coop Danmark A/S årsrapport 2025, importert Coop business model scrape | Verifisert i ekstrahert årsrapport | Bruk presis metric "nettoomsetning"; sterkere enn avrundet 32,5bn-ordlyd |
+| 44.756bn DKK | Coop nettoomsetning inkludert brugsforeninger i 2025 | Coop Danmark A/S årsrapport 2025, importert Coop business model scrape | Verifisert i ekstrahert årsrapport | Viser bredere Coop-family retail scale |
+| 536 | Coop Danmark A/S-butikker i 2025 | Coop Danmark A/S årsrapport 2025, importert Coop business model scrape | Verifisert i ekstrahert årsrapport | Fysisk hovedkanal og butikkfotavtrykk |
+| 900 | Butikker inkludert brugsforeninger i 2025 | Coop Danmark A/S årsrapport 2025, importert Coop business model scrape | Verifisert i ekstrahert årsrapport | Sterk bricks-and-mortar-evidens |
+| 313m DKK | EBITDA før gevinst ved salg av materielle anleggsmidler i 2025 | Coop årsrapport / offisiell resultatmelding, importert Coop business model scrape | Verifisert i ekstrahert årsrapport og offisiell melding | Bruk som operasjonell forbedringsmetric, ikke sluttresultat |
+| -215m DKK | EBIT i 2025 | Coop årsrapport / offisiell resultatmelding, importert Coop business model scrape | Verifisert i ekstrahert årsrapport og offisiell melding | Hold adskilt fra case-/konteksttallet 232m DKK |
+| Mer enn 2m | Coop medlemmer/medeiere | Coop Medlem offisiell side, importert Coop business model scrape | Source URL available | Støtter medlemsorganisasjonslogikk |
+| 1,000 | Medeiere Coop sier de spør hver uke om tema fra priser til produktbekymringer | Coop Medlem offisiell side, importert Coop business model scrape | Source URL available | Customer knowledge / medlemslyttemekanisme |
+| 5% | Medlemsbonus på fersk frukt og grønt | Coop innmeldingsside, importert Coop business model scrape | Source URL available | Viser medlems-/prisverdi-mekanikk |
+| Opptil 20 | Ukentlige personlige tilbud basert på det medlemmene kjøper mest | Coop personlige tilbud-side, importert Coop business model scrape | Source URL available | Støtter data-/personaliseringsclaim |
+| 5-15% | FordelsKonto-bonus på utvalgte merker | Coop FordelsKonto-side, importert Coop business model scrape | Source URL available | Bonus-/betaling-/value-capture-mekanikk; eksakte vilkår bør sjekkes |
+| Mer enn 1,8m | Lobyco-rapporterte Coop App-brukere | Lobyco case, importert Coop business model scrape | Vendor-rapportert | Kun adoption-/reach-metric; ikke dokumentasjon på profitabilitet |
+| Ca. 880 000 | Lobyco-rapporterte månedlige aktive Coop App-brukere | Lobyco insight-side, importert Coop business model scrape | Vendor-rapportert | Kun engagement-metric |
+| 25% | Lobyco-rapportert dansk husholdningsreach for Coop App | Lobyco case, importert Coop business model scrape | Vendor-rapportert | Reach-claim; ikke uavhengig verifisert i runnen |
+| 50% høyere frekvens | Lobyco-rapportert handlefrekvens blant appbrukere versus andre kunder | Lobyco case, importert Coop business model scrape | Vendor-rapportert / kausalitetsrisiko | Kan reflektere seleksjonsbias; ikke presenter som kausalt |
+| Mer enn 1,5m | Shortcut-rapporterte Coop App-downloads | Shortcut case, importert Coop business model scrape | Vendor-rapportert | Trolig eldre/historisk apputviklingsmetric |
+| Mer enn 250 000 | Shortcut-rapporterte daglige Coop App-brukere | Shortcut case, importert Coop business model scrape | Vendor-rapportert | Bruk forsiktig; ikke profitabilitetsmetric |
+| +100 000 | Playable-rapporterte unike spillere per spill | Playable case, importert Coop business model scrape | Vendor-rapportert | Kampanjeengasjement-metric |
+| 9% | Playable-rapportert høyere kurvverdi for kunder som løste inn premie i 2023 | Playable case, importert Coop business model scrape | Vendor-rapportert / kausalitetsrisiko | Kan være seleksjons-/kampanjeeffekt; ikke nettoresultat |
+| 4,25m | Playable-rapporterte Christmas game plays i 2023 | Playable case, importert Coop business model scrape | Vendor-rapportert | Engagement-metric |
+| 500 000 | Playable-rapporterte Christmas prizes innløst i Coop-butikker | Playable case, importert Coop business model scrape | Vendor-rapportert | Støtter store-redemption-logikk, ikke profitabilitet |
+| Mer enn 3 000 | Coop private-label-produkter i Coop-serien | Coop offisiell private-label-side, importert Coop business model scrape | Source URL available | Private-label-skala |
+| Mer enn 1 200 | Änglamark-produkter | Coop offisiell Änglamark-side, importert Coop business model scrape | Source URL available | Ansvarlighet/private-label-skala |
+| 700+ | Coop Trading leverandørbase | Coop Trading-side, importert Coop business model scrape | Source URL available | Leverandørnettverkskontekst |
+| 31 January 2025 | Coop.dk-webshopens lukkedato | Coop kundeservice-side, importert Coop business model scrape | Source URL available | Viser ytterligere tilbaketrekning fra online commerce |
 
 ## Number Use Rule
 

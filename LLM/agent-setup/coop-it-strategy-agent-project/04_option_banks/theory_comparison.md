@@ -78,6 +78,16 @@ Current interpretation:
 
 > DVC + Digital Business Model remains the strongest theory candidate because it can analyse both digital customer value and whether Coop App/Lobyco fit Coop's store-based business model. DVC + Porter/positioning is the strongest alternative if the paper becomes more competitor-driven.
 
+## Locked Theory Choice
+
+As of 2026-05-04, the user has locked:
+
+> DVC Framework + Digital Business Model perspective
+
+This should now be treated as the selected 1-2 course perspectives for the project.
+
+Do not add more theories to the final paper unless the user explicitly reopens the theory decision. Porter/positioning, platform/ecosystem, implementation and RBV may only be used as minor supporting vocabulary if necessary, not as full extra perspectives.
+
 ## How To Justify A Later Theory Choice
 
 Use this structure in the final paper:

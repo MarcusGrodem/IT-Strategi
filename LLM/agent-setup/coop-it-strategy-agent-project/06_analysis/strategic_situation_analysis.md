@@ -263,6 +263,54 @@ Strategic implication:
 
 The final paper should include explicit assumptions and evidence limits. Strong recommendations should be framed around what Coop should test, govern or prioritise, rather than claiming that the app has already proven profitability. This theme favours KPI discipline, staged investment logic and cautious wording.
 
+## 8. Importert Coop Business Model Evidence: Bricks-And-Mortar, Chain Complexity And Digital Value Logic
+
+Denne seksjonen integrerer den nye Coop business model scraping-runnen i den strategiske situasjonsanalysen. Den endrer ikke at executive, teori og strategisk stance fortsatt er åpne.
+
+Claim:
+
+> Den importerte Coop-evidensen styrker bildet av Coop som en fysisk dagligvareaktør med en sterk digital kundekontakt, men den dokumenterer ikke sikkert at appen, Lobyco, retail media eller gamification skaper netto økonomisk verdi.
+
+Reasoning:
+
+Årsrapporttall og offisielle Coop-kilder gir sterkere dokumentasjon på Coop sin skala, butikkavhengighet og medlemsmodell enn tidligere handoff-notater. Samtidig kommer flere av de mest positive app-/plattformclaimene fra Lobyco, Playable og Shortcut, som er kommersielt interesserte kilder. Derfor må analysen holde to tanker samtidig: Coop har en reell digital reach/capability, men strategisk verdi må vurderes gjennom fysisk butikkøkonomi, kjedefit og governance.
+
+Empirical observations:
+
+| Observasjon | Claim type | Evidenslink | Strategisk bruk |
+|---|---|---|---|
+| Coop Danmark A/S rapporterte 32,565 mrd. DKK i nettoomsetning i 2025; 44,756 mrd. DKK inkl. brugsforeninger | Fact | E027 | Viser at kjerneøkonomien er stor dagligvarehandel |
+| Coop Danmark A/S hadde 536 butikker; 900 inkl. brugsforeninger | Fact | E028 | Gjør fysisk butikknettverk til hovedarena for appverdi |
+| EBITDA var 313 mill. DKK, men EBIT var -215 mill. DKK | Fact | E029 | Viser forbedring, men fortsatt økonomisk press |
+| Coop presenterer mer enn 2 millioner medlemmer som medeiere | Claim / Fact | E030 | Forklarer medlems-/governance-dimensjon, ikke bare rabatt |
+| Offisielle Coop App-sider beskriver Scan & Betal, bonus, personlige tilbud, kvitteringer, handleliste, spill og klimaavtrykk | Fact om funksjoner / Claim om verdi | E032 | Støtter appen som butikkstøttende relasjonskanal |
+| Coop.dk MAD og Coop.dk-webshop er lukket | Fact | E033 | Svekkker en ren e-commerce-tolkning av digital strategi |
+| Lobyco hevder 1,8m+ brukere, 25 % husholdningsreach, ca. 880 000 MAU og 50 % høyere handlefrekvens | Marketing claim | E034 | Støtter appreach, men ikke nødvendigvis lønnsomhet eller kausalitet |
+| Shortcut hevder OEM-logikk, 1,5m+ downloads og 250 000+ daglige brukere | Marketing claim | E035 | Støtter digital kapabilitetshistorikk, men ikke investeringskonklusjon |
+| Playable hevder supplier-funded prizes, retail media, +100 000 spillere per spill, 9 % høyere kurvverdi og 500 000 premier innløst i butikk | Marketing claim | E036-E037 | Indikerer mulig supplier-/retail-media-verdi, men ikke nettoeffekt |
+| Kvickly, SuperBrugsen, Brugsen og 365discount uttrykker ulike kundeløfter | Inference | E038 | Støtter kjedefit-problemet og “go deep”-spørsmålet |
+
+Theory link:
+
+- **Digital Business Model:** Den nye evidensen gjør value capture-spørsmålet mer presist: Coop må koble appreach til butikktrafikk, kurv, margin, leverandørfinansierte kampanjer, retail media, data og Lobyco-økonomi.
+- **DVC Framework:** Coop App kan analyseres gjennom experiences, relationships, digital infrastructure, outputs og relevance. Men DVC-output som reach eller engagement må ikke forveksles med strategisk outcome.
+- **Porter/positioning:** Kjedeporteføljen viser flere posisjoner samtidig: discount, kvalitet/lokal mat, community og bredt varehus. Appen må støtte disse aktivitetssystemene, ikke bare være en felles digital flate.
+- **Implementation/governance:** Spørsmålet blir hvordan Coop styrer appinvesteringer med KPI-er som skiller adoption fra inkrementell verdi.
+
+Strategic implication:
+
+Den nye evidensen styrker tre åpne stances uten å velge mellom dem:
+
+1. **Hybrid governance** blir mer relevant fordi den kan kombinere felles app/Lobyco-infrastruktur med krav til kjede- og butikkverdi.
+2. **Kjedespesifikk modulering / “go deep”** blir mer relevant fordi Coop-kjedene faktisk uttrykker ulike kundeløfter.
+3. **Porteføljedisciplin rundt Lobyco** blir mer relevant fordi Lobyco kan være både digital kapabilitet og mulig distraksjon fra butikkturnaround.
+
+Den nye evidensen svekker samtidig en enkel “styrk appen fordi den er populær”-argumentasjon. Vendor-tall støtter app-adopsjon og engagement, men ikke nødvendigvis lønnsomhet. Den svekker også en enkel “kutt digitalt”-argumentasjon, fordi Coop faktisk har en stor digital kundekontakt som kan være vanskelig å erstatte.
+
+Kritisk formuleringsregel:
+
+> Skriv at kildene indikerer mulig digital verdi og mulig supplier-/retail-media-logikk. Ikke trekk bastante konklusjoner om appens lønnsomhet eller Lobyco-eierskap fra disse kildene alene.
+
 ## Cross-Theme Theory Assessment
 
 This section tests the main theory candidates without choosing the final perspective.

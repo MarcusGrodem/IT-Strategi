@@ -48,7 +48,9 @@ Best if the paper should focus on app/Lobyco while still preparing for the execu
 
 ## Preliminary Assessment
 
-No choice is locked.
+Choice locked on 2026-05-04:
+
+> Martin Hasgard Olesen, Director Communication, Marketing and Digital.
 
 Strong current candidates:
 
@@ -56,3 +58,17 @@ Strong current candidates:
 - Martin Hasgard Olesen, if the paper should be a customer-facing digital/app governance paper.
 - Michael Tilsted, if the paper should be a sharp discount/chain-differentiation paper.
 
+## Consequence Of Locked Choice
+
+The final paper should prepare Martin Hasgard Olesen for the expected executive discussion.
+
+This means the paper should focus on:
+
+- Coop App as customer-facing digital channel,
+- loyalty and member relationship,
+- retail media and supplier-funded campaign value,
+- Lobyco as digital capability/governance object,
+- chain-specific digital relevance,
+- store economics and KPI discipline.
+
+The paper should not become a generic CEO investment memo, although investment trade-offs must still be addressed.

@@ -41,6 +41,14 @@ For whichever option is later chosen, record:
 
 Chosen option:
 
+Option 2 — DVC Framework + Digital Business Model perspective.
+
+Status: Locked by user on 2026-05-04.
+
 Reason:
 
+Preliminary reason: This combination fits the assignment because DVC can analyse digital customer value in Coop App, while Digital Business Model perspective can analyse whether Coop App/Lobyco fit Coop's store-based business model, value capture and investment governance.
+
 Date:
+
+2026-05-04

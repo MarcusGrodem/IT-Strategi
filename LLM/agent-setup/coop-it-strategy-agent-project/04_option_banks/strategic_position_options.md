@@ -43,7 +43,12 @@ Option 2, "sell Lobyco", needs stronger evidence that Lobyco is a distraction or
 
 Chosen option:
 
+Option 5 — Hybrid governance.
+
 Reason:
+
+This stance best fits the selected actor and theory. It keeps Coop App/Lobyco as potential strategic digital assets, but avoids uncritical app optimism by requiring that further investment be tied to physical-store economics, chain-specific customer value, source-critical KPIs and governance.
 
 Date:
 
+2026-05-04

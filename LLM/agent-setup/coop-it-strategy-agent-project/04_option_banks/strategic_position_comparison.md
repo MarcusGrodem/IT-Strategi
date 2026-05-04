@@ -29,7 +29,9 @@ The assignment itself names the core option space: reduce investment, possibly s
 
 ## Preliminary Assessment
 
-No choice is locked.
+Choice locked on 2026-05-04:
+
+> Hybrid governance: Coop should keep Coop App/Lobyco, but tie further investment to store economics, chain-specific value and strict KPIs.
 
 The current evidence most strongly supports comparing:
 
@@ -39,3 +41,16 @@ The current evidence most strongly supports comparing:
 
 The final paper should still analyse the whole option space because the case explicitly asks these questions.
 
+## Consequence Of Locked Stance
+
+The final paper should still discuss the case options:
+
+- reduce app investment,
+- sell or partly divest Lobyco,
+- strengthen app investment,
+- go deep by chain,
+- other options.
+
+However, the paper's argued stance should be that Martin Hasgard Olesen should enter the executive discussion with a hybrid governance position:
+
+> Do not simply strengthen, cut or sell. Keep the digital capability, but make further investment conditional on documented customer relevance, store-level value, chain-specific fit, retail media discipline and clear KPIs.

@@ -28,6 +28,13 @@ A source can support one of these without proving the others.
 | DVC Framework | Course theory / framework | Medium | Medium | Theory perspective for digital value creation | May overemphasise digital potential if not balanced by financial/source critique |
 | Hedman & Bjoern-Andersen 2016 | Academic / historical case | Medium | High | Historical context on IT complexity/debt | Older evidence may not describe current Coop situation |
 | Local competitor scraping run | Local research output based on public web sources | Medium | Low | Competitor comparison, source register and key takeaways | Treat generated synthesis as secondary; important claims should trace back to original source URLs |
+| Lokal Coop business model scraping-run | Lokal research-output basert på offentlige Coop-, vendor-, app-store- og nyhetskilder pluss ekstraherte årsrapport-PDF-er | Medium | Low | Coop-side forretningsmodellevidens, source register, nøkkeltall og raw sources | Behandle syntesen som sekundær; bruk årsrapporter og raw sources for final ordlyd |
+| Coop årsrapporter / finansielle kilder | Årsrapport / offisiell finansiell rapportering | Low/Medium | Low | Omsetning, EBITDA, EBIT, butikkantall og medlems-/governance-kontekst | Sterk for rapporterte metrics, men bevar eksakte metric-navn og ikke bland EBIT/nettoresultat/EBITDA |
+| Coop offisielle medlem-/app-/kjedesider | Offisiell selskapsselfremstilling | Medium | Low | Identitet, medlemsløfte, appfunksjoner, kjedeposisjonering og kundeløfte | Nyttig for hva Coop sier at de står for; ikke nøytral dokumentasjon på kundeopplevelse eller økonomisk effekt |
+| Lobyco Coop-kilder | Vendor-/subsidiary-marketing source | High | Low | Appreach, MAU, frekvensclaim, multi-banner loyalty og plattform-/OEM-framing | Støtter appadopsjon-/kapabilitetsclaims, ikke kausalitet eller profitabilitet |
+| Playable Coop case | Supplier marketing source | High | Low | Gamification, retail media, leverandørfinansierte premier og butikkinnløsning | Engagement- og kurvclaims kan være promoterende og seleksjonsbiased |
+| Shortcut Coop App case | Supplier/developer marketing source | High | Low | Apputviklingshistorikk, OEM-framing, downloads, daglige brukere og funksjonsliste | Teknisk leveranse og brukstall dokumenterer ikke strategisk eller finansiell effekt |
+| App-store-sider | Plattformmetadata | Medium/High | Low | Feature-/rating-/download-kontekst hvis stabil | Google Play-scrapet feilet og må ikke brukes til nøkkelpåstander |
 
 ## Claim-Level Cautions
 
@@ -125,3 +132,36 @@ Use this hierarchy:
 Important imported caution:
 
 > Competitor digital tools should not be interpreted as proof that "more digital" is better. The stronger pattern is fit between digital solution, customer promise and operating model.
+
+## Coop Business Model Scrape Source Criticism
+
+Den importerte Coop-scrapen styrker Coop-siden av casen, men den endrer ikke kildekritikkregelen. Den viktigste forskjellen er at noen Coop-fakta nå er sterkere dokumentert gjennom årsrapport og offisielle kilder, mens app-/plattformpåstander fortsatt er svake som kausal evidens.
+
+### Sterkere som fakta
+
+- Nettoomsetning, EBITDA, EBIT og butikkantall fra Coop Danmark A/S årsrapport 2025 kan brukes som sterke fakta hvis metric-navnet gjengis presist.
+- Coop.dk MAD-lukking i 2023 og Coop.dk-webshop-lukking 31. januar 2025 kan brukes som sterke indikasjoner på at Coop ikke bør analyseres som en ren online-grocery-aktør.
+- Offisielle app-sider kan brukes til å beskrive funksjoner som Scan & Betal, digitale kvitteringer, personlige tilbud, spill og klimaavtrykk.
+
+### Svakere som strategisk bevis
+
+- Lobyco sine tall for appbrukere, husholdningsreach, månedlige aktive brukere og handlefrekvens er vendor-rapporterte. De støtter app-adopsjon og engagement, men ikke nødvendigvis lønnsomhet.
+- Playable sine gamification-tall støtter at spill kan skape kampanjeengasjement og butikkinnløsning, men ikke at gamification gir netto lønnsomhet eller langsiktig lojalitet.
+- Shortcut sin OEM-/download-/daily-user-fortelling støtter apputviklingshistorikk, men ikke om videre investering er riktig.
+- Coop sine egne medlems- og kjedesider viser selvpresentasjon. De sier hva Coop ønsker å stå for, ikke nødvendigvis hvordan kundene faktisk oppfatter Coop.
+
+### Google Play-caveat
+
+Google Play-kilden i scraping-runnen returnerte “requested URL was not found”. Den skal ikke brukes til nøkkelpåstander om rating, downloads, appfunksjoner eller app-adopsjon.
+
+### Skriveregel for denne importen
+
+Bruk formuleringer som:
+
+- “Coop oppgir ...”
+- “Lobyco hevder ...”
+- “Playable hevder ...”
+- “Dette indikerer en mulig verdilogikk ...”
+- “Dette støtter app-adopsjon, men ikke nødvendigvis lønnsomhet ...”
+
+Unngå bastante formuleringer som gjør app-adopsjon, plattformclaims, gamification eller appbrukeratferd til dokumentert lønnsomhet eller kausal effekt.

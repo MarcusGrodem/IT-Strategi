@@ -22,6 +22,16 @@ This matrix helps prevent weak claims from becoming strong conclusions.
 | Lidl Plus reinforces discount economics through coupons/member prices | Lidl official pages | Feature claim / inference | Medium | High | Medium | Use as evidence of app-promise fit, not independent proof of success |
 | Dagrofa/MENY links loyalty to food/local identity | Dagrofa pages and Loyalty Group-related claims | Claim / inference | Medium | Medium/High | Medium | Use as chain-positioning evidence with survey caveats |
 | Nemlig shows online grocery can grow while still having tight bottom-line economics | Nemlig/Ritzau + Proff | Mixed financial claim | Medium | Medium | Medium | Use to nuance coop.dk closure discussion |
+| Coop sine 2025-finans- og butikkfotavtrykkstall viser en stor fysisk dagligvarevirksomhet under fortsatt økonomisk press | Coop Danmark A/S årsrapport 2025 / offisiell melding | Fact | High | Low/Medium | Low | Bruk som Coop-side baseline; bevar eksakte metric-navn |
+| Coop sin medlemseide identitet og 2m+ medlemsbase er sentral i egen selvpresentasjon | Coop Medlem offisielle sider | Claim / Fact | High for selvpresentasjon; Medium for tolkning | Medium | Low | Bruk til å forklare medlems-/value proposition- og governance-identitet |
+| Coop App fungerer som butikkstøttende lojalitets- og relasjonskanal | Coop offisielle app-/medlemssider + lukkingsevidens | Inference | Medium/High | Medium | Medium | Bruk som analytisk framing; ikke inferer profitabilitet |
+| Lobyco-metrics viser appreach og engagement | Lobyco vendor-sider | Marketing claim | Medium | High | Medium/High | Bruk som vendor-rapportert reach; unngå kausale eller profitabilitetsclaims |
+| Lobyco endrer mulig Coop-rollen fra retailer mot modular/OEM provider | Lobyco + Shortcut vendor-sider | Claim / Inference | Medium | High | Medium | Analyser som mulig rolleskift, ikke etablert plattformeffekt |
+| Playable sine gamification-metrics indikerer mulig retail-media-/butikkinnløsningsverdi | Playable vendor case | Marketing claim | Medium/Low | High | High | Bruk som mulig value-creation-mekanisme som krever verifisering og KPI-governance |
+| Shortcut sin apputviklings-/OEM-case viser digital kapabilitetshistorikk | Shortcut vendor case | Marketing claim | Medium | High | Medium | Bruk som bakgrunn/kapabilitetsevidens, ikke effekt-dokumentasjon |
+| Coop sine kjedeforskjeller indikerer at en one-size-fits-all-app kan være strategisk svak | Coop-kjedesider + competitor fit evidence | Inference | Medium/High | Medium | Medium | Bruk til å støtte "go deep" eller modulær governance-diskusjon uten å låse løsning |
+| Coop sine private labels og leverandørnettverk støtter supplier-/retail-media-logikk | Coop private-label-sider + Coop Trading | Claim / Inference | Medium | Medium | Medium | Bruk som forretningsmodellkontekst; ikke dokumentasjon på retail-media-inntekt |
+| Google Play-scrapet støtter Coop App-claims | Google Play raw scrape | Mislykket kilde / svak claim | Low | High | High | Ikke bruk til nøkkelpåstander med mindre kilden hentes på nytt |
 
 ## Reliability Scale
 

@@ -43,7 +43,12 @@ The strongest chain-specific angle may be:
 
 Chosen option:
 
+Option 5 — Direktør for Kommunikation, Marketing og Digital: Martin Hasgard Olesen.
+
 Reason:
+
+This actor fits the selected DVC + Digital Business Model perspectives because the paper can focus on Coop App, customer-facing digital value, loyalty, retail media, Lobyco governance and chain-specific digital relevance while still addressing store economics and investment discipline.
 
 Date:
 
+2026-05-04

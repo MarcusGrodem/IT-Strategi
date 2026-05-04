@@ -10,7 +10,24 @@ This file will be developed after the first decisions and initial evidence work.
 
 ## Agent Recommendation
 
-Pending. The likely best structure is traditional but with theory applied quickly and directly.
+Use a traditional structure with direct theory application:
+
+1. Introduction
+2. Method, scope and assumptions
+3. Case background
+4. Source criticism
+5. Theory choice and application
+6. Strategic situation analysis
+7. Strategic stance
+8. Strategic recommendations
+9. Limitations and critical reflection
+10. Conclusion
+11. References
+12. AI use statement
+
+Detailed outline:
+
+`08_final_report/outline.md`
 
 ## User Decision
 
@@ -19,4 +36,3 @@ Chosen option:
 Reason:
 
 Date:
-
