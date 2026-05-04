@@ -49,6 +49,6 @@ Coop Denmark is a member-owned, store-based grocery retailer with four main bann
 | Members | More than 2m | 2026 | Coop Medlem |
 | Coop app users | More than 1.8m | 2026 | Lobyco case |
 | Coop app monthly active users | Approx. 880,000 | 2026 | Lobyco insight |
+| Coop app daily users | Above 250,000 | 2026 | Shortcut case |
 | Danish households using app | 25% | 2026 | Lobyco case |
 | App customer frequency uplift | 50% higher frequency | 2026 | Lobyco case |
-| Coop private-label products | More than 3,000 | 2026 | Coop vareserie |

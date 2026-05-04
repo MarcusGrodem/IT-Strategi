@@ -348,6 +348,30 @@
     "notes": ""
   },
   {
+    "source_url": "https://playable.com/cases/coop/",
+    "source_title": "How Coop fueled loyalty and retail media",
+    "publisher": "Playable",
+    "source_type": "vendor marketing source",
+    "date_published_or_year": "2026",
+    "access_date": "2026-05-04",
+    "reliability_assessment": "medium for documented platform metrics; low-medium for promotional claims",
+    "marketing_source_yes_no": "yes",
+    "possible_bias": "promotes vendor platform capabilities; numbers useful but interpretation should be treated cautiously",
+    "notes": ""
+  },
+  {
+    "source_url": "https://www.shortcut.io/cases/coop-denmark-app",
+    "source_title": "Digital transformation for the modern retail chain",
+    "publisher": "Shortcut",
+    "source_type": "vendor marketing source",
+    "date_published_or_year": "2026",
+    "access_date": "2026-05-04",
+    "reliability_assessment": "medium for documented platform metrics; low-medium for promotional claims",
+    "marketing_source_yes_no": "yes",
+    "possible_bias": "promotes vendor platform capabilities; numbers useful but interpretation should be treated cautiously",
+    "notes": ""
+  },
+  {
     "source_url": "https://www.cooptrading.com/who-we-are/",
     "source_title": "Who we are",
     "publisher": "Coop Trading",

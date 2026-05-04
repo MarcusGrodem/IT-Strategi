@@ -11,7 +11,7 @@ This report is evidence gathering and business model analysis for a CBS IT-strat
 - Coop's value proposition is mixed rather than singular: member benefits, local/community role, responsible food standards, price/bonus mechanics, quality formats and digital convenience all appear in the evidence.
 - The chain portfolio spans different positions: Kvickly combines broad assortment and member/price mechanics; SuperBrugsen stresses quality, taste and local goods; Brugsen stresses local community proximity; 365discount stresses low prices with a green/responsible overlay.
 - Coop App is best understood as a store-supporting loyalty and relationship layer, not as proof that Coop is an online grocery business. It supports personal offers, bonus, Scan & Betal, receipts, shopping lists, games, climate footprint and local store content.
-- Lobyco turns Coop's digital loyalty capability into a potential modular/OEM platform asset. Vendor sources report more than 1.8m Coop app users, about 880,000 monthly active users and 50% higher shopping frequency among app users, but these are vendor-marketing claims and should be treated cautiously.
+- Lobyco and Shortcut turn Coop's digital loyalty capability into a potential modular/OEM platform asset. Vendor sources report more than 1.8m Coop app users, about 880,000 monthly active users and 50% higher shopping frequency among app users, but these are vendor-marketing claims and should be treated cautiously.
 - There is a clear tension between strong digital engagement and grocery economics: Coop closed Coop.dk MAD in 2023 and later Coop.dk webshop in 2025 to focus on the physical-store core.
 - Financially, Coop improved materially but was still in turnaround territory: 2025 EBITDA before property gains was DKK 313m, while EBIT was -DKK 215m.
 
@@ -85,14 +85,16 @@ The chain portfolio suggests strategic breadth but also complexity. Coop is not 
 
 The Coop App functions as a digital companion to physical grocery shopping. Official sources describe Scan & Betal, payment, bonus balance, personal offers, member offers, digital receipts, shareable shopping lists, recipes, digital circulars, Samvirke, games, climate footprint, organic share and local store content. These are mostly store-supporting features.
 
-Lobyco changes the interpretation of Coop's digital capability. It presents Coop's loyalty platform as a reusable retail technology product. Lobyco vendor sources say Coop has more than 1.8m app users, reaches 25% of Danish households, has about 880,000 monthly active users and sees 50% higher shopping frequency among app users. These are useful numbers, but because Lobyco sells loyalty platforms, their interpretation should be treated cautiously.
+Lobyco and Shortcut change the interpretation of Coop's digital capability. Lobyco presents Coop's loyalty platform as a reusable retail technology product, and Shortcut describes the Coop App as transformed into an OEM solution and core of several large retail-chain customer apps. Lobyco vendor sources say Coop has more than 1.8m app users, reaches 25% of Danish households, has about 880,000 monthly active users and sees 50% higher shopping frequency among app users. Shortcut reports over 1.5m downloads and daily users above 250,000. These are useful numbers, but because Lobyco and Shortcut sell digital retail services, their interpretation should be treated cautiously.
+
+Playable adds evidence on how games and retail media fit into the digital model. Its vendor case says Coop uses app games with supplier-funded branded prizes, linking customer engagement, supplier exposure and in-store redemption. It reports +100,000 unique players per game, 9% higher basket value among prize redeemers in 2023, 4.25m Christmas game plays and 500,000 Christmas prizes redeemed in Coop stores. These figures are useful for understanding the app-store-supplier triangle, but they are vendor-reported.
 
 ### DVC mapping
 
 - Experiences: Scan & Betal, games, recipes, digital circulars, receipts and shopping lists.
 - Relationships: membership, co-ownership, bonus, personal offers, partner benefits and app engagement.
 - Evolution: shift from analogue member organisation to app-enabled loyalty, while closing online grocery and webshop channels.
-- Digital competences: personalization, loyalty mechanics, app development, multi-banner campaign management and data-based offer selection.
+- Digital competences: personalization, loyalty mechanics, app development, multi-banner campaign management, gamification/retail-media campaign execution and data-based offer selection.
 - Digital infrastructure: one app across four banners, Coop One, purchase data, payment integrations, FordelsKonto and Lobyco.
 - Digital outputs: personal offers, bonus balances, climate footprint, receipts, games, Scan & Betal and campaign activation.
 - Relevance: customer-specific offers, local store content, organic/climate insight and price/bonus relevance.
@@ -116,8 +118,12 @@ Coop's position is internally complex. It is primarily a physical grocery retail
 | Members | More than 2m | 2026 | Coop Medlem | Ownership and loyalty base | high |
 | Coop app users | More than 1.8m | 2026 | Lobyco case | Vendor-reported digital reach | medium |
 | Coop app monthly active users | Approx. 880,000 | 2026 | Lobyco insight | Vendor-reported active engagement | medium |
+| Coop app daily users | Above 250,000 | 2026 | Shortcut case | Vendor-reported app engagement; likely older than current Lobyco figures | medium |
 | Danish households using app | 25% | 2026 | Lobyco case | Vendor-reported reach | medium |
 | App customer frequency uplift | 50% higher frequency | 2026 | Lobyco case | Correlation/claim; not independently verified | medium |
+| Gamification unique players | +100,000 per game | 2026 | Playable case | Vendor-reported game engagement | medium |
+| Christmas game plays | 4.25m | 2023 | Playable case | Vendor-reported seasonal engagement | medium |
+| Christmas prizes redeemed in stores | 500,000 | 2023 | Playable case | Vendor-reported store-redemption outcome | medium |
 | Coop private-label products | More than 3,000 | 2026 | Coop vareserie | Private-label scale | high |
 | Änglamark products | More than 1,200 | 2026 | Coop / Änglamark | Responsibility-oriented private-label scale | high |
 | Coop Trading suppliers | 700+ | 2026 | Coop Trading | Supplier/sourcing ecosystem | medium |
@@ -129,8 +135,8 @@ Coop's position is internally complex. It is primarily a physical grocery retail
 - Digital frontrunner vs closed online grocery: Coop.dk MAD closed in 2023 and Coop.dk webshop closed in 2025, while the app remains central.
 - Member value vs price-sensitive grocery market: Coop emphasizes co-ownership, responsibility and bonus, while chain pages emphasize Discountmatch, Lav Pris and 365discount.
 - Many chain concepts vs clarity: Kvickly, SuperBrugsen, Brugsen and 365discount each carry different value propositions; the app and membership try to connect them.
-- Lobyco/OEM platform vs store logic: Lobyco points to platform capability, but Coop's disclosed economics and closures point back to physical stores as the core.
-- Marketing claims vs outcomes: Lobyco claims app-driven frequency uplift, but public sources do not prove causality or disclose app profitability.
+- Lobyco/Shortcut OEM platform vs store logic: vendor cases point to platform capability, but Coop's disclosed economics and closures point back to physical stores as the core.
+- Marketing claims vs outcomes: Lobyco, Shortcut and Playable claim strong app/gamification outcomes, but public sources do not prove causality or disclose app profitability.
 
 ## 11. Theory mapping
 
@@ -160,13 +166,13 @@ Coop's position is internally complex. It is primarily a physical grocery retail
 
 ## 12. Gaps and uncertainties
 
-- Retail media data for Coop Denmark was not found in strong public Danish sources. Vendor/industry retail-media material was not used for Coop Denmark-specific financial claims.
+- Retail media data for Coop Denmark was found mainly in Playable vendor material, not in strong public Danish financial sources.
 - Exact revenue or profit contribution from Coop App, Lobyco, retail media, games or personalization was not found.
 - App-store ratings/download counts were searched and scraped, but crawler extraction may be partial and they are not used as primary evidence.
 - Chain-specific revenue/profit/store counts for Kvickly, SuperBrugsen, Brugsen and 365discount were not found in extractable public sources during this run.
 - The source set verifies Coop.dk MAD closure and Coop.dk webshop closure, but public sources do not quantify total savings from each closure.
 - Lobyco app metrics are useful but not independently verified; they should be cited as vendor-reported figures.
-- Spending/basket uplift from games, retail media and individual app features was not found in non-marketing sources.
+- Spending/basket uplift from games, retail media and individual app features was found only in vendor marketing sources, not independent/financial sources.
 
 ## 13. Source list
 
@@ -199,6 +205,8 @@ Coop's position is internally complex. It is primarily a physical grocery retail
 - Helping 25% of Danish households shop smarter (Lobyco): https://www.lobyco.com/case-studies/coop
 - Making Multi-Banner Loyalty Simple (Lobyco): https://www.lobyco.com/insights/making-multi-banner-loyalty-simple
 - Lobyco home page (Lobyco): https://www.lobyco.com/
+- How Coop fueled loyalty and retail media (Playable): https://playable.com/cases/coop/
+- Digital transformation for the modern retail chain (Shortcut): https://www.shortcut.io/cases/coop-denmark-app
 - Who we are (Coop Trading): https://www.cooptrading.com/who-we-are/
 - Working with suppliers (Coop Trading): https://www.cooptrading.com/our-corporate-responsibility/working-with-suppliers/
 - Coops hjemmelevering lukker (Ritzau / ni.dk): https://ni.dk/ni-news/id/35f0f2a6-7ddc-4fee-bf00-4e127bf759ec/Coops-hjemmelevering-lukker

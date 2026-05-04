@@ -32,7 +32,7 @@ Categories
   * [ Indie ](https://apps.apple.com/dk/iphone/grouping/174170)
 
 
-# The page you're looking for can't be found.
+# An error occurred.
 Denmark
   * [Dansk](https://apps.apple.com/dk/app/coop-app/id537614968?l=da)
 
