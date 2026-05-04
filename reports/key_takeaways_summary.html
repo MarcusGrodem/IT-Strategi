@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coop competitor analysis - key takeaways</title>
+  <style>
+    :root {
+      --ink: oklch(24% 0.035 248);
+      --muted: oklch(47% 0.035 248);
+      --line: oklch(88% 0.018 238);
+      --soft: oklch(97% 0.012 205);
+      --paper: oklch(99% 0.006 205);
+      --accent: oklch(45% 0.115 171);
+      --accent-soft: oklch(94% 0.045 171);
+      --blue: oklch(48% 0.12 238);
+      --blue-soft: oklch(94% 0.04 238);
+      --amber: oklch(66% 0.145 72);
+      --amber-soft: oklch(95% 0.065 82);
+      --rose: oklch(56% 0.155 20);
+      --rose-soft: oklch(95% 0.045 20);
+      --violet: oklch(48% 0.11 305);
+      --violet-soft: oklch(95% 0.035 305);
+      --coop: oklch(44% 0.13 145);
+      --coop-soft: oklch(93% 0.055 145);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 28px 56px;
+    }
+
+    header {
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    a {
+      color: oklch(38% 0.12 238);
+      font-weight: 650;
+      text-decoration-color: color-mix(in oklch, currentColor 45%, transparent);
+      text-underline-offset: 2px;
+    }
+
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 18px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 4px;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 9px 10px;
+      vertical-align: top;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      background: var(--soft);
+      font-size: 13px;
+      color: #2c3844;
+    }
+
+    td {
+      font-size: 14px;
+    }
+
+    .dashboard {
+      display: grid;
+      gap: 18px;
+      margin: 26px 0 6px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+    }
+
+    .kpi {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: oklch(100% 0.004 205);
+      padding: 14px;
+      min-height: 118px;
+    }
+
+    .kpi strong {
+      display: block;
+      margin: 2px 0 6px;
+      font-size: 27px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .kpi span {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .kpi p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .scale {
+      background: var(--blue-soft);
+      color: oklch(33% 0.11 238);
+    }
+
+    .coop {
+      background: var(--coop-soft);
+      color: oklch(29% 0.11 145);
+    }
+
+    .discount {
+      background: var(--amber-soft);
+      color: oklch(36% 0.11 72);
+    }
+
+    .food {
+      background: var(--accent-soft);
+      color: oklch(31% 0.095 171);
+    }
+
+    .online {
+      background: var(--violet-soft);
+      color: oklch(33% 0.10 305);
+    }
+
+    .warning {
+      background: var(--rose-soft);
+      color: oklch(36% 0.13 20);
+    }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .chart {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: oklch(100% 0.004 205);
+      padding: 16px;
+    }
+
+    .chart h3 {
+      margin: 0 0 4px;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .chart .note {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 92px 1fr 76px;
+      gap: 10px;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .bar-label {
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .bar-track {
+      position: relative;
+      height: 14px;
+      border-radius: 999px;
+      background: oklch(94% 0.012 238);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      display: block;
+      width: var(--value);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--bar-color);
+    }
+
+    .bar-value {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .bar-fill.negative {
+      margin-left: calc(100% - var(--value));
+      background: var(--rose);
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--swatch);
+    }
+
+    .emphasis-table tbody tr:nth-child(1) td {
+      background: var(--coop-soft);
+    }
+
+    .emphasis-table tbody tr:nth-child(2) td {
+      background: var(--blue-soft);
+    }
+
+    .emphasis-table tbody tr:nth-child(3) td {
+      background: var(--amber-soft);
+    }
+
+    .emphasis-table tbody tr:nth-child(4) td {
+      background: var(--accent-soft);
+    }
+
+    .emphasis-table tbody tr:nth-child(5) td {
+      background: var(--violet-soft);
+    }
+
+    .number {
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .risk-number {
+      font-weight: 800;
+      color: var(--rose);
+    }
+
+    .conclusion {
+      border: 1px solid color-mix(in oklch, var(--accent) 42%, var(--line));
+      border-radius: 8px;
+      background: var(--accent-soft);
+      padding: 16px;
+      margin-top: 12px;
+    }
+
+    .conclusion p {
+      margin: 0;
+    }
+
+    @media print {
+      main {
+        max-width: none;
+        padding: 18mm 14mm;
+      }
+
+      body {
+        font-size: 11pt;
+      }
+
+      h1 {
+        font-size: 22pt;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
+
+      table,
+      tr {
+        break-inside: avoid;
+      }
+
+      .kpi,
+      .chart {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Coop competitor analysis - key takeaways</h1>
+      <p class="meta">Evidence summary for the Coop Denmark IT-strategy case. Created from the run folder findings, not as recommendations for Coop.</p>
+    </header>
+
+    <section class="dashboard" aria-labelledby="dashboard-title">
+      <h2 id="dashboard-title">Evidence dashboard</h2>
+      <div class="kpi-grid">
+        <article class="kpi">
+          <span class="coop">Coop baseline</span>
+          <strong>32.5bn</strong>
+          <p>Coop Danmark revenue in 2025, with EBITDA of 313m DKK and EBIT of -215m DKK. <a href="https://coop.dk/kontakt/pressekontakt/pressemeddelelser/coop-forbedrer-driftsindtjeningen-med-350-millioner-kr/">Source</a></p>
+        </article>
+        <article class="kpi">
+          <span class="scale">Scale</span>
+          <strong>83.168bn</strong>
+          <p>Salling Group revenue in 2025, with 1.990bn DKK profit. <a href="https://sallinggroup.com/en/stores/key-figures">Source</a></p>
+        </article>
+        <article class="kpi">
+          <span class="discount">Discount</span>
+          <strong>28.478bn</strong>
+          <p>REMA 1000 revenue in 2024 from Paqle, with 515.650m DKK profit. <a href="https://www.paqle.dk/p/rema-1000/227324/finance">Source</a></p>
+        </article>
+        <article class="kpi">
+          <span class="food">Food/local</span>
+          <strong>544</strong>
+          <p>Dagrofa stores in 2025, with MENY ranked strongest grocery brand. <a href="https://www.dagrofa.dk/artikel/dagrofa-loefter-driftsresultatet-og-omsaetningen-naar-rekordhoeje-209-mia-kr/">Source</a></p>
+        </article>
+        <article class="kpi">
+          <span class="online">Online-first</span>
+          <strong>4 / 5</strong>
+          <p>Households can receive groceries and meal boxes from Nemlig. <a href="https://via.ritzau.dk/pressemeddelelse/14710924/nemlig-fortsaetter-vaeksten-og-halverer-underskud-i-nyt-regnskabsar?publisherId=13560508&amp;lang=da">Source</a></p>
+        </article>
+        <article class="kpi">
+          <span class="warning">Caution</span>
+          <strong>-28.090m</strong>
+          <p>Nemlig 2025 bottom-line result in Proff, despite revenue growth. <a href="https://www.proff.dk/regnskab/nemlig.com-as/odense-s/n%C3%A6rings-og-nydelsesmidler/GXIFMDI116S">Source</a></p>
+        </article>
+      </div>
+
+      <div class="chart-grid">
+        <article class="chart">
+          <h3>Reported revenue vs Coop, bn DKK</h3>
+          <p class="note">Bars use Salling as 100%. Coop is included as the benchmark. Lidl financials were not found in this run.</p>
+          <div class="bar-row">
+            <div class="bar-label">Salling</div>
+            <div class="bar-track"><span class="bar-fill" style="--value: 100%; --bar-color: var(--blue);"></span></div>
+            <div class="bar-value">83.168</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Coop</div>
+            <div class="bar-track"><span class="bar-fill" style="--value: 39.1%; --bar-color: var(--coop);"></span></div>
+            <div class="bar-value">32.500</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">REMA</div>
+            <div class="bar-track"><span class="bar-fill" style="--value: 34.2%; --bar-color: var(--amber);"></span></div>
+            <div class="bar-value">28.478</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Dagrofa</div>
+            <div class="bar-track"><span class="bar-fill" style="--value: 25.1%; --bar-color: var(--accent);"></span></div>
+            <div class="bar-value">20.900</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Nemlig</div>
+            <div class="bar-track"><span class="bar-fill" style="--value: 3.4%; --bar-color: var(--violet);"></span></div>
+            <div class="bar-value">2.820</div>
+          </div>
+          <div class="legend">
+            <span><i class="swatch" style="--swatch: var(--coop);"></i>Coop benchmark</span>
+            <span><i class="swatch" style="--swatch: var(--blue);"></i>Scale</span>
+            <span><i class="swatch" style="--swatch: var(--amber);"></i>Discount</span>
+            <span><i class="swatch" style="--swatch: var(--accent);"></i>Food/local</span>
+            <span><i class="swatch" style="--swatch: var(--violet);"></i>Online-first</span>
+          </div>
+        </article>
+
+        <article class="chart">
+          <h3>Result vs Coop, m DKK</h3>
+          <p class="note">Coop uses EBIT (-215m). Competitor values use reported profit/result where available; Dagrofa also reports 529m DKK operating earnings.</p>
+          <div class="bar-row">
+            <div class="bar-label">Salling</div>
+            <div class="bar-track"><span class="bar-fill" style="--value: 100%; --bar-color: var(--blue);"></span></div>
+            <div class="bar-value">1,990</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">REMA</div>
+            <div class="bar-track"><span class="bar-fill" style="--value: 25.9%; --bar-color: var(--amber);"></span></div>
+            <div class="bar-value">516</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Dagrofa</div>
+            <div class="bar-track"><span class="bar-fill" style="--value: 5.0%; --bar-color: var(--accent);"></span></div>
+            <div class="bar-value">99</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Coop EBIT</div>
+            <div class="bar-track"><span class="bar-fill negative" style="--value: 10.8%;"></span></div>
+            <div class="bar-value">-215</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Nemlig</div>
+            <div class="bar-track"><span class="bar-fill negative" style="--value: 1.4%;"></span></div>
+            <div class="bar-value">-28</div>
+          </div>
+          <div class="legend">
+            <span><i class="swatch" style="--swatch: var(--coop);"></i>Coop benchmark</span>
+            <span><i class="swatch" style="--swatch: var(--blue);"></i>Profit</span>
+            <span><i class="swatch" style="--swatch: var(--rose);"></i>Loss</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>1. Absolute key takeaways</h2>
+      <ul>
+        <li>Strong competitors do not just have digital tools; their digital tools fit their core business model.</li>
+        <li>Coop is the baseline: 32.5bn DKK revenue, 313m DKK EBITDA and -215m DKK EBIT in 2025.</li>
+        <li>Salling shows scale plus store-integrated apps: 83.168bn DKK revenue and 1.990bn DKK profit in 2025.</li>
+        <li>REMA's success evidence is mostly discount focus and operational strength, not app sophistication.</li>
+        <li>Lidl Plus is tightly linked to the discount promise through coupons, member prices and purchase goals.</li>
+        <li>Dagrofa/MENY show that customer loyalty can come from clear food and local-store positioning.</li>
+        <li>Nemlig is a useful online-first contrast, but its bottom-line result remains negative in Proff's 2025 table.</li>
+        <li>Coop's app reach is strong, but competitor evidence suggests digital value depends on operational fit.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Key numbers</h2>
+      <table class="emphasis-table">
+        <thead>
+          <tr>
+            <th>Competitor</th>
+            <th>Metric</th>
+            <th>Value</th>
+            <th>Year</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Coop Denmark</td>
+            <td>Revenue / EBITDA / EBIT</td>
+            <td><span class="number">32.5bn</span> / <span class="number">313m</span> / <span class="risk-number">-215m</span> DKK</td>
+            <td>2025</td>
+            <td><a href="https://coop.dk/kontakt/pressekontakt/pressemeddelelser/coop-forbedrer-driftsindtjeningen-med-350-millioner-kr/">Coop</a></td>
+          </tr>
+          <tr>
+            <td>Salling Group</td>
+            <td>Revenue / profit</td>
+            <td><span class="number">83.168bn</span> / <span class="number">1.990bn</span> DKK</td>
+            <td>2025</td>
+            <td><a href="https://sallinggroup.com/en/stores/key-figures">Salling Group</a></td>
+          </tr>
+          <tr>
+            <td>REMA 1000</td>
+            <td>Revenue / profit</td>
+            <td><span class="number">28.478bn</span> / <span class="number">515.650m</span> DKK</td>
+            <td>2024</td>
+            <td><a href="https://www.paqle.dk/p/rema-1000/227324/finance">Paqle</a></td>
+          </tr>
+          <tr>
+            <td>Dagrofa</td>
+            <td>Revenue / operating earnings</td>
+            <td><span class="number">20.9bn</span> / <span class="number">529m</span> DKK</td>
+            <td>2025</td>
+            <td><a href="https://www.dagrofa.dk/artikel/dagrofa-loefter-driftsresultatet-og-omsaetningen-naar-rekordhoeje-209-mia-kr/">Dagrofa</a></td>
+          </tr>
+          <tr>
+            <td>Nemlig</td>
+            <td>Revenue / adjusted EBITDA</td>
+            <td><span class="number">2.82bn</span> / <span class="number">35.3m</span> DKK</td>
+            <td>2024/25</td>
+            <td><a href="https://via.ritzau.dk/pressemeddelelse/14710924/nemlig-fortsaetter-vaeksten-og-halverer-underskud-i-nyt-regnskabsar?publisherId=13560508&amp;lang=da">Nemlig</a></td>
+          </tr>
+          <tr>
+            <td>Nemlig</td>
+            <td>Profit for year</td>
+            <td><span class="risk-number">-28.090m</span> DKK</td>
+            <td>2025</td>
+            <td><a href="https://www.proff.dk/regnskab/nemlig.com-as/odense-s/n%C3%A6rings-og-nydelsesmidler/GXIFMDI116S">Proff</a></td>
+          </tr>
+          <tr>
+            <td>Danish e-commerce</td>
+            <td>Mobile share of online purchases</td>
+            <td><span class="number">49%</span></td>
+            <td>2025</td>
+            <td><a href="https://www.danskindustri.dk/vi-radgiver-dig/ecommerce/di-e-commerce-analyser/analyser/2026/danskernes-arlige-e-commerce-tracker-2025/">Dansk Industri</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. What competitors seem to do differently</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Competitor</th>
+            <th>Digital/customer-facing solution</th>
+            <th>Apparent success factor</th>
+            <th>Contrast with Coop</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Salling</td>
+            <td>Chain apps + Scan&amp;Go</td>
+            <td>Scale and store integration</td>
+            <td>Strong digital utility inside profitable operations</td>
+          </tr>
+          <tr>
+            <td>REMA</td>
+            <td>Planning app + Scan Selv</td>
+            <td>Clear discount promise</td>
+            <td>Less broad digital ambition, clearer model</td>
+          </tr>
+          <tr>
+            <td>Lidl</td>
+            <td>Lidl Plus coupons/goals</td>
+            <td>Price/value reinforcement</td>
+            <td>App directly supports discount economics</td>
+          </tr>
+          <tr>
+            <td>Dagrofa</td>
+            <td>MENY/SPAR member apps</td>
+            <td>Chain identity and loyalty</td>
+            <td>Sharper chain-specific positioning</td>
+          </tr>
+          <tr>
+            <td>Nemlig</td>
+            <td>Online grocery app/webshop</td>
+            <td>Purpose-built online logistics</td>
+            <td>Coop closed online grocery in 2023</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>4. Exam-ready conclusion</h2>
+      <div class="conclusion">
+        <p>Competitors appear to succeed when their digital solutions clearly support their core business model, customer promise and operational setup. Salling uses digital to make scaled physical retail easier. REMA and Lidl use apps to reinforce discount value. Dagrofa links member apps to food/local identity. Nemlig shows online grocery requires a dedicated logistics model and still has difficult economics. The main insight is evidence of fit, not a recommendation for Coop.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

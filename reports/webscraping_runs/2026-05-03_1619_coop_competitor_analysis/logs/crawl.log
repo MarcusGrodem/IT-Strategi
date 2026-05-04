@@ -1,0 +1,58 @@
+[2026-05-03 16:26:41] crawling salling_key_figures https://sallinggroup.com/en/stores/key-figures
+[2026-05-03 16:26:50] ok salling_key_figures
+[2026-05-03 16:26:52] crawling salling_2025_press https://sallinggroup.com/nyheder/international-vaekst-loefter-salling-group-til-historisk-niveau/14899554
+[2026-05-03 16:27:01] ok salling_2025_press
+[2026-05-03 16:27:03] crawling netto_plus https://netto.dk/netto-plus/
+[2026-05-03 16:27:11] ok netto_plus
+[2026-05-03 16:27:13] crawling netto_scan_go https://support.netto.dk/hc/da/articles/30919097799057-Hvordan-bruger-jeg-Scan-Go
+[2026-05-03 16:27:21] ok netto_scan_go
+[2026-05-03 16:27:23] crawling bilka_scango https://www.bilka.dk/scango/
+[2026-05-03 16:27:31] ok bilka_scango
+[2026-05-03 16:27:33] crawling bilka_scango_support https://support.bilka.dk/hc/da/articles/36560426099857-Scan-Go-i-Bilka-Plus-appen
+[2026-05-03 16:27:40] ok bilka_scango_support
+[2026-05-03 16:27:42] crawling foetex_scango https://support.foetex.dk/hc/da/articles/28279829727633-f%C3%B8tex-Scan-Go
+[2026-05-03 16:27:49] ok foetex_scango
+[2026-05-03 16:27:51] crawling rema_scan_selv https://rema1000.dk/information/scan-selv
+[2026-05-03 16:28:01] ok rema_scan_selv
+[2026-05-03 16:28:03] crawling rema_main_app_appstore https://apps.apple.com/dk/app/rema-1000/id426938378
+[2026-05-03 16:28:10] ok rema_main_app_appstore
+[2026-05-03 16:28:12] crawling rema_scan_app_googleplay https://play.google.com/store/apps/details?id=dk.rema1000.app
+[2026-05-03 16:28:19] ok rema_scan_app_googleplay
+[2026-05-03 16:28:21] crawling rema_reitan https://rema1000.dk/vores-historie/reitan
+[2026-05-03 16:28:30] ok rema_reitan
+[2026-05-03 16:28:32] crawling rema_csr https://ansvarlighed.rema1000.dk/samfundsansvar
+[2026-05-03 16:28:42] ok rema_csr
+[2026-05-03 16:28:44] crawling rema_market_share_ritzau https://ni.dk/ni-news/id/56662f68-b455-489a-bebe-706b19ceda1c/Analyse-giver-Rema-1000-discounttronen---Nettos-ejer-afviser-blankt
+[2026-05-03 16:28:56] ok rema_market_share_ritzau
+[2026-05-03 16:28:58] crawling lidl_plus https://www.lidl.dk/c/lidl-plus/s10013731
+[2026-05-03 16:29:07] ok lidl_plus
+[2026-05-03 16:29:09] crawling lidl_plus_coupons https://www.lidl.dk/c/lidl-plus-kuponer/s10014639
+[2026-05-03 16:29:22] ok lidl_plus_coupons
+[2026-05-03 16:29:24] crawling lidl_plus_coupon_plus https://www.lidl.dk/c/lidl-plus-kupon-plus/s10014640
+[2026-05-03 16:29:33] ok lidl_plus_coupon_plus
+[2026-05-03 16:29:35] crawling lidl_value_for_money https://via.ritzau.dk/pressemeddelelse/14578254/kunderne-har-talt-lidl-giver-mest-vaerdi-for-pengene-og-leverer-bedst-pa-frugt-og-gront?publisherId=13559974&lang=da
+[2026-05-03 16:29:44] ok lidl_value_for_money
+[2026-05-03 16:29:46] crawling dagrofa_2025_results https://www.dagrofa.dk/artikel/dagrofa-loefter-driftsresultatet-og-omsaetningen-naar-rekordhoeje-209-mia-kr/
+[2026-05-03 16:29:53] ok dagrofa_2025_results
+[2026-05-03 16:29:55] crawling dagrofa_chains https://www.dagrofa.dk/kaeder/
+[2026-05-03 16:30:08] ok dagrofa_chains
+[2026-05-03 16:30:10] crawling dagrofa_meny_brand https://www.dagrofa.dk/artikel/meny-kaares-som-danmarks-staerkeste-dagligvarebrand/
+[2026-05-03 16:30:25] ok dagrofa_meny_brand
+[2026-05-03 16:30:27] crawling dagrofa_annual_report_2025 https://www.dagrofa.dk/wp-content/uploads/2026/03/DAGROFA_AaRSRAPPORT_2025_144DPI_1.pdf
+[2026-05-03 16:30:35] ok dagrofa_annual_report_2025
+[2026-05-03 16:30:37] crawling meny_app_googleplay https://play.google.com/store/apps/details?id=dk.meny
+[2026-05-03 16:30:45] ok meny_app_googleplay
+[2026-05-03 16:30:47] crawling spar_sammen_appstore https://apps.apple.com/dk/app/spar-sammen/id586234461
+[2026-05-03 16:30:55] ok spar_sammen_appstore
+[2026-05-03 16:30:57] crawling nemlig_2025_results https://via.ritzau.dk/pressemeddelelse/14710924/nemlig-fortsaetter-vaeksten-og-halverer-underskud-i-nyt-regnskabsar?publisherId=13560508&lang=da
+[2026-05-03 16:31:06] ok nemlig_2025_results
+[2026-05-03 16:31:08] crawling nemlig_proff_financials https://www.proff.dk/regnskab/nemlig.com-as/odense-s/n%C3%A6rings-og-nydelsesmidler/GXIFMDI116S
+[2026-05-03 16:31:20] ok nemlig_proff_financials
+[2026-05-03 16:31:22] crawling nemlig_app_googleplay https://play.google.com/store/apps/details?id=com.nemlig
+[2026-05-03 16:31:29] ok nemlig_app_googleplay
+[2026-05-03 16:31:31] crawling nemlig_organic https://via.ritzau.dk/pressemeddelelse/14785234/nemlig-styrker-oko-andelen-trods-pres-i-markedet?lang=da&publisherId=13560508
+[2026-05-03 16:31:39] ok nemlig_organic
+[2026-05-03 16:31:41] crawling loyaltygroup_brancheindex https://loyaltygroup.dk/brancheanalyser/brancheindex/brancheindex-dagligvarer/
+[2026-05-03 16:31:51] ok loyaltygroup_brancheindex
+[2026-05-03 16:31:54] crawling di_ecommerce_2025 https://www.danskindustri.dk/vi-radgiver-dig/ecommerce/di-e-commerce-analyser/analyser/2026/danskernes-arlige-e-commerce-tracker-2025/
+[2026-05-03 16:32:03] ok di_ecommerce_2025

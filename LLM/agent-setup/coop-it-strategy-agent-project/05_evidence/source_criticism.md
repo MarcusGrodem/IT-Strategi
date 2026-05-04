@@ -1,0 +1,127 @@
+# Source Criticism
+
+This file records how sources should be treated in the Coop IT-strategy project.
+
+## Core Principle
+
+The project must distinguish between:
+
+- app adoption,
+- app engagement,
+- customer loyalty,
+- store traffic,
+- revenue,
+- profitability,
+- strategic differentiation,
+- long-term competitive advantage.
+
+A source can support one of these without proving the others.
+
+## Source-Level Assessment
+
+| Source | Source type | Bias risk | Age risk | Main use | Main caution |
+|---|---|---|---|---|---|
+| Exam case description | Official exam source | Low | Low | Factual foundation and assignment framing | Still check exact wording before using numbers |
+| Lobyco source | Subsidiary / commercially interested source | High | Low | Evidence of how Lobyco presents app value, adoption and engagement | Do not use as neutral proof of profitability or causal impact |
+| Playable source | Supplier marketing | High | Low | Evidence of intended gamification and campaign value | Supplier has interest in presenting campaigns as successful |
+| Shortcut source | Supplier/developer marketing | High | Low | Background on app development and features | Development success is not the same as strategic or financial success |
+| DVC Framework | Course theory / framework | Medium | Medium | Theory perspective for digital value creation | May overemphasise digital potential if not balanced by financial/source critique |
+| Hedman & Bjoern-Andersen 2016 | Academic / historical case | Medium | High | Historical context on IT complexity/debt | Older evidence may not describe current Coop situation |
+| Local competitor scraping run | Local research output based on public web sources | Medium | Low | Competitor comparison, source register and key takeaways | Treat generated synthesis as secondary; important claims should trace back to original source URLs |
+
+## Claim-Level Cautions
+
+### Lobyco Claims
+
+Use as:
+
+> Lobyco claims...
+
+Not as:
+
+> The Coop App proves...
+
+Main risks:
+
+- commercial self-presentation,
+- selection bias,
+- missing profitability evidence,
+- unclear causality between app use and customer behaviour.
+
+### Playable Claims
+
+Use as:
+
+> Playable's case material indicates how gamification is intended to support engagement and campaigns.
+
+Not as:
+
+> Gamification creates profitable loyalty for Coop.
+
+Main risks:
+
+- supplier bias,
+- campaign success may not translate into long-term loyalty,
+- engagement may not equal profit.
+
+### Shortcut Claims
+
+Use as:
+
+> Shortcut's material can help describe app development and feature history.
+
+Not as:
+
+> Shortcut proves that the app is strategically successful.
+
+Main risks:
+
+- developer/vendor perspective,
+- focus on technical delivery rather than business outcome.
+
+## Required Writing Patterns
+
+Preferred:
+
+- "The source claims..."
+- "This indicates..."
+- "This suggests..."
+- "This should be treated cautiously because..."
+- "The evidence supports app adoption, but not necessarily financial contribution."
+- "Given Coop's physical-store model..."
+- "The strategic value depends on whether..."
+
+Avoid:
+
+- "The source proves..."
+- "The Coop App is a huge success..."
+- "The app increases profitability..." unless supported by strong evidence.
+- "Digital transformation is important..." without specific case link.
+
+## Source Criticism To Include In Final Paper
+
+The final paper should include a short source criticism section explaining that:
+
+1. The exam case is used as the factual foundation.
+2. Lobyco, Playable and Shortcut are useful but commercially interested sources.
+3. Their claims are used as indicators of intended or claimed value, not neutral proof.
+4. Claims about app users may suffer from selection bias.
+5. The analysis cannot fully prove profitability effects without internal Coop KPI and financial data.
+
+## Competitor Source Criticism Added From Scraping Run
+
+The competitor scraping run is useful because it collected source URLs, source types and reliability notes. However, the generated `competitor_analysis.md` and `key_takeaways_summary.md` are still secondary syntheses.
+
+Use this hierarchy:
+
+1. Prefer original company annual/key-figure pages for financial facts.
+2. Use company press releases for official claims, but mention promotional framing where relevant.
+3. Use app/support pages for feature mechanics, not business impact.
+4. Use app store data for adoption/visibility, not profitability.
+5. Use Paqle/Proff as secondary financial databases when official figures are unavailable.
+6. Use contested market-share claims only with explicit caveats.
+7. Use DI e-commerce data only as general digital behaviour context, not grocery-specific profitability evidence.
+
+Important imported caution:
+
+> Competitor digital tools should not be interpreted as proof that "more digital" is better. The stronger pattern is fit between digital solution, customer promise and operating model.

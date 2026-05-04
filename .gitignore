@@ -1,0 +1,4 @@
+.crawl4ai-state/
+.venv/
+__pycache__/
+*.pyc

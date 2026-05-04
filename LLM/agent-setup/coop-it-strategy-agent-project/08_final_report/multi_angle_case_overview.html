@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coop IT-Strategy — Multi-Angle Case Overview</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #3b3b3b;
+    --muted: #5e5e5e;
+    --rule: #d8d4cb;
+    --bg: #faf8f3;
+    --panel: #ffffff;
+    --accent: #4a4a8a;
+    --warn: #8a4a4a;
+    --good: #3d6a3d;
+    --tag-bg: #efeae0;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Iowan Old Style", Georgia, "Times New Roman", serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 16px;
+  }
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 32px 96px;
+  }
+  header.title {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+  header.title .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 34px;
+    line-height: 1.18;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 24px;
+    margin: 56px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 19px;
+    margin: 32px 0 6px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  h4 {
+    font-size: 15px;
+    margin: 18px 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+  }
+  p { margin: 0 0 12px; }
+  .lede {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 78ch;
+  }
+  .callout {
+    background: var(--panel);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    margin: 18px 0 28px;
+    font-size: 15px;
+  }
+  .callout.warn { border-left-color: var(--warn); }
+  .callout strong { color: var(--ink); }
+
+  nav.toc {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+  nav.toc h2 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: none;
+    padding: 0;
+    color: var(--muted);
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 22px;
+    columns: 2;
+    column-gap: 36px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+  }
+  nav.toc li { margin-bottom: 4px; break-inside: avoid; }
+  nav.toc a { color: var(--ink-soft); text-decoration: none; }
+  nav.toc a:hover { color: var(--accent); text-decoration: underline; }
+
+  .actor-card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 24px 28px 20px;
+    margin: 12px 0 24px;
+  }
+  .actor-card .role {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .actor-card h3 { margin: 4px 0 8px; }
+  .actor-card .summary { color: var(--ink-soft); font-size: 15px; }
+
+  .angle {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px 16px;
+    margin: 18px 0 24px;
+  }
+  .angle h4.angle-title {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0 0 6px;
+    font-family: "Iowan Old Style", Georgia, serif;
+  }
+  .angle .qline {
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .angle dl {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 6px 22px;
+    font-size: 14.5px;
+    margin: 10px 0 0;
+  }
+  .angle dt {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding-top: 4px;
+    font-weight: 600;
+  }
+  .angle dd { margin: 0; padding-top: 2px; }
+  .angle ul { margin: 2px 0 4px; padding-left: 18px; }
+  .angle li { margin-bottom: 3px; }
+
+  .tag {
+    display: inline-block;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--tag-bg);
+    color: var(--ink-soft);
+    padding: 2px 8px;
+    margin-right: 6px;
+    border-radius: 2px;
+  }
+  .tag.used { background: #e3ecdf; color: var(--good); }
+  .tag.notused { background: #f0e3e3; color: var(--warn); }
+  .tag.missing { background: #f1ecd6; color: #7a6a30; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 28px;
+    font-size: 13.5px;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    background: #f3efe6;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.actor { font-weight: 600; white-space: nowrap; }
+
+  .synthesis {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .synthesis ul { padding-left: 20px; }
+  .synthesis li { margin-bottom: 8px; }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    nav.toc ol { columns: 1; }
+    .angle dl { grid-template-columns: 1fr; }
+    .angle dt { padding-top: 10px; }
+    h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="title">
+  <div class="eyebrow">Coop IT-Strategy Exam Project · 2026-05-04</div>
+  <h1>Multi-Angle Case Overview</h1>
+  <p class="lede">A red-team and option-mapping report that lays out possible directions the Coop App / Lobyco case can be taken. The purpose is to help the user weigh angles before locking executive, theory or strategic position.</p>
+</header>
+
+<section id="about">
+  <h2>About this report</h2>
+  <p>The exam assignment asks the project to <strong>I) analyse Coop's strategic situation and II) on that basis develop 2-5 strategic recommendations</strong> that prepare one named member of Coop's executive management for the expected discussion about Coop App and Lobyco.</p>
+  <p>This report does <strong>not</strong> produce final recommendations. It maps possible angles per case actor, identifies what each angle requires in the situation analysis, and surfaces evidence, theory fit, source-use questions and exam risks. The goal is to keep alternatives open while sharpening the basis for later choice.</p>
+  <div class="callout">
+    <strong>Reading instruction.</strong> Each angle is a hypothesis, not a recommendation. Language is deliberately cautious: "claims", "indicates", "suggests", "should be treated cautiously". Marketing-derived claims (Lobyco, Playable, Shortcut) are treated as <em>claimed</em> value, not proven outcome.
+  </div>
+  <div class="callout warn">
+    <strong>Decision status.</strong> Executive, theory and strategic position are all marked <em>Under evaluation</em> in the decision board. This report is consistent with that policy and does not select among them.
+  </div>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>Table of contents</h2>
+  <ol>
+    <li><a href="#about">About this report</a></li>
+    <li><a href="#sources">The five supplementary sources</a></li>
+    <li><a href="#actor-thor">Thor Skov Jørgensen — CEO</a></li>
+    <li><a href="#actor-rikke">Rikke Krause — SuperBrugsen &amp; Kvickly</a></li>
+    <li><a href="#actor-torben">Torben B. Andersen — Brugsen</a></li>
+    <li><a href="#actor-michael">Michael Tilsted — 365discount</a></li>
+    <li><a href="#actor-martin">Martin Hasgard Olesen — Komm., Marketing &amp; Digital</a></li>
+    <li><a href="#compare-angles">Comparison of the most promising angles</a></li>
+    <li><a href="#compare-theory">Theory-to-angle mapping</a></li>
+    <li><a href="#compare-sources">Source use across angles</a></li>
+    <li><a href="#strongest">Strongest angles so far (without locking choice)</a></li>
+    <li><a href="#open">Open decisions</a></li>
+    <li><a href="#missing">Missing evidence</a></li>
+  </ol>
+</nav>
+
+<section id="sources">
+  <h2>The five supplementary sources</h2>
+  <p>The case package contains five supplementary sources alongside the official exam case description. Each angle below states explicitly which of these are <em>used</em>, <em>not used</em> or <em>missing/unverified</em>.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Source</th><th>Type</th><th>Best use</th><th>Main caution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>S1</td><td>Lobyco — "Helping 25% of Danish households shop smarter"</td><td>Subsidiary / marketing</td><td>Claimed app reach, engagement, retail media value</td><td>Commercially interested; selection bias; not proof of profitability</td></tr>
+      <tr><td>S2</td><td>Playable — "How Coop fueled loyalty and retail media"</td><td>Supplier marketing</td><td>Intended gamification and campaign value</td><td>Supplier bias; engagement ≠ profit</td></tr>
+      <tr><td>S3</td><td>Shortcut — "Digital transformation at Coop"</td><td>Supplier / developer marketing</td><td>App development history and feature mechanics</td><td>Vendor framing; technical delivery ≠ strategic success</td></tr>
+      <tr><td>S4</td><td>DVC Framework — "Accelerating digital value creation"</td><td>Course theory / framework</td><td>Concepts: experiences, relationships, relevance, infrastructure, outputs</td><td>Can become too positive about digital value; full bibliographic data still missing</td></tr>
+      <tr><td>S5</td><td>Hedman &amp; Bjørn-Andersen — "Challenge of technological debt at Coop"</td><td>Academic / historical case</td><td>Historical IT-debt context relevant to Lobyco/app architecture</td><td>2016 vintage; current Coop situation may differ; full reference details missing</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn">
+    <strong>Reference status.</strong> S1–S3 still need full URL/title/access-date. S4 and S5 still need full bibliographic data. See <code>05_evidence/reference_needs.md</code>. Until then, claims drawn from these sources are usable but should be marked as preliminary.
+  </div>
+</section>
+
+<!-- =========================== THOR =========================== -->
+<section id="actor-thor">
+  <h2>Thor Skov Jørgensen — Adm. direktør (CEO)</h2>
+  <div class="actor-card">
+    <div class="role">Group level</div>
+    <h3>What this actor needs to be prepared for</h3>
+    <p class="summary">A group-level decision on whether to reduce, sell, strengthen or differentiate Coop App / Lobyco, framed as an investment trade-off across the group. The CEO must own the full executive discussion and connect digital strategy to financial pressure and bricks-and-mortar core.</p>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">T1 · Portfolio discipline and opportunity cost</h4>
+    <div class="qline">Strategic question: How should Coop's CEO allocate constrained group capital between Coop App / Lobyco and physical-store priorities?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>App / Lobyco investment should be governed as one item in a constrained group portfolio, with explicit KPIs tying investment continuation to demonstrable store-level value.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) financial pressure, (b) opportunity cost across chains, (c) the gap between app reach and proven financial contribution, and (d) why marketing-derived claims cannot substitute for profitability evidence.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Coop 2025 results indicate revenue ~32.5bn DKK, EBITDA ~313m DKK, EBIT loss ~215m DKK (E016).</li>
+          <li>Case states Coop is financially pressured (E003) with declining revenue and structural deficits (E006).</li>
+          <li>App adoption / engagement does not by itself prove financial contribution (E013).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Lobyco claims of ~25% household reach (S1) suggest the app is a non-trivial customer asset that pure cost cuts could erode.</li>
+          <li>Playable (S2) and Shortcut (S3) suggest existing digital investment has produced real campaign and feature capability that may have option value.</li>
+          <li>DI e-commerce data (E026) suggests digital channels are mainstream consumer behaviour.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>Digital Business Model perspective + selected DVC concepts.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        Digital Business Model: <em>value capture, key resources, governance/KPIs</em> — to test whether app/Lobyco can be governed as a value logic, not only as a customer-facing experience.<br>
+        DVC: <em>digital outputs and relevance</em> only — to test whether app reach translates into store-anchored value.<br>
+        <em>Theory concept → Coop observation → analytical meaning → strategic implication</em>: "value capture" → app engagement is not yet linked to traceable margin → reach without capture is fragile under financial pressure → CEO needs investment guardrails before further commitment.
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco reach as <em>claimed</em> reach, not proven economic value.<br>
+        <span class="tag used">Used S4</span> DVC parts to frame "value creation" vs. "value capture".<br>
+        <span class="tag notused">Not used S2</span> Playable too narrow for group-level allocation logic.<br>
+        <span class="tag notused">Not used S3</span> Shortcut is feature-focused; less useful for capital allocation.<br>
+        <span class="tag missing">Missing S5</span> Hedman &amp; Bjørn-Andersen could support an IT-debt argument but full reference is unverified.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Avoid using Lobyco reach as profit evidence. The 232m DKK exam-context loss vs. 215m DKK official EBIT loss must be reconciled before quoting.</dd>
+      <dt>Possible recommendation types</dt><dd>Capital allocation framework; KPI gates for app investment; quarterly portfolio review; opportunity-cost statement vs. store-CAPEX.</dd>
+      <dt>Exam risk</dt><dd>May read as generic "discipline" advice if not tied tightly to the app/Lobyco question. Risk of underusing course's digital concepts.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether Coop has any internal KPI evidence linking app behaviour to basket/visit/margin; whether group-level allocation data is available; reference details for S5.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">T2 · Lobyco divestment as capital-release option</h4>
+    <div class="qline">Strategic question: Should Coop sell or partly divest Lobyco to release capital and refocus on bricks-and-mortar?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>The case explicitly raises Lobyco divestment; the CEO must be able to evaluate it on its merits rather than dismiss it. A partial-divestment or strategic-partner option may reconcile capital relief with retained capability.</dd>
+      <dt>Required situation analysis</dt><dd>Must analyse (a) Lobyco's role as capability vs. distraction, (b) whether external value exists beyond Coop, (c) the cost of losing in-house digital capability after coop.dk closure, (d) governance risk of full divestment.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Case raises divestment explicitly as a discussion point.</li>
+          <li>Financial pressure (E003, E006) makes capital release relevant.</li>
+          <li>coop.dk closed in 2023 due to lack of profitability (E001) — sets a precedent for exit decisions on unprofitable digital ventures.</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Lobyco (S1) and Playable (S2) suggest retail-media and loyalty capability still under construction; sale could destroy option value.</li>
+          <li>Hedman &amp; Bjørn-Andersen (S5) historically frame Coop's IT trajectory in terms of debt and capability gaps; divesting could re-create technological debt.</li>
+          <li>Competitor pattern (E015) indicates digital capability is most valuable when fitted to the firm's own business model — outside ownership may weaken fit.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>Digital Business Model + selected RBV concepts.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        Digital Business Model: <em>key resources/capabilities, value capture</em>.<br>
+        RBV: <em>valuable, rare, hard-to-imitate</em> — only as a test, not as a full RBV section.<br>
+        <em>RBV → Coop observation</em>: Lobyco may be rare in Danish grocery → analytical meaning: divestment is reversible only at high cost → strategic implication: full sale should require evidence of low strategic value, not just capital pressure.
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco's external positioning narrative.<br>
+        <span class="tag used">Used S5</span> Hedman &amp; Bjørn-Andersen as historical context for IT capability loss (pending reference).<br>
+        <span class="tag notused">Not used S4</span> DVC adds little to ownership/divestment logic.<br>
+        <span class="tag notused">Not used S2</span> Playable relevant only if retail-media value is the divestment hinge.<br>
+        <span class="tag notused">Not used S3</span> Shortcut focuses on app build, not Lobyco ownership.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Lobyco self-presentation cannot establish market value of Lobyco. No public sale-comparable evidence in the project. Hedman &amp; Bjørn-Andersen reference age may limit current applicability.</dd>
+      <dt>Possible recommendation types</dt><dd>Decision criteria for divestment; partial-divestment or partner option; carve-out preconditions; data and IP retention clauses.</dd>
+      <dt>Exam risk</dt><dd>Speculative if no Lobyco valuation or external-customer evidence is available. Could become an M&amp;A essay rather than IT-strategy.</dd>
+      <dt>Must investigate before choosing</dt><dd>Any public evidence of Lobyco's external customers, revenue or partnerships; reference details for S5; whether the course material treats divestment of digital capability.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">T3 · Conditional strengthening — invest where stores benefit</h4>
+    <div class="qline">Strategic question: Under what conditions should the CEO authorise stronger app investment rather than reduction?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>Strengthening app investment can be defensible, but only where investment is tied to store-level outcomes (traffic, basket, fresh categories, chain promise). The CEO's role is to set the conditions, not to mandate scale.</dd>
+      <dt>Required situation analysis</dt><dd>Must show (a) where competitor evidence supports digital-business-model fit, (b) where Coop's chain architecture creates conditional opportunities, (c) why conditional investment is different from "go deep" or pure strengthening.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Cross-competitor pattern (E015) suggests digital tools work best when they fit the core business model.</li>
+          <li>Salling combines profitability with store-integrated apps (E017, E018).</li>
+          <li>Lobyco reach claim (S1) suggests Coop has a customer base to build on.</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Coop 2025 EBIT loss (E016) limits room for un-conditional commitment.</li>
+          <li>App engagement claims (E009, S2) may reflect selection bias.</li>
+          <li>Nemlig.com evidence (E025) suggests digital ambition without store-fit is economically difficult.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC Framework + Digital Business Model.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>relevance, relationships, digital infrastructure</em> — to define what "strong" customer value would mean.<br>
+        Digital Business Model: <em>value proposition, value capture, governance</em>.<br>
+        <em>DVC concept "relevance" → Coop observation</em>: app reach exists but relevance to specific chain promises is unproven → analytical meaning: investment without chain-fit is unlikely to capture value → strategic implication: CEO authorises strengthening only where chain-fit is demonstrable.
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco reach as the asset to leverage.<br>
+        <span class="tag used">Used S4</span> DVC concepts as analytical filter.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame is less central to forward investment.<br>
+        <span class="tag notused">Not used S2</span> Playable usable but supports a narrower retail-media sub-argument.<br>
+        <span class="tag notused">Not used S3</span> Shortcut feature history not load-bearing here.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Risk of leaning on marketing claims to justify strengthening. The argument must hold even if S1/S2 are discounted.</dd>
+      <dt>Possible recommendation types</dt><dd>Conditional investment gates; chain-fit KPIs; staged scaling; explicit reductions where fit is weak.</dd>
+      <dt>Exam risk</dt><dd>May look like a compromise if the conditions are not made concrete. Must avoid sounding like "balanced" boilerplate.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether internal Coop data on store/basket effects exists; how the course defines "fit" between digital and business model.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- =========================== RIKKE =========================== -->
+<section id="actor-rikke">
+  <h2>Rikke Krause — Direktør, SuperBrugsen og Kvickly</h2>
+  <div class="actor-card">
+    <div class="role">Supermarket / large-format chains</div>
+    <h3>What this actor needs to be prepared for</h3>
+    <p class="summary">How Coop App and Lobyco should support SuperBrugsen and Kvickly's customer promise — inspiration, fresh, service, basket size and store traffic — rather than a generic group-wide app logic.</p>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">R1 · Inspiration and basket-building</h4>
+    <div class="qline">Strategic question: Can the app meaningfully drive basket size and fresh-category demand for SuperBrugsen and Kvickly?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>For supermarket formats, app value claims should be evaluated through inspiration, meal planning and fresh-category use, not through generic engagement.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) what "value" means for supermarket customers, (b) whether competitor app behaviour suggests basket effects, (c) where claimed engagement could plausibly translate to fresh/basket outcomes.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Lobyco (S1) claims app users shop more frequently; this could indicate basket-relevant behaviour if validated.</li>
+          <li>Salling chain apps integrate with store/Scan&amp;Go (E018), suggesting basket and store-flow logic.</li>
+          <li>Dagrofa/MENY positioning (E024) suggests food/local identity supports loyalty in supermarket formats.</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Frequency claims (E009, S1) suffer from selection bias.</li>
+          <li>Playable (S2) gamification evidence is supplier-driven and engagement-focused, not basket-focused.</li>
+          <li>No Coop-internal basket data is in the evidence register.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC Framework + Digital Business Model.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>experiences, relevance</em> — to articulate inspiration and meal-planning value.<br>
+        Digital Business Model: <em>value proposition</em> — specifically chain-level value proposition.<br>
+        <em>"Experiences" → app inspiration content for SuperBrugsen → analytical meaning: app moves from engagement asset to demand-creation asset → strategic implication: chain-specific content investment, not horizontal feature investment.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco frequency claim as <em>claimed</em> shopping pattern.<br>
+        <span class="tag used">Used S4</span> DVC experience/relevance concepts.<br>
+        <span class="tag notused">Not used S2</span> Playable's gamification frame is too thin for basket logic.<br>
+        <span class="tag notused">Not used S3</span> Shortcut technical history not central here.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not load-bearing for inspiration value.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Frequency-of-shopping claims should be treated cautiously — heavy app users may already be heavy shoppers.</dd>
+      <dt>Possible recommendation types</dt><dd>Inspiration content modules tied to fresh categories; meal-planning features; basket-impact KPIs; A/B-tested content investments.</dd>
+      <dt>Exam risk</dt><dd>May read as marketing copy if the link to store economics is not concretely argued.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether internal Coop basket/category data is accessible; competitor evidence on inspiration content effectiveness.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">R2 · Loyalty mechanics tied to measurable store traffic</h4>
+    <div class="qline">Strategic question: Should the loyalty/coupon engine be re-pointed at measurable store-traffic outcomes for the large-format chains?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>Loyalty mechanics should be evaluated by their effect on store visits and basket value in SuperBrugsen and Kvickly, not by app engagement metrics in isolation.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) why supermarket KPIs differ from discount KPIs, (b) what loyalty mechanics competitors operationalise, (c) where Coop's current loyalty design risks rewarding existing behaviour rather than creating new behaviour.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Lidl Plus links app value to coupons, weekly offers, member prices and purchase goals (E021).</li>
+          <li>Cross-competitor pattern (E015) supports fit between digital tool and chain promise.</li>
+          <li>Lobyco (S1) confirms Coop has a loyalty engine that can be re-pointed.</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Lidl evidence is partly promotional (E022).</li>
+          <li>Loyalty Group BrancheIndex (E020-context) does not give Coop full methodology.</li>
+          <li>Engagement-equals-loyalty claims should not be treated as causal.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC Framework + selected Porter/positioning concepts.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>relationships, relevance</em>.<br>
+        Porter: <em>differentiation and activity-system fit</em> only — not the full five forces.<br>
+        <em>"Activity-system fit" → loyalty mechanics → analytical meaning: reward design must reinforce supermarket promise (fresh, family, service) → strategic implication: redesign rules around store-traffic and category goals.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco loyalty engine description.<br>
+        <span class="tag used">Used S2</span> Playable mechanics as evidence of <em>intended</em> design space.<br>
+        <span class="tag notused">Not used S3</span> Shortcut development history is tangential.<br>
+        <span class="tag notused">Not used S4</span> DVC used selectively, not as full framework.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not relevant here.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Playable is supplier marketing; engagement claims should be reframed as <em>design space</em>, not proven outcome.</dd>
+      <dt>Possible recommendation types</dt><dd>Visit-frequency KPIs; basket-uplift design rules; chain-specific reward calibration; supplier-funded category campaigns.</dd>
+      <dt>Exam risk</dt><dd>Could drift into operational marketing if not anchored in the strategic situation.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether the loyalty engine is technically re-pointable per chain; whether SuperBrugsen and Kvickly have separate KPI ownership.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">R3 · Chain-specific app modules instead of one shared app</h4>
+    <div class="qline">Strategic question: Do SuperBrugsen and Kvickly need a feature mix that is meaningfully different from 365discount?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>Even if a shared app shell is preserved, the supermarket chains may need a distinct feature module — inspiration, fresh, service — that does not fit a discount logic.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) the case's "go deep by chain" question, (b) competitor evidence that fit beats breadth, (c) the cost of one app trying to serve incompatible promises.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Case explicitly raises "go deep by chain" as an option.</li>
+          <li>Salling differentiates by chain (E018).</li>
+          <li>Cross-competitor fit pattern (E015).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Differentiation increases technical and governance cost (Hedman/Bjørn-Andersen, S5).</li>
+          <li>Lobyco (S1) is built around shared infrastructure; full divergence is not free.</li>
+          <li>Single-app simplicity may be a feature for some customers.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>Digital Business Model + selected DVC concepts.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        Digital Business Model: <em>value proposition per chain, channels, governance</em>.<br>
+        DVC: <em>relevance</em>.<br>
+        <em>"Channel fit" → SuperBrugsen vs. 365discount → analytical meaning: a single channel logic cannot equally serve both → strategic implication: chain-specific module within shared core.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco shared-infrastructure description.<br>
+        <span class="tag used">Used S5</span> Hedman &amp; Bjørn-Andersen as caution on technological cost (pending reference).<br>
+        <span class="tag notused">Not used S2</span> Playable's campaign frame doesn't decide chain split.<br>
+        <span class="tag notused">Not used S3</span> Shortcut feature history is informative but not load-bearing.<br>
+        <span class="tag notused">Not used S4</span> DVC used selectively.
+      </dd>
+      <dt>Source-critical issues</dt><dd>S5 reference incomplete; do not treat 2016 IT-debt evidence as current state without verification.</dd>
+      <dt>Possible recommendation types</dt><dd>Chain-module roadmap; shared-core / chain-edge architecture; chain ownership of product KPIs.</dd>
+      <dt>Exam risk</dt><dd>Could look like an "advisory only" angle for Rikke; risk that the paper drifts toward CEO scope.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether Coop's app architecture allows chain modules; whether course material directly treats chain-specific digital strategy.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- =========================== TORBEN =========================== -->
+<section id="actor-torben">
+  <h2>Torben B. Andersen — Direktør, Brugsen</h2>
+  <div class="actor-card">
+    <div class="role">Local / member-owned / community</div>
+    <h3>What this actor needs to be prepared for</h3>
+    <p class="summary">How app and digital tools can reinforce Brugsen's local, member-owned and community identity rather than be governed only as a centralised marketing channel. The Brugsen angle is narrower but has strong brand-heritage logic.</p>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">B1 · App as local-identity and member-relationship layer</h4>
+    <div class="qline">Strategic question: Can the app make Brugsen's local and member-owned identity more visible and useful in everyday shopping?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>The app's value for Brugsen lies in reinforcing local relevance — store openings, local offers, member content — rather than in centralised gamification.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) Brugsen's identity within the Coop family, (b) whether competitor evidence supports identity-based loyalty, (c) where centralised app design currently obscures local differentiation.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Dagrofa/MENY evidence (E024) suggests food/local identity is a viable loyalty path.</li>
+          <li>Cross-competitor pattern (E015): digital fit beats digital breadth.</li>
+          <li>Coop's brand heritage as member-owned (case context).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Lobyco (S1) is built for centralised reach; local content needs different governance.</li>
+          <li>Local content increases editorial cost; Brugsen alone may not justify the investment.</li>
+          <li>No evidence in register about local-content effects on member behaviour.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC Framework + selected Digital Business Model concepts.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>relationships, relevance</em>.<br>
+        Digital Business Model: <em>value proposition (member layer)</em>.<br>
+        <em>"Relevance" → local store / local member content → analytical meaning: the app moves from generic loyalty to identity-affirming tool → strategic implication: invest in local-content workflow rather than gamification.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco infrastructure as the layer to repurpose.<br>
+        <span class="tag used">Used S4</span> DVC relationship/relevance concepts.<br>
+        <span class="tag notused">Not used S2</span> Playable engagement frame is at odds with identity logic.<br>
+        <span class="tag notused">Not used S3</span> Shortcut development history is not central.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not load-bearing.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Brugsen identity claims must come from the case, not from Lobyco marketing.</dd>
+      <dt>Possible recommendation types</dt><dd>Local-content module; member-recognition features; geo-targeted offers; editorial governance for local stores.</dd>
+      <dt>Exam risk</dt><dd>Narrow scope may make it hard to address the executive discussion at group level.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether the case provides Brugsen-specific evidence; whether other competitors operationalise local content.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">B2 · Selective simplification — fewer features, more utility</h4>
+    <div class="qline">Strategic question: Should Brugsen push for selective simplification of the shared app rather than further engagement features?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>For Brugsen's customer base, app utility (opening hours, local offers, simple savings) may matter more than gamification or content breadth.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) financial pressure as a reason to simplify, (b) the marketing-claim quality of engagement evidence, (c) the case's "reduce investment" question.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Financial pressure (E003, E006, E016).</li>
+          <li>REMA's narrow Scan Selv utility (E019) suggests less can be more.</li>
+          <li>Marketing-claim caution on engagement (E013).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Removing features may forfeit retail-media value (S2).</li>
+          <li>Engagement features may benefit other chains; cutting them affects more than Brugsen.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC Framework + Implementation perspective.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>relevance, digital infrastructure</em>.<br>
+        Implementation: <em>operational fit, KPI discipline</em> — selectively, not full change-management theory.<br>
+        <em>"Operational fit" → Brugsen's small-store reality → analytical meaning: feature complexity has a higher cost in small-store ops → strategic implication: simplification with explicit utility focus.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S2</span> Playable as evidence of feature space being trimmed.<br>
+        <span class="tag used">Used S4</span> DVC relevance/infrastructure parts.<br>
+        <span class="tag notused">Not used S1</span> Lobyco's reach narrative is less central to a "simplify" argument.<br>
+        <span class="tag notused">Not used S3</span> Shortcut development history not load-bearing.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not central.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Risk of dismissing engagement features purely because their evidence is marketing-derived. Must distinguish "evidence-weak" from "value-weak".</dd>
+      <dt>Possible recommendation types</dt><dd>Feature retirement criteria; utility-first redesign for small-store contexts; staged simplification with measurement.</dd>
+      <dt>Exam risk</dt><dd>May be read as anti-digital in a course about digital opportunities.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether engagement features have measurable retention effects; what the course says about feature reduction.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">B3 · Local retail-media as supplier-funded community tool</h4>
+    <div class="qline">Strategic question: Can Lobyco's retail-media engine be repurposed for local supplier campaigns that strengthen Brugsen's community identity?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>If retail media can be configured locally, Brugsen can let local suppliers fund community-relevant campaigns — turning a centralised monetisation engine into a local-identity tool.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) what retail media currently does in Lobyco, (b) whether competitor evidence supports supplier-funded value, (c) the governance gap between national and local advertisers.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Playable (S2) and Lobyco (S1) describe retail media and supplier-funded campaigns as a value layer.</li>
+          <li>Dagrofa/MENY food/local positioning (E024).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Local retail media is operationally heavy; small advertisers may not generate enough volume.</li>
+          <li>Marketing-source bias on retail-media value (S1, S2).</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>Selected Platform/ecosystem concepts + DVC.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        Platform/ecosystem: <em>multi-sided value, supplier-side interactions</em> only.<br>
+        DVC: <em>relevance, relationships</em>.<br>
+        <em>"Multi-sided value" → local advertiser + member → analytical meaning: retail media has untapped local segment → strategic implication: pilot local supplier campaigns through Lobyco for Brugsen.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco retail-media narrative.<br>
+        <span class="tag used">Used S2</span> Playable supplier-campaign mechanics.<br>
+        <span class="tag notused">Not used S3</span> Shortcut development history not central.<br>
+        <span class="tag notused">Not used S4</span> DVC used selectively.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not central.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Both load-bearing sources are commercially interested; framing must stay at "claimed value", not proven contribution.</dd>
+      <dt>Possible recommendation types</dt><dd>Local retail-media pilot; advertiser-onboarding playbook; community campaign templates.</dd>
+      <dt>Exam risk</dt><dd>Risk of overstating Coop as a mature platform when evidence is supplier-marketing-led.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether retail-media in Lobyco can be configured locally; whether course material treats platform-edge use cases.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- =========================== MICHAEL =========================== -->
+<section id="actor-michael">
+  <h2>Michael Tilsted — Direktør, 365discount</h2>
+  <div class="actor-card">
+    <div class="role">Discount / price-driven</div>
+    <h3>What this actor needs to be prepared for</h3>
+    <p class="summary">Whether 365discount needs a simpler, price-focused and possibly distinct app logic — and whether the broad Coop App design is even useful in a discount context.</p>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">M1 · "Go deep" — a 365discount-specific discount-app logic</h4>
+    <div class="qline">Strategic question: Should 365discount have a savings-first app logic comparable to Lidl Plus or REMA's Scan Selv?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>Discount competition rewards a focused digital tool tied to price. A 365discount-specific module — savings, weekly offers, simple coupons — may be more strategically relevant than shared engagement features.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) discount competitive pressure, (b) Lidl/REMA's digital-tool fit, (c) why generic Coop App features may dilute a discount promise.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Lidl Plus links app value to discount mechanics (E021).</li>
+          <li>REMA's Scan Selv is narrow but discount-aligned (E019).</li>
+          <li>Cross-competitor fit pattern (E015).</li>
+          <li>Loyalty/BrancheIndex context indicates weaker scores for Netto/365discount.</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Lidl/Ritzau evidence (E022) is promotional.</li>
+          <li>Market-share figures (E020) are contested.</li>
+          <li>Operating a separate app/module increases technical and brand cost.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC Framework + selected Porter/positioning concepts.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>relevance, digital outputs</em>.<br>
+        Porter: <em>differentiation, fit between activity and position</em> — selected, not full five forces.<br>
+        <em>"Activity-position fit" → 365discount price promise → analytical meaning: digital tool must reinforce price perception → strategic implication: discount-specific app logic, possibly forked from shared core.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco infrastructure as starting point.<br>
+        <span class="tag used">Used S4</span> DVC relevance concept.<br>
+        <span class="tag notused">Not used S2</span> Playable's gamification is the opposite of the angle's logic.<br>
+        <span class="tag notused">Not used S3</span> Shortcut not central.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not core.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Lidl evidence is partly promotional; should be presented as <em>indicative of design space</em>, not as proof of profitability.</dd>
+      <dt>Possible recommendation types</dt><dd>Discount-app module roadmap; price-perception KPIs; selective feature reduction in 365discount context; A/B testing against shared app version.</dd>
+      <dt>Exam risk</dt><dd>Operational complexity may sound expensive; needs explicit cost-discipline framing to address financial pressure.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether 365discount's customer behaviour data justifies a separate logic; whether the course defines fit/differentiation in a way that supports forking.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">M2 · Reduce — does 365discount need much app at all?</h4>
+    <div class="qline">Strategic question: Is the strategically defensible answer for 365discount to invest minimally in app — only what reinforces price?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>For a discount chain, simplicity may be a feature. The app should perhaps shrink to coupons, offers and Scan, with everything else removed.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) financial pressure, (b) discount-chain operating norms, (c) the case's "reduce investment" question, (d) marketing-source caveats on engagement value.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>REMA's narrow utility approach (E019).</li>
+          <li>Financial pressure (E003, E006, E016).</li>
+          <li>Engagement claims are marketing-led (E013).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Lidl Plus shows discount apps can still be feature-rich (E021).</li>
+          <li>Removing features may weaken cross-chain Lobyco economics (S1).</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>Digital Business Model + Implementation.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        Digital Business Model: <em>value capture, channels</em>.<br>
+        Implementation: <em>operational fit and KPI discipline</em> only.<br>
+        <em>"Channel-cost fit" → discount margin reality → analytical meaning: feature breadth carries cost the chain may not capture → strategic implication: reduce 365discount app footprint to discount-relevant features.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S4</span> DVC concepts only as a critique target ("relevance" set against feature breadth).<br>
+        <span class="tag notused">Not used S1</span> Lobyco reach not the deciding evidence.<br>
+        <span class="tag notused">Not used S2</span> Playable opposes the simplification logic.<br>
+        <span class="tag notused">Not used S3</span> Shortcut development history not central.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not core.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Argument should not rely on "marketing source ⇒ overstated value"; need to distinguish weak evidence from low value.</dd>
+      <dt>Possible recommendation types</dt><dd>Feature-cut shortlist; minimum viable discount-app definition; cost reallocation to store operations.</dd>
+      <dt>Exam risk</dt><dd>May seem anti-digital. Could undercut the IT-strategy framing of the course.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether discount-chain customer-behaviour data is in the case; whether the course rewards a "reduce digital investment" stance.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">M3 · Price-perception defence through targeted digital</h4>
+    <div class="qline">Strategic question: Can the app's data and personalisation be used as a price-perception defence rather than a generic engagement tool?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>Even if 365discount cannot win on app sophistication, app data and targeted offers may be deployable to defend price perception against Lidl/REMA.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) price-perception pressure, (b) competitor-app role in price perception, (c) what "perception" can be measured and improved through digital.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Lidl value-for-money positioning (E022).</li>
+          <li>Loyalty Group BrancheIndex context.</li>
+          <li>Lobyco data infrastructure (S1).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Survey-based price-perception evidence is method-limited.</li>
+          <li>Lobyco data on its own does not change shelf price.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC + Porter/positioning (selected parts).</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>relationships, digital outputs (data)</em>.<br>
+        Porter: <em>differentiation along price-perception axis</em> only.<br>
+        <em>"Digital outputs as data" → personalised price/coupon mechanics → analytical meaning: data turns into price-perception lever → strategic implication: target a perception KPI, not engagement KPI.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco data narrative.<br>
+        <span class="tag used">Used S2</span> Playable mechanics for personalised offers.<br>
+        <span class="tag notused">Not used S3</span> Shortcut not central.<br>
+        <span class="tag notused">Not used S4</span> DVC used selectively.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not central.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Personalisation claims should be treated cautiously: Lobyco/Playable cannot establish causal price-perception effects.</dd>
+      <dt>Possible recommendation types</dt><dd>Price-perception KPI; targeted-offer engine for 365discount; perception-focused A/B tests; cross-functional ownership with Marketing.</dd>
+      <dt>Exam risk</dt><dd>Could blur into marketing analysis; needs explicit IT-strategy framing.</dd>
+      <dt>Must investigate before choosing</dt><dd>Whether price-perception data exists in or for Coop; whether the course supports treating data as a strategic resource for discount.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- =========================== MARTIN =========================== -->
+<section id="actor-martin">
+  <h2>Martin Hasgard Olesen — Direktør for Kommunikation, Marketing og Digital</h2>
+  <div class="actor-card">
+    <div class="role">Cross-chain digital governance</div>
+    <h3>What this actor needs to be prepared for</h3>
+    <p class="summary">How Coop should govern customer-facing digital, loyalty, retail media and chain differentiation. This actor sits closest to Coop App / Lobyco day-to-day and must reconcile cross-chain governance with the executive-discussion options.</p>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">D1 · Hybrid governance — keep, but tie investment to KPIs</h4>
+    <div class="qline">Strategic question: Can Martin set a hybrid governance model that keeps Coop App / Lobyco but conditions further investment on store-level KPIs and chain-fit?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>Hybrid governance — keep app/Lobyco, but gate investment on store-level KPIs, chain-fit and source-critical use of vendor claims — is consistent with both financial pressure and digital opportunity.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) financial pressure, (b) the gap between marketing-derived claims and proven value, (c) the case's "reduce / strengthen / go deep / other" option space.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Coop 2025 EBIT loss (E016).</li>
+          <li>Cross-competitor fit pattern (E015).</li>
+          <li>Source-critical inferences on engagement claims (E013, S1, S2).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Hybrid framing risks sounding like compromise language unless the gates are concrete.</li>
+          <li>Lobyco governance complexity is not yet documented in evidence register.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC Framework + Digital Business Model.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>experiences, relationships, relevance</em>.<br>
+        Digital Business Model: <em>value capture, governance/KPIs, key resources</em>.<br>
+        <em>"Value capture under uncertainty" → app/Lobyco today → analytical meaning: continued investment requires conditional commitments → strategic implication: explicit KPI gates and chain-fit thresholds.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco capability description.<br>
+        <span class="tag used">Used S4</span> DVC concepts as analytical filter.<br>
+        <span class="tag notused">Not used S2</span> Playable narrower than governance question.<br>
+        <span class="tag notused">Not used S3</span> Shortcut development history not load-bearing.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame possible but not central.
+      </dd>
+      <dt>Source-critical issues</dt><dd>"Hybrid" must not become a non-decision; gates must be specific enough to be tested.</dd>
+      <dt>Possible recommendation types</dt><dd>KPI gates for app investment; chain-fit thresholds; quarterly governance review; source-critical reporting standards for vendor claims.</dd>
+      <dt>Exam risk</dt><dd>Reads as "balanced" boilerplate if gates are vague; risk of over-broad scope drifting into CEO territory.</dd>
+      <dt>Must investigate before choosing</dt><dd>What KPIs the course suggests; whether internal Coop data exists for store-level KPI gates.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">D2 · Lobyco as controlled strategic capability</h4>
+    <div class="qline">Strategic question: Can Lobyco be retained but with a clarified mandate — Coop first, external second?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>Lobyco may be most valuable as a controlled capability whose primary mandate is to strengthen Coop's chains; external/platform growth should be authorised only when it strengthens Coop's own strategic position.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) Lobyco's role today, (b) the divestment alternative (T2) as a comparison, (c) governance risks of distraction, (d) whether external value is empirically credible.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Case explicitly raises Lobyco future as a discussion point.</li>
+          <li>Lobyco self-presentation (S1).</li>
+          <li>Cross-competitor fit pattern (E015).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>No evidence in register about Lobyco's external customer base or revenue.</li>
+          <li>Constraining a subsidiary may reduce its commercial momentum.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>Digital Business Model + selected Platform/ecosystem concepts.</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        Digital Business Model: <em>key resources, governance, value capture</em>.<br>
+        Platform/ecosystem: <em>multi-sided dynamics</em> only — not full network-effect theory.<br>
+        <em>"Multi-sided dynamics with primary side" → Coop chains as primary, external buyers as secondary → analytical meaning: mandate ordering matters → strategic implication: Coop-first mandate with authorised exceptions.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco's self-presentation as the position to govern.<br>
+        <span class="tag used">Used S2</span> Playable retail-media frame to scope the platform side.<br>
+        <span class="tag notused">Not used S3</span> Shortcut development history not central.<br>
+        <span class="tag notused">Not used S4</span> DVC used selectively only.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame possibly relevant but not load-bearing.
+      </dd>
+      <dt>Source-critical issues</dt><dd>S1 cannot establish external commercial value of Lobyco. Avoid presenting external positioning as proven traction.</dd>
+      <dt>Possible recommendation types</dt><dd>Mandate statement; authorisation rules for non-Coop work; reporting line; protected investment in Coop-first capabilities.</dd>
+      <dt>Exam risk</dt><dd>Risk of overstating Coop as a platform; mandate language must remain governance-focused, not aspirational.</dd>
+      <dt>Must investigate before choosing</dt><dd>Public information on Lobyco's external clients; the course's treatment of platform-edge governance.</dd>
+    </dl>
+  </div>
+
+  <div class="angle">
+    <h4 class="angle-title">D3 · Retail media and customer relationship as the core argument</h4>
+    <div class="qline">Strategic question: Should Martin frame Coop App / Lobyco primarily as a retail-media and customer-relationship infrastructure that supports Coop's business model?</div>
+    <dl>
+      <dt>Possible main claim</dt><dd>Coop App / Lobyco's strategic significance can be reframed as retail-media and customer-relationship infrastructure — provided that vendor claims are used cautiously and supplier-funded value is tested against store reality.</dd>
+      <dt>Required situation analysis</dt><dd>Must establish (a) retail media as a value layer, (b) supplier interactions and customer data, (c) caution on marketing-led evidence, (d) consistency with bricks-and-mortar core.</dd>
+      <dt>Supporting evidence</dt>
+      <dd>
+        <ul>
+          <li>Lobyco retail-media narrative (S1).</li>
+          <li>Playable supplier-campaign mechanics (S2).</li>
+          <li>Cross-competitor pattern (E015).</li>
+        </ul>
+      </dd>
+      <dt>Weakening / nuancing evidence</dt>
+      <dd>
+        <ul>
+          <li>Both core sources are commercially interested.</li>
+          <li>No retail-media revenue figure in evidence register.</li>
+          <li>Risk of overstating Coop as a platform.</li>
+        </ul>
+      </dd>
+      <dt>Theory perspectives</dt><dd>DVC Framework + Platform/ecosystem (selected parts).</dd>
+      <dt>Theory parts actually used</dt>
+      <dd>
+        DVC: <em>relationships, digital outputs, relevance</em>.<br>
+        Platform/ecosystem: <em>supplier-customer interaction, data-mediated relationships</em> only.<br>
+        <em>"Data-mediated relationships" → app users + suppliers via Lobyco → analytical meaning: app becomes a connective layer rather than only a customer experience → strategic implication: govern as relationship infrastructure with cautious commercial framing.</em>
+      </dd>
+      <dt>Supplementary sources</dt>
+      <dd>
+        <span class="tag used">Used S1</span> Lobyco retail-media positioning.<br>
+        <span class="tag used">Used S2</span> Playable supplier-campaign mechanics.<br>
+        <span class="tag notused">Not used S3</span> Shortcut development history not load-bearing.<br>
+        <span class="tag notused">Not used S4</span> DVC used selectively.<br>
+        <span class="tag notused">Not used S5</span> Historical IT-debt frame not core.
+      </dd>
+      <dt>Source-critical issues</dt><dd>Both load-bearing supplementary sources are biased; the angle leans heavily on cautious framing. Without external retail-media data, claims must remain "indicative".</dd>
+      <dt>Possible recommendation types</dt><dd>Retail-media value-measurement model; supplier-funded campaign guardrails; chain-specific advertiser segmentation; transparency standard for marketing claims.</dd>
+      <dt>Exam risk</dt><dd>Highest source-criticism exposure of all Martin angles; depends on disciplined language to avoid overclaiming.</dd>
+      <dt>Must investigate before choosing</dt><dd>Any external retail-media benchmarks; whether the course material covers retail media specifically.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- =========================== TABLES =========================== -->
+<section id="compare-angles">
+  <h2>Comparison of the most promising angles</h2>
+  <p>This table is comparative, not selective. It surfaces the angles whose evidence and theory fit currently look strongest, but does not lock a choice.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th><th>Actor</th><th>Angle</th><th>Strongest because</th><th>Weakest because</th><th>Strategic stance closest fit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="actor">T1</td><td>Thor</td><td>Portfolio discipline &amp; opportunity cost</td><td>Anchors directly in financial pressure and the case option space</td><td>Could read as generic discipline if not tied to chain evidence</td><td>Hybrid governance</td></tr>
+      <tr><td class="actor">T3</td><td>Thor</td><td>Conditional strengthening</td><td>Connects DVC + Digital Business Model to chain-fit logic</td><td>"Conditional" must be made concrete</td><td>Hybrid / Strengthen</td></tr>
+      <tr><td class="actor">R3</td><td>Rikke</td><td>Chain-specific app modules</td><td>Direct fit with case's "go deep" question and competitor pattern</td><td>Architecture/governance cost may exceed current evidence</td><td>Go deep by chain</td></tr>
+      <tr><td class="actor">M1</td><td>Michael</td><td>365discount-specific app logic</td><td>Strong competitor evidence (Lidl, REMA) and discount fit</td><td>Operational complexity; may underplay Lobyco group value</td><td>Go deep by chain</td></tr>
+      <tr><td class="actor">D1</td><td>Martin</td><td>Hybrid governance</td><td>Reconciles financial pressure, digital potential and source criticism</td><td>Risk of compromise tone if gates are vague</td><td>Hybrid governance</td></tr>
+      <tr><td class="actor">D2</td><td>Martin</td><td>Lobyco as controlled strategic capability</td><td>Directly answers the "sell Lobyco?" question with a third path</td><td>Limited evidence of Lobyco's external value</td><td>Lobyco as controlled capability</td></tr>
+      <tr><td class="actor">B2</td><td>Torben</td><td>Selective simplification</td><td>Pragmatic under financial pressure; uses source criticism well</td><td>May read as anti-digital; narrow scope</td><td>Selective simplification</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="compare-theory">
+  <h2>Theory-to-angle mapping</h2>
+  <p>Each angle uses 1-2 perspectives, often only selected parts. The table below shows the planned theory fit per angle.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th><th>Angle</th><th>Primary perspective</th><th>Secondary perspective</th><th>Selected parts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>T1</td><td>Portfolio discipline</td><td>Digital Business Model</td><td>DVC (selected)</td><td>Value capture, governance / KPIs, digital outputs, relevance</td></tr>
+      <tr><td>T2</td><td>Lobyco divestment</td><td>Digital Business Model</td><td>RBV (selected as test)</td><td>Key resources, value capture, "VRIN" test only</td></tr>
+      <tr><td>T3</td><td>Conditional strengthening</td><td>DVC</td><td>Digital Business Model</td><td>Relevance, relationships, digital infrastructure, value proposition, governance</td></tr>
+      <tr><td>R1</td><td>Inspiration / basket</td><td>DVC</td><td>Digital Business Model</td><td>Experiences, relevance, value proposition</td></tr>
+      <tr><td>R2</td><td>Loyalty → store traffic</td><td>DVC</td><td>Porter (selected)</td><td>Relationships, relevance, differentiation / activity-system fit</td></tr>
+      <tr><td>R3</td><td>Chain-specific modules</td><td>Digital Business Model</td><td>DVC (selected)</td><td>Value proposition, channels, governance, relevance</td></tr>
+      <tr><td>B1</td><td>Local-identity layer</td><td>DVC</td><td>Digital Business Model (selected)</td><td>Relationships, relevance, value proposition (member layer)</td></tr>
+      <tr><td>B2</td><td>Selective simplification</td><td>DVC</td><td>Implementation (selected)</td><td>Relevance, infrastructure, operational fit, KPI discipline</td></tr>
+      <tr><td>B3</td><td>Local retail media</td><td>Platform/ecosystem (selected)</td><td>DVC</td><td>Multi-sided value, supplier-side interactions, relevance, relationships</td></tr>
+      <tr><td>M1</td><td>Discount-specific app</td><td>DVC</td><td>Porter (selected)</td><td>Relevance, digital outputs, differentiation / fit</td></tr>
+      <tr><td>M2</td><td>Reduce 365discount app</td><td>Digital Business Model</td><td>Implementation (selected)</td><td>Value capture, channels, operational fit, KPIs</td></tr>
+      <tr><td>M3</td><td>Price-perception defence</td><td>DVC</td><td>Porter (selected)</td><td>Relationships, digital outputs, price-axis differentiation</td></tr>
+      <tr><td>D1</td><td>Hybrid governance</td><td>DVC</td><td>Digital Business Model</td><td>Experiences, relationships, relevance, value capture, governance / KPIs, key resources</td></tr>
+      <tr><td>D2</td><td>Lobyco controlled capability</td><td>Digital Business Model</td><td>Platform/ecosystem (selected)</td><td>Key resources, governance, value capture, multi-sided dynamics</td></tr>
+      <tr><td>D3</td><td>Retail media as core</td><td>DVC</td><td>Platform/ecosystem (selected)</td><td>Relationships, digital outputs, relevance, supplier-customer interaction, data-mediated relationships</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <strong>Pattern.</strong> DVC + Digital Business Model dominates. Porter, Platform/ecosystem, Implementation and RBV appear only as <em>selected parts</em> in support roles. This is consistent with the assignment rule (1-2 perspectives) and with the existing <code>theory_to_evidence_matrix.md</code>.
+  </div>
+</section>
+
+<section id="compare-sources">
+  <h2>Source use across angles</h2>
+  <p>Coverage of the five supplementary sources by angle. <span class="tag used">Used</span> means the source is load-bearing for that angle. <span class="tag notused">Not used</span> means it would not strengthen the angle. <span class="tag missing">Missing</span> means reference status is unverified — claims usable only with a caveat.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th><th>S1 Lobyco</th><th>S2 Playable</th><th>S3 Shortcut</th><th>S4 DVC</th><th>S5 Hedman &amp; Bjørn-Andersen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>T1</td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used</span></td><td><span class="tag missing">Missing</span></td></tr>
+      <tr><td>T2</td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag missing">Missing/used (pending ref)</span></td></tr>
+      <tr><td>T3</td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>R1</td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>R2</td><td><span class="tag used">Used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>R3</td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag missing">Missing/used (pending ref)</span></td></tr>
+      <tr><td>B1</td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>B2</td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>B3</td><td><span class="tag used">Used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>M1</td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>M2</td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used (as critique target)</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>M3</td><td><span class="tag used">Used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>D1</td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>D2</td><td><span class="tag used">Used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td></tr>
+      <tr><td>D3</td><td><span class="tag used">Used</span></td><td><span class="tag used">Used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td><td><span class="tag notused">Not used</span></td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn">
+    <strong>S3 Shortcut is consistently "Not used".</strong> The source is feature-history oriented and rarely load-bearing for strategic options. If the user wants S3 to play a stronger role, an angle focused on app development capability and historical IT-trajectory would need to be added (likely combined with S5 Hedman &amp; Bjørn-Andersen).
+  </div>
+</section>
+
+<section id="strongest" class="synthesis">
+  <h2>Strongest angles so far, without locking choice</h2>
+  <p>Based on the current evidence register, source criticism and theory-to-evidence matrix, four angles look most defensible against red-team challenge — but no choice is made:</p>
+  <ul>
+    <li><strong>D1 · Hybrid governance (Martin)</strong> — best balance between financial pressure, digital potential and source criticism; consistent with current <code>strategic_position_options.md</code> scoring of "hybrid governance" at 10.</li>
+    <li><strong>R3 · Chain-specific modules (Rikke)</strong> and <strong>M1 · Discount-specific app logic (Michael)</strong> — both directly answer the case's "go deep by chain" question, and both are supported by competitor-fit evidence (E015, E018, E019, E021).</li>
+    <li><strong>T1 · Portfolio discipline (Thor)</strong> — most defensible CEO-level frame because it acknowledges financial pressure (E016) without dismissing app reach (S1).</li>
+    <li><strong>D2 · Lobyco as controlled strategic capability (Martin)</strong> — most useful "third path" between strengthen and divest, but limited by missing evidence on Lobyco external value.</li>
+  </ul>
+  <p>Each of these angles can still fail under red-team pressure if specific evidence gaps below are not closed.</p>
+</section>
+
+<section id="open" class="synthesis">
+  <h2>Open decisions</h2>
+  <ul>
+    <li><strong>Executive choice</strong> remains open. The strongest cross-actor candidates remain Martin (D1, D2) for cross-chain digital governance and Thor (T1, T3) for group-level investment trade-off. Michael (M1) is the strongest chain-specific candidate.</li>
+    <li><strong>Strategic stance</strong> remains open. The angle work above sharpens the comparison between hybrid governance, go-deep-by-chain, controlled-capability and selective simplification.</li>
+    <li><strong>Theory choice</strong> remains open. DVC + Digital Business Model continues to look strongest across the angle map; DVC + Porter/positioning becomes stronger if the paper goes chain-differentiation; DVC + Platform/ecosystem becomes stronger if retail media (D3, B3) becomes central.</li>
+    <li><strong>Competitor focus</strong> remains open. Lidl and REMA are central if M1 is chosen; Salling is central if R3 is chosen; Dagrofa/MENY is central if B1 is chosen.</li>
+    <li><strong>Language and citation style</strong> remain open. APA 7 is recommended but not locked.</li>
+  </ul>
+</section>
+
+<section id="missing" class="synthesis">
+  <h2>Missing evidence</h2>
+  <ul>
+    <li><strong>Internal Coop KPI evidence</strong> linking app behaviour to store-level outcomes (basket, visit, fresh-category, margin). Without this, every "value capture" claim must be cautious.</li>
+    <li><strong>Lobyco external commercial evidence</strong> (clients, revenue, partnerships). Without this, T2 (divestment) and D2 (controlled capability) rely on case framing rather than independent fact.</li>
+    <li><strong>Reconciliation</strong> between the case's 232m DKK loss figure and Coop's official 215m DKK EBIT loss (E007/E008 vs. E016).</li>
+    <li><strong>Reference details</strong> for S1 (Lobyco), S2 (Playable), S3 (Shortcut) — URL, title, access date.</li>
+    <li><strong>Bibliographic data</strong> for S4 (DVC Framework) and S5 (Hedman &amp; Bjørn-Andersen 2016).</li>
+    <li><strong>Course-material specifics</strong> on which DVC and Digital Business Model concepts are emphasised — to ensure "selected parts" choices match the course frame.</li>
+    <li><strong>Retail-media benchmarks</strong> outside Lobyco/Playable marketing material — needed before D3 or B3 can be load-bearing angles.</li>
+    <li><strong>Price-perception data</strong> for 365discount specifically — needed before M3 can be defended.</li>
+    <li><strong>Architecture / cost evidence</strong> on chain-module feasibility in the existing app — needed before R3 and M1 can become operational recommendations.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Multi-Angle Case Overview · 2026-05-04 · Coop IT-Strategy Exam Project · This report does not lock executive, theory or strategic position. All claims drawn from supplementary sources are framed as <em>claims</em> or <em>indications</em>, consistent with the project's source-criticism policy.</p>
+</footer>
+
+</div>
+</body>
+</html>
