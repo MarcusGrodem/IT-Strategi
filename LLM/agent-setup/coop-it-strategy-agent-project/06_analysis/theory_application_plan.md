@@ -46,6 +46,11 @@ Short version:
 
 ## Digital Business Model: Parts To Use
 
+Primary source now added:
+
+- Weill, Peter, and Stephanie L. Woerner. 2018. *What's Your Digital Business Model? Six Questions to Help You Build the Next-Generation Enterprise*. Harvard Business Review Press.
+- Local takeaway note: `05_evidence/full_dbm_key_takeaways.md`
+
 | Business model part | Why relevant to Coop | How to apply |
 |---|---|---|
 | Value proposition | Coop App may promise savings, convenience, relevance, loyalty and inspiration | Clarify what value the app should create for different chains/customers |
@@ -128,4 +133,3 @@ Even with theory locked, these remain open:
 - strategic stance on Coop App/Lobyco,
 - final recommendations,
 - which evidence claims are strong enough for final paper use.
-

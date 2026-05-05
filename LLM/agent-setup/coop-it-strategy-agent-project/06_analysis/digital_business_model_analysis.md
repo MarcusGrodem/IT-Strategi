@@ -65,6 +65,38 @@ Coop should govern further app/Lobyco investment through a business-model logic:
 
 Denne seksjonen importerer de mest relevante Coop-spesifikke funnene fra `10_project_context/imported_coop_business_model_scrape_2026-05-03.md` og `05_evidence/coop_business_model_evidence.md`. Den erstatter ikke den åpne strategiske vurderingen; den gjør bare analysen mer evidensbasert.
 
+## Weill & Woerner DBM: Teorisk skjerping
+
+Denne seksjonen bygger på `05_evidence/FULL_DBM.pdf` og takeaway-notatet `05_evidence/full_dbm_key_takeaways.md`. Kilden brukes som teori, ikke som Coop-spesifikk evidens.
+
+### Relevante DBM-begreper for Coop
+
+| Begrep fra Weill & Woerner | Coop-tolkning | Analysebruk |
+|---|---|---|
+| Digital threat | Coop møter ikke bare online-grocery-trussel, men også press på kunderelevans, pris/verdi, konkurrenters butikkverktøy og lønnsomhet | Brukes til å begrunne hvorfor app/Lobyco må vurderes strategisk, ikke som isolert IT-prosjekt |
+| Customer knowledge | Coop App og medlemsbasen kan gi identitet, kjøpshistorikk, interaksjoner og preferanser | Må kobles til bedre tilbud, butikkreise, kjedespesifikk relevans og margin, ikke bare datamengde |
+| Business design | Coop er primært store-first/value-chain/omnichannel, med mulige ecosystem-like og modular-producer elementer | Hindrer overdrivelse av Coop som full ecosystem driver |
+| Omnichannel | Integrert kundeopplevelse på tvers av fysisk butikk, app og medlemskommunikasjon | Passer bedre enn ren e-commerce fordi Coop.dk MAD og webshop er lukket |
+| Modular producer | Plug-and-play produkt/tjeneste som kan inngå i andres økosystemer | Relevant for Lobyco bare hvis OEM-/plattformverdi og ekstern inntjening dokumenteres |
+| Ecosystem driver | Førstevalg-destinasjon i et bredt kundedomene, med partnere og data på tvers av interaksjoner | Bruk svært forsiktig; retail media og supplier campaigns er bare ecosystem-like mekanismer |
+| Content / customer experience / platform | Produkter/tilbud/innhold, app- og butikkopplevelse, og Lobyco/data/infrastruktur | Hjelper å prioritere hva Coop faktisk skal bli sterk på under økonomisk press |
+| Eight capabilities | Kundeinnsikt, kundevoice, evidensbaserte beslutninger, integrert CX, distinkt posisjon, partnerskap, API/service-enabling, effektivitet/sikkerhet/compliance | Direkte støtte for KPI-governance og selektiv investering |
+
+### Skjerpet DBM-claim
+
+> Coop App og Lobyco bør vurderes som business model components, ikke som frittstående digitale suksesshistorier.
+
+Dette betyr at analysen må teste fire spørsmål:
+
+1. Øker appen Coop sin kunnskap om medlemmer og kunder på en måte som faktisk kan brukes?
+2. Styrker appen Coop sin store-first value proposition per kjede?
+3. Kan Coop fange verdi gjennom margin, butikktrafikk, retention, leverandørbetaling eller effektivitet?
+4. Bygger Lobyco en kapabilitet Coop bør eie, eller skaper den kompleksitet uten dokumentert Coop-verdi?
+
+### Strategisk implikasjon
+
+Weill & Woerner styrker en selektiv governance-retning: Coop bør ikke velge mellom blind digital vekst og enkel nedskalering. Under økonomisk press bør Coop kjøpe opsjoner der app/Lobyco kan skape dokumentert butikk- og medlemsverdi, og kutte eller parkere funksjoner som ikke gjør det.
+
 ### 1. Value Proposition
 
 Claim:
