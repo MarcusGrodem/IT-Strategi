@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategiske IT-anbefalinger — Martin Hasgard Olesen</title>
+  <style>
+    :root {
+      --coop-red: #c0392b;
+      --coop-dark: #1a1a2e;
+      --coop-grey: #4a4a4a;
+      --coop-light: #f5f5f0;
+      --accent: #1a5276;
+      --border: #d4d4cc;
+      --rec-bg: #f7f9fc;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--coop-grey);
+      background: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 48px;
+    }
+
+    h1 { font-size: 2rem; color: var(--coop-dark); margin-bottom: 0.25em; }
+    h2 { font-size: 1.35rem; color: var(--coop-dark); margin: 2.5em 0 0.6em; border-bottom: 2px solid var(--border); padding-bottom: 0.3em; }
+    h3 { font-size: 1.1rem; color: var(--accent); margin: 1.8em 0 0.4em; }
+    h4 { font-size: 0.95rem; color: var(--coop-grey); text-transform: uppercase; letter-spacing: 0.05em; margin: 1.2em 0 0.3em; }
+    p  { margin-bottom: 1em; }
+
+    .cover {
+      border-left: 5px solid var(--accent);
+      padding: 28px 32px;
+      margin-bottom: 3em;
+      background: var(--coop-light);
+    }
+    .cover .subtitle { color: var(--accent); font-style: italic; margin-top: 0.25em; font-size: 1.05rem; }
+    .cover .meta { margin-top: 1.2em; font-size: 0.88rem; color: #666; }
+    .cover .meta span { display: block; }
+
+    .role-box {
+      background: #eaf0f8;
+      border: 1px solid #b8cde0;
+      border-top: 4px solid var(--accent);
+      padding: 18px 22px;
+      margin: 1.5em 0 2em;
+      border-radius: 2px;
+      font-size: 0.95rem;
+    }
+    .role-box p { margin: 0 0 0.5em; }
+    .role-box p:last-child { margin: 0; }
+
+    .intro-box {
+      background: var(--coop-light);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--coop-red);
+      padding: 20px 24px;
+      margin: 1.5em 0 2em;
+      border-radius: 2px;
+    }
+    .intro-box p { margin: 0; font-size: 0.97rem; }
+
+    .rec-card {
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      background: var(--rec-bg);
+      padding: 28px 32px;
+      margin: 2.5em 0;
+      border-radius: 2px;
+    }
+    .rec-card .rec-number {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 0.5em;
+    }
+    .rec-card h3 { color: var(--coop-dark); margin-top: 0.2em; font-size: 1.2rem; }
+
+    .claim {
+      background: #fff;
+      border-left: 4px solid var(--coop-red);
+      padding: 14px 18px;
+      margin: 1.2em 0;
+      font-style: italic;
+      color: var(--coop-dark);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 1.2em 0;
+    }
+    th {
+      background: var(--coop-dark);
+      color: #fff;
+      text-align: left;
+      padding: 8px 12px;
+      font-weight: normal;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:nth-child(even) td { background: #eef2f7; }
+
+    .box-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.2em 0; }
+    .box { padding: 14px 16px; border-radius: 2px; font-size: 0.92rem; }
+    .box.risk { background: #fdf3f2; border: 1px solid #e8b4b0; }
+    .box.impl { background: #eaf3fb; border: 1px solid #a8cde0; }
+    .box h4 { margin-top: 0; font-size: 0.82rem; }
+
+    .theory-link {
+      background: #f0f4ff;
+      border: 1px solid #c5d0f0;
+      padding: 12px 16px;
+      margin: 1em 0;
+      font-size: 0.9rem;
+      border-radius: 2px;
+    }
+    .theory-link strong { color: var(--coop-dark); }
+
+    .martin-note {
+      background: #eaf0f8;
+      border: 1px solid #aec8e0;
+      padding: 12px 16px;
+      margin: 1em 0;
+      font-size: 0.9rem;
+      border-radius: 2px;
+    }
+    .martin-note::before {
+      content: "Martin-spesifikt: ";
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .evidence-list { list-style: none; padding: 0; margin: 0.5em 0; }
+    .evidence-list li { padding: 4px 0 4px 16px; position: relative; font-size: 0.92rem; border-bottom: 1px solid var(--border); }
+    .evidence-list li::before { content: "›"; position: absolute; left: 0; color: var(--coop-red); }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 3em 0; }
+
+    footer { margin-top: 4em; font-size: 0.82rem; color: #888; border-top: 1px solid var(--border); padding-top: 1.5em; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     COVER
+══════════════════════════════════════════════ -->
+<div class="cover">
+  <h1>Strategiske IT-anbefalinger til Coop Danmark</h1>
+  <p class="subtitle">Fem anbefalinger til Martin Hasgard Olesen,<br>
+  Direktør for Kommunikation, Marketing og Digital</p>
+  <div class="meta">
+    <span>Semesteroppgave — IT-Strategi, CBS HA (it.) 4. semester | Vår 2026</span>
+    <span>Linus Robertsen Palmqvist &nbsp;·&nbsp; Marcus Grude-Grødem &nbsp;·&nbsp; Axel Woxen &nbsp;·&nbsp; Anders Alexander Olseth</span>
+    <span>Perspektiver: Digital Value Creation (DVC) &amp; Digital Business Model (DBM)</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ROLLEN OG DEN ANALYTISKE KONTEKSTEN
+══════════════════════════════════════════════ -->
+<h2>Martins rolle og den analytiske konteksten</h2>
+
+<div class="role-box">
+  <p>
+    <strong>Hvorfor Martin Hasgard Olesen?</strong> Som Direktør for Kommunikation, Marketing og
+    Digital sitter Martin i skjæringspunktet mellom tre domener som er direkte relevante for
+    Coop App og Lobyco: han eier kommunikasjonen mot de 1,8 millioner appbrukerne, han styrer
+    markedsføringsinvesteringene som delvis kanaliseres gjennom appen, og han har ansvar for den
+    digitale utviklingen — inkludert relasjonen til Lobyco og spørsmål om retail media.
+  </p>
+  <p>
+    Martins bidrag i direksjonsdiskusjonen er ikke å avgjøre om Coop App skal styrkes eller
+    kuttes — det er Thor Skov Jørgensens beslutning. Martins bidrag er å oversette den digitale
+    aktiviteten til et presist og troverdig styringsspråk: hvilke app-metrics viser faktisk
+    strategisk verdi, hvilke kommunikasjons- og markedsføringsvirkemidler bør gå gjennom appen,
+    og hvordan kan han sikre at Lobyco og retail media tjener Coops kjedemodell — ikke bare
+    leverandørenes interesser.
+  </p>
+</div>
+
+<div class="intro-box">
+  <p>
+    <strong>Analytisk grunnlag:</strong> DVC-rammeverket viser at appens <em>relationships</em>
+    er en av Coops sterkeste digitale eiendeler — men at sterk relasjon ikke automatisk er det
+    samme som sterk lønnsomhet. DBM-rammeverket (Weill &amp; Woerner, 2018) viser at Coops
+    omnichannel-posisjon avhenger av at kommunikasjons-, marketing- og digitalfunksjonen styrer
+    appen mot dokumentert butikkverdi, ikke mot leverandørclaims og engasjementsmål. Begge
+    perspektivene peker mot ett kjernespørsmål for Martin: hvordan omsetter han digital
+    kundekontakt til strategi som direksjonen kan stole på?
+  </p>
+</div>
+
+<p>
+  Anbefalingene er adressert til Martin i hans operative domene — han kan gjennomføre disse
+  innenfor sin myndighet som direktør, og de gir ham grunnlag for å delta i
+  direksjonsdiskusjonen om Coop App og Lobyco med en autorativ og kildekritisk stemme.
+</p>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 1
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 1</span>
+  <h3>Bygg et KPI-hierarki som skiller digital aktivitet fra strategisk verdi — og presenter det for direksjonen</h3>
+
+  <div class="claim">
+    Martin Hasgard Olesen bør utvikle og innføre et eksplisitt KPI-hierarki for Coop App
+    som separerer adopsjons- og engasjementsmål fra atferdsmål og lønnsomhetsmål — og bruke
+    dette hierarkiet aktivt i direksjonsdiskusjonen om appinvesteringens fremtid.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DVC-analysen av det ytre laget konkluderer med at digitale outputs — appbrukere, kampanje-
+    engasjement, månedlige aktive brukere — er mellomliggende mål, ikke bevis på strategisk
+    verdi. Lobyco (2026) oppgir eksempelvis at Coop App har 1,8 millioner brukere og omtrent
+    880 000 månedlige aktive brukere. Disse tallene viser at Coop har en betydelig digital
+    kundekontakt. De viser ikke at appen skaper inkrementell butikktrafikk, økt kurvstørrelse
+    eller netto lønnsomhet. Martin sitt bidrag i kommunikasjons- og markedsføringsfunksjonen
+    er nettopp å oversette disse tallene til et presist rapporteringsspråk som direksjonen
+    kan bruke — ikke å la leverandørclaims stå som eneste referansepunkt for appens verdi.
+  </p>
+  <p>
+    DBM-rammeverket (Weill &amp; Woerner, 2018) støtter dette: omnichannel-aktører som lykkes,
+    baserer strategiske beslutninger på <em>customer knowledge</em> koblet til faktiske
+    forretningsmessige resultater — en av de åtte digitale kapabilitetene i DBM-modellen.
+    Å rapportere på engagement alene er ikke det samme som å demonstrere kundekunnskap; det er
+    å demonstrere aktivitet. Martin bør lede dette skiftet internt.
+  </p>
+
+  <div class="martin-note">
+    Martin eier rapporteringsstrukturen for digital markedsføring og kommunikasjon. Han er den
+    naturlige aktøren til å innføre et KPI-hierarki som skiller mellom aktivitets-, atferds- og
+    lønnsomhetsmål — og til å presentere dette for direksjonen som et troverdig analytisk verktøy.
+  </div>
+
+  <h4>Empiriske observasjoner</h4>
+  <ul class="evidence-list">
+    <li>Lobyco hevder 50&nbsp;% høyere handlefrekvens blant appbrukere vs. ikke-appbrukere —
+        men dette er korrelasjon, ikke kausalitet; seleksjonsbias er en reell alternativforklaring
+        (Lobyco, 2026).</li>
+    <li>Playable (2026) rapporterer engasjement- og innløsningstall fra gamification, men dokumenterer
+        ikke netto inntekt etter kampanjekostnader, premier og margintap.</li>
+    <li>Coop rapporterer EBIT på -215 mill. DKK for 2025 (Coop Danmark A/S årsrapport, 2025) —
+        noe som gjør at direksjonen vil stille spørsmål ved appinvesteringens avkastning. Martin
+        trenger et presist svar, ikke reach-tall.</li>
+  </ul>
+
+  <h4>Foreslått KPI-hierarki</h4>
+  <table>
+    <thead>
+      <tr><th>Nivå</th><th>Hva det måler</th><th>Eksempler</th><th>Strategisk vekt</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1 — Adopsjonsmetrics</td><td>Digital rekkevidde</td><td>Nedlastninger, MAU, household reach</td><td>Lavest — nødvendig, ikke tilstrekkelig</td></tr>
+      <tr><td>2 — Engasjementsmetrics</td><td>Appaktivitet</td><td>Kampanjedeltakelse, spillfrekvens, push-åpningsrate</td><td>Lav — viser aktivitet, ikke verdi</td></tr>
+      <tr><td>3 — Atferdsmetrics</td><td>Kobling til butikk</td><td>Scan &amp; Pay-bruk, tilbudsinnløsning, besøksfrekvens</td><td>Medium — indikerer mulig verdi</td></tr>
+      <tr><td>4 — Butikkøkonomimetrics</td><td>Inkrementell effekt</td><td>Butikktrafikk, kurvstørrelse, handlefrekvens (kontrollert)</td><td>Høy — dette er strategisk dokumentasjon</td></tr>
+      <tr><td>5 — Lønnsomhetsmetrics</td><td>Value capture</td><td>Margin, netto leverandørbetaling, kostnad per appfunksjon</td><td>Høyest — det eneste direksjonen kan investere på</td></tr>
+    </tbody>
+  </table>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> DVC skiller mellom digital outputs (nivå 1–2) og dypere
+    digital verdi (nivå 3–5). Kun ved å rapportere på alle nivåer viser Martin at Coop forstår
+    forskjellen. &nbsp;<strong>DBM-kobling:</strong> Evidensbaserte beslutninger er en av de åtte
+    kapabilitetene i Weill &amp; Woerner (2018) sitt rammeverk — og dette KPI-hierarkiet er det
+    konkrete verktøyet for å realisere den kapabiliteten.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      Coop mangler sannsynligvis interne data for nivå 4 og 5 per i dag. Å presentere et
+      hierarki uten data på de øverste nivåene kan eksponere et evidensgap som svekker
+      Martins posisjon. Men det motsatte er verre: å la direksjonen tro at
+      engasjementstall er et tilstrekkelig strategisk fundament.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Start med å synliggjøre hva Coop faktisk kan måle i dag. Presenter hierarkiet med
+      ærlig anerkjennelse av evidensgapene — og bruk det som argument for å investere i
+      måleinfrastruktur, ikke i bredere appfunksjoner. Transparens om begrensningene
+      styrker, ikke svekker, Martins troverdighet overfor direksjonen.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 2
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 2</span>
+  <h3>Styr kommunikasjonsinnholdet i appen kjedespesifikt — og skap relevans, ikke uniform bredde</h3>
+
+  <div class="claim">
+    Martin bør lede overgangen fra én felles kommunikasjons- og markedsføringslogikk i
+    Coop App til en kjedespesifikk innholdsstruktur, der 365discount, Brugsen, SuperBrugsen
+    og Kvickly kommuniserer distinkt og relevant — innenfor én teknisk plattform.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DVC-rammeverkets kjerne er <em>relevance</em> — den digitale løsningens evne til å oppleves
+    som meningsfull av den faktiske brukeren i den faktiske handlekonteksten. Analysen av dette
+    begrepet konkluderer med at Coops ulike kjeders kunder har fundamentalt ulike
+    handleoppdrag: «kunder i 365discount er opptatt av tilbud og enkelhet, mens kunder i
+    Kvickly eller SuperBrugsen i større grad legger vekt på inspirasjon, oppskrifter og bredere
+    vareutvalg». Dersom Coop App sender samme kommunikasjon til alle — samme tilbud, samme
+    kampanjer, samme innhold — risikerer appen å oppleves som irrelevant for store deler av
+    brukerbasen.
+  </p>
+  <p>
+    Martin eier kommunikasjons- og markedsføringsfunksjonen. Det betyr at han kan gjennomføre
+    kjedebasert innholdsdiferensiering uten å endre appens tekniske arkitektur — dette handler
+    om kommunikasjonsstrategi og innholdsproduksjon, ikke om full teknisk ombygging. DBM-analysen
+    (Weill &amp; Woerner, 2018) støtter dette: omnichannel-verdi oppstår når den digitale
+    relasjonen reflekterer kjedens distinkte kundeløfte, ikke når appen fungerer som en felles
+    markedsflate for alle kjedene.
+  </p>
+
+  <div class="martin-note">
+    Martin kan gjennomføre denne anbefalingen innenfor sin eksisterende myndighet: han leder
+    kommunikasjons- og markedsføringsfunksjonen og kan definere redaksjonelle retningslinjer,
+    innholdsstrukturer og kampanjelogikk per kjede — uten å vente på en konsernomfattende
+    app-ombygging.
+  </div>
+
+  <h4>Empiriske observasjoner</h4>
+  <ul class="evidence-list">
+    <li>Coop-kjedene uttrykker distinkte kundeløfter i offisiell kommunikasjon: 365discount
+        på lavpris og enkelhet, Brugsen på lokal tilhørighet og kooperativ identitet,
+        SuperBrugsen på matinspirasjon og ferskvarer, Kvickly på bredde og varehushandel
+        (Coop.dk, 2026).</li>
+    <li>Konkurrentanalysen viser at Lidl Plus er skreddersydd for kupong- og spareatferd,
+        REMA sin Scan Selv er minimalistisk og transaksjonsrettet, og Dagrofa/MENY kobler
+        appen til mat- og lokal identitet — ikke til generisk dagligvare-lojalitet
+        (competitor evidence, 2026).</li>
+    <li>DVC-artikkelen fremhever at organisasjoner bør «allow customers to design relevant
+        relationships so that each individual customer can decide what to share with the
+        organisation, which features to use and benefits to gain» (Duus &amp; Cooray, 2020).
+        Kjedespesifikk kommunikasjon er ett skritt mot dette.</li>
+  </ul>
+
+  <h4>Kjedespesifikk kommunikasjonsmatrise</h4>
+  <table>
+    <thead>
+      <tr><th>Kjede</th><th>Primær kommunikasjonsverdi</th><th>Innholdstype</th><th>Tone</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>365discount</td>
+        <td>Pris, sparing, enkelhet</td>
+        <td>Ukestilbud, sparemål, kampanjesedler — minimalt innhold</td>
+        <td>Direkte, kortfattet, transaksjonell</td>
+      </tr>
+      <tr>
+        <td>Brugsen</td>
+        <td>Lokal tilhørighet, andelsidentitet</td>
+        <td>Lokalnyheter, andelsinfo, nærproducenter, lokale tilbud</td>
+        <td>Varm, lokal, fellesskapsorientert</td>
+      </tr>
+      <tr>
+        <td>SuperBrugsen</td>
+        <td>Matinspirasjon, ferskvarer</td>
+        <td>Oppskrifter, sæsongtips, personaliserte matvarer</td>
+        <td>Inspirerende, mat-fokusert, personlig</td>
+      </tr>
+      <tr>
+        <td>Kvickly</td>
+        <td>Varehusbredde, totalhandel</td>
+        <td>Kategorikampanjer, merkelojalitet, non-food-tilbud</td>
+        <td>Bred, variert, transaksjonell</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> Relevance er DVC-kjernen — og relevans oppnås gjennom
+    innhold som treffer den faktiske kunden i den faktiske kjedekonteksten.
+    &nbsp;<strong>DBM-kobling:</strong> Weill &amp; Woerner (2018) viser at omnichannel-aktører
+    som lykkes, differensierer kundekommunikasjonen basert på reell kundekjennskap per segment
+    — ikke basert på én universell kampanjeflate.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      Kjedespesifikt innhold øker produksjonskostnader og redaksjonell kompleksitet.
+      Martin sin kommunikasjonsfunksjon må ha kapasitet til å produsere og styre
+      kjedetilpasset innhold over tid — dette er ikke en engangsinnsats, men en
+      løpende redaksjonell forpliktelse.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Start med én kjede som pilot (anbefalt: 365discount, fordi forskjellen fra
+      øvrige kjeder er størst og tydeligst). Definer suksesskriterier for
+      kjedespesifikk kommunikasjon — økt innløsningsrate på tilbud, høyere
+      appengasjement i den aktuelle kjeden, eller lavere opt-out-rate. Skaler
+      kun hvis piloten viser effekt.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 3
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 3</span>
+  <h3>Gjennomgå gamification og leverandørkampanjer — og krev dokumentert netto kundeverdi</h3>
+
+  <div class="claim">
+    Martin bør lede en strukturert gjennomgang av gamification-funksjoner og
+    leverandørfinansierte kampanjer i Coop App, og krev at hver funksjon dokumenterer
+    netto kundeverdi — ikke bare engasjementsaktivitet — som betingelse for videre prioritering.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DVC-analysen av <em>relationships</em> trekker et sentralt skille: «det er nødvendig å
+    skille mellom varige, kundedrevede relasjoner og kortsiktig aktivitet skapt gjennom
+    eksempelvis gamification og pushvarsler. Høy aktivitet i appen er dermed ikke nødvendigvis
+    ekvivalent med langsiktig verdiskapning eller bidrag til økonomisk profitt.» Martin eier
+    kommunikasjons- og markedsføringsfunksjonen — og dermed også relasjonen til Playable og
+    andre leverandører av gamification-løsninger. Det er hans ansvar å avgjøre hvilke
+    kampanje- og gamification-initiativer som faktisk styrker relasjonen mellom Coop og
+    kunden, og hvilke som kun skaper kortvarig aktivitet uten strategisk forankring.
+  </p>
+  <p>
+    Playable (2026) hevder +9&nbsp;% kurvverdi og 500 000 innløste premier i butikk fra
+    gamification-kampanjer. Disse tallene er imidlertid leverandørmarkedsføring — de
+    rapporterer ikke netto effekt etter kampanjekostnader, premiekostnader, margintap på
+    leverandørsubsidier og potensielle tillitskostnader. DBM-analysen understreker dette:
+    dersom appen oppleves som optimalisert for leverandøreksponering heller enn for
+    kunden, svekkes appens <em>relevance</em> og dermed Coops omnichannel-posisjon.
+  </p>
+
+  <div class="martin-note">
+    Martin er den direktøren i Coop som sitter nærmest Playable, gamification-initiativer
+    og leverandørkampanjer — og som dermed har størst innflytelse på om disse evalueres
+    kritisk eller aksepteres ukritisk. Denne anbefalingen handler om å bruke den makten
+    konstruktivt.
+  </div>
+
+  <h4>Empiriske observasjoner</h4>
+  <ul class="evidence-list">
+    <li>Playable hevder +9&nbsp;% kurvverdi i forbindelse med gamification-kampanjer, men
+        rapporterer ikke kontrollgruppe, marginkostnad per premier eller netto butikkeffekt
+        (Playable, 2026). Påstanden kan ikke brukes som investeringsbevis.</li>
+    <li>Playable hevder 500 000 innløste premier i butikk — noe som indikerer en kobling
+        mellom digital kampanjeaktivitet og fysisk butikkbesøk. Men innløsning av premier
+        krever leverandørbetaling og butikklogistikk, og nettoverdien for Coop er ikke
+        dokumentert (Playable, 2026).</li>
+    <li>DVC-analysen av <em>evolution</em> viser at retail media og gamification «representerer
+        et potensial for fremtidig verdiskapning, men også en strategisk risiko knyttet til
+        investeringer og usikker avkastning».</li>
+    <li>For en kooperativ aktør som Coop, med mer enn 2 millioner medeiere (Coop, 2026),
+        er kundetillit en del av forretningsmodellens legitimitet — ikke bare et
+        kommunikasjonsproblem. Overdreven kommersialisering av appen kan skade
+        tillitskapitalen.</li>
+  </ul>
+
+  <h4>Evalueringsrammeverk for gamification og kampanjer</h4>
+  <table>
+    <thead>
+      <tr><th>Spørsmål</th><th>Hva det avdekker</th><th>Krav for videre prioritering</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Skaper kampanjen inkrementell butikktrafikk?</td>
+        <td>Om engasjement kobles til fysisk handling</td>
+        <td>Ja, med kontrollgruppe-dokumentasjon</td>
+      </tr>
+      <tr>
+        <td>Er netto effekten positiv etter premie-/kampanjekostnader?</td>
+        <td>Om leverandørbetaling dekker Coop sin kostnad</td>
+        <td>Ja, med margin-kalkyle per kampanje</td>
+      </tr>
+      <tr>
+        <td>Opplever kunden kampanjen som relevant og tillitsskapende?</td>
+        <td>Om kommersialitet skader relasjonen</td>
+        <td>Tillitsmåling viser nøytral eller positiv effekt</td>
+      </tr>
+      <tr>
+        <td>Styrker kampanjen kjedens kundeløfte?</td>
+        <td>Om kampanjen passer kjeden den kjøres i</td>
+        <td>Eksplisitt kjedespesifikk begrunnelse</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> Relationships i DVC handler om tillitsbaserte, personaliserte
+    relasjoner — ikke om høy aktivitet i seg selv. Gamification uten tillitsforankring skaper
+    aktivitet, ikke relasjon. &nbsp;<strong>DBM-kobling:</strong> Weill &amp; Woerner (2018)
+    viser at omnichannel-verdien avhenger av at digital kundekontakt oppleves som relevant og
+    troverdig — og at leverandøriserte opplevelser kan underminere dette.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      En systematisk gjennomgang kan vise at sentrale gamification-initiativer ikke kan
+      dokumentere netto verdi. Dette kan skape spenning med Playable og andre leverandører,
+      og kan redusere kortsiktig appengasjement. Martin må være forberedt på at
+      «færre, bedre» kampanjer kan oppleves som tilbakeskritt internt.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Innfør et enkelt «kampanje-passbord» der alle fremtidige gamification- og
+      leverandørkampanjer svarer på de fire evalueringsspørsmålene ovenfor. Gi
+      eksisterende kampanjer en frist til å levere dokumentasjon. Fjern eller redesign
+      de som ikke består — og bruk frigjort kommunikasjonskapasitet på butikk-
+      relevante relasjonsinitiativ.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 4
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 4</span>
+  <h3>Styrk medlemsrelasjonen gjennom appen — men skill lojalitetsmål fra lønnsomhetsmål i din rapportering</h3>
+
+  <div class="claim">
+    Martin bør aktivt styrke Coop App sin rolle som relasjonskanal for de mer enn 2 millioner
+    medeiere, men han bør i intern rapportering og direksjonsdiskusjonen eksplisitt skille
+    mellom mål som viser lojalitet og mål som viser inkrementell lønnsomhet.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DVC-analysen av <em>relationships</em> viser at «Coop har gjennom Coop App etablert en
+    sterk relasjonsplattform basert på den enorme brukerbasen på 1,8 millioner brukere» og at
+    «personaliserte tilbud øker relevansen for den enkelte kunden». Dette er analytisk verdifullt.
+    Men analysen understreker også at «relasjonsstrategien i stor grad baserer seg på
+    økonomiske insentiver som direkte reduserer marginene» og at «høy aktivitet i appen er
+    dermed ikke nødvendigvis ekvivalent med langsiktig verdiskapning eller bidrag til
+    økonomisk profitt».
+  </p>
+  <p>
+    Coop sin medlemsmodell er et særtrekk. Over 2 millioner medeiere er ikke bare kunder —
+    de er medeiere i et kooperativ. Denne identiteten er sterkere enn en ordinær
+    lojalitetsprogramtilknytning, og Coop App kan styrke den. Men Martin bør passe på at
+    han ikke blander to ulike argumenter i direksjonsdiskusjonen: (1) appen styrker
+    medlemsrelasjonen og kooperativ identitet — som er et legitimt selvstendig argument, og
+    (2) appen er lønnsom — som krever separat dokumentasjon. DBM-perspektivet (Weill &amp;
+    Woerner, 2018) viser at value creation (verdi for kunden) og value capture (verdi for
+    Coop) er ulike dimensjoner. Begge er viktige, men de kan ikke erstattes av hverandre.
+  </p>
+
+  <div class="martin-note">
+    Martin er ansvarlig for kommunikasjonen mot de 2 millioner medeierne. Han er dermed
+    den direktøren som best kan artikulere den kooperative dimensjonen av appens verdi —
+    men også den som har størst risiko for å overkommunisere lojalitet som
+    lønnsomhetsargument overfor direksjonen.
+  </div>
+
+  <h4>Empiriske observasjoner</h4>
+  <ul class="evidence-list">
+    <li>Coop oppgir mer enn 2 millioner medeiere — en relasjonsdimensjon som går utover
+        ordinær kundeklubblojalitet og gir appen en kooperativ legitimitet (Coop, 2026).</li>
+    <li>Lobyco hevder at appbrukere handler 50&nbsp;% oftere enn andre kunder — men dette
+        kan reflektere at allerede lojale kunder er mer sannsynlig å bruke appen (selection
+        bias), ikke at appen <em>skaper</em> lojalitet (Lobyco, 2026).</li>
+    <li>Coop App har funksjoner som personlige tilbud, bonus, forbruksoversikt og lokal
+        butikkkommunikasjon — alle funksjoner som understøtter den kooperative
+        relasjonsidentiteten (Coop App-sider, 2026).</li>
+    <li>DBM-analysen viser at «høy digital kundekontakt ikke nødvendigvis innebærer høy
+        lønnsomhet i en lavmargin-preget bransje» — og at dette er et sentralt skille som
+        Martin bør kommunisere tydelig internt.</li>
+  </ul>
+
+  <h4>Analytisk skille: lojalitetsmål vs. lønnsomhetsmål</h4>
+  <table>
+    <thead>
+      <tr><th>Lojalitetsmål (Martin kan eie disse)</th><th>Lønnsomhetsmål (krever separat dokumentasjon)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Andel aktive appbrukere av totalt antall medeiere</td><td>Inkrementell kurvstørrelse blant appbrukere vs. kontrollgruppe</td></tr>
+      <tr><td>Net Promoter Score / tilfredshet i appen</td><td>Netto margin fra leverandørfinansierte kampanjer</td></tr>
+      <tr><td>Opt-in-rate for personaliserte kommunikasjoner</td><td>Marginkostnad per innløst tilbud</td></tr>
+      <tr><td>Returnerende brukere per måned (retention)</td><td>Inkrementell butikktrafikk (kontrollert studie)</td></tr>
+      <tr><td>Kooperativ engasjementsindikator (andelsrelatert aktivitet)</td><td>Kostnad per aktiv appbruker inkl. Lobyco-andel</td></tr>
+    </tbody>
+  </table>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> Relationships i DVC er verdifulle i seg selv — men DVC
+    krever også at man spør om relasjonen bidrar til relevans og outputs som kan kobles til
+    strategisk verdi. Lojalitet er nødvendig, men ikke tilstrekkelig. &nbsp;<strong>DBM-kobling:</strong>
+    Weill &amp; Woerner (2018) skiller mellom value creation (for kunden) og value capture
+    (for organisasjonen). Martin bør rapportere på begge — og ikke la det ene erstatte det
+    andre i direksjonsdiskusjonen.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      Å presentere separate lojalitets- og lønnsomhetsmål kan tydeliggjøre et evidensgap
+      som er ubehagelig: at Coop har sterke lojalitetsmål, men svake lønnsomhetsmål for
+      appen. Dette gapet bør imidlertid kommuniseres åpent — det er bedre å eie problemet
+      enn å bli overrasket av det i direksjonsmøtet.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Innfør et fast rapporteringsformat for Coop App der lojalitetsmål og lønnsomhetsmål
+      presenteres i to separate kolonner — med eksplisitt anerkjennelse av hvilke mål som
+      per i dag er dokumentert og hvilke som er estimater. Bruk dette formatet konsekvent
+      overfor direksjonen.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 5
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 5</span>
+  <h3>Styr Lobyco og retail media fra et «Coop-first»-mandat — og ikke la ekstern forretning drive innholdet</h3>
+
+  <div class="claim">
+    Martin Hasgard Olesen bør sikre at Lobyco og retail media-initiativene i Coop App opererer
+    under et eksplisitt «Coop-first»-mandat, der Coop sin kunderelasjon og omnichannel-posisjon
+    er overordnet, og der ekstern forretningsutvikling i Lobyco er underordnet og klart
+    avgrenset.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DBM-analysen identifiserer en sentral strategisk spenning i Coops digitale forretningsmodell:
+    Lobyco kan tolkes som en <em>modular producer</em>-kapabilitet (Weill &amp; Woerner, 2018) som
+    leverer digital infrastruktur for app og kampanjer — potensielt både til Coop og til eksterne
+    aktører. Dersom Lobyco videreutvikler seg mot ekstern forretning uten tydelige
+    governance-rammer, risikerer Coop at appens innhold og prioriteringer blir drevet av Lobycos
+    forretningsmessige interesser heller enn Coops kjedestrategier. For Martin — som eier
+    kommunikasjons-, marketing- og digitaldirektørrollen — er dette et direkte
+    styringsansvar.
+  </p>
+  <p>
+    DVC-analysen av <em>digital infrastructure</em> viser at infrastruktur kun er strategisk
+    verdifull dersom den støtter kjernevirksomhetens verdiskaping. Dersom Lobyco sin infrastruktur
+    primært optimaliseres for ekstern forretning eller leverandøreksponering, kan den bevege seg
+    bort fra å støtte Coops butikkbaserte omnichannel-modell. For en kommunikasjons- og
+    marketingdirektør er dette særlig relevant: retail media og gamification-kampanjer er dels
+    Lobycos forretning og dels Coops kommunikasjonsflate. Martin bør klargjøre hvem som har
+    styringsretten over den flaten — og det bør være Coop.
+  </p>
+
+  <div class="martin-note">
+    Martin er bindeleddet mellom Lobyco sin leverandørolle og Coops kommunikasjons- og
+    markedsføringsstrategi. Han er den naturlige aktøren til å kreve et tydelig
+    «Coop-first»-mandat — og til å sørge for at Lobycos produktveiledning er forankret i
+    Coops kjedestrategi, ikke i Lobycos eksterne salgsbehov.
+  </div>
+
+  <h4>Empiriske observasjoner</h4>
+  <ul class="evidence-list">
+    <li>Lobyco presenterer seg selv som en plattform som kan levere multi-banner loyalty
+        også til andre aktører enn Coop — noe som antyder en modular producer-ambisjon
+        (Lobyco, 2026; Shortcut, 2026). Dette er ikke nødvendigvis feil, men det krever
+        tydelig governance fra Coop sin side.</li>
+    <li>Playable-kampanjer finansieres delvis av leverandørenes budsjetter og kan dermed
+        optimaliseres for leverandøreksponering heller enn for Coops kunderelasjon
+        (Playable, 2026). Martin bør avklare hvem sine interesser som styrer
+        innholdsprioriteringene.</li>
+    <li>DBM-analysen konkluderer med at «hverken Coop App eller Lobyco skaper verdi alene
+        for Coop, men verdien avhenger av om ledelsen klarer å styre den digitale
+        utviklingen slik at appen styrker Coops omnichannel-modell».</li>
+    <li>Coop sin kooperative eiermodell med 2 millioner medeiere gjør kundetillit til en
+        del av forretningsmodellens grunnleggende legitimitet — ikke bare et
+        kommunikasjonsproblem. Overdreven kommersialisering skader dette på en måte som
+        er vanskeligere å reparere enn i en ordinær aksjeselskapsmodell (Coop, 2026).</li>
+  </ul>
+
+  <h4>«Coop-first»-mandatets kjerneprinsipper</h4>
+  <table>
+    <thead>
+      <tr><th>Prinsipp</th><th>Hva det betyr i praksis</th><th>Hvem håndhever det</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Coop sin kunderelasjon er overordnet</td>
+        <td>Ingen leverandørkampanje eller gamification-initiativ prioriteres over
+            appopplevelsens relevans og tillit</td>
+        <td>Martin, i samarbeid med Lobyco og kjedeledelse</td>
+      </tr>
+      <tr>
+        <td>Retail media krever tillitsmåling</td>
+        <td>All leverandøreksponering måles mot kundetilfredshet og opt-out-rate
+            — ikke bare inntektsgenerering</td>
+        <td>Martin, rapportert til direksjonen</td>
+      </tr>
+      <tr>
+        <td>Lobycos eksternfokus er underordnet Coops kjedemandater</td>
+        <td>Lobycos produktveiledning forankres i kjedestrategiene, ikke i
+            Lobycos eksterne forretningsutvikling</td>
+        <td>Martin og Thor, i styringsstrukturen for Lobyco</td>
+      </tr>
+      <tr>
+        <td>Innholdsprioriteringer er Coop-eide</td>
+        <td>Martin sin funksjon godkjenner innholds- og kampanjeprioriteter i appen
+            — leverandører kan finansiere, ikke bestemme</td>
+        <td>Martin</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> Digital infrastructure i DVC er verdifull når den muliggjør
+    og forsterker kundeopplevelser, relasjoner og relevans. Dersom infrastrukturen (Lobyco)
+    begynner å optimalisere for egne forretningsmål, løsner koblingen mellom infrastruktur
+    og DVC-verdiskapning. &nbsp;<strong>DBM-kobling:</strong> Weill &amp; Woerner (2018) viser
+    at omnichannel-aktørers digitale styrke avhenger av <em>integrated customer experience</em>
+    — som krever at alle digitale berøringspunkter er styrt mot én sammenhengende
+    kundeopplevelse, ikke mot ulike leverandørers interesser.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      Et «Coop-first»-mandat kan begrense Lobycos kommersielle fleksibilitet og gjøre det
+      vanskeligere å tiltrekke ekstern forretning. Det kan også skape spenning mellom
+      Martin sin funksjon og Lobycos ledelse dersom mandatgrensene ikke er tydelig
+      avtalefestet. Martin bør løfte dette til direksjonen for å sikre
+      konsernomfattende forankring.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Utarbeid en skriftlig mandatbeskrivelse for Lobycos rolle i Coop App — klargjør
+      hva som er Coop-eksklusive prioriteringer og hva Lobyco kan utvikle for eksterne
+      kunder. Innfør kvartalsvise governance-gjennomganger der Martin vurderer om
+      appens innhold og Lobycos produktveiledning er i tråd med Coops kjedestrategier.
+      Koble retail media-inntekter til en tillitsindikator som rapporteres parallelt.
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     SAMMENSTILLING
+══════════════════════════════════════════════ -->
+<h2>Sammenstilling: Analytisk logikk bak Martins fem anbefalinger</h2>
+
+<p>
+  De fem anbefalingene er ikke fem uavhengige tiltak. De følger en intern analytisk logikk:
+  Martin Hasgard Olesen bør styre sin funksjon fra <em>aktivitetsmåling til strategisk
+  verdidokumentasjon</em>, fra <em>uniform kommunikasjon til kjedespesifikk relevans</em>, og
+  fra <em>leverandørstyrt innhold til Coop-first governance</em>.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Anbefaling</th>
+      <th>Martins domene</th>
+      <th>DVC-forankring</th>
+      <th>DBM-forankring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1.</strong> KPI-hierarki</td>
+      <td>Digital rapportering og styringsgrunnlag</td>
+      <td>Digital outputs ≠ strategisk verdi</td>
+      <td>Evidensbaserte beslutninger (DBM kapabilitet)</td>
+    </tr>
+    <tr>
+      <td><strong>2.</strong> Kjedespesifikk kommunikasjon</td>
+      <td>Innhold og markedsføring per kjede</td>
+      <td>Relevance er DVC-kjernen</td>
+      <td>Omnichannel krever kjedefit i kundekommunikasjon</td>
+    </tr>
+    <tr>
+      <td><strong>3.</strong> Gamification-gjennomgang</td>
+      <td>Kampanje- og leverandørrelasjoner</td>
+      <td>Relationships ≠ kortsiktig aktivitet</td>
+      <td>Value capture krever netto-effekt, ikke brutto-engasjement</td>
+    </tr>
+    <tr>
+      <td><strong>4.</strong> Skill lojalitet fra lønnsomhet</td>
+      <td>Medeierkommunikasjon og CRM</td>
+      <td>Relationships: value creation vs. value capture</td>
+      <td>DBM skiller value creation fra value capture</td>
+    </tr>
+    <tr>
+      <td><strong>5.</strong> Lobyco «Coop-first»-mandat</td>
+      <td>Governance av Lobyco og retail media</td>
+      <td>Digital infrastructure tjener kjernevirksomheten</td>
+      <td>Integrated customer experience krever Coop-styrt infrastruktur</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     KRITISK REFLEKSJON
+══════════════════════════════════════════════ -->
+<h2>Kritisk refleksjon og begrensninger</h2>
+
+<p>
+  Anbefalingene til Martin er formulert med utgangspunkt i det tilgjengelige offentlige
+  kildegrunnlaget. Dette gir noen viktige begrensninger. For det første eier Martin sannsynligvis
+  intern KPI-informasjon som ikke er offentlig tilgjengelig — noe som betyr at noen av
+  anbefalingene kan være mer eller mindre aktuelle enn analysen kan avgjøre fra utsiden.
+</p>
+<p>
+  For det andre er Lobyco-, Playable- og Shortcut-kildene kommersielt interesserte. Det er
+  mulig at gamification-initiativene er mer lønnsomme for Coop enn kildene kan dokumentere
+  offentlig — men det er også mulig at de er mindre lønnsomme. Analysen kan ikke avgjøre
+  dette; den kan kun identifisere at dokumentasjonen per i dag er utilstrekkelig som
+  investeringsgrunnlag.
+</p>
+<p>
+  DVC-rammeverket kan ha en tendens til å fremheve digitale muligheter uten tilstrekkelig
+  forankring i lønnsomhetsdokumentasjon. DBM-rammeverket korrigerer for dette, men begge
+  perspektivene er til syvende og sist analytiske verktøy — ikke empiriske bevis. Martins
+  egne interne data og erfaring bør derfor alltid veie tyngre enn den analytiske inferensen
+  i en rapport basert på offentlige kilder.
+</p>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     KONKLUSJON
+══════════════════════════════════════════════ -->
+<h2>Konklusjon</h2>
+
+<p>
+  Martin Hasgard Olesens rolle i diskusjonen om Coop App og Lobycos fremtid er ikke å avgjøre
+  konsernets investeringsstrategi — det er administrerende direktørs ansvar. Martins bidrag er
+  å sikre at kommunikasjons-, marketing- og digitalfunksjonen leverer et troverdig, kildekritisk
+  og analytisk presist grunnlag for den direksjonsdiskusjonen.
+</p>
+<p>
+  De fem anbefalingene utgjør til sammen en styringsstrategi for Martins domene: bygg
+  KPI-hierarkier som skiller aktivitet fra verdi, gjør appens kommunikasjon kjedespesifikt
+  relevant, krev dokumentert netto kundeverdi fra gamification og kampanjer, rapporter
+  lojalitet og lønnsomhet som separate dimensjoner, og sikre at Lobyco og retail media
+  opererer under et «Coop-first»-mandat. Dersom Martin lykkes med dette, vil han ikke bare
+  forbedre Coop App sin strategiske forankring — han vil også styrke sin posisjon i
+  direksjonen som en direktør som omsetter digital kompleksitet til presist og styrbart
+  beslutningsgrunnlag.
+</p>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     REFERANSER
+══════════════════════════════════════════════ -->
+<h2>Referanser</h2>
+
+<p><em>Akademiske kilder:</em></p>
+<ul class="evidence-list">
+  <li>Duus, R., &amp; Cooray, M. (2020). Digital Value Creation. I: <em>Digitalization</em>. CBS Learning Lab.</li>
+  <li>Weill, P., &amp; Woerner, S. L. (2018). <em>What's Your Digital Business Model? Six Questions to Help You Build the Next-Generation Enterprise</em>. Harvard Business Review Press.</li>
+  <li>Rienecker, L., &amp; Jørgensen, P. S. (Ed.). (2022). <em>Den gode opgave</em>. Samfundslitteratur.</li>
+  <li>Hedman, J., &amp; Bjørn-Andersen, N. (2016). Technology debt in Coop. [Akademisk case, CBS].</li>
+</ul>
+
+<p><em>Virksomhetskilder:</em></p>
+<ul class="evidence-list">
+  <li>Coop Danmark A/S. (2025). <em>Årsrapport 2025</em>. Coop.dk.</li>
+  <li>Coop. (2026). Coop App og Coop Medlem. <em>Coop.dk</em>.</li>
+  <li>Lobyco. (2026). Coop case study. <em>Lobyco.com</em>.</li>
+  <li>Playable. (2026). Coop case. <em>Playable.com</em>.</li>
+  <li>Shortcut. (2026). Coop Denmark App case. <em>Shortcut.io</em>.</li>
+</ul>
+
+<p><em>Konkurrentkilder (sekundære):</em></p>
+<ul class="evidence-list">
+  <li>Salling Group. (2025). Key figures 2025. <em>Sallinggroup.com</em>.</li>
+  <li>Dagrofa. (2025). Annual Report 2025. <em>Dagrofa.dk</em>.</li>
+  <li>Lidl Danmark. (2026). Lidl Plus-appinformasjon. <em>Lidl.dk</em>.</li>
+  <li>REMA 1000. (2026). Scan Selv. <em>Rema1000.dk</em>.</li>
+</ul>
+
+<footer>
+  <p>
+    CBS HA (it.) 4. semester | IT-Strategi | Vår 2026 &nbsp;·&nbsp;
+    Linus Robertsen Palmqvist · Marcus Grude-Grødem · Axel Woxen · Anders Alexander Olseth
+  </p>
+  <p>Rapporten er skrevet på norsk i tråd med oppgavekravets åpning for norsk eller engelsk.</p>
+</footer>
+
+</body>
+</html>

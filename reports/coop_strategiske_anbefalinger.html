@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategiske IT-anbefalinger til Coop Danmark</title>
+  <style>
+    :root {
+      --coop-red: #c0392b;
+      --coop-dark: #1a1a2e;
+      --coop-grey: #4a4a4a;
+      --coop-light: #f5f5f0;
+      --accent: #2c6e49;
+      --border: #d4d4cc;
+      --rec-bg: #fafaf7;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--coop-grey);
+      background: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 48px;
+    }
+
+    /* ── Typography ── */
+    h1 { font-size: 2rem; color: var(--coop-dark); margin-bottom: 0.25em; }
+    h2 { font-size: 1.35rem; color: var(--coop-dark); margin: 2.5em 0 0.6em; border-bottom: 2px solid var(--border); padding-bottom: 0.3em; }
+    h3 { font-size: 1.1rem; color: var(--accent); margin: 1.8em 0 0.4em; }
+    h4 { font-size: 0.95rem; color: var(--coop-grey); text-transform: uppercase; letter-spacing: 0.05em; margin: 1.2em 0 0.3em; }
+    p  { margin-bottom: 1em; }
+
+    /* ── Cover ── */
+    .cover {
+      border-left: 5px solid var(--coop-red);
+      padding: 28px 32px;
+      margin-bottom: 3em;
+      background: var(--coop-light);
+    }
+    .cover .subtitle { color: var(--coop-red); font-style: italic; margin-top: 0.25em; font-size: 1.05rem; }
+    .cover .meta { margin-top: 1.2em; font-size: 0.88rem; color: #666; }
+    .cover .meta span { display: block; }
+
+    /* ── Intro box ── */
+    .intro-box {
+      background: var(--coop-light);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--coop-red);
+      padding: 20px 24px;
+      margin: 1.5em 0 2em;
+      border-radius: 2px;
+    }
+    .intro-box p { margin: 0; font-size: 0.97rem; }
+
+    /* ── Recommendation cards ── */
+    .rec-card {
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      background: var(--rec-bg);
+      padding: 28px 32px;
+      margin: 2.5em 0;
+      border-radius: 2px;
+    }
+    .rec-card .rec-number {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 0.5em;
+    }
+    .rec-card h3 { color: var(--coop-dark); margin-top: 0.2em; font-size: 1.2rem; }
+
+    /* ── Claim-block ── */
+    .claim {
+      background: #fff;
+      border-left: 4px solid var(--coop-red);
+      padding: 14px 18px;
+      margin: 1.2em 0;
+      font-style: italic;
+      color: var(--coop-dark);
+    }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 1.2em 0;
+    }
+    th {
+      background: var(--coop-dark);
+      color: #fff;
+      text-align: left;
+      padding: 8px 12px;
+      font-weight: normal;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:nth-child(even) td { background: #f0f0eb; }
+
+    /* ── Risk & impl. boxes ── */
+    .box-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.2em 0; }
+    .box {
+      padding: 14px 16px;
+      border-radius: 2px;
+      font-size: 0.92rem;
+    }
+    .box.risk { background: #fdf3f2; border: 1px solid #e8b4b0; }
+    .box.impl { background: #f0f7f2; border: 1px solid #aed0b8; }
+    .box h4 { margin-top: 0; font-size: 0.82rem; }
+
+    /* ── Callout: theory link ── */
+    .theory-link {
+      background: #f0f4ff;
+      border: 1px solid #c5d0f0;
+      padding: 12px 16px;
+      margin: 1em 0;
+      font-size: 0.9rem;
+      border-radius: 2px;
+    }
+    .theory-link strong { color: var(--coop-dark); }
+
+    /* ── Evidence list ── */
+    .evidence-list { list-style: none; padding: 0; margin: 0.5em 0; }
+    .evidence-list li { padding: 4px 0 4px 16px; position: relative; font-size: 0.92rem; border-bottom: 1px solid var(--border); }
+    .evidence-list li::before { content: "›"; position: absolute; left: 0; color: var(--coop-red); }
+
+    /* ── Section divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 3em 0; }
+
+    /* ── Footer ── */
+    footer { margin-top: 4em; font-size: 0.82rem; color: #888; border-top: 1px solid var(--border); padding-top: 1.5em; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     COVER
+══════════════════════════════════════════════ -->
+<div class="cover">
+  <h1>Strategiske IT-anbefalinger til Coop Danmark</h1>
+  <p class="subtitle">Fem anbefalinger til Thor Skov Jørgensen, Administrerende direktør</p>
+  <div class="meta">
+    <span>Semesteroppgave — IT-Strategi, CBS HA (it.) 4. semester | Vår 2026</span>
+    <span>Linus Robertsen Palmqvist &nbsp;·&nbsp; Marcus Grude-Grødem &nbsp;·&nbsp; Axel Woxen &nbsp;·&nbsp; Anders Alexander Olseth</span>
+    <span>Perspektiver: Digital Value Creation (DVC) &amp; Digital Business Model (DBM)</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANALYTISK GRUNNLAG
+══════════════════════════════════════════════ -->
+<h2>Analytisk grunnlag for anbefalingene</h2>
+
+<p>
+  Anbefalingene nedenfor følger direkte av den strategiske analysen i oppgaven. De kan ikke leses
+  løsrevet fra den: analysen dokumenterer en grunnleggende spenning mellom Coop sin store digitale
+  rekkevidde og den manglende dokumentasjonen på om denne rekkevidden faktisk skaper forretningsmessig
+  verdi for konsernets butikkbaserte kjernemodell.
+</p>
+
+<div class="intro-box">
+  <p>
+    <strong>Analysens sentralfunn:</strong> DVC-rammeverket viser at Coop App kan skape verdi gjennom
+    forbedrede kundeopplevelser (<em>experiences</em>), sterkere relasjoner (<em>relationships</em>),
+    digital videreutvikling (<em>evolution</em>) og økt relevans. DBM-rammeverket (Weill &amp; Woerner, 2018)
+    viser at Coop er en omnichannel-aktør med fysisk butikk som kjerne, og at Coop App og Lobyco må styres
+    mot dokumentert value capture — ikke primært måles på digitale output-mål som nedlastninger og
+    engasjement. Begge perspektivene peker mot ett overordnet styringsdilemma: Coop har en sterk
+    digital kundekontakt, men det offentlige kildegrunnlaget dokumenterer ikke at appen skaper
+    inkrementell butikkøkonomi, lojalitet eller lønnsomhet.
+  </p>
+</div>
+
+<p>
+  Anbefalingene er rettet mot Thor Skov Jørgensen i hans rolle som administrerende direktør. Denne
+  posisjonen gjør det naturlig å adressere de overordnede spørsmålene om investeringsallokering,
+  strategisk styring av Lobyco, kjedeporteføljens digitale behov og konsernets evne til å
+  omsette digital kundekontakt til faktisk butikk- og marginverdi.
+</p>
+
+<p>
+  Argumentasjonsformen følger CBS-oppgavekravets struktur: <strong>påstand → begrunnelse →
+  empiriske observasjoner</strong> (Rienecker &amp; Jørgensen, 2022).
+</p>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 1
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 1</span>
+  <h3>Redefiner Coop App sin suksess rundt butikkøkonomi — ikke digital aktivitet</h3>
+
+  <div class="claim">
+    Coop bør innføre en KPI-hierarki som kobler appinvestering til butikkøkonomi, og avvikle
+    praksisen med å måle appens strategiske verdi gjennom digitale aktivitetsmål alene.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DVC-rammeverket skiller mellom digitale <em>outputs</em> og faktiske digitale verdier. Outputs —
+    som antall appbrukere, månedlige aktive brukere og kampanjeengasjement — viser at noe skjer
+    digitalt, men de beviser ikke at Coop skaper lønnsom kundeverdi. Analysen av det ytre DVC-laget
+    konkluderer med at digitale outputs «kun er strategisk relevante hvis de kan kobles til fysisk
+    butikkverdi, leverandørverdi og lønnsomhet». DBM-rammeverket (Weill &amp; Woerner, 2018)
+    forsterker dette: det avgjørende spørsmålet er ikke om appen er aktiv, men om Coop lykkes med
+    <em>value capture</em> — gjennom butikktrafikk, kurvstørrelse, handlefrekvens, margin eller
+    leverandørbetaling. Under et EBIT-underskudd på 215 mill. DKK (Coop Danmark A/S årsrapport 2025)
+    er investeringsdisiplin ikke et valg, men en nødvendighet.
+  </p>
+
+  <h4>Empiriske observasjoner</h4>
+  <ul class="evidence-list">
+    <li>Lobyco oppgir 1,8 millioner appbrukere og ca. 880 000 månedlige aktive brukere — men dette er
+        leverandørrapporterte reach-tall, ikke dokumentasjon på lønnsomhet (Lobyco, 2026).</li>
+    <li>Lobyco hevder at appbrukere handler 50&nbsp;% oftere enn andre kunder — en påstand med høy
+        kausalitets- og seleksjonsrisiko: allerede lojale kunder er mer sannsynlig å laste ned appen
+        (Lobyco, 2026).</li>
+    <li>Coop Danmark A/S rapporterer EBITDA på 313 mill. DKK og EBIT på -215 mill. DKK for 2025,
+        noe som bekrefter investeringsskarphet på konsernnivå (Coop Danmark A/S årsrapport 2025).</li>
+    <li>Analysen av kildekritikk dokumenterer at ingen offentlig tilgjengelig kilde viser netto
+        inkrementell basket-effekt, marginforbedring eller butikktrafikk som kan direkte tilskrives
+        appen.</li>
+  </ul>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> DVC skiller eksplisitt mellom digital output-mål og dypere
+    digital kundeverdi. Appens reach er et output-mål; det er ikke det samme som styrket
+    omnichannel-posisjon. &nbsp;<strong>DBM-kobling:</strong> Weill &amp; Woerner (2018) viser at
+    omnichannel-aktører skaper value capture gjennom integrert kunnskap om kunden koblet til
+    faktiske forretningsmessige resultater — ikke bare gjennom datamengde eller appaktivitet.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      Coop mangler sannsynligvis interne KPI-er for inkrementell appeffekt på butikknivå. En
+      slik omlegging krever investering i måleinfrastruktur og intern endringsevne — noe som selv
+      har en kostnad.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Definer et KPI-hierarki som skiller mellom: (1) adopsjons- og engasjementsmål, (2) atferdsmål
+      (butikkbesøk, kurvstørrelse, handlefrekvens), (3) lønnsomhetsmål (margin, retention,
+      leverandørbetaling). Rapporter på alle tre nivåer — og styr investering primært etter nivå 2 og 3.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 2
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 2</span>
+  <h3>Utvikle kjedespesifikke app-value propositions innenfor én styrt plattform</h3>
+
+  <div class="claim">
+    Coop bør utvikle distinkte digitale verditilbud for de ulike kjedene — 365discount, Brugsen,
+    SuperBrugsen og Kvickly — gjennom moduler innenfor én felles, styrt plattform, fremfor å
+    behandle appen som én universell løsning eller å bygge helt separate apper.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DVC-begrepet <em>relevance</em> er kjernen i rammeverket og uttrykker hvorvidt digitale tiltak
+    oppleves som meningsfulle for kunden. Analysen konkluderer med at «relevansen ikke nødvendigvis
+    er lik på tvers av Coop sin kundebase». En kunde i 365discount søker enkelhet og pris, mens en
+    kunde i SuperBrugsen kan vektlegge inspirasjon, oppskrifter og matopplevelse. Én felles
+    applogikk kan dermed bli for generell til å treffe noen av disse kjedene godt nok.
+    DBM-analysen plasserer Coop som omnichannel-aktør, og viser at omnichannel-verdien avhenger av
+    om den digitale relasjonen reflekterer kjedens distinkte kundeløfte. Konkurrentanalysen
+    understøtter dette: Lidl Plus forsterker discount-logikken gjennom kupongmekanikker, REMA bruker
+    Scan Selv for enkel butilitet, og Dagrofa/MENY kobler lojalitet til mat- og lokal identitet
+    (scraping-analyse, 2026). Det finnes ikke ett universalt «vinnende» dagligvare-app-format;
+    det som skaper verdi er <em>fit</em> mellom app-logikk og kjedens forretningsmodell.
+  </p>
+
+  <h4>Empiriske observasjoner</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Kjede</th>
+        <th>Primær kundemisjon</th>
+        <th>Implikasjon for app-logikk</th>
+        <th>Konkurrentanalogi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>365discount</td>
+        <td>Lav pris, enkelhet, faste vaner</td>
+        <td>Kuponger, sparemål, minimal friksjon</td>
+        <td>Lidl Plus, REMA Scan Selv</td>
+      </tr>
+      <tr>
+        <td>Brugsen</td>
+        <td>Lokal tilhørighet, kooperativ identitet</td>
+        <td>Lokal kommunikasjon, medlemstilhørighet, andelsinnsikt</td>
+        <td>Dagrofa/MENY lokal identitet</td>
+      </tr>
+      <tr>
+        <td>SuperBrugsen</td>
+        <td>Matinspirasjon, ferskvarer, bredde</td>
+        <td>Oppskrifter, personaliserte matforslag, sesongkommunikasjon</td>
+        <td>Salling chain-apps (food/experience)</td>
+      </tr>
+      <tr>
+        <td>Kvickly</td>
+        <td>Varehusbredde, familie, totalhandel</td>
+        <td>Vareutvalg, merkelojalitet, supplerende kategorier</td>
+        <td>Salling Scan&amp;Go (butikkutility)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> Relevance er DVC-modellens kjerne — digitale løsninger skaper
+    verdi kun når de oppleves som meningsfulle av den faktiske kunden i den faktiske
+    handlekonteksten. &nbsp;<strong>DBM-kobling:</strong> Weill &amp; Woerner (2018) viser at
+    omnichannel-aktører trenger sterk kundekjennskap per segment. En felles app-logikk som ikke
+    differensierer per kjede kan svekke Coop sin omnichannel-posisjon ved å levere en
+    gjennomsnittlig opplevelse til alle.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      Kjedespesifikk modulering øker kompleksitet, krav til innholdsproduksjon og teknisk
+      plattformkompleksitet. Feil gjennomføring kan gi høyere kostnader uten tilsvarende
+      gevinst. Coop sin teknologiske historikk (SAP-implementeringen, case 2015) viser at
+      komplekse IT-initiativer kan overskride budsjett og leveranseevne.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Én felles Lobyco-basert plattform beholdes som teknisk fundament. Det utvikles
+      kjede-spesifikke moduler for innhold, tilbud, kommunikasjon og success-metrics — ikke
+      separate fullstendig nye apper. Invester i kjedefit-testing før skalering (se
+      anbefaling 5).
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 3
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 3</span>
+  <h3>Forankre Coop App som butikkstøttende kanal — ikke som selvstendig digital satsing</h3>
+
+  <div class="claim">
+    Thor Skov Jørgensen bør fastslå at Coop App skal evalueres og prioriteres som en kanal
+    som støtter de fysiske butikkene, ikke som et selvstendig digitalt satsingsprosjekt
+    parallelt med butikkdriften.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DVC-analysen av <em>experiences</em> viser at appens verdi primært er å støtte den fysiske
+    handleopplevelsen: «Coop App kan først og fremst forstås som en digital understøttelse av
+    kundens set experience i den fysiske butikk.» Funksjoner som Scan &amp; Pay, personlige
+    tilbud, digitale kvitteringer og handlelister styrker kundereisen <em>i tilknytning til
+    butikken</em> — ikke uavhengig av den. DBM-analysen bekrefter dette: etter nedleggelsen av
+    coop.dk MAD (2023) og coop.dk-webshop (januar 2025) er de fysiske butikkene Coops eneste
+    salgskanal. Dette betyr at appens strategiske verdi er betinget av om den forbedrer
+    butikkbesøket, øker handlekurven eller støtter kjedens posisjon — ikke av om den skaper
+    en selvstendig digital tilstedeværelse.
+  </p>
+  <p>
+    DVC-analysen advarer dessuten mot en sentral sårbarhet: <em>situational experiences</em>
+    kan undergrave investeringer i velfungerende <em>set experiences</em>. Tekniske feil i
+    Scan &amp; Pay, tilbud som ikke er gyldige i den aktuelle butikken, eller bonusdata
+    som er feil, kan raskt forvandle en friks­jonsreduserende funksjon til en
+    friksjonsøkende opplevelse. Coop sin teknologiske gjeld (dokumentert i Munk-Nissen-casen,
+    2015) viser at digital infrastruktur som ikke integreres pålitelig i butikkoperasjonen
+    kan undergrave tillit og skade kundeopplevelsen.
+  </p>
+
+  <h4>Empiriske observasjoner</h4>
+  <ul class="evidence-list">
+    <li>Coop.dk MAD ble lukket i 2023 grunnet manglende lønnsomhet; Coop.dk-webshop ble
+        lukket 31. januar 2025 (Coop kundeservice, 2025). Coop er per i dag utelukkende
+        en fysisk butikkaktør.</li>
+    <li>Coop rapporterer 536 Coop Danmark-butikker og 900 butikker inkludert brugsforeningene
+        (Coop Danmark A/S årsrapport 2025) — det er i disse 900 butikkene verdien av appen
+        må realiseres.</li>
+    <li>Scan &amp; Pay, digitale kvitteringer, handleliste og lokale tilbud fremheves som
+        kjerneopplevelser i Coop App — alle direkte butikkstøttende (Coop App-sider, 2026;
+        Lobyco, 2026).</li>
+    <li>Nemlig-analysen indikerer at dedikert online grocery med egne logistikk-KPI-er er
+        et krevende forretningsmodell-spor for dagligvareaktører i Danmark (competitor
+        evidence, 2026). Dette styrker argumentet for at Coop bør rendyrke butikk-first
+        tilnærmingen.</li>
+  </ul>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> Experiences er det første DVC-laget — men verdien avhenger
+    av at de digitale opplevelsene løser faktiske kundeproblemer i den konteksten de oppstår
+    (handleturen, butikken). Abstrakte digitale erfaringer som ikke er forankret i butikkreisen
+    skaper lavere digital verdi. &nbsp;<strong>DBM-kobling:</strong> Weill &amp; Woerner (2018)
+    sin kanalanalyse viser at omnichannel-verdien oppstår i samspillet mellom fysisk og digital
+    kanal, ikke i den digitale kanalen alene.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      En for snever «butikk-first»-forståelse kan hindre Coop i å utvikle digitale tjenester
+      som på sikt kan skape nye inntektsstrømmer eller styrke konkurransepositionen. Ledelsen
+      må unngå at «butikkstøtte» blir et argument for å ikke investere i digital utvikling
+      overhodet.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Evaluer alle eksisterende appfunksjoner etter ett kriterium: forbedrer denne funksjonen
+      den fysiske handleopplevelsen, butikktrafikken, kurvstørrelsen eller kundetilliten?
+      Deprioritér eller fjern funksjoner som ikke kan besvare dette spørsmålet positivt —
+      og bruk frigjorte ressurser på butikkintegrasjon og driftsreliabilitet.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 4
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 4</span>
+  <h3>Sett tydelige styringsrammer for Lobyco — og test retail media med tillitsgarantier</h3>
+
+  <div class="claim">
+    Thor Skov Jørgensen bør sikre at Lobyco evalueres som en Coop-first digital kapabilitet
+    med klare governance-rammer, og at retail media-innsatsen piloteres med eksplisitte
+    tillitssikringer og KPI-krav — ikke skaleres basert på leverandørclaims alene.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DBM-analysen konkluderer med at Lobyco representerer en «strategisk spenning» i Coops
+    forretningsmodell. Lobyco kan tolkes som en <em>modular producer</em>-kapabilitet innenfor
+    DBM (Weill &amp; Woerner, 2018), da de leverer digital infrastruktur for app og kampanjer
+    til Coop og muligens andre aktører. Denne posisjonen er ikke nødvendigvis feil — men den
+    skaper risiko for at Lobyco utvikler seg mot egne mål som ikke alltid er samstilt med Coops
+    butikkbaserte omnichannel-logikk. DVC-rammeverkets <em>digital infrastructure</em>-begrep
+    viser at infrastruktur kun er strategisk verdifull dersom den er styrt mot og muliggjør
+    verdiskapning for kjernevirksomheten.
+  </p>
+  <p>
+    Retail media — bruken av Coop App og medlemsdata til å tilby leverandørene målrettet
+    eksponering — er en potensiell ny inntektsstrøm. Playable (2026) hevder at gamification
+    og leverandørfinansierte premier skaper økt kurvverdi (+9&nbsp;%) og butikkinnløsning.
+    Disse tallene er imidlertid kommersielt motiverte og kan ikke ukritisk brukes som bevis
+    for nettoeffekt. Det avgjørende analytiske poenget er at retail media kan undergrave
+    appens relevans og kundetillit dersom appen oppleves som optimalisert for leverandørene
+    heller enn for kunden. For en kooperativ aktør som Coop, der medeierskap og tillit er
+    del av forretningsmodellens legitimitet (mer enn 2 millioner medeiere, Coop, 2026), er
+    dette en særlig alvorlig risiko.
+  </p>
+
+  <h4>Empiriske observasjoner</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Påstand</th>
+        <th>Kildetype</th>
+        <th>Analytisk bruk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lobyco leverer digital app-infrastruktur og lojalitetsplatform til Coop og mulige
+            eksterne klienter</td>
+        <td>Lobyco-/Shortcut-claim (leverandørkilde)</td>
+        <td>Indikerer mulig modular producer-kapabilitet; ikke dokumentert ekstern inntektsprofil</td>
+      </tr>
+      <tr>
+        <td>Playable hevder +9&nbsp;% kurvverdi og 500&nbsp;000 innløste premier i butikk
+            fra gamification</td>
+        <td>Leverandør-/marketingclaim (Playable, 2026)</td>
+        <td>Indikerer mulig mekanisme; kan ikke alene brukes som bevis for netto lønnsomhet</td>
+      </tr>
+      <tr>
+        <td>Retail media kan skape ny inntektsstrøm uavhengig av salgsvolum</td>
+        <td>Analytisk inferens fra DBM og kildegrunnlag</td>
+        <td>Potensiell value capture-mekanisme; krever testing og tillitsmåling</td>
+      </tr>
+      <tr>
+        <td>Coop har mer enn 2 millioner medeiere med kooperativ identitet</td>
+        <td>Offisiell Coop-kilde (Coop, 2026)</td>
+        <td>Kundetillit er strategisk kapital; commercial oversaturation skader omnichannel-posisjon</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> DVC-rammeverkets <em>relationships</em>-begrep viser at
+    tillitsbaserte relasjoner er sentralt for digital kundeverdi. Retail media kan skade denne
+    relasjonen dersom kommersielle interesser prioriteres over kundens. &nbsp;<strong>DBM-kobling:</strong>
+    Weill &amp; Woerner (2018) viser at omnichannel-aktører bevarer sin posisjon gjennom
+    integrert kundekunnskap — ikke gjennom å optimalisere for ekstern inntekt på bekostning av
+    kunderelasjon. Lobyco bør styres som en Coop-first kapabilitet, ikke som en selvstendig
+    plattformaktør.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      Strenge governance-rammer kan bremse Lobycos innovasjonstakt og gjøre det vanskeligere
+      å tiltrekke ekstern forretning. Retail media-testing kan gi lavere kortsiktig
+      leverandørinntekt. En for stram styring kan gjøre Coop mindre attraktiv som
+      teknologipartner for andre aktører.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Definer Lobycos mandat eksplisitt: skal de primært levere verdi for Coop-kjedene,
+      eller er ekstern forretningsutvikling et strategisk mål? Etabler tillitsmålinger for
+      retail media (f.eks. kundetilfredshetsdata, klagestatistikk, opt-out-rate). Innfør
+      en grense for kommersiell belastning per appøkt.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ANBEFALING 5
+══════════════════════════════════════════════ -->
+<div class="rec-card">
+  <span class="rec-number">Anbefaling 5</span>
+  <h3>Pilotér kjedespesifikke app-tiltak og skill lojalitet fra lønnsomhet i evalueringen</h3>
+
+  <div class="claim">
+    Coop bør teste kjedespesifikke digitale initiativer gjennom avgrensede piloter med
+    forhåndsdefinerte success-metrics, og konsernet bør eksplisitt skille mellom
+    lojalitetsmål og lønnsomhetsmål i evalueringen av pilotenes resultater.
+  </div>
+
+  <h4>Begrunnelse</h4>
+  <p>
+    DVC-analysen av <em>evolution</em> konkluderer med at Coop befinner seg i en situasjon der
+    digitale initiativer er «potensielt verdiskapende, men med strategisk risiko knyttet til
+    usikker avkastning». Under finansielt press er det særlig viktig å teste hypoteser om
+    kjedefit og kundeverdi i avgrenset skala før man binder opp store konsernressurser. Dette
+    støttes av Coop sin teknologiske historikk, der Munk-Nissen-casen (2015) viser at store
+    IT-initiativer uten tilstrekkelig ledelsesforankring og inkrementell testing kan skape
+    teknologisk gjeld og skepsis i organisasjonen.
+  </p>
+  <p>
+    DBM-analysen understreker et sentralt skille: sterk digital relasjon er ikke det samme
+    som sterk lønnsomhet. Coop App kan ha høy appbruk og godt engasjement blant de mest
+    lojale kundene — men dette reflekterer muligens seleksjonsbias (allerede lojale kunder er
+    mer sannsynlig å bruke appen) heller enn at appen <em>skaper</em> lojalitet. Thor Skov
+    Jørgensen bør kreve at pilotevalueringer operasjonaliserer dette skillet tydelig:
+    lojalitetsmål (appbruk, engasjement, returrate) rapporteres separat fra lønnsomhetsmål
+    (inkrementell butikktrafikk, margin, kurveffekt, netto leverandørbetaling).
+  </p>
+
+  <h4>Empiriske observasjoner</h4>
+  <ul class="evidence-list">
+    <li>Lobycos claim om 50&nbsp;% høyere handlefrekvens blant appbrukere er et
+        korrelasjonsdata-claim — det dokumenterer ikke at appen <em>forårsaker</em> høyere
+        frekvens (Lobyco, 2026). Seleksjonsbias er en reell alternativforklaring.</li>
+    <li>Coop Danmark A/S årsrapport 2025 viser et konsern med EBIT på -215 mill. DKK —
+        et signal om at videre appinvestering krever tydelig dokumentasjon på inkrementell
+        verdi, ikke bare reach-vekst.</li>
+    <li>Konkurrentanalysen (scraping-analyse, 2026) indikerer at ulike kjedemodeller krever
+        ulike digitale tilnærminger. Det finnes ingen universalt riktig dagligvare-app-strategi
+        — noe som gjør kjede-spesifikk pilottesting analytisk nødvendig.</li>
+    <li>Coop har mer enn 2 millioner medeiere (Coop, 2026) — en stor og verdifull base som
+        gjør det mulig å gjennomføre statistisk valide piloter med kontrollgrupper innenfor
+        konsernets egne kunder.</li>
+  </ul>
+
+  <div class="theory-link">
+    <strong>DVC-kobling:</strong> DVC sin <em>relevance</em>-kjerne viser at digital verdi
+    oppstår der digitale løsninger faktisk oppleves meningsfulle av kunden. Piloter er den
+    eneste måten å teste dette empirisk — fremfor å anta at konkurrenters app-logikk
+    automatisk passer Coops kunder. &nbsp;<strong>DBM-kobling:</strong> Weill &amp; Woerner
+    (2018) viser at omnichannel-aktører som lykkes, bygger på evidensbaserte beslutninger
+    om kundeatferd — en av de åtte digitale kapabilitetene i DBM-rammeverket.
+  </div>
+
+  <div class="box-row">
+    <div class="box risk">
+      <h4>Risiko</h4>
+      Pilotstrategier kan forsinke konsernbrede initiativer og skape intern frustrasjon
+      dersom rammeverket for piloter ikke er klart kommunisert. Dersom piloter ikke er
+      designet med kontrollgrupper og inkrementalitetsmåling, risikerer man å replisere
+      den samme seleksjonsbias-feilen som preger leverandørclaims.
+    </div>
+    <div class="box impl">
+      <h4>Implikasjon for implementering</h4>
+      Definer tre elementer <em>før</em> piloten starter: (1) Hvilken kjedespesifikk hypotese
+      testes? (2) Hvilke inkrementelle metrics brukes — og hvordan skilles lojalitetsmål fra
+      lønnsomhetsmål? (3) Hva er terskelen for å skalere versus avvikle initiativet?
+      Pilotperiode: 3–6 måneder. Evalueringskriterier fastsettes av konsernledelsen, ikke av
+      leverandørene.
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     SAMMENSTILLING
+══════════════════════════════════════════════ -->
+<h2>Sammenstilling: Analytisk logikk bak anbefalingene</h2>
+
+<p>
+  De fem anbefalingene er ikke uavhengige enkeltpunkter. De følger en analytisk logikk
+  forankret i DVC og DBM:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Anbefaling</th>
+      <th>DVC-forankring</th>
+      <th>DBM-forankring</th>
+      <th>Analytisk funn som begrunner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1.</strong> Redefiner suksess-KPI-er</td>
+      <td>Digital outputs ≠ strategisk verdi</td>
+      <td>Value capture krever dokumentert butikkeffekt</td>
+      <td>Leverandørclaims dokumenterer reach, ikke lønnsomhet</td>
+    </tr>
+    <tr>
+      <td><strong>2.</strong> Kjedespesifikke value propositions</td>
+      <td>Relevance er DVC-kjernen</td>
+      <td>Omnichannel-posisjon krever kjedefit</td>
+      <td>365discount-kunder og Kvickly-kunder har ulike digitale behov</td>
+    </tr>
+    <tr>
+      <td><strong>3.</strong> Butikkstøttende kanal</td>
+      <td>Experiences knyttet til physisk handletur</td>
+      <td>App er kanal, ikke erstatning for fysisk handel</td>
+      <td>Coop.dk lukket; 900 butikker er eneste salgskanal</td>
+    </tr>
+    <tr>
+      <td><strong>4.</strong> Governance for Lobyco og retail media</td>
+      <td>Digital infrastructure styres mot kjernevirksomheten</td>
+      <td>Lobyco er governance-spørsmål, ikke automatisk fordel</td>
+      <td>Retail media-claims er leverandørkommunikasjon; kundetillit er kapital</td>
+    </tr>
+    <tr>
+      <td><strong>5.</strong> Pilot og skill lojalitet fra lønnsomhet</td>
+      <td>Evolution krever evidensbasert tilnærming</td>
+      <td>Evidensbaserte beslutninger er en av DBMs åtte kapabiliteter</td>
+      <td>Seleksjonsbias i appbruker-claims; finansielt press krever KPI-disiplin</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     KRITISK REFLEKSJON
+══════════════════════════════════════════════ -->
+<h2>Kritisk refleksjon og begrensninger</h2>
+
+<p>
+  Anbefalingene bygger på et kildegrunnlag med klare svakheter som må anerkjennes. For det
+  første er Lobyco, Playable og Shortcut kommersielt interesserte kilder. Påstander om
+  appbruk, engasjement og kampanjeeffekter er i stor grad leverandørmarkedsføring — nyttig
+  for å forstå mulige mekanismer, men utilstrekkelig som bevis på netto forretningsmessig
+  verdi. Oppgaven har behandlet disse kildene eksplisitt som claims, ikke som fakta.
+</p>
+<p>
+  For det andre er interne Coop-KPI-er for appeffekt på butikknivå ikke offentlig tilgjengelige.
+  Dette betyr at analysen ikke kan bevise at Coop App skaper eller <em>ikke</em> skaper
+  inkrementell margin, butikktrafikk eller lojalitet. Anbefalingene er derfor formulert som
+  governance- og styringsforslag — ikke som konklusjoner om appens nåværende lønnsomhet.
+</p>
+<p>
+  For det tredje kan DVC-rammeverket ha en tendens til å fremheve mulig digital verdi uten
+  tilstrekkelig forankring i finansielle resultater. Dette er grunnen til at oppgaven bruker
+  DBM (Weill &amp; Woerner, 2018) som et korrigerende perspektiv: DBM tvinger analysen til
+  å stille spørsmålet om <em>value capture</em>, ikke bare om digital aktivitet.
+</p>
+<p>
+  Endelig bør det bemerkes at anbefalingen om kjedespesifikke value propositions (anbefaling 2)
+  hviler på en inferens fra konkurrentanalysen — at digitale verktøy skaper mer verdi når de
+  passer med kjedens forretningsmodell. Dette er en plausibel analytisk slutning, men det er
+  ikke direkte bevist at kjedespesifikk modulering vil gi Coop bedre resultater. Dette er
+  nettopp grunnen til at anbefaling 5 krever pilottesting.
+</p>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     KONKLUSJON
+══════════════════════════════════════════════ -->
+<h2>Konklusjon</h2>
+
+<p>
+  Coops digitale utfordring i 2026 handler ikke om å velge mellom fysisk og digital handel.
+  Analysen gjennom DVC og DBM viser at Coop allerede har en sterk digital kundekontakt
+  gjennom Coop App, mer enn 1,8 millioner brukere og Lobyco som digital infrastruktur.
+  Utfordringen er at det offentlige kildegrunnlaget ikke dokumenterer at denne digitale
+  rekkevidden omsettes til inkrementell butikkøkonomi, margin eller varig konkurransefordel.
+</p>
+<p>
+  De fem anbefalingene til Thor Skov Jørgensen er derfor ikke en anbefaling om å styrke
+  eller redusere den digitale satsingen som sådan. De er en anbefaling om å styre den
+  digitale satsingen mer disiplinert: med KPI-er koblet til butikkøkonomi, med kjedespesifikke
+  value propositions som treffer kundenes faktiske behov, med Coop App tydelig posisjonert
+  som en butikkstøttende kanal, med governance-rammer som sikrer at Lobyco og retail media
+  tjener Coops omnichannel-modell — og med piloter som gir konsernledelsen et faktabasert
+  grunnlag for å avgjøre hvilke digitale initiativer som faktisk bør skaleres.
+</p>
+<p>
+  Dette er i tråd med oppgavens overordnede analytiske konklusjon: Coop App og Lobyco er
+  mulige strategiske kapabiliteter — men de er bare strategisk verdifulle dersom de styres
+  mot dokumentert butikk- og medlemsverdi, ikke mot leverandørclaims og engagement-tall alene.
+</p>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════
+     REFERANSER
+══════════════════════════════════════════════ -->
+<h2>Referanser</h2>
+
+<p><em>Akademiske kilder:</em></p>
+<ul class="evidence-list">
+  <li>Duus, R., &amp; Cooray, M. (2020). Digital Value Creation. I: <em>Digitalization</em>.
+      CBS Learning Lab.</li>
+  <li>Weill, P., &amp; Woerner, S. L. (2018). <em>What's Your Digital Business Model? Six
+      Questions to Help You Build the Next-Generation Enterprise</em>. Harvard Business
+      Review Press.</li>
+  <li>Rienecker, L., &amp; Jørgensen, P. S. (Ed.). (2022). <em>Den gode opgave</em>.
+      Samfundslitteratur.</li>
+  <li>Hedman, J., &amp; Bjørn-Andersen, N. (2016). Technology debt in Coop.
+      [Akademisk case, CBS].</li>
+</ul>
+
+<p><em>Virksomhetskilder:</em></p>
+<ul class="evidence-list">
+  <li>Coop Danmark A/S. (2025). <em>Årsrapport 2025</em>. Coop.dk.</li>
+  <li>Coop. (2026). Coop App og Coop Medlem. <em>Coop.dk</em>.</li>
+  <li>Lobyco. (2026). Coop case study. <em>Lobyco.com</em>.</li>
+  <li>Playable. (2026). Coop case. <em>Playable.com</em>.</li>
+  <li>Shortcut. (2026). Coop Denmark App case. <em>Shortcut.io</em>.</li>
+</ul>
+
+<p><em>Konkurrentkilder (sekundære):</em></p>
+<ul class="evidence-list">
+  <li>Salling Group. (2025). Key figures 2025. <em>Sallinggroup.com</em>.</li>
+  <li>Dagrofa. (2025). Annual Report 2025. <em>Dagrofa.dk</em>.</li>
+  <li>Lidl Danmark. (2026). Lidl Plus-appinformasjon. <em>Lidl.dk</em>.</li>
+  <li>REMA 1000. (2026). Scan Selv. <em>Rema1000.dk</em>.</li>
+</ul>
+
+<footer>
+  <p>
+    CBS HA (it.) 4. semester | IT-Strategi | Vår 2026 &nbsp;·&nbsp;
+    Linus Robertsen Palmqvist · Marcus Grude-Grødem · Axel Woxen · Anders Alexander Olseth
+  </p>
+  <p>Rapporten er skrevet på norsk i tråd med oppgavekravets åpning for norsk eller engelsk.</p>
+</footer>
+
+</body>
+</html>
