@@ -1,96 +1,96 @@
-# Theory Reference: DVC Framework + Digital Business Model
+# Teori: DVC Framework + Digital Business Model
 
 ## DVC Framework
 
-### What it is
-A framework for analysing the different types of digital value a firm can create. Used to diagnose *where* digital value exists or could exist.
+### Hva det er
+Et rammeverk for å analysere hvilke typer digital verdi en virksomhet kan skape. Brukes til å diagnostisere *hvor* digital verdi eksisterer eller kan eksistere.
 
-### The 5 DVC Components — with Coop Application
+### De 5 DVC-komponentene — med Coop-anvendelse
 
-| DVC Component | What it means | Coop App application |
+| DVC-komponent | Hva det betyr | Coop App-anvendelse |
 |---|---|---|
-| **Experiences** | Digital interactions that improve customer experience | Scan & Betal, digital receipts, shopping list, gamification — do they reduce friction and improve the store journey? |
-| **Relationships** | Digital channels that deepen customer relationships | Member app communication, personalised offers, bonus tracking — does it strengthen the cooperative member bond? |
-| **Relevance** | Digital value that fits the customer's specific situation | Coop has 4 chains with different missions — does the app feel relevant to 365discount vs. SuperBrugsen vs. Brugsen? |
-| **Digital Infrastructure** | Back-end capabilities that enable digital value | Lobyco as platform infrastructure — loyalty engine, API layer, potential modular producer role |
-| **Digital Outputs** | Measurable digital results | MAU, household reach, campaign clicks — but these are *intermediate* measures, not outcomes |
+| **Experiences** | Digitale interaksjoner som forbedrer kundeopplevelsen | Scan & Betal, digitale kvitteringer, handleliste, gamification — reduserer de friksjon og forbedrer butikkreisen? |
+| **Relationships** | Digitale kanaler som utdyper kunderelasjoner | Appkommunikasjon til medlemmer, personaliserte tilbud, bonusoversikt — styrker det det kooperative medlemsbåndet? |
+| **Relevance** | Digital verdi som passer kundens konkrete situasjon | Coop har 4 kjeder med ulike kundeoppdrag — oppleves appen like relevant for 365discount som for SuperBrugsen og Brugsen? |
+| **Digital Infrastructure** | Back-end-kapabiliteter som muliggjør digital verdi | Lobyco som plattforminfrastruktur — lojalitetsmotor, API-lag, mulig modular producer-rolle |
+| **Digital Outputs** | Målbare digitale resultater | MAU, household reach, kampanjeklikk — men disse er *mellomliggende* mål, ikke utfall |
 
-### Key critical point about DVC
-DVC can make digital activity look valuable simply because it exists. **Digital outputs ≠ digital outcomes.** You need DBM to test whether DVC value translates to business model value.
+### Kritisk poeng om DVC
+DVC kan gjøre digital aktivitet til å fremstå verdifull bare fordi den eksisterer. **Digital outputs ≠ digitale outcomes.** Du trenger DBM for å teste om DVC-verdi omsettes til forretningsmodellverdi.
 
 ---
 
-## Digital Business Model Perspective (Weill & Woerner 2018)
+## Digital Business Model-perspektivet (Weill & Woerner 2018)
 
-### What it is
-A framework for understanding whether and how digital capabilities fit a firm's overall business model. Organises firms along two axes:
-1. **Customer knowledge** — how deeply does the firm understand its customers?
-2. **Value network design** — does the firm operate in a controlled value chain or a broader ecosystem?
+### Hva det er
+Et rammeverk for å forstå om og hvordan digitale kapabiliteter passer virksomhetens overordnede forretningsmodell. Organiserer virksomheter langs to akser:
+1. **Customer knowledge** — hvor dypt kjenner virksomheten sine kunder?
+2. **Value network design** — opererer virksomheten i en kontrollert verdikjede eller et bredere økosystem?
 
-### The 4 Business Model Types
+### De 4 forretningsmodell-typene
 
-| Type | Description | Coop relevance |
+| Type | Beskrivelse | Coop-relevans |
 |---|---|---|
-| **Omnichannel business** | Physical + digital, customer knowledge moderate, controlled chain | **Coop's current position** — store-first omnichannel |
-| **Supplier** | Produces for others, limited customer relationship | Not Coop's main model |
-| **Ecosystem driver** | Hub of a broad ecosystem, high customer knowledge | Long-term aspiration only — no current evidence supports this |
-| **Modular producer** | Plug-in capabilities sold to other ecosystems | **Lobyco as potential modular producer** — selling loyalty infra to other retailers |
+| **Omnichannel business** | Fysisk + digitalt, moderat kundekunnskap, kontrollert kjede | **Coops nåværende posisjon** — store-first omnichannel |
+| **Supplier** | Produserer for andre, begrenset kunderelasjon | Ikke Coops hovedmodell |
+| **Ecosystem driver** | Hub i et bredt økosystem, høy kundekunnskap | Langsiktig aspirasjon kun — ingen evidens støtter dette i dag |
+| **Modular producer** | Plug-in-kapabiliteter solgt til andres økosystemer | **Lobyco som potensiell modular producer** — selger lojalitetsinfra til andre aktører |
 
-### The 3 Dimensions for Building Competitive Advantage
+### De 3 dimensjonene for å bygge konkurransefortrinn
 
-| Dimension | What it means | Coop opportunity |
+| Dimensjon | Hva det betyr | Coop-mulighet |
 |---|---|---|
-| **Content** | What information/products/value the firm offers digitally | Own brands, local offers, recipes, climate info — unique but currently communicated flatly |
-| **Customer experience** | How digital makes interactions better | Scan & Betal, digital receipts, personal offers — strongest current strategic contribution |
-| **Platform** | Shared digital infrastructure across chains | Lobyco as shared platform, but needs chain-specific modules |
+| **Content** | Hvilken informasjon/produkter/verdi virksomheten tilbyr digitalt | Egne merkevarer, lokale tilbud, oppskrifter, klimainnsikt — unikt, men kommuniseres flat i dag |
+| **Customer experience** | Hvordan digitalt gjør interaksjoner bedre | Scan & Betal, digitale kvitteringer, personlige tilbud — det sterkeste strategiske bidraget nå |
+| **Platform** | Felles digital infrastruktur på tvers av kjeder | Lobyco som felles plattform, men trenger kjedespesifikke moduler |
 
-### Key concepts from DBM
+### Nøkkelbegreper fra DBM
 
-**Value proposition** — what Coop App promises customers (savings, convenience, personalisation, member benefits). Must be differentiated by chain.
+**Value proposition** — hva Coop App lover kundene (sparing, bekvemmelighet, personalisering, medlemsfordeler). Må differensieres per kjede.
 
-**Value creation** — who gets value and how (customers → better offers; stores → traffic; suppliers → campaign access; Coop → data + member contact).
+**Value creation** — hvem får verdi og hvordan (kunder → bedre tilbud; butikker → trafikk; leverandører → kampanjeflater; Coop → data + medlemskontakt).
 
-**Value capture** — how Coop captures economic value (incremental basket, retail media net revenue, supplier-funded campaigns, retention). This is the weakest link in the evidence.
+**Value capture** — hvordan Coop fanger økonomisk verdi (inkrementell kurv, retail media-nettoinntekt, supplier-funded campaigns, retensjon). Dette er det svakeste leddet i evidensen.
 
-**Customer knowledge** — Coop's strategic potential: 2M+ members + purchase history + store context. But "data ≠ decisions" — needs analytical capacity to convert.
+**Customer knowledge** — Coops strategiske potensial: 2M+ medlemmer + kjøpshistorikk + butikkontekst. Men «data ≠ beslutninger» — krever analytisk kapasitet for å konverteres.
 
-### Coop's positioning: Store-first omnichannel
+### Coops posisjon: Store-first omnichannel
 
-After closing Coop.dk MAD (2023) and Coop.dk webshop (Jan 2025), Coop is clearly NOT an e-commerce player. The app must be understood as a **digital layer around the physical store visit**, not a standalone channel.
+Etter lukking av Coop.dk MAD (2023) og Coop.dk-webshop (januar 2025) er Coop tydelig IKKE en e-handelsaktør. Appen må forstås som et **digitalt lag rundt det fysiske butikkbesøket**, ikke som en selvstendig kanal.
 
-This matters for your argument: recommendations must tie the app to **store economics**, not build a separate digital strategy.
+Dette er avgjørende for argumentet ditt: anbefalingene må knytte appen til **butikkøkonomi**, ikke bygge en separat digital strategi.
 
 ---
 
-## How DVC + DBM Work Together in Your Paper
+## Hvordan DVC + DBM fungerer sammen i oppgaven
 
 ```
-DVC: What digital value can the app create?
+DVC: Hvilken digital verdi kan appen skape?
        ↓
-DBM: Does that value fit Coop's business model?
+DBM: Passer den verdien med Coops forretningsmodell?
        ↓
-Question: Can it create value capture (not just activity)?
+Spørsmål: Kan den skape value capture (ikke bare aktivitet)?
        ↓
-Conclusion: Conditional investment — Hybrid Governance
+Konklusjon: Betinget investering — Hybrid Governance
 ```
 
-The combination prevents two errors:
-- **Over-valuing digital** (DVC alone would): "We have 1.8M users, therefore success"
-- **Under-valuing digital** (pure financials): "EBIT is negative, cut everything digital"
+Kombinasjonen forhindrer to feil:
+- **Overvurdere digital** (DVC alene ville): «Vi har 1,8M brukere, altså er det suksess»
+- **Undervurdere digital** (ren finansiell linse): «EBIT er negativ, kutt alt digitalt»
 
 ---
 
-## Author/Source Reference Quick List
+## Forfatter-/kildereferanser
 
-| Theory/concept | Source |
+| Teori/konsept | Kilde |
 |---|---|
-| DVC Framework | Pensum (course materials) |
-| Digital Business Model (4 types, 3 dimensions) | Weill & Woerner (2018) |
+| DVC Framework | Pensum (kursmateriale) |
+| Digital Business Model (4 typer, 3 dimensjoner) | Weill & Woerner (2018) |
 | Digital Transformation vs. IT-Enabled Transformation | Wessel et al. (2021) |
-| Strategy as positioning | Porter (1996) |
+| Strategi som posisjonering | Porter (1996) |
 | Business Model Canvas | Osterwalder & Pigneur (2010) |
-| IT complexity / legacy debt at Coop | Bjørn-Andersen & Hedman (2016) |
-| Digital Innovation | Yoo et al. (2010); Nambisan et al. (2017) |
-| Disruption | Relevant for Lektion 5 questions |
-| Digital Ecosystems | Relevant for Lektion 6 questions |
-| IT implementation | Relevant for Lektion 7 questions |
+| IT-kompleksitet / legacy-gjeld hos Coop | Bjørn-Andersen & Hedman (2016) |
+| Digital innovasjon | Yoo et al. (2010); Nambisan et al. (2017) |
+| Disrupsjon | Relevant for Lektion 5-spørsmål |
+| Digitale økosystemer | Relevant for Lektion 6-spørsmål |
+| IT-implementering | Relevant for Lektion 7-spørsmål |

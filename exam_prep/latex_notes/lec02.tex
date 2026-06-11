@@ -1,0 +1,228 @@
+\section{Forelesning 2: \emph{Strategisk analyse (del I) og typiske strategiske virkemidler}}
+\label{sec:lec02}
+\settermlabel{terms:lec02}
+
+\subsection*{Oversikt}
+Forelesning 2 introduserer verktøykassen for \emph{ekstern} og \emph{intern}
+strategisk analyse, og en katalog av typiske strategiske grep en aktør kan velge.
+Målet er å gå fra Porters abstrakte posisjoneringsbegrep (\autoref{sec:lec01})
+til konkrete analyseverktøy som strukturerer hva man ser etter når man
+diagnostiserer en virksomhets situasjon.
+
+\subsection{Hovedteori}
+
+\subsubsection*{Makroanalyse: PESTEL og scenarier}
+Før bransjeanalysen kommer makro-omgivelsene. \term{PESTEL} kartlegger
+politiske, økonomiske, sosiale, teknologiske, miljømessige (klima) og
+lovgivende faktorer. PESTEL utvides ofte med \emph{forecasting} (megatrender,
+svake signaler) og \emph{scenario analysis} -- ulike framtidsbilder testes
+mot strategien.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\sffamily},
+  hub/.style={circle, draw=noteBlue, fill=noteBlue, text=white,
+              minimum size=1.9cm, font=\sffamily\bfseries\large, inner sep=0pt},
+  petal/.style 2 args={circle, draw=#1, fill=#1!12, line width=1pt,
+                       minimum size=2.4cm, align=center, inner sep=2pt,
+                       font=\sffamily\footnotesize, text=#1!55!black,
+                       label={[font=\sffamily\bfseries\Large, text=#1]center:#2}},
+]
+% Faktorfarger
+\definecolor{pestelP}{HTML}{B23A48}
+\definecolor{pestelEc}{HTML}{C97B25}
+\definecolor{pestelS}{HTML}{D4A017}
+\definecolor{pestelT}{HTML}{0E7C7B}
+\definecolor{pestelEn}{HTML}{2E7D32}
+\definecolor{pestelL}{HTML}{6A1B9A}
+
+% Sentralnav
+\node[hub] (c) at (0,0) {PESTEL};
+
+% Seks faktorer plassert i sirkel
+\node[petal={pestelP}{P}]  (p)  at ( 90:3.6cm) {\\[10pt]Political};
+\node[petal={pestelEc}{E}] (e1) at ( 30:3.6cm) {\\[10pt]Economic};
+\node[petal={pestelS}{S}]  (s)  at (330:3.6cm) {\\[10pt]Social};
+\node[petal={pestelT}{T}]  (t)  at (270:3.6cm) {\\[10pt]Technological};
+\node[petal={pestelEn}{E}] (e2) at (210:3.6cm) {\\[10pt]Environmental};
+\node[petal={pestelL}{L}]  (l)  at (150:3.6cm) {\\[10pt]Legal};
+
+% Forbindelseslinjer fra nav til hver faktor
+\foreach \n/\col in {p/pestelP, e1/pestelEc, s/pestelS,
+                     t/pestelT, e2/pestelEn, l/pestelL}
+  \draw[\col, line width=0.9pt, dashed, opacity=0.7] (c) -- (\n);
+
+% Ytre ring som antyder forecasting / scenarier
+\draw[noteBlue!40, line width=0.6pt, dotted] (0,0) circle (5.2cm);
+\node[noteBlue!70!black, font=\sffamily\itshape\small]
+  at (90:5.55cm) {forecasting \& scenarier};
+\end{tikzpicture}
+\caption{PESTEL-rammeverket: seks makroomgivelser kartlegges rundt et felles
+analysenav, og hele kartet leses gjennom forecasting og scenarier
+(Johnson et al.).}
+\end{figure}
+
+\subsubsection*{Bransjeanalyse: Porters Five Forces}
+Rammeverket kartlegger konkurransedynamikken i en bransje gjennom fem krefter:
+\begin{enumerate}
+  \item \term{Industry rivalry} -- intensiteten av konkurranse mellom
+    eksisterende aktører.
+  \item \term{Threat of new entrants} -- inntrengertrussel, knyttet til
+    inngangsbarrierer.
+  \item \term{Bargaining power of buyers} -- kjøpermakt.
+  \item \term{Bargaining power of suppliers} -- leverandørmakt.
+  \item \term{Threat of substitutes} -- substituttrusler.
+\end{enumerate}
+Den samlede styrken av de fem kreftene bestemmer bransjens strukturelle
+lønnsomhetspotensial.
+
+\begin{definition}{Bransjeattraktivitet}
+En bransje er strukturelt attraktiv når de fem kreftene er svake. Strategisk
+posisjon handler om å plassere seg slik at de fem kreftene treffer en mindre
+hardt enn konkurrentene.
+\end{definition}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{lec02-porter-five-forces.png}
+\caption{Porters Five Forces -- de fem konkurransekreftene som bestemmer
+bransjens strukturelle lønnsomhetspotensial.}
+\end{figure}
+
+\subsubsection*{Bransjens livssyklus}
+De fem kreftene endrer styrke gjennom bransjens livssyklus: \emph{development
+$\rightarrow$ growth $\rightarrow$ shake-out $\rightarrow$ maturity
+$\rightarrow$ decline}. F.eks.\ er rivalisering typisk lavest i tidlig
+vekstfase og høyest i moden/synkende fase. Modne bransjer (som dansk
+dagligvare) har høy rivalisering og lav vekst -- dette har konsekvenser for
+hvilke virkemidler som faktisk virker.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{lec02-industry-life-cycle.png}
+\caption{Industriens livssyklus med tilhørende endringer i Five Forces
+(Johnson et al.).}
+\end{figure}
+
+\subsubsection*{Intern analyse: Ressursbasert syn og VRIO}
+Komplementært til Porters posisjoneringsperspektiv: noen virksomheter har
+\term{VRIO-ressurser} (\emph{Valuable, Rare, Inimitable, Organised}) som gir
+\emph{bærekraftig konkurransefortrinn}. VRIO-stigen leder gjennom fire
+posisjoner -- fra \emph{vanskelig konkurransesituasjon} til \emph{bærekraftig
+konkurransefortrinn}. Relevant for å vurdere f.eks.\ Coops medlemsdata.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{lec02-vrio-decision-matrix.png}
+\caption{VRIO-stigen og de fire resulterende konkurranseposisjonene.}
+\end{figure}
+
+\subsubsection*{Intern analyse: Verdikjeden}
+Porters \term{value chain} bryter virksomhetens aktiviteter ned i:
+\begin{itemize}
+  \item \emph{Primæraktiviteter}: inbound logistics, operations, outbound
+    logistics, marketing \& sales, service.
+  \item \emph{Støtteaktiviteter}: firm infrastructure, HRM, technology
+    development, procurement.
+\end{itemize}
+Hver aktivitet er en mulig kilde til konkurransefortrinn -- enten gjennom lavere
+kostnad eller gjennom differensiering. Verdikjeden er også \emph{baseline} som
+Rosenstand \& Baiyere sin \term{Digital Value Chain (DVC)} kontrasteres mot
+(jf.\ \autoref{sec:lec03}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{lec02-porter-value-chain.png}
+\caption{Porters klassiske verdikjede.}
+\end{figure}
+
+\subsubsection*{SWOT som syntese}
+\term{SWOT} (Styrker, Svakheter, Muligheter, Trusler) syntetiserer
+\emph{interne} (S/W) og \emph{eksterne} (O/T) funn fra de foregående
+analysene. SWOT er ikke en strategi i seg selv -- den er et hjelpemiddel for
+å se sammenhenger.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\linewidth]{lec02-swot.png}
+\caption{SWOT-matrisen som syntese av intern og ekstern analyse.}
+\end{figure}
+
+\subsubsection*{Five Building Blocks of Digital Transformation}
+Ross et al.\ definerer fem grunnleggende kapabiliteter en virksomhet trenger
+for å gjennomføre digital transformasjon:
+\begin{itemize}
+  \item \term{Operational Backbone} -- pålitelige kjerneprosesser og data
+    som muliggjør effektiv drift.
+  \item \term{Shared Customer Insights} -- felles, oppdatert kundekunnskap
+    på tvers av enheter.
+  \item \term{Digital Platform} -- gjenbrukbare komponenter for raskt å
+    bygge nye digitale tilbud.
+  \item \term{Accountability Framework} -- klare beslutningsrettigheter og
+    ansvarslinjer for digitale initiativ.
+  \item \term{External Developer Platform} -- åpning mot tredjeparter via
+    API-er og verktøy.
+\end{itemize}
+Disse er forutsetninger, ikke strategi -- men strategien må adressere om de
+er på plass.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{lec02-five-building-blocks-digital-transformation.png}
+\caption{Ross et al.\ sine fem byggeklosser for digital transformasjon.}
+\end{figure}
+
+\subsection{Sentrale fagbegreper}\label{terms:lec02}
+\begin{itemize}
+  \item \term{PESTEL} -- makro-omgivelsesanalyse.
+  \item \term{Five Forces} -- ekstern bransjeanalyse.
+  \item \term{Industry life cycle} -- bransjens utviklingsstadier.
+  \item \term{Value chain} -- intern aktivitetsanalyse.
+  \item \term{VRIO} -- ressursbasert vurdering av varig fortrinn.
+  \item \term{SWOT} -- syntese intern $\times$ ekstern.
+  \item \term{Entry barriers} -- skalafordeler, brand, byttekostnader, kapital.
+  \item \term{Switching costs} -- kunders kostnad ved å bytte leverandør.
+  \item \term{Network effects} -- verdi som vokser med antall brukere.
+  \item \term{Lock-in} -- mekanisme som binder kunder til en leverandør.
+  \item \term{Five Building Blocks} -- digitale grunnkapabiliteter (Ross).
+\end{itemize}
+
+\subsection{Typiske strategiske virkemidler}
+For en etablert aktør som møter digital disrupsjon (jf.\ \autoref{sec:lec05}):
+\begin{enumerate}
+  \item \textbf{Forsvare} eksisterende posisjon (styrke eksisterende fortrinn).
+  \item \textbf{Investere} i nye digitale kanaler.
+  \item \textbf{Kjøpe} digitale kapabiliteter (oppkjøp).
+  \item \textbf{Samarbeide} med digitale aktører (allianser, plattformer).
+  \item \textbf{Selv-disrupsjon} -- bygge en disruptiv enhet før andre gjør det.
+\end{enumerate}
+Valget avhenger av strategisk fit med forretningsmodellen (\autoref{sec:lec03}).
+
+\subsection{Eksempler og caser}
+\begin{eksempelboks}{Dansk dagligvare -- Five Forces}
+Høy rivalisering (Salling, Coop, REMA, Lidl), moderat trussel fra netthandel
+(Nemlig), sterk leverandørmakt fra store merker, lav kjøpermakt per kunde men
+sterk samlet, substitutter inkluderer ferdigmat-bud og restaurant. Moden
+bransje med strukturelt lav margin.
+\end{eksempelboks}
+
+\begin{eksempelboks}{Coops verdikjede}
+Innkjøp og logistikk er sentralt; digital teknologi i butikk (Scan \& Betal,
+lojalitetsapp) hører hjemme under \emph{technology development} og
+\emph{marketing \& sales}. Medlemsdataene er VRIO-kandidat -- verdifulle,
+relativt sjeldne, vanskelig å imitere uten samme medlemsbase, men
+organisasjonen må være riktig satt opp for å utnytte dem.
+\end{eksempelboks}
+
+\subsection{Eksamensrelevans}
+\begin{itemize}
+  \item Kunne gjennomføre en Five Forces-analyse på en konkret bransje.
+  \item Kunne plassere digitale initiativ i verdikjeden og forklare hvor
+    fortrinn oppstår.
+  \item Kjenne katalogen av strategiske virkemidler og kunne velge mellom dem.
+  \item Forstå at ekstern + intern analyse er to nødvendige sider av samme sak,
+    og at SWOT \emph{syntetiserer}.
+  \item Bruke VRIO til å vurdere om en ressurs gir varig fortrinn -- ikke
+    bare et øyeblikkelig forsprang.
+\end{itemize}

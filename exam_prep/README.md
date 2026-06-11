@@ -1,26 +1,26 @@
-# Exam Prep — IT-Strategi
+# Eksamensforberedelse — IT-Strategi
 
-Study materials for the oral exam (June 15–26, 2026).
+Studiemateriale for muntlig eksamen (15.–26. juni 2026).
 
-## Files
+## Filer
 
-| File | What it contains |
+| Fil | Innhold |
 |---|---|
-| `00_exam_format.md` | Exam structure, timing, quality criteria, learning objectives |
-| `01_report_defense.md` | Core argument, 5 recommendations table, likely Q&A on the paper |
-| `02_theory_DVC_DBM.md` | Full theory reference: DVC Framework + Digital Business Model |
-| `03_key_facts.md` | Numbers, dates, chains, competitors — know these cold |
-| `04_curriculum_overview.md` | All 9 lectures summarised + key authors |
-| `05_likely_curriculum_questions.md` | Q&A for curriculum questions (outside the paper) |
-| `06_opening_presentation_draft.md` | Two draft options for the 4–5 minute opening |
+| `00_eksamensformat.md` | Eksamensstruktur, tidsbruk, kvalitetskriterier, læringsmål |
+| `01_forsvar_av_oppgaven.md` | Hovedargument, 5 anbefalinger, sannsynlige spørsmål til oppgaven |
+| `02_teori_DVC_DBM.md` | Full teorireferanse: DVC Framework + Digital Business Model |
+| `03_nøkkelfakta.md` | Tall, datoer, kjeder, konkurrenter — lær disse utenat |
+| `04_pensumoversikt.md` | Alle 9 forelesninger oppsummert med nøkkelforfattere |
+| `05_sannsynlige_pensumspørsmål.md` | Spørsmål og svar for pensumspørsmål utenfor oppgaven |
+| `06_innledning_utkast.md` | To utkast til 4–5 minutters innledning |
 
-## Quick orientation
+## Rask orientering
 
-**Your paper:** Advising Martin Hasgard Olesen (Director Communication, Marketing & Digital) on Coop App and Lobyco strategy. Theories: DVC Framework + Digital Business Model (Weill & Woerner). Stance: hybrid governance. 5 recommendations.
+**Oppgaven din:** Rådgiver Martin Hasgard Olesen (Direktør for Kommunikasjon, Marketing og Digital) om fremtiden for Coop App og Lobyco. Teorier: DVC Framework + Digital Business Model (Weill & Woerner). Stance: hybrid governance. 5 anbefalinger.
 
-**Exam:** ~20 min/student. Opening (4–5 min) + paper Q&A + curriculum Q&A. Individual grade.
+**Eksamen:** ~20 min/student. Innledning (4–5 min) + spørsmål til oppgaven + pensumspørsmål. Individuell karakter.
 
-**Start here if time is short:**
-1. `03_key_facts.md` — get the numbers right
-2. `01_report_defense.md` — know your argument cold
-3. `05_likely_curriculum_questions.md` — prep for outside-paper questions
+**Start her hvis du har dårlig tid:**
+1. `03_nøkkelfakta.md` — få tallene rett
+2. `01_forsvar_av_oppgaven.md` — kjenn argumentet ditt
+3. `05_sannsynlige_pensumspørsmål.md` — forbered pensumspørsmål

@@ -1,0 +1,134 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[norsk]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{microtype}
+
+\graphicspath{{figures/}}
+
+% ------------------- Farger -------------------
+\definecolor{noteTeal}{HTML}{0E7C7B}
+\definecolor{notePurple}{HTML}{6A1B9A}
+\definecolor{noteBlue}{HTML}{1F4E79}
+\definecolor{noteAccent}{HTML}{B23A48}
+\definecolor{defBg}{HTML}{EAF4F4}
+\definecolor{defBorder}{HTML}{0E7C7B}
+\definecolor{exBg}{HTML}{FFF4E6}
+\definecolor{exBorder}{HTML}{C97B25}
+
+% ------------------- Seksjonsstil -------------------
+\titleformat{\section}{\Large\bfseries\color{noteBlue}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{noteTeal!85!black}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{noteBlue!85!black}}{}{0pt}{}
+
+% ------------------- Semantiske kommandoer -------------------
+% \term blir klikkbar og lenker til gjeldende forelesnings ordliste.
+% Hver lecXX.tex setter \settermlabel{terms:lecXX} øverst, og legger
+% \label{terms:lecXX} på "Sentrale fagbegreper"-overskriften.
+\newcommand{\currenttermlabel}{terms:lec01}
+\newcommand{\settermlabel}[1]{\renewcommand{\currenttermlabel}{#1}}
+\newcommand{\term}[1]{\hyperref[\currenttermlabel]{\textbf{\textcolor{noteTeal!75!black}{#1}}}}
+\newcommand{\keypoint}[1]{\textit{\textcolor{notePurple!75!black}{#1}}}
+
+% ------------------- Bokser -------------------
+\newtcolorbox{definition}[1]{
+  enhanced, breakable,
+  colback=defBg, colframe=defBorder,
+  boxrule=0.6pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\textbf{Definisjon: #1}},
+  fonttitle=\bfseries\color{white},
+  coltitle=white,
+  attach boxed title to top left={xshift=8pt, yshift=-3pt},
+  boxed title style={colback=defBorder, sharp corners, boxrule=0pt},
+}
+
+\newtcolorbox{eksempelboks}[1]{
+  enhanced, breakable,
+  colback=exBg, colframe=exBorder,
+  boxrule=0.6pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\textbf{Eksempel: #1}},
+  fonttitle=\bfseries\color{white},
+  coltitle=white,
+  attach boxed title to top left={xshift=8pt, yshift=-3pt},
+  boxed title style={colback=exBorder, sharp corners, boxrule=0pt},
+}
+
+% Brukt for figurer der placeholder ikke ble matchet av reviewer
+\newcommand{\figureplaceholder}[2]{%
+  \begin{center}\fbox{\parbox{0.85\linewidth}{\centering\small\textit{[Figur mangler: #1]\\#2}}}\end{center}%
+}
+
+% ------------------- Hyperref -------------------
+\hypersetup{
+  colorlinks=true,
+  linkcolor=noteBlue,
+  citecolor=noteBlue,
+  urlcolor=noteAccent,
+}
+
+% ------------------- Metadata -------------------
+\title{\textbf{IT-strategi --- Eksamensnotater}}
+\author{Marcus Grude Grødem}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\Huge\bfseries\color{noteBlue} IT-strategi \par}
+\vspace{0.6cm}
+{\Large Eksamensnotater \par}
+\vspace{1.2cm}
+{\large Copenhagen Business School --- Foråret 2026 \par}
+\vspace{2.5cm}
+\rule{0.6\linewidth}{0.4pt}\par
+\vspace{0.6cm}
+{\large Marcus Grude Grødem \par}
+\vspace{0.4cm}
+{\small \today \par}
+\vfill
+{\small\itshape Notatene er strukturert per forelesning (1--7, 9). Prosa er på norsk;
+fagbegreper er beholdt på originalspråket (engelsk/dansk).}\par
+\vspace{1cm}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\input{lec01}
+\clearpage
+\input{lec02}
+\clearpage
+\input{lec03}
+\clearpage
+\input{lec04}
+\clearpage
+\input{lec05}
+\clearpage
+\input{lec06}
+\clearpage
+\input{lec07}
+\clearpage
+\input{lec09}
+\clearpage
+
+\part*{Del II --- Prosjektforsvar}
+\addcontentsline{toc}{part}{Del II --- Prosjektforsvar}
+\input{project_defense}
+
+\end{document}
