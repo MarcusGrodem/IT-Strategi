@@ -13,12 +13,13 @@
 
 ## Din oppgave
 
-- **Rådgivert aktør:** Martin Hasgard Olesen, Direktør for Kommunikation, Marketing og Digital
-- **Case:** Coop App og Lobyco — fremtidig investering og styring
-- **Teorier:** DVC Framework + Digital Business Model-perspektivet (Weill & Woerner)
-- **Strategisk stance:** Hybrid governance
-- **5 anbefalinger**
-- **Språk:** Norsk (bekreft med CBS-reglene før endelig innlevering)
+- **Rådgivert aktør:** Thor Skov Jørgensen, administrerende direktør (CEO), Coop Danmark
+- **Case:** Coop App og Lobyco — strategisk rolle og styring fremover
+- **Teorier:** DVC Framework (Duus & Cooray 2020) + Digital Business Model (Weill & Woerner 2018)
+- **Strategisk stance:** Videreføring av appen med tydeligere strategisk styring — tre styringsdimensjoner
+- **3 anbefalinger:** KPI-hierarki, Kjedespesifikk diversifisering i felles plattform, Lobyco & Retail Media som Coop-først-kapabilitet
+- **Språk:** Norsk
+- **Levert:** 15.05.2026 — gruppeoppgave (Linus Robertsen Palmqvist, Marcus Grude-Grødem, Axel Woxen, Anders Alexander Olseth)
 
 ## Hva sensorene vurderer
 
@@ -42,7 +43,8 @@ Fra kvalitetskriteriene (Rienecker & Jørgensen):
 ## Din innledning (4–5 min): Velg klokt
 
 Velg 1–2 temaer fra oppgaven der du kan vise dybde og forsvare deg godt. Gode valg:
-- Valget av hybrid governance og hvorfor ikke alternativene
-- Hvordan DVC + Digital Business Model fungerer sammen i analysen av Coop
-- Kildekritikkargumentet — hvorfor du behandler Lobyco/Playable-påstander forsiktig
+- Hvorfor *styring*, ikke investeringsnivå, er det riktige strategiske spørsmålet for Skov Jørgensen
+- Hvordan DVC + DBM fungerer sammen — value creation vs. value capture som rød tråd
+- Kildekritikkargumentet — hvorfor du behandler Lobyco/Playable/Shortcut-påstander forsiktig
 - KPI-hierarki-anbefalingen — hva «suksess» bør bety for Coop App
+- Hvorfor Coop driver IT-Enabled Org. Transformation, ikke Digital Transformation (Wessel et al. 2021)

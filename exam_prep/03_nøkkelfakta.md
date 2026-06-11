@@ -41,12 +41,13 @@
 
 ## Rådgivert aktør
 
-**Martin Hasgard Olesen** — Direktør for Kommunikation, Marketing og Digital
+**Thor Skov Jørgensen** — administrerende direktør (CEO), Coop Danmark
 
-Hvorfor Martin?
-- Ansvarsområdet dekker kunderevendt digital, lojalitet, retail media, kommunikasjon
-- Han trenger å delta i *direksjonsdiskusjonen* med et kvalifisert standpunkt
-- Han må oversette digital aktivitetsmetrikk til finansielt/strategisk språk for styret
+Hvorfor Skov Jørgensen?
+- Som CEO eier han direksjonsdiskusjonen om appens fremtid
+- Han må veie digital satsing mot konsernets samlede økonomi (EBIT −215 mill. DKK) og strategiske retning etter Coop.dk-lukkingen
+- Han har mandatet til å beslutte styringsmodellen — KPI-rammeverk, governance av Lobyco, koordinering mellom kjeder og konsern
+- Lavere ledelsesnivåer eier delene; CEO eier helheten
 
 ## Konkurrentoversikt
 
@@ -66,4 +67,18 @@ Hvorfor Martin?
 
 **Ikke kjent fra offentlige kilder:** Lobycos kostnadsstruktur, eksterne inntekter, bokverdi, graden av teknologisk avhengighet mellom Coop App og Lobyco, hva en kjøper ville betale.
 
-**Konklusjon:** Kan ikke anbefale salg eller beholde uten mer data. Anbefal governance-avklaring: Coop-first mandat, målbare KPI-er.
+**Konklusjon:** Kan ikke anbefale salg eller beholde uten mer data. Anbefal governance-avklaring: Coop-først-mandat, målbare KPI-er. Dette er Anbefaling 3.
+
+## Kilder i oppgaven
+
+| Kilde | Bruk |
+|---|---|
+| Duus & Cooray (2020) | DVC-rammeverk — primær teori |
+| Weill & Woerner (2018) | DBM-rammeverk — primær teori |
+| Hedman & Bjørn-Andersen (2016) | Coops historiske teknologiske gjeld |
+| Lobyco (2026a, 2026b) | Brukertall, kundeklubb-claims, case studies |
+| Playable (2026) | Gamification + retail media |
+| Shortcut (2026) | Digital transformasjons-case for Coop |
+| Tata Consultancy Services (n.d.) | ICA-personalisering (sammenligning) |
+| Eagle Eye (n.d.) | Tesco Clubcard (sammenligning) |
+
