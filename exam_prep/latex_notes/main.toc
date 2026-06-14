@@ -1,59 +1,92 @@
 \babel@toc {norsk}{}\relax 
-\contentsline {section}{\numberline {1}Forelesning 1: \emph {Introduksjon -- Hva er strategi?}}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Hovedteori}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Sentrale fagbegreper}{6}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Modeller og rammeverk -- bruksveiledning}{6}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Eksempler og caser}{6}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Eksamensrelevans}{6}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Forelesning 2: \emph {Strategisk analyse (del I) og typiske strategiske virkemidler}}{8}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Hovedteori}{8}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Sentrale fagbegreper}{12}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Typiske strategiske virkemidler}{12}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Eksempler og caser}{13}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Eksamensrelevans}{13}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Forelesning 3: \emph {Digitale forretningsmodeller}}{14}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Hovedteori}{14}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Sentrale fagbegreper}{18}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Modeller -- bruksveiledning}{18}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Eksempler og caser}{18}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Eksamensrelevans}{19}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Forelesning 4: \emph {Strategi og digital transformasjon}}{20}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Hovedteori}{20}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Sentrale fagbegreper}{23}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Diagnostisk rammeverk}{23}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Eksempler og caser}{23}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Eksamensrelevans}{23}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Forelesning 5: \emph {Digital innovasjon, disrupsjon og strategier}}{25}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Hovedteori}{25}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Sentrale fagbegreper}{29}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Diagnostiske spørsmål}{29}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Eksempler og caser}{29}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Eksamensrelevans}{30}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Forelesning 6: \emph {Digitale økosystemer og plattformer}}{31}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Hovedteori}{31}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Sentrale fagbegreper}{34}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Diagnostisk rammeverk for økosystemstrategi}{35}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Eksempler og caser}{35}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Eksamensrelevans}{35}{subsection.6.5}%
-\contentsline {section}{\numberline {7}Forelesning 7: \emph {Implementering av IT-strategier}}{36}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Hovedteori}{36}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Sentrale fagbegreper}{40}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Implementeringsdisiplin: en sjekkliste}{41}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Eksempler og caser}{41}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Eksamensrelevans}{41}{subsection.7.5}%
-\contentsline {section}{\numberline {8}Forelesning 9: \emph {Oppsummering og eksamensforberedelse}}{42}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Hovedteori -- den integrative tråden}{42}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Sentrale fagbegreper -- konsolidering}{43}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Coop som integrerende eksempel}{43}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Eksamenstips fra Lektion 9}{44}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Eksamensrelevans}{44}{subsection.8.5}%
-\contentsline {part}{Del II --- Prosjektforsvar}{45}{part*.1}%
-\contentsline {section}{\numberline {9}Prosjektforsvar: \emph {Coop App-prosjektet i lys av pensum}}{45}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Prosjektets kjerne i én setning}{45}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}De tre anbefalingene og deres teorianker}{45}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Hvorfor DVC + DBM? (forsvar av rammeverk-valget)}{45}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Hvor resten av pensum styrker forsvaret}{46}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Sannsynlige forsvarsspørsmål -- og svar}{47}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Strukturen for å svare på pensumspørsmål (CRE+I)}{49}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}Begrensninger ved oppgaven (vær åpen om disse)}{50}{subsection.9.7}%
-\contentsline {subsection}{\numberline {9.8}En tre-setningers \guillemotleft {}elevator pitch\guillemotright {} for forsvaret}{50}{subsection.9.8}%
+\contentsline {section}{\numberline {1}Forelesning 1: \emph {Introduksjon -- Hva er strategi?}}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Hovedteori}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Sentrale fagbegreper}{7}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Modeller og rammeverk -- bruksveiledning}{7}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Eksempler og caser}{7}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Eksamensrelevans}{7}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Forelesning 2: \emph {Strategisk analyse (del I) og typiske strategiske virkemidler}}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Hovedteori}{9}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Sentrale fagbegreper}{14}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Typiske strategiske virkemidler}{14}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Eksempler og caser}{14}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Eksamensrelevans}{14}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Forelesning 3: \emph {Digitale forretningsmodeller}}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Hovedteori}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Sentrale fagbegreper}{20}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Modeller -- bruksveiledning}{20}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Eksempler og caser}{20}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Eksamensrelevans}{21}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Forelesning 4: \emph {Strategi og digital transformasjon}}{22}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Hovedteori}{22}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Sentrale fagbegreper}{25}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Diagnostisk rammeverk}{25}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Eksempler og caser}{25}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Eksamensrelevans}{25}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Forelesning 5: \emph {Digital innovasjon, disrupsjon og strategier}}{27}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Hovedteori}{27}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Sentrale fagbegreper}{31}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Diagnostiske spørsmål}{31}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Eksempler og caser}{31}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Eksamensrelevans}{32}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Forelesning 6: \emph {Digitale økosystemer og plattformer}}{33}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Hovedteori}{33}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Sentrale fagbegreper}{36}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Diagnostisk rammeverk for økosystemstrategi}{37}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Eksempler og caser}{37}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Eksamensrelevans}{37}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Forelesning 7: \emph {Implementering av IT-strategier}}{38}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Hovedteori}{38}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Sentrale fagbegreper}{42}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Implementeringsdisiplin: en sjekkliste}{43}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Eksempler og caser}{43}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Eksamensrelevans}{43}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Forelesning 9: \emph {Oppsummering og eksamensforberedelse}}{44}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Hovedteori -- den integrative tråden}{44}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Sentrale fagbegreper -- konsolidering}{45}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Coop som integrerende eksempel}{45}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Eksamenstips fra Lektion 9}{46}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Eksamensrelevans}{46}{subsection.8.5}%
+\contentsline {part}{Del II --- Prosjektforsvar}{47}{part*.1}%
+\contentsline {section}{\numberline {9}Prosjektforsvar: \emph {Coop App-prosjektet i lys av pensum}}{47}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Casens kontekst -- hvorfor problemstillingen er reell}{47}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Hvorfor Skov Jørgensen som rådgivert aktør?}{48}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Prosjektets kjerne i én setning}{48}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}De tre anbefalingene og deres teorianker}{49}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Hvorfor DVC + DBM? (forsvar av rammeverk-valget)}{49}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Strategisk stance: «Videreføring med styring»}{51}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Anbefaling 1 -- KPI-hierarki: dybdeforsvar}{52}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Anbefaling 2 -- Kjedespesifikk diversifisering: dybdeforsvar}{52}{subsection.9.8}%
+\contentsline {subsection}{\numberline {9.9}Anbefaling 3 -- Lobyco \& retail media Coop-først: dybdeforsvar}{53}{subsection.9.9}%
+\contentsline {subsection}{\numberline {9.10}Implementering -- hvordan Coop teoretisk skal gjennomføre dette}{54}{subsection.9.10}%
+\contentsline {subsection}{\numberline {9.11}Hvor resten av pensum styrker forsvaret}{55}{subsection.9.11}%
+\contentsline {subsection}{\numberline {9.12}Kildekritikk og evidenskjede}{57}{subsection.9.12}%
+\contentsline {subsection}{\numberline {9.13}Begrensninger ved oppgaven (vær åpen om disse)}{57}{subsection.9.13}%
+\contentsline {subsection}{\numberline {9.14}Sannsynlige forsvarsspørsmål -- og svar}{58}{subsection.9.14}%
+\contentsline {subsection}{\numberline {9.15}Strukturen for å svare på pensumspørsmål (CRE+I)}{60}{subsection.9.15}%
+\contentsline {subsection}{\numberline {9.16}En tre-setningers \guillemotleft {}elevator pitch\guillemotright {} for forsvaret}{60}{subsection.9.16}%
+\contentsline {part}{Del III --- Modelloversikt}{61}{part*.2}%
+\contentsline {section}{\numberline {10}Modelloversikt --- formål, forklaring og Coop-tilknytning}{61}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Johnson et al. --- Cultural Web / Paradigme-modellen}{61}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}PESTEL --- analyse av makromiljøet}{62}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Porters Five Forces}{63}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Industriers livssyklus og De Fem Kreftene}{64}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}VRIO --- ressursbasert analyse}{65}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}SWOT}{66}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}TOWS --- fra analyse til handling}{67}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Verdikjede og verdikjedesystemer (Porter)}{68}{subsection.10.8}%
+\contentsline {subsection}{\numberline {10.9}Five Building Blocks of Digital Transformation (Ross et al.)}{69}{subsection.10.9}%
+\contentsline {subsection}{\numberline {10.10}CVP --- Johnson et al.s forretningsmodellramme}{70}{subsection.10.10}%
+\contentsline {subsection}{\numberline {10.11}Business Model Canvas (Osterwalder)}{71}{subsection.10.11}%
+\contentsline {subsection}{\numberline {10.12}Weill \& Woerner (2018) --- Digital Business Model Framework}{72}{subsection.10.12}%
+\contentsline {subsection}{\numberline {10.13}Network effects (Nettverkseffekter)}{73}{subsection.10.13}%
+\contentsline {subsection}{\numberline {10.14}Allwein et al.\ (2020) --- Platform Business Model Canvas}{74}{subsection.10.14}%
+\contentsline {subsection}{\numberline {10.15}Lubinski et al.\ (2020) --- Platform Business Model Canvas}{75}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.16}Davis Eisape --- Platform Business Model Canvas}{76}{subsection.10.16}%
+\contentsline {subsection}{\numberline {10.17}Wessel et al.\ --- Digital Transformation vs IT-Enabled Transformation}{77}{subsection.10.17}%
+\contentsline {subsection}{\numberline {10.18}Øyemodellen --- typer disruption}{78}{subsection.10.18}%
+\contentsline {subsection}{\numberline {10.19}Disruption-modellen (tre sirkler)}{79}{subsection.10.19}%
+\contentsline {subsection}{\numberline {10.20}Digital Innovation Strategy + tre kjerneelementer}{80}{subsection.10.20}%
+\contentsline {subsection}{\numberline {10.21}Tawse \& Tabesh --- Strategy Implementation Framework}{81}{subsection.10.21}%
+\contentsline {part}{Del IV --- Ordbank}{83}{part*.3}%
+\contentsline {section}{Ordbank --- Sentrale fagbegrep og teorier}{83}{section*.4}%

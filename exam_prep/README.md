@@ -15,6 +15,7 @@ Studiemateriale for muntlig eksamen (15.–26. juni 2026).
 | `06_innledning_utkast.md` | To utkast til 4–5 minutters innledning |
 | `07_begrunnelser_perspektivering.md` | Dybde-forsvar av alle valg + pensum-perspektivering for hver anbefaling |
 | `08_implementering.md` | Hvordan Coop teoretisk skal implementere de 3 anbefalingene (3C, hybrid governance, pilot-først) |
+| `09_ordbank.md` | Felles ordbank — kortdefinisjoner av sentrale fagbegrep, teorier og forfattere |
 
 ## Rask orientering
 

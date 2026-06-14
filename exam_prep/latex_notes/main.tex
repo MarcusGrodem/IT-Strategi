@@ -42,6 +42,11 @@
 \newcommand{\term}[1]{\hyperref[\currenttermlabel]{\textbf{\textcolor{noteTeal!75!black}{#1}}}}
 \newcommand{\keypoint}[1]{\textit{\textcolor{notePurple!75!black}{#1}}}
 
+% \modelref{label}{tekst} -- klikkbar lenke til modelloversikten (Del III).
+% Brukes i Del I (forelesninger) og Del II (prosjektforsvar) for at leseren
+% kan hoppe direkte til full modellbeskrivelse i Del III.
+\newcommand{\modelref}[2]{\hyperref[model:#1]{\textbf{\textcolor{noteBlue!80!black}{#2}}}}
+
 % ------------------- Bokser -------------------
 \newtcolorbox{definition}[1]{
   enhanced, breakable,
@@ -130,5 +135,15 @@ fagbegreper er beholdt på originalspråket (engelsk/dansk).}\par
 \part*{Del II --- Prosjektforsvar}
 \addcontentsline{toc}{part}{Del II --- Prosjektforsvar}
 \input{project_defense}
+\clearpage
+
+\part*{Del III --- Modelloversikt}
+\addcontentsline{toc}{part}{Del III --- Modelloversikt}
+\input{models}
+\clearpage
+
+\part*{Del IV --- Ordbank}
+\addcontentsline{toc}{part}{Del IV --- Ordbank}
+\input{ordbank}
 
 \end{document}

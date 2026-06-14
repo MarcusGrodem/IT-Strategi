@@ -26,6 +26,7 @@ EXTRACTIONS = [
 
     # Lecture 2: Strategic analysis I
     ('lec2', 8, 'lec02-pestel-and-forecasting.png'),
+    ('lec2', 16, 'lec02-forecasting-under-uncertainty.png'),
     ('lec2', 20, 'lec02-porter-five-forces.png'),
     ('lec2', 28, 'lec02-industry-life-cycle.png'),
     ('lec2', 36, 'lec02-vrio-decision-matrix.png'),

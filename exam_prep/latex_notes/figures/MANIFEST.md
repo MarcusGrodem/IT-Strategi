@@ -44,6 +44,12 @@ Tool used: PyMuPDF (`fitz`) — the rendering script lives next to the figures. 
 - **What it shows:** PESTEL (Politisk / Økonomisk / Socialt / Teknologi / Klima og Miljø / Lovgivning) alongside Johnson et al.'s diagram of forecasting (market/nonmarket, megatrends, weak signals) and scenario analysis as macro-environment tools.
 - **When to cite:** Macro-environment analysis; explaining how PESTEL feeds into forecasting and scenario planning.
 
+### lec02-forecasting-under-uncertainty.png
+- **Lecture:** 2 — Strategisk analyse I
+- **Source page:** 16 of `170226_Lektion 2_Strategisk analyse (del I) og typiske strategiske virkemidler_IT-strategi-1.pdf`
+- **What it shows:** Johnson et al. (2017) Figure 2.8 — three forecasting approaches plotted against increasing uncertainty: (i) Single-point forecast (low uncertainty), (ii) Range forecast with probability bands (Unlikely / Possible / Probable / Possible / Unlikely), and (iii) Alternative futures A / B / C (high uncertainty).
+- **When to cite:** When discussing how strategic forecasting is chosen based on level of uncertainty — single-point, interval/range, or scenario-based "alternative futures" forecasting; useful alongside megatrends, inflexion points and weak signals.
+
 ### lec02-porter-five-forces.png
 - **Lecture:** 2 — Strategisk analyse I
 - **Source page:** 20 of `170226_Lektion 2_...pdf`
