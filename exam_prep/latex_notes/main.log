@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.28)  15 JUN 2026 11:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.28)  15 JUN 2026 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1403,190 +1403,195 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--140
 \T1/lmr/m/n/10.95 (+20) /omnichannel-spenning;
  []
 
-[48] [49]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-52.
- (/usr/local/texlive/2026basic/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-[50] [51] [52] [53] [54] [55] [56] [57] [58] [59]) [60] (./models.tex
-<figures/models-overview-matrix.png, id=1258, 3011.25pt x 1693.82813pt>
+[48]
+<figures/dvc-framework-duus-cooray.png, id=1142, 346.29375pt x 271.0125pt>
+File: figures/dvc-framework-duus-cooray.png Graphic file (type png)
+<use figures/dvc-framework-duus-cooray.png>
+Package pdftex.def Info: figures/dvc-framework-duus-cooray.png  used on input l
+ine 168.
+(pdftex.def)             Requested size: 253.51564pt x 198.40814pt.
+ [49 <./figures/dvc-framework-duus-cooray.png>]
+File: figures/lec03-weill-woerner-digital-business-model-framework.png Graphic 
+file (type png)
+<use figures/lec03-weill-woerner-digital-business-model-framework.png>
+Package pdftex.def Info: figures/lec03-weill-woerner-digital-business-model-fra
+mework.png  used on input line 217.
+(pdftex.def)             Requested size: 414.83868pt x 233.31776pt.
+ [50] [51] [52{/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/lm/lm-ma
+thex.enc}] [53] [54]
+[55] [56] [57] [58] [59] [60] [61]) [62] (./models.tex
+<figures/models-overview-matrix.png, id=1269, 3011.25pt x 1693.82813pt>
 File: figures/models-overview-matrix.png Graphic file (type png)
 <use figures/models-overview-matrix.png>
 Package pdftex.def Info: figures/models-overview-matrix.png  used on input line
  29.
 (pdftex.def)             Requested size: 460.935pt x 259.25824pt.
-<figures/model-cultural-web.png, id=1259, 1154.81438pt x 475.7775pt>
+<figures/model-cultural-web.png, id=1270, 1154.81438pt x 475.7775pt>
 File: figures/model-cultural-web.png Graphic file (type png)
 <use figures/model-cultural-web.png>
 Package pdftex.def Info: figures/model-cultural-web.png  used on input line 43.
 
 (pdftex.def)             Requested size: 345.70125pt x 142.42943pt.
- [61
+ [63
 
  <./figures/models-overview-matrix.png (PNG copy)>]
-<figures/model-pestel.png, id=1269, 2055.68pt x 770.88pt>
+<figures/model-pestel.png, id=1281, 2055.68pt x 770.88pt>
 File: figures/model-pestel.png Graphic file (type png)
 <use figures/model-pestel.png>
 Package pdftex.def Info: figures/model-pestel.png  used on input line 90.
 (pdftex.def)             Requested size: 345.70125pt x 129.63634pt.
- [62 <./figures/model-cultural-web.png>]
-<figures/model-five-forces.png, id=1275, 1240.635pt x 1013.7875pt>
+ [64 <./figures/model-cultural-web.png>]
+<figures/model-five-forces.png, id=1287, 1240.635pt x 1013.7875pt>
 File: figures/model-five-forces.png Graphic file (type png)
 <use figures/model-five-forces.png>
 Package pdftex.def Info: figures/model-five-forces.png  used on input line 135.
 
 (pdftex.def)             Requested size: 345.70125pt x 282.48181pt.
- [63 <./figures/model-pestel.png>] [64 <./figures/model-five-forces.png>]
-<figures/model-industry-lifecycle.png, id=1287, 1541.76pt x 869.2475pt>
+ [65 <./figures/model-pestel.png>] [66 <./figures/model-five-forces.png>]
+<figures/model-industry-lifecycle.png, id=1299, 1541.76pt x 869.2475pt>
 File: figures/model-industry-lifecycle.png Graphic file (type png)
 <use figures/model-industry-lifecycle.png>
 Package pdftex.def Info: figures/model-industry-lifecycle.png  used on input li
 ne 184.
 (pdftex.def)             Requested size: 368.74939pt x 207.89417pt.
-<figures/model-vrio-1.png, id=1288, 1925.1925pt x 1224.575pt>
+<figures/model-vrio-1.png, id=1300, 1925.1925pt x 1224.575pt>
 File: figures/model-vrio-1.png Graphic file (type png)
 <use figures/model-vrio-1.png>
 Package pdftex.def Info: figures/model-vrio-1.png  used on input line 220.
 (pdftex.def)             Requested size: 322.65309pt x 205.22269pt.
-[65 <./figures/model-industry-lifecycle.png>]
-<figures/model-vrio-2.png, id=1294, 1102.1175pt x 371.3875pt>
+ [67 <./figures/model-industry-lifecycle.png>]
+<figures/model-vrio-2.png, id=1306, 1102.1175pt x 371.3875pt>
 File: figures/model-vrio-2.png Graphic file (type png)
 <use figures/model-vrio-2.png>
 Package pdftex.def Info: figures/model-vrio-2.png  used on input line 221.
 (pdftex.def)             Requested size: 322.65309pt x 108.72531pt.
-<figures/model-swot.png, id=1295, 788.9475pt x 732.7375pt>
+<figures/model-swot.png, id=1307, 788.9475pt x 732.7375pt>
 File: figures/model-swot.png Graphic file (type png)
 <use figures/model-swot.png>
 Package pdftex.def Info: figures/model-swot.png  used on input line 256.
 (pdftex.def)             Requested size: 322.65309pt x 299.66403pt.
- [66 <./figures/model-vrio-1.png> <./figures/model-vrio-2.png>]
+ [68 <./figures/model-vrio-1.png> <./figures/model-vrio-2.png>]
 Overfull \hbox (16.08795pt too wide) in paragraph at lines 276--278
 []\T1/lmr/bx/n/10.95 (-20) Strengths: \T1/lmr/m/n/10.95 (-20) 1,8 mio. bru-ke-r
 e, første-parts-data, Lo-bycos OEM-plattform, sterk brand-gjenkjenning. 
  []
 
-[67 <./figures/model-swot.png>]
-<figures/model-tows.png, id=1308, 1606.0pt x 903.375pt>
+[69 <./figures/model-swot.png>]
+<figures/model-tows.png, id=1319, 1606.0pt x 903.375pt>
 File: figures/model-tows.png Graphic file (type png)
 <use figures/model-tows.png>
 Package pdftex.def Info: figures/model-tows.png  used on input line 295.
 (pdftex.def)             Requested size: 322.65309pt x 181.48508pt.
-<figures/model-value-chain-1.png, id=1309, 1222.5675pt x 690.58pt>
+<figures/model-value-chain-1.png, id=1320, 1222.5675pt x 690.58pt>
 File: figures/model-value-chain-1.png Graphic file (type png)
 <use figures/model-value-chain-1.png>
 Package pdftex.def Info: figures/model-value-chain-1.png  used on input line 33
 6.
 (pdftex.def)             Requested size: 345.70125pt x 195.26834pt.
- [68 <./figures/model-tows.png>]
-<figures/model-value-chain-2.png, id=1314, 1355.0625pt x 690.58pt>
+ [70 <./figures/model-tows.png>]
+<figures/model-value-chain-2.png, id=1325, 1355.0625pt x 690.58pt>
 File: figures/model-value-chain-2.png Graphic file (type png)
 <use figures/model-value-chain-2.png>
 Package pdftex.def Info: figures/model-value-chain-2.png  used on input line 33
 7.
 (pdftex.def)             Requested size: 345.70125pt x 176.17459pt.
- [69 <./figures/model-value-chain-1.png> <./figures/model-value-chain-2.png>]
-<figures/model-five-building-blocks.png, id=1321, 1702.36pt x 955.57pt>
+ [71 <./figures/model-value-chain-1.png> <./figures/model-value-chain-2.png>]
+<figures/model-five-building-blocks.png, id=1332, 1702.36pt x 955.57pt>
 File: figures/model-five-building-blocks.png Graphic file (type png)
 <use figures/model-five-building-blocks.png>
 Package pdftex.def Info: figures/model-five-building-blocks.png  used on input 
 line 388.
 (pdftex.def)             Requested size: 345.70125pt x 194.04135pt.
- [70 <./figures/model-five-building-blocks.png>]
-<figures/model-cvp.png, id=1327, 2055.68pt x 1011.78pt>
+ [72 <./figures/model-five-building-blocks.png>]
+<figures/model-cvp.png, id=1339, 2055.68pt x 1011.78pt>
 File: figures/model-cvp.png Graphic file (type png)
 <use figures/model-cvp.png>
 Package pdftex.def Info: figures/model-cvp.png  used on input line 435.
 (pdftex.def)             Requested size: 345.70125pt x 170.1477pt.
- [71 <./figures/model-cvp.png>]
-<figures/model-bmc-2.png, id=1333, 1445.4pt x 835.12pt>
+ [73 <./figures/model-cvp.png>]
+<figures/model-bmc-2.png, id=1345, 1445.4pt x 835.12pt>
 File: figures/model-bmc-2.png Graphic file (type png)
 <use figures/model-bmc-2.png>
 Package pdftex.def Info: figures/model-bmc-2.png  used on input line 480.
 (pdftex.def)             Requested size: 391.79755pt x 226.36467pt.
-<figures/model-bmc-1.png, id=1334, 935.495pt x 576.1525pt>
+<figures/model-bmc-1.png, id=1346, 935.495pt x 576.1525pt>
 File: figures/model-bmc-1.png Graphic file (type png)
 <use figures/model-bmc-1.png>
 Package pdftex.def Info: figures/model-bmc-1.png  used on input line 481.
 (pdftex.def)             Requested size: 276.5638pt x 170.33275pt.
- [72 <./figures/model-bmc-2.png> <./figures/model-bmc-1.png>]
-<figures/model-weill-woerner.jpeg, id=1341, 694.84593pt x 541.27219pt>
+ [74 <./figures/model-bmc-2.png> <./figures/model-bmc-1.png>]
+<figures/model-weill-woerner.jpeg, id=1352, 694.84593pt x 541.27219pt>
 File: figures/model-weill-woerner.jpeg Graphic file (type jpg)
 <use figures/model-weill-woerner.jpeg>
 Package pdftex.def Info: figures/model-weill-woerner.jpeg  used on input line 5
 06.
 (pdftex.def)             Requested size: 345.70125pt x 269.28918pt.
- [73 <./figures/model-weill-woerner.jpeg>]
-<figures/model-network-effects.png, id=1346, 1638.12pt x 1116.17pt>
+ [75 <./figures/model-weill-woerner.jpeg>]
+<figures/model-network-effects.png, id=1357, 1638.12pt x 1116.17pt>
 File: figures/model-network-effects.png Graphic file (type png)
 <use figures/model-network-effects.png>
 Package pdftex.def Info: figures/model-network-effects.png  used on input line 
 554.
 (pdftex.def)             Requested size: 368.74939pt x 251.24663pt.
- [74 <./figures/model-network-effects.png>]
-<figures/model-allwein.jpeg, id=1352, 1171.37625pt x 1002.74625pt>
+ [76 <./figures/model-network-effects.png>]
+<figures/model-allwein.jpeg, id=1363, 1171.37625pt x 1002.74625pt>
 File: figures/model-allwein.jpeg Graphic file (type jpg)
 <use figures/model-allwein.jpeg>
 Package pdftex.def Info: figures/model-allwein.jpeg  used on input line 597.
 (pdftex.def)             Requested size: 368.74939pt x 315.66783pt.
- [75 <./figures/model-allwein.jpeg>]
-<figures/model-lubinski.png, id=1357, 1318.9275pt x 1298.8525pt>
+ [77 <./figures/model-allwein.jpeg>]
+<figures/model-lubinski.png, id=1368, 1318.9275pt x 1298.8525pt>
 File: figures/model-lubinski.png Graphic file (type png)
 <use figures/model-lubinski.png>
 Package pdftex.def Info: figures/model-lubinski.png  used on input line 625.
 (pdftex.def)             Requested size: 368.74939pt x 363.14111pt.
- [76 <./figures/model-lubinski.png>]
-<figures/model-eisape.png, id=1363, 1573.88pt x 1409.265pt>
+ [78 <./figures/model-lubinski.png>]
+<figures/model-eisape.png, id=1375, 1573.88pt x 1409.265pt>
 File: figures/model-eisape.png Graphic file (type png)
 <use figures/model-eisape.png>
 Package pdftex.def Info: figures/model-eisape.png  used on input line 654.
 (pdftex.def)             Requested size: 391.79755pt x 350.81013pt.
- [77 <./figures/model-eisape.png>]
-<figures/model-wessel-1.png, id=1369, 2055.68pt x 1154.3125pt>
+ [79 <./figures/model-eisape.png>]
+<figures/model-wessel-1.png, id=1381, 2055.68pt x 1154.3125pt>
 File: figures/model-wessel-1.png Graphic file (type png)
 <use figures/model-wessel-1.png>
 Package pdftex.def Info: figures/model-wessel-1.png  used on input line 688.
 (pdftex.def)             Requested size: 368.74939pt x 207.06274pt.
-<figures/model-wessel-2.png, id=1370, 1961.3275pt x 823.075pt>
+<figures/model-wessel-2.png, id=1382, 1961.3275pt x 823.075pt>
 File: figures/model-wessel-2.png Graphic file (type png)
 <use figures/model-wessel-2.png>
 Package pdftex.def Info: figures/model-wessel-2.png  used on input line 689.
 (pdftex.def)             Requested size: 299.60493pt x 125.72911pt.
 
-[78 <./figures/model-wessel-1.png> <./figures/model-wessel-2.png>]
-<figures/model-eye.png, id=1378, 2055.68pt x 1050.92625pt>
+[80 <./figures/model-wessel-1.png> <./figures/model-wessel-2.png>]
+<figures/model-eye.png, id=1389, 2055.68pt x 1050.92625pt>
 File: figures/model-eye.png Graphic file (type png)
 <use figures/model-eye.png>
 Package pdftex.def Info: figures/model-eye.png  used on input line 745.
 (pdftex.def)             Requested size: 345.70125pt x 176.7308pt.
- [79 <./figures/model-eye.png>]
-<figures/model-disruption-circles.png, id=1384, 1784.6675pt x 1096.095pt>
+ [81 <./figures/model-eye.png>]
+<figures/model-disruption-circles.png, id=1395, 1784.6675pt x 1096.095pt>
 File: figures/model-disruption-circles.png Graphic file (type png)
 <use figures/model-disruption-circles.png>
 Package pdftex.def Info: figures/model-disruption-circles.png  used on input li
 ne 792.
 (pdftex.def)             Requested size: 322.65309pt x 198.15828pt.
- [80 <./figures/model-disruption-circles.png>]
-<figures/model-digital-innovation-strategy.png, id=1390, 1053.9375pt x 688.5725
+ [82 <./figures/model-disruption-circles.png>]
+<figures/model-digital-innovation-strategy.png, id=1401, 1053.9375pt x 688.5725
 pt>
 File: figures/model-digital-innovation-strategy.png Graphic file (type png)
 <use figures/model-digital-innovation-strategy.png>
 Package pdftex.def Info: figures/model-digital-innovation-strategy.png  used on
  input line 832.
 (pdftex.def)             Requested size: 345.70125pt x 225.86374pt.
- [81 <./figures/model-digital-innovation-strategy.png>]
-<figures/model-tawse-tabesh.png, id=1396, 2055.68pt x 813.0375pt>
+ [83 <./figures/model-digital-innovation-strategy.png>]
+<figures/model-tawse-tabesh.png, id=1407, 2055.68pt x 813.0375pt>
 File: figures/model-tawse-tabesh.png Graphic file (type png)
 <use figures/model-tawse-tabesh.png>
 Package pdftex.def Info: figures/model-tawse-tabesh.png  used on input line 886
 .
 (pdftex.def)             Requested size: 368.74939pt x 145.8442pt.
- [82 <./figures/model-tawse-tabesh.png>]) [83] (./ordbank.tex
+ [84 <./figures/model-tawse-tabesh.png>]) [85] (./ordbank.tex
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 2.
@@ -1601,7 +1606,7 @@ Overfull \hbox (18.92815pt too wide) in paragraph at lines 70--87
 [] 
  []
 
-[84
+[86
 
 ]
 Overfull \hbox (12.6186pt too wide) in paragraph at lines 90--110
@@ -1638,7 +1643,7 @@ Overfull \hbox (13.23724pt too wide) in paragraph at lines 113--160
 [] 
  []
 
-[85]
+[87]
 Overfull \hbox (18.30908pt too wide) in paragraph at lines 163--179
 [] 
  []
@@ -1648,7 +1653,7 @@ Overfull \hbox (12.6186pt too wide) in paragraph at lines 182--227
 [] 
  []
 
-[86]
+[88]
 Overfull \hbox (18.30908pt too wide) in paragraph at lines 230--252
 [] 
  []
@@ -1673,41 +1678,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 255--148
 
  []
 
-[87] [88] (./main.aux)
+[89] [90] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 638432839F79E4FF694F980501551134;21439.
  ) 
 Here is how much of TeX's memory you used:
- 32475 strings out of 469006
- 656453 string characters out of 5454813
+ 32448 strings out of 469006
+ 656179 string characters out of 5454813
  1105892 words of memory out of 5000000
- 59999 multiletter control sequences out of 15000+600000
- 726999 words of font info for 242 fonts, out of 8000000 for 9000
+ 59969 multiletter control sequences out of 15000+600000
+ 726810 words of font info for 242 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  98i,9n,108p,1193b,1351s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></u
 sr/local/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/
-texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texliv
-e/2026basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026
-basic/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026basic
-/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2026basic/texmf
--dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2026basic/texmf-di
-st/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2026basic/texmf-dist/f
-onts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/
-type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (89 pages, 32667837 bytes).
+texlive/2026basic/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texli
+ve/2026basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/202
+6basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026basic
+/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026basic/texm
+f-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2026basic/texmf-dist
+/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fo
+nts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/
+type1/public/lm/lmsy10.pfb>
+Output written on main.pdf (91 pages, 32680575 bytes).
 PDF statistics:
- 1559 PDF objects out of 1728 (max. 8388607)
- 1325 compressed objects within 14 object streams
- 319 named destinations out of 1000 (max. 500000)
- 54945 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1572 PDF objects out of 1728 (max. 8388607)
+ 1335 compressed objects within 14 object streams
+ 323 named destinations out of 1000 (max. 500000)
+ 54438 words of extra memory for PDF output out of 61914 (max. 10000000)
 
