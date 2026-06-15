@@ -67,26 +67,26 @@
 \contentsline {subsection}{\numberline {9.16}En tre-setningers \guillemotleft {}elevator pitch\guillemotright {} for forsvaret}{60}{subsection.9.16}%
 \contentsline {part}{Del III --- Modelloversikt}{61}{part*.2}%
 \contentsline {section}{\numberline {10}Modelloversikt --- formål, forklaring og Coop-tilknytning}{61}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Johnson et al. --- Cultural Web / Paradigme-modellen}{61}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}PESTEL --- analyse av makromiljøet}{62}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Porters Five Forces}{63}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}Industriers livssyklus og De Fem Kreftene}{64}{subsection.10.4}%
-\contentsline {subsection}{\numberline {10.5}VRIO --- ressursbasert analyse}{65}{subsection.10.5}%
-\contentsline {subsection}{\numberline {10.6}SWOT}{66}{subsection.10.6}%
-\contentsline {subsection}{\numberline {10.7}TOWS --- fra analyse til handling}{67}{subsection.10.7}%
-\contentsline {subsection}{\numberline {10.8}Verdikjede og verdikjedesystemer (Porter)}{68}{subsection.10.8}%
-\contentsline {subsection}{\numberline {10.9}Five Building Blocks of Digital Transformation (Ross et al.)}{69}{subsection.10.9}%
-\contentsline {subsection}{\numberline {10.10}CVP --- Johnson et al.s forretningsmodellramme}{70}{subsection.10.10}%
-\contentsline {subsection}{\numberline {10.11}Business Model Canvas (Osterwalder)}{71}{subsection.10.11}%
-\contentsline {subsection}{\numberline {10.12}Weill \& Woerner (2018) --- Digital Business Model Framework}{72}{subsection.10.12}%
-\contentsline {subsection}{\numberline {10.13}Network effects (Nettverkseffekter)}{73}{subsection.10.13}%
-\contentsline {subsection}{\numberline {10.14}Allwein et al.\ (2020) --- Platform Business Model Canvas}{74}{subsection.10.14}%
-\contentsline {subsection}{\numberline {10.15}Lubinski et al.\ (2020) --- Platform Business Model Canvas}{75}{subsection.10.15}%
-\contentsline {subsection}{\numberline {10.16}Davis Eisape --- Platform Business Model Canvas}{76}{subsection.10.16}%
-\contentsline {subsection}{\numberline {10.17}Wessel et al.\ --- Digital Transformation vs IT-Enabled Transformation}{77}{subsection.10.17}%
-\contentsline {subsection}{\numberline {10.18}Øyemodellen --- typer disruption}{78}{subsection.10.18}%
-\contentsline {subsection}{\numberline {10.19}Disruption-modellen (tre sirkler)}{79}{subsection.10.19}%
-\contentsline {subsection}{\numberline {10.20}Digital Innovation Strategy + tre kjerneelementer}{80}{subsection.10.20}%
-\contentsline {subsection}{\numberline {10.21}Tawse \& Tabesh --- Strategy Implementation Framework}{81}{subsection.10.21}%
-\contentsline {part}{Del IV --- Ordbank}{83}{part*.3}%
-\contentsline {section}{Ordbank --- Sentrale fagbegrep og teorier}{83}{section*.4}%
+\contentsline {subsection}{\numberline {10.1}Johnson et al. --- Cultural Web / Paradigme-modellen}{62}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}PESTEL --- analyse av makromiljøet}{63}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Porters Five Forces}{64}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Industriers livssyklus og De Fem Kreftene}{65}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}VRIO --- ressursbasert analyse}{66}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}SWOT}{67}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}TOWS --- fra analyse til handling}{68}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Verdikjede og verdikjedesystemer (Porter)}{69}{subsection.10.8}%
+\contentsline {subsection}{\numberline {10.9}Five Building Blocks of Digital Transformation (Ross et al.)}{70}{subsection.10.9}%
+\contentsline {subsection}{\numberline {10.10}CVP --- Johnson et al.s forretningsmodellramme}{71}{subsection.10.10}%
+\contentsline {subsection}{\numberline {10.11}Business Model Canvas (Osterwalder)}{72}{subsection.10.11}%
+\contentsline {subsection}{\numberline {10.12}Weill \& Woerner (2018) --- Digital Business Model Framework}{73}{subsection.10.12}%
+\contentsline {subsection}{\numberline {10.13}Network effects (Nettverkseffekter)}{74}{subsection.10.13}%
+\contentsline {subsection}{\numberline {10.14}Allwein et al.\ (2020) --- Platform Business Model Canvas}{75}{subsection.10.14}%
+\contentsline {subsection}{\numberline {10.15}Lubinski et al.\ (2020) --- Platform Business Model Canvas}{76}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.16}Davis Eisape --- Platform Business Model Canvas}{77}{subsection.10.16}%
+\contentsline {subsection}{\numberline {10.17}Wessel et al.\ --- Digital Transformation vs IT-Enabled Transformation}{78}{subsection.10.17}%
+\contentsline {subsection}{\numberline {10.18}Øyemodellen --- typer disruption}{79}{subsection.10.18}%
+\contentsline {subsection}{\numberline {10.19}Disruption-modellen (tre sirkler)}{80}{subsection.10.19}%
+\contentsline {subsection}{\numberline {10.20}Digital Innovation Strategy + tre kjerneelementer}{81}{subsection.10.20}%
+\contentsline {subsection}{\numberline {10.21}Tawse \& Tabesh --- Strategy Implementation Framework}{82}{subsection.10.21}%
+\contentsline {part}{Del IV --- Ordbank}{84}{part*.3}%
+\contentsline {section}{Ordbank --- Sentrale fagbegrep og teorier}{84}{section*.4}%
