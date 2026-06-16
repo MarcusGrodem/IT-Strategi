@@ -13,15 +13,24 @@
 
 ---
 
-## 1. Ramme: hvorfor implementering er vanskelig akkurat for Coop
+## 1. Ramme: implementering i en turnaround-i-progresjon (ikke en krise)
 
-Tre strukturelle forhold som tvinger implementeringen til å være pragmatisk, ikke ambisiøs:
+**Viktig nyansering basert på regnskapsanalysen 2020–2025:** Coop er ikke i fritt fall — de er i en *turnaround som faktisk virker, men ikke er friskmeldt*. Det er en helt annen implementeringsramme enn "krise".
 
-1. **Økonomisk press.** Underskudd på 232 mio DKK og omsetningsfall 1,0 mia kr (oppgavens tallgrunnlag). Hver implementeringskrone konkurrerer med et nedskaleringspress. Dette betyr at *sekvensering* og *piloter* er viktigere enn store omlegginger.
-2. **Teknologisk gjeld (Hedman & Bjørn-Andersen, 2016).** Coop har historisk hatt en fragmentert IT-arkitektur med legacy POS-systemer, kjedespesifikke stacker og begrenset master data management. Selv om kilden er fra 2016, er **mønsteret av teknisk gjeld i dagligvare strukturelt** — det forsvinner ikke uten investering, og vi ser indirekte spor i at coop.dk ble lukket (kompleksitet ble for dyr å vedlikeholde).
-3. **Eierstrukturen.** Coop er forbrukereid (FDB). Det betyr at radikale endringer (f.eks. å gjøre Lobyco til en ren ekstern plattformspiller) ville krevd legitimitet fra medlemsdemokrati — implementeringen er ikke bare teknisk og organisatorisk, men *politisk*.
+- **EBITDA snur fra −37 (2024) til +313 mio DKK (2025).** Den underliggende driften er klart bedre. Operasjonell disiplin har akkurat bevist seg.
+- **Men EBIT er fortsatt −215 mio DKK** og årsresultat −232. Driften bærer ikke avskrivninger og kapitalbasen ennå.
+- **Capex er halvert:** 1.326 (2020) → 575 mio DKK (2025), et fall på 56 %. Det er den faktiske investeringsrammen vi opererer innenfor.
+- **Soliditeten faller fra 17,8 % (2024) til 16,2 % (2025).** Kapitalbufferen som ble bygget opp i 2024 spises sakte. Vi har tid, men ikke uendelig.
+- **2024 var ikke et rent normalår** — særlige poster +472 og eiendomssalg løftet resultatet. 2025 er en "renere", men svakere måling av kjernedriften.
 
-**Konsekvens for våre tre anbefalinger:** alle tre må kunne *piloteres på én kjede* (helst 365discount eller Kvickly), måles på 6–12 måneder, og skaleres bevisst. Big bang er ikke på bordet.
+**Fire strukturelle forhold som former implementeringen:**
+
+1. **Halvert investeringsramme.** Capex 575 mio DKK i 2025. Alle våre anbefalinger konkurrerer om en investeringsbase som er nær halvert siden 2020. Det tvinger frem *sekvensering og piloter*, ikke big bang.
+2. **2026-korridoren er smal.** Ledelsen guider omsetningsvekst 1,5–2,5 % og EBIT 0–150 mio DKK for 2026. Enhver implementering må kunne forsvares innenfor denne korridoren — pilotresultater må vises i pp-bevegelser, ikke i ambisiøse løfter.
+3. **Teknologisk gjeld (Hedman & Bjørn-Andersen, 2016).** Fragmentert arkitektur, legacy POS, begrenset master data management. Mønsteret er strukturelt — det forsvinner ikke uten investering, og vi ser indirekte spor i at coop.dk ble lukket.
+4. **Eierstrukturen (FDB).** Forbrukereid. Radikale endringer (f.eks. Lobyco som ren ekstern plattformspiller) ville krevd legitimitet fra medlemsdemokrati — implementeringen er ikke bare teknisk, men *politisk*.
+
+**Konsekvens for våre tre anbefalinger:** alle tre må kunne *piloteres på én kjede* (helst 365discount eller Kvickly), måles på 6–12 måneder, og leveres innenfor EBIT-korridoren 0–150 mio. Vi rir på en pågående turnaround; vi forstyrrer den ikke.
 
 ---
 
@@ -50,12 +59,24 @@ Sensor *vil* spørre: «Hvordan skiller dere appens effekt fra effekten av pris,
 - Vi måler **inkrementell effekt**, ikke total effekt. Det vi ikke kan kontrollere for, defineres som usikkerhet og rapporteres åpent.
 - Dette er konsistent med pensums understreking av at strategi krever **monitorering og tilpasning**, ikke perfekt evidens.
 
-### 2c. Organisatorisk eierskap
+### 2c. Marginsensitiviteten gir KPI-hierarkiet sitt operasjonelle språk
+
+Regnskapsanalysen viser at **0,3–0,5 prosentpoeng** i bruttomargin eller kostnadsnivå flytter EBIT med **100–160 mio DKK**.
+
+Det er gull for vårt KPI-hierarki: vi kan og **må** måle appens effekt i prosentpoeng-bevegelser på driftsmotoren, ikke i abstrakte engasjementsmål.
+
+- **Hvis app-styrte kampanjer øker bruttomarginen med 0,3 pp** på den medlems-segmenterte omsetningen → potensielt 100 mio DKK i EBIT-effekt.
+- **Hvis Scan & Pay reduserer kasse-bemanningskost med 0,2 pp av omsetningen** → potensielt 65 mio DKK i EBIT-effekt.
+- **Hvis Lobyco/retail media bidrar med X kroner per medlem** → må omregnes til pp på driftsmotoren for å være sammenlignbar.
+
+Dette er den skarpeste mulige koblingen mellom DBM (value capture) og operativ målbarhet. Det gir også et naturlig forsvar mot "er ikke dette bare bruksmål?" — nei, vi *forplikter oss* til å måle EBIT-bidrag i pp.
+
+### 2d. Organisatorisk eierskap
 
 - Hvem eier hierarkiet? Forslag: en **felles styringskomité med representanter fra digital, butikkdrift og økonomi**, ledet av en C-level eier (CIO eller CDO).
 - Uten klart eierskap blir KPI-hierarkiet til en rapport, ikke en styringsmekanisme. Dette er et klassisk Hedman & Bjørn-Andersen-poeng om at IT-strategi *implementeres gjennom organisatoriske strukturer*, ikke gjennom systemer alene.
 
-### 2d. Sekvensering (realistisk roadmap, 18 mnd)
+### 2e. Sekvensering (realistisk roadmap, 18 mnd)
 
 | Fase | Måneder | Innhold | Kostnad/risiko |
 |---|---|---|---|
@@ -202,9 +223,10 @@ Hvis jeg må velge, vekt slik:
 
 ## 10. Tre setninger jeg vil huske å si
 
-1. «Vår implementeringssti er bevisst trinnvis: pilot → mål → skaler, fordi økonomien tvinger frem realisme og fordi teknisk gjeld må håndteres parallelt.»
-2. «Vi løser ikke modular producer-spenningen retorisk — vi løser den strukturelt, gjennom governance over data og kapasitet.»
-3. «Hvis vi hadde valgt Digital Transformation som modus (Wessel), ville implementeringen sett helt annerledes ut. Vi har valgt IT-Enabled bevisst — og det former hver av de tre anbefalingene.»
+1. «Coop er ikke i krise — de er i en turnaround som faktisk virker. EBITDA snur fra −37 til +313 mio DKK i 2025. Vår implementering rir på den bølgen.»
+2. «Marginsensitiviteten gir oss et felles språk: 0,3–0,5 pp i bruttomargin eller kost = 100–160 mio EBIT. Det er der KPI-hierarkiet vårt måles, ikke i abstrakte engasjementsmål.»
+3. «Vi løser ikke modular producer-spenningen retorisk — vi løser den strukturelt, gjennom governance over data og kapasitet.»
+4. «Hvis vi hadde valgt Digital Transformation som modus (Wessel), ville implementeringen sett helt annerledes ut. Vi har valgt IT-Enabled bevisst — og det former hver av de tre anbefalingene.»
 
 ---
 
@@ -213,6 +235,8 @@ Hvis jeg må velge, vekt slik:
 | Spørsmål | Kort svar |
 |---|---|
 | Hva koster dette? | Pilot på 365discount er begrenset (anslagsvis 8–12 mnd team-innsats). Full utrulling forutsetter teknisk gjeld-investering vi ikke har tallfestet — det er en åpen kostnad vi flagger transparent. |
+| Hva er realistisk leveranse i 2026? | Ledelsen guider EBIT 0–150 mio DKK for 2026. Implementeringsinitiativene må passe innenfor denne korridoren — pilotresultater må kunne dokumenteres i pp-bevegelser på bruttomargin eller kostnadsnivå (0,3–0,5 pp ≈ 100–160 mio EBIT). Alt over er ikke kredibelt. |
+| Konkurrerer dere ikke med en investeringsramme som allerede er halvert? | Jo, og det er nettopp derfor pilot-tilnærmingen er riktig. Capex har falt fra 1.326 (2020) til 575 mio DKK (2025). Vi kan ikke be om en kapex-økning vi ikke har dekning for — vi må vinne ressursene gjennom å bevise pp-effekt i pilot. |
 | Hvem eier implementeringen? | En styringskomité ledet av CIO/CDO, med butikk-, økonomi- og digital-representasjon. Lobyco har egen styrelinje. |
 | Hva hvis pilotering på 365discount feiler? | Da har vi spart full utrulling. Det er hele poenget med sekvensering — vi kjøper informasjon billig før vi forplikter oss. |
 | Er ikke dette bare «kjør forsiktig»? | Nei. Det er et bevisst valg om IT-Enabled implementeringsmodus fordi Coops økonomi og struktur ikke tillater DT-modus. Forsiktighet her er strategisk, ikke fryktbasert. |
