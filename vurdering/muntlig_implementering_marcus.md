@@ -60,14 +60,29 @@ Mintzberg skiller mellom *deliberate* (planlagt, sekvensiert) og *emergent* (opp
 
 Dette er *forsvaret* mot "hvorfor ikke big bang": fordi vi anerkjenner at organisasjonen ikke vet alt på forhånd. Strategi som ren plan kollapser når den møter virkeligheten — derfor designer vi for læring.
 
-### Linse 3 — Schein (kultur i 3 lag) + Brown
+### Linse 3 — Schein & Brown / Johnson et al.: Kulturløken (4 lag)
 
-Schein analyserer organisasjonskultur i tre lag:
-1. **Artefakter** (synlige): styringsstrukturer, kjedeskiltene, Brugsen-tradisjonen, FDB-eierskap som juridisk form
-2. **Espoused values** (uttalte verdier): "medlemmen først", "demokratisk eierskap", "lokalsamfunn"
-3. **Underliggende grunnantakelser** (ubevisste): at langsiktig medlemsverdi går foran kortsiktig profitt; at kjedene har sin egen identitet
+Den klassiske Schein 3-lags-modellen er for grov for Coop. Schein & Brown (1998), videreført i Johnson et al. (2017, *Exploring Strategy*, s. 171), splitter kulturen i **fire konsentriske lag** — kulturløken. Forskjellen mellom *uttalte verdier* og *faktiske oppfatninger* er kritisk for implementering, fordi det er der retail media og Lobyco-governance bryter eller bekrefter.
 
-Brown utfyller med vekt på kulturens rolle som *både* muliggjører og barriere for endring. Implikasjonen for Coop er at retail media-anbefalingen risikerer å bryte med lag 3 — den kan oppleves som *å sette leverandørinntekter foran medlem*. Det er ikke et kommunikasjonsproblem, det er et kulturproblem.
+| Lag | Definisjon | Coop-spesifikt innhold |
+|---|---|---|
+| **1. Values** (ytterste) | Formelle og uformelle verdier | Formelle: "medlemmen først", "demokratisk eierskap", "lokalsamfunn", "ansvarlig handel". Uformelle: "vi er ikke som Lidl", "Brugsen er trygg", "Coop tjener ikke penger som vanlige selskap" |
+| **2. Beliefs** | Bevisste og ubevisste oppfatninger | Bevisste: "vi forstår våre medlemmer best", "digitalisering må tjene butikken". Ubevisste: at digitalt *støtter* fysisk — det erstatter det aldri; at leverandører er motpart i en marginkamp, ikke en partner i en plattform |
+| **3. Behaviours** | Individuell og organisatorisk adferd | Individuell: butikksjefer prioriterer egen kjedeidentitet; medarbeidere ser appen som tillegg, ikke kjerne. Organisatorisk: kjedevise P&L-er, demokratisk eierstyring, koop.dk ble lukket fordi den ikke "passet inn" |
+| **4. Paradigm** (kjerne) | Erkjente og uerkjente grunnantakelser | "Coop er vår" — eies av medlemmene. Langsiktig medlemsverdi går foran kortsiktig profitt. Hver kjede har sin egen sjel. Profitt er middel, ikke mål |
+
+**Hvorfor 4 lag og ikke 3 betyr noe for Coop-casen:**
+
+Schein 3-lag ville plassert "medlemmen først" og "vi tjener ikke penger som andre" i samme bøtte (espoused values). Kulturløken skiller dem: det første er en *formell verdi* (lag 1), det andre er en *ubevisst oppfatning* (lag 2). Det skille er gull for implementeringsanalyse, fordi det forklarer hvorfor visse anbefalinger oppleves som forræderi selv om de ikke bryter noen uttalt regel.
+
+### Implementeringsimplikasjoner per lag
+
+- **Lag 1 (Values):** Retail media må kommuniseres som *medlemsverdi* (bedre tilbud, mer relevante kampanjer), ikke som *leverandørinntektsstrøm*. Bryter en ikke verdiene, men kan oppleves slik — og kulturløken sier oppfattelsen er det som betyr noe.
+- **Lag 2 (Beliefs):** Vårt IT-Enabled-valg (Wessel) *bekrefter* den ubevisste oppfatningen om at "digitalt støtter fysisk". Det er Backing-mekanisme — vi rir på en eksisterende belief, ikke kjemper mot den. **Det er strategisk smart at vår strategi føles riktig før den argumenteres for.**
+- **Lag 3 (Behaviours):** Pilot på 365discount respekterer kjedeautonomi-adferden. Modulær plattform speiler den eksisterende organisatoriske adferden (kjedevise beslutninger), ikke kjemper mot den. Conway's law fungerer i vår favør.
+- **Lag 4 (Paradigm):** **Den dypeste risikoen er at retail media kolliderer med paradigmet** om at "Coop tjener medlemmene, ikke leverandørene". Dette er ikke et kommunikasjonsproblem — det er et identitetsproblem som krever paradigm-arbeid (involvering, transparens, NPS-styrt volum). Hvis paradigmet brytes, mister Coop noe som ikke kan kjøpes tilbake.
+
+**Det viktige poenget muntlig:** Vi har designet de tre anbefalingene slik at de *bekrefter* lag 1–3 og *beskytter* lag 4. Det er kulturløken brukt som implementeringsverktøy, ikke bare som analyse.
 
 ### Linse 4 — Hedman & Bjørn-Andersen: sosioteknisk perspektiv
 
@@ -280,32 +295,64 @@ Hva jeg vil ha klart hvis sensor presser på teknisk gjeld:
 
 ---
 
-## 7. Organisasjonskultur, endringsledelse og motkrefter — Schein, Brown og BASCP
+## 7. Organisasjonskultur, endringsledelse og motkrefter — Kulturløken og BASCP
 
-Dette er kulturelle motkrefter sett gjennom Schein/Brown og BASCPs Cultural receptivity-dimensjon.
+Dette er kulturelle motkrefter sett gjennom Schein & Brown / Johnson et al. sin kulturløk og BASCPs Cultural receptivity-dimensjon.
 
-### 7a. Coops kultur i Scheins tre lag
+### 7a. Coops kultur i kulturløkens fire lag
 
-| Lag | Coop-spesifikt innhold | Implementeringsimplikasjon |
-|---|---|---|
-| **Artefakter** | FDB-eierskap, kjedeskilt med egen identitet (Brugsen, Kvickly), demokratiske valgte styrer | Synlige strukturer favoriserer kjedeautonomi → modulær plattform passer kulturen bedre enn én sentralapp |
-| **Espoused values** | "Medlemmen først", "lokalsamfunn", "demokratisk eierskap" | Retail media må kommuniseres som *medlemsverdi* (bedre tilbud), ikke som *leverandørinntekt* — ellers bryter den verdier |
-| **Underliggende grunnantakelser** | Langsiktig medlemsverdi går foran kortsiktig profitt; kjedene har egne sjeler | Den dypeste risikoen ved retail media er kollisjon med lag 3 — det er ikke et kommunikasjonsproblem, det er et kulturproblem |
+> Modellen er Schein & Brown (1998), videreført i Johnson et al. (2017, *Exploring Strategy*, s. 171). Fire konsentriske lag — fra ytterste *values* til kjerne *paradigm*.
 
-**Brown utfyller:** kultur er både muliggjører og barriere. Den samme medlems-først-kulturen som *blokkerer* aggressiv retail media er den som *legitimerer* KPI-hierarkiet (vi måler hvordan vi tjener medlemmen).
+**Lag 1 — Values (formelle og uformelle verdier)**
+- *Formelle:* "medlemmen først", "demokratisk eierskap", "bæredyktighet", "lokalt forankret".
+- *Uformelle:* "vi er ikke som Lidl", "Brugsen er trygg", "vi tar vare på lokalsamfunnene".
+- **Implementeringsimplikasjon:** Retail media kan ikke selges som "ny inntektsstrøm" — det må rammes som "mer relevante tilbud for medlemmene". Hvis vi snubler i kommunikasjonen, treffer vi formelle verdier feil.
 
-### 7b. Motkrefter og hvordan kulturen forklarer dem
+**Lag 2 — Beliefs (bevisste og ubevisste oppfatninger)**
+- *Bevisste:* "vi forstår våre medlemmer best", "digitalisering må tjene butikken".
+- *Ubevisste:* at digitalt *støtter* fysisk — det erstatter det aldri; at leverandører er motpart i marginkamp.
+- **Implementeringsimplikasjon:** Vårt IT-Enabled-valg (Wessel) *bekrefter* den ubevisste oppfatningen. Strategien føles riktig før den argumenteres for — det er stillas under Backing.
 
-- **Butikkledere** kan oppleve at app-styrte KPI-er flytter makt fra butikknivå til hovedkvarter — motstanden er rasjonell sett fra deres synspunkt. **Kulturelt grep:** ramme KPI-ene som *støtte for butikkdrift*, ikke *kontroll av butikkdrift*. Inviter butikkledere inn i pilotutformingen.
-- **Kjedeledelser** kan motsette seg felles plattform fordi det reduserer deres autonomi — løses med kjedespesifikke moduler. **Det er ikke tilfeldig at anbefaling 2 er kjedespesifikk** — den er designet for å treffe Scheins artefakt-lag (kjedeidentitet).
-- **Lobycos ledelse** har egne kommersielle mål — løses gjennom eierstruktur og styresammensetning, ikke ved retorikk. Dette er BASCPs Backing-dimensjon.
-- **Medlemmene (FDB-eiere)** kan motsette seg retail media hvis kundetillit svekkes — løses gjennom transparens og NPS-styrte volummekanismer.
+**Lag 3 — Behaviours (individuell og organisatorisk adferd)**
+- *Individuell:* butikksjefer prioriterer egen kjedeidentitet; medarbeidere ser appen som tillegg.
+- *Organisatorisk:* kjedevise P&L-er, demokratisk eierstyring, coop.dk ble lukket fordi den ikke "passet" inn i adferdsmønsteret.
+- **Implementeringsimplikasjon:** Pilot på 365discount og kjedespesifikke moduler speiler eksisterende adferd. Vi designer ikke om organisasjonen — vi følger den.
 
-### 7c. Pensumets samlede budskap
+**Lag 4 — Paradigm (erkjente og uerkjente grunnantakelser)**
+- "Coop er vår" — eies av medlemmene.
+- Langsiktig medlemsverdi går foran kortsiktig profitt.
+- Hver kjede har sin egen sjel.
+- Profitt er middel, ikke mål.
+- **Implementeringsimplikasjon:** **Den dypeste risikoen** er at retail media kolliderer med paradigmet om medlemmen-først. Bryter vi paradigmet, mister Coop noe som ikke kan kjøpes tilbake. NPS-styrt volum og transparens er paradigm-beskyttelse, ikke PR.
+
+### 7b. Hvorfor kulturløken er overlegen Schein 3-lag for Coop
+
+Den klassiske 3-lags-modellen ville samlet både "medlemmen først" (formell verdi) og "Coop tjener ikke penger som andre" (ubevisst oppfatning) i samme bøtte (espoused values). Det skjuler den viktigste implementeringsfaren: at en anbefaling kan være *konsistent med formelle verdier* og samtidig *kollidere med ubevisste oppfatninger*.
+
+Retail media er nettopp et slikt tilfelle: ingen verdi-erklæring sier at "vi ikke skal samarbeide kommersielt med leverandører", men den ubevisste oppfatningen om at "leverandører er motpart" gjør at retail media kan oppleves som forræderi internt — *uten at noen kan peke på regelen som ble brutt*.
+
+**Det er denne typen subtil kulturanalyse muntlig forsvar vinner karakter på.**
+
+### 7c. Brown utfyller — kultur som muliggjører OG barriere
+
+Brown's bidrag (gjennom Johnson et al.): kultur er ikke statisk verken muliggjører eller barriere — det er begge deler samtidig, avhengig av hva som foreslås.
+
+- Den samme medlem-først-kulturen som *blokkerer* aggressiv retail media er den som *legitimerer* KPI-hierarkiet (vi måler hvordan vi tjener medlemmen bedre).
+- Den samme kjedeautonomi-adferden som *forhindrer* en sentral app er den som *muliggjør* modulær plattform (kjedene får eierskap til sine moduler).
+- **Strategisk implementeringsgrep:** vi designer hver anbefaling så den treffer kulturens muliggjørende side, ikke dens blokkerende side.
+
+### 7d. Motkrefter og hvordan kulturløken forklarer dem
+
+- **Butikkledere** opplever app-KPI-er som maktforskyvning fra butikknivå (lag 3 behaviours, lag 4 paradigm om butikkautonomi). **Kulturelt grep:** ramme KPI-ene som *støtte*, ikke *kontroll*. Inviter butikkledere inn i pilotutformingen — det respekterer behaviours-laget.
+- **Kjedeledelser** motsetter seg felles plattform fordi den truer kjedeidentitet (lag 4 paradigm). Modulær plattform er ikke tilfeldig kjedespesifikk — den er designet rundt paradigmet, ikke mot det.
+- **Lobycos ledelse** har egne kommersielle mål — løses gjennom eierstruktur og styresammensetning. Dette er BASCPs Backing-dimensjon, ikke kulturarbeid.
+- **Medlemmene (FDB-eiere)** kan motsette seg retail media som *paradigm-brudd* — løses gjennom transparens og NPS-styrte volummekanismer. Dette er paradigm-beskyttelse i konkret form.
+
+### 7e. Pensumets samlede budskap
 
 - **Hedman & Bjørn-Andersen:** IT-strategi er sosioteknisk — teknologi + organisasjon + mennesker som ett system.
-- **Schein/Brown:** kulturen er ikke bare "soft stuff" — den avgjør om strategien lykkes eller blir vraket av lag-3-antakelser.
-- **BASCP — Cultural receptivity** er den dimensjonen som oftest blir oversett i strategiimplementering, ifølge Tawse & Tabesh. Vi har tenkt på den, og vi har designet anbefalingene for å treffe Coops kultur, ikke kjempe mot den.
+- **Schein & Brown / Johnson et al. (kulturløken):** kultur er ikke bare "soft stuff" — den avgjør om strategien lykkes eller blir vraket av paradigm-kollisjoner ingen kan peke konkret på.
+- **BASCP — Cultural receptivity** er den dimensjonen som oftest blir oversett i strategiimplementering, ifølge Tawse & Tabesh. Vi har tenkt på den i fire lag, ikke ett, og vi har designet anbefalingene for å treffe hvert lag bevisst.
 
 ---
 
