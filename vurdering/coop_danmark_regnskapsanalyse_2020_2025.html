@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coop Danmark regnskapsanalyse 2020–2025</title>
+<style>
+:root {
+  --red:#c90016;
+  --red2:#a80013;
+  --ink:#191919;
+  --muted:#646464;
+  --line:#e7e2df;
+  --paper:#fffaf7;
+  --card:#ffffff;
+  --soft:#f7efed;
+  --green:#0f7a4f;
+  --amber:#a96400;
+  --bad:#b42318;
+  --good:#087443;
+  --blue:#2364aa;
+  --shadow: 0 14px 40px rgba(35,22,18,.08);
+  --radius: 20px;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background: linear-gradient(160deg,#fffaf7 0%, #f5eeeb 55%, #fff 100%);
+  color:var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  line-height:1.45;
+}
+a { color:var(--red2); }
+.wrapper { max-width:1220px; margin:0 auto; padding:28px; }
+.hero {
+  position:relative;
+  border-radius:32px;
+  padding:42px;
+  color:white;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255,255,255,.20), transparent 28%),
+    linear-gradient(135deg,#cb0017 0%, #76000c 100%);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.hero:after {
+  content:"COOP";
+  position:absolute; right:-40px; bottom:-72px;
+  font-size:170px; font-weight:900; letter-spacing:-16px;
+  color:rgba(255,255,255,.08);
+}
+.hero h1 { margin:0 0 8px; font-size: clamp(34px, 5vw, 64px); line-height:1; letter-spacing:-2px; }
+.hero p { max-width:850px; margin:14px 0 0; color:#ffe9e9; font-size:18px; }
+.badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+.badge { padding:8px 12px; border:1px solid rgba(255,255,255,.34); border-radius:999px; background:rgba(255,255,255,.12); font-size:13px; backdrop-filter: blur(6px); }
+.grid { display:grid; gap:18px; }
+.grid.kpi { grid-template-columns: repeat(4, minmax(0,1fr)); margin:24px 0; }
+.card {
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow: var(--shadow);
+}
+.card h2, .card h3 { margin-top:0; }
+.kpi-card { position:relative; overflow:hidden; min-height:158px; }
+.kpi-card .label { color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.08em; font-weight:700; }
+.kpi-card .value { font-size:34px; font-weight:850; margin-top:8px; letter-spacing:-1px; }
+.kpi-card .delta { margin-top:8px; color:var(--muted); font-size:14px; }
+.kpi-card:after { content:""; position:absolute; right:-35px; bottom:-35px; width:120px; height:120px; background:var(--soft); border-radius:50%; }
+.good { color:var(--good); } .bad { color:var(--bad); } .amber { color:var(--amber); }
+.section-title { display:flex; justify-content:space-between; gap:18px; align-items:end; margin:36px 0 16px; }
+.section-title h2 { font-size:30px; margin:0; letter-spacing:-.8px; }
+.section-title p { margin:0; color:var(--muted); max-width:680px; }
+.two { grid-template-columns: 1.5fr .9fr; }
+.three { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.controls { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+select, button, input[type=range] {
+  font:inherit;
+}
+select {
+  padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:white; min-width:240px;
+}
+button {
+  border:1px solid var(--line); background:white; color:var(--ink); padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:700;
+}
+button.active { background:var(--red); color:white; border-color:var(--red); }
+.chart-card { min-height:420px; }
+.chart-head { display:flex; justify-content:space-between; gap:18px; align-items:center; margin-bottom:10px; }
+.chart-head h3 { margin:0; }
+svg { display:block; width:100%; height:auto; }
+.tooltip {
+  position:fixed; pointer-events:none; background:#191919; color:white; padding:8px 10px; border-radius:10px;
+  font-size:12px; opacity:0; transform:translate(-50%,-120%); transition:opacity .12s; z-index:50;
+  box-shadow:0 8px 22px rgba(0,0,0,.2);
+}
+.note { color:var(--muted); font-size:13px; }
+.callout { border-left:5px solid var(--red); background:#fff6f5; padding:16px 18px; border-radius:14px; }
+.callout strong { color:var(--red2); }
+.table-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th,td { padding:11px 10px; border-bottom:1px solid var(--line); text-align:right; }
+th:first-child, td:first-child { text-align:left; }
+th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; background:#fff7f5; position:sticky; top:0; }
+.tag { display:inline-flex; padding:5px 8px; border-radius:999px; background:#f1eeee; font-size:12px; font-weight:750; }
+.flow { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:12px; margin-top:14px; }
+.flow .step { padding:16px; border-radius:18px; border:1px solid var(--line); background:linear-gradient(180deg,#fff,#fff8f7); position:relative; }
+.flow .step:not(:last-child):after { content:"→"; position:absolute; right:-14px; top:38%; color:var(--red); font-size:24px; font-weight:900; }
+.step .num { width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--red);color:white;font-weight:900;margin-bottom:10px; }
+.tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+.tab-pane { display:none; } .tab-pane.active { display:block; }
+.pillrow { display:flex; flex-wrap:wrap; gap:8px; }
+.pill { border-radius:999px; padding:7px 10px; background:#f5efed; font-size:13px; }
+.slider-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px; }
+.slider-line { display:grid; gap:6px; }
+.slider-line label { font-weight:750; font-size:13px; display:flex; justify-content:space-between; }
+input[type=range] { width:100%; accent-color:var(--red); }
+.big-result { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:14px; }
+.big-result div { background:#fff7f5; border:1px solid var(--line); border-radius:16px; padding:14px; }
+.big-result b { display:block; font-size:24px; margin-top:5px; }
+.footer { margin:36px 0 12px; color:var(--muted); font-size:13px; }
+@media (max-width:900px) {
+  .grid.kpi, .two, .three, .flow, .slider-grid, .big-result { grid-template-columns:1fr; }
+  .hero { padding:28px; }
+  .hero:after { font-size:110px; }
+  .chart-head, .section-title { display:block; }
+}
+@media print {
+  body { background:white; }
+  .card,.hero { box-shadow:none; }
+  button, select, input[type=range] { display:none; }
+}
+</style>
+</head>
+<body>
+<div class="tooltip" id="tooltip"></div>
+<main class="wrapper">
+  <section class="hero">
+    <h1>Coop Danmark<br>regnskapsanalyse 2020–2025</h1>
+    <p>En praktisk lesning av regnskapet: hva den operative driften forteller, hvilke poster som forstyrrer bildet, hvordan marginene utvikler seg, og hva som kan være realistiske trender de neste fem årene.</p>
+    <div class="badges">
+      <span class="badge">Alle tall i mio. DKK</span>
+      <span class="badge">Basert på årsrapporter 2020–2025</span>
+      <span class="badge">Interaktive diagrammer</span>
+      <span class="badge">Laget 16. juni 2026</span>
+    </div>
+  </section>
+
+  <section class="grid kpi" id="kpis"></section>
+
+  <section class="card callout">
+    <strong>Min hovedkonklusjon:</strong> Coop er i en reell turnaround. Den underliggende driften er klart bedre enn kriseåret 2022–2023, og EBITDA er tilbake i pluss i 2025. Men EBIT er fortsatt negativ, marginene er tynne, butikkenhetene blir færre, og 2024-resultatet var sterkt hjulpet av eiendomssalg og regnskapsmessige effekter. Regnskapet sier derfor: <b>stabiliseringen virker, men lønnsomheten er ikke friskmeldt.</b>
+  </section>
+
+  <div class="section-title">
+    <div>
+      <h2>1. Nøkkeltall og trend</h2>
+      <p>Velg nøkkeltall og se hvordan bildet endrer seg. 2024 og 2025 er viktigst fordi de viser effekten av ny eierstruktur, porteføljetilpasning og mer disiplinert drift.</p>
+    </div>
+    <div class="controls">
+      <select id="metricSelect"></select>
+    </div>
+  </div>
+
+  <section class="grid two">
+    <article class="card chart-card">
+      <div class="chart-head">
+        <h3 id="trendTitle">Trend</h3>
+        <span class="tag" id="trendTag">2020–2025</span>
+      </div>
+      <div id="trendChart"></div>
+      <p class="note" id="trendComment"></p>
+    </article>
+
+    <article class="card">
+      <h3>Slik leser jeg tallene</h3>
+      <div class="tabs">
+        <button class="tab active" data-tab="drift">Drift</button>
+        <button class="tab" data-tab="margin">Margin</button>
+        <button class="tab" data-tab="poster">Særlige poster</button>
+        <button class="tab" data-tab="balanse">Balanse</button>
+      </div>
+      <div class="tab-pane active" id="tab-drift">
+        <p><b>Operasjonell drift:</b> EBITDA før gevinst ved salg av materielle anlæg er det beste raske målet på kjerneoperasjonen. Den går fra -572 i 2022 til 313 i 2025. Det er en stor bedring.</p>
+        <p><b>Men:</b> EBIT er fortsatt -215 i 2025. Det betyr at driften ikke bærer avskrivninger og kapitalbasen fullt ut ennå.</p>
+      </div>
+      <div class="tab-pane" id="tab-margin">
+        <p><b>Marginene er ikke gode.</b> Bruttomarginen er 14,5 % i 2025, mens EBITDA-marginen kun er 1,0 %. EBIT-marginen før særlige poster er -0,7 %.</p>
+        <p>Dette er en virksomhet hvor små endringer i pris, svinn, varekost, kampanjer og bemanning får stor effekt på resultatet.</p>
+      </div>
+      <div class="tab-pane" id="tab-poster">
+        <p><b>2023:</b> -1.775 i særlige nedskrivninger. Det er et tydelig signal om at tidligere verdier og inntjeningsforventninger var for høye.</p>
+        <p><b>2024:</b> +472 i særlige poster og betydelig eiendomssalg. 2024 er derfor ikke et «rent» normalår. <b>2025:</b> 0 i særlige poster.</p>
+      </div>
+      <div class="tab-pane" id="tab-balanse">
+        <p><b>Kapitalgrunnlaget ble reddet/styrket i 2024.</b> Egenkapitalen gikk fra negativ i 2023 til 2.098 i 2024, og soliditetsgraden var 17,8 %. I 2025 faller den litt til 16,2 %, men fortsatt langt bedre enn 2023.</p>
+        <p>Det gir tid til turnaround, men ikke ubegrenset rom for feil.</p>
+      </div>
+    </article>
+  </section>
+
+  <div class="section-title">
+    <div>
+      <h2>2. Marginbildet</h2>
+      <p>Bruttoresultatet viser varemarginen. EBITDA viser om butikkdrift, logistikk og administrasjon samlet begynner å virke. EBIT viser om også avskrivninger og investert kapital bæres.</p>
+    </div>
+  </div>
+
+  <section class="grid two">
+    <article class="card chart-card">
+      <h3>Marginer over tid</h3>
+      <div id="marginChart"></div>
+      <p class="note">Merk at 2020 mangler sammenlignbart EBITDA-tall i den sammenstilte rapporteringen brukt her.</p>
+    </article>
+    <article class="card">
+      <h3>Margin-diagnose</h3>
+      <div class="pillrow">
+        <span class="pill">Bruttomargin 2025: <b>14,5 %</b></span>
+        <span class="pill">EBITDA-margin 2025: <b>1,0 %</b></span>
+        <span class="pill">EBIT-margin 2025: <b>-0,7 %</b></span>
+      </div>
+      <p>Det viktigste er avstanden mellom bruttomargin og EBITDA-margin. I 2025 har Coop 4.728 i bruttoresultat og 313 i EBITDA. Det betyr at nesten hele bruttofortjenesten spises opp av drift, logistikk, butikker, administrasjon og transformasjonskostnader.</p>
+      <p>Det er ikke nødvendigvis unormalt at dagligvare har lave marginer, men Coop har ikke en komfortabel marginbuffer. De må fortsette å forbedre sortiment, kampanjer, svinn, bemanning og butikkportefølje.</p>
+    </article>
+  </section>
+
+  <div class="section-title">
+    <div>
+      <h2>3. Hva skjedde med EBITDA og EBIT?</h2>
+      <p>Her er det lett å blande sammen EBITDA og EBIT. EBITDA forbedres i 2025. EBIT faller mot 2024 fordi 2024 var hjulpet av eiendomssalg og regnskapseffekter.</p>
+    </div>
+  </div>
+
+  <section class="grid three">
+    <article class="card">
+      <h3>EBITDA er ikke ned i 2025</h3>
+      <p>EBITDA går fra <b>-37</b> i 2024 til <b>313</b> i 2025. Det er en forbedring på <b>350</b>. Fra 2023 til 2025 er forbedringen <b>731</b>.</p>
+      <p class="note">Dette tyder på bedre underliggende drift: høyere salgsavance, bedre kommersiell eksekvering, lavere svinn/kassasjoner og strammere kostnadsstyring.</p>
+    </article>
+    <article class="card">
+      <h3>EBIT faller likevel</h3>
+      <p>EBIT før særlige poster går fra <b>162</b> i 2024 til <b>-215</b> i 2025. Forklaringen er ikke nødvendigvis svakere kjernedrift, men at 2024 hadde betydelig eiendomssalg.</p>
+      <p class="note">Derfor bør 2025 ses som et renere driftsår enn 2024.</p>
+    </article>
+    <article class="card">
+      <h3>2025 er «renere», men svakere</h3>
+      <p>2025 har <b>0</b> i særlige poster, men negativt årsresultat på <b>-232</b>. Det gjør analysen enklere: kjerneforretningen er bedre, men ikke lønnsom nok.</p>
+      <p class="note">Konklusjon: turnaround pågår, men må fortsatt levere mer EBIT.</p>
+    </article>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h3>Turnaround-modell</h3>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><b>Krise/press</b><p>2022–2023: marginpress, rabatt-/discountskifte, inflasjon, leverandørkost og store nedskrivninger.</p></div>
+      <div class="step"><div class="num">2</div><b>Kapital og opprydding</b><p>2024: ny eierstruktur, kapitaltilførsel, butikk- og eiendomsgrep, reverseringer/regnskapseffekter.</p></div>
+      <div class="step"><div class="num">3</div><b>Stabilisering</b><p>2025: positiv EBITDA, færre butikker, lavere investeringer, mer kostnadsdisiplin.</p></div>
+      <div class="step"><div class="num">4</div><b>Bevisfase</b><p>2026–2030: må vise positiv EBIT uten store engangseffekter og uten å miste konkurransekraft.</p></div>
+    </div>
+  </section>
+
+  <div class="section-title">
+    <div>
+      <h2>4. Spesielle poster og «støy» i resultatet</h2>
+      <p>Disse postene er viktige fordi de kan få resultatet til å se bedre eller verre ut enn den normale driften egentlig er.</p>
+    </div>
+  </div>
+  <section class="grid two">
+    <article class="card chart-card">
+      <h3>EBIT før og etter særlige poster</h3>
+      <div id="specialChart"></div>
+      <p class="note">2023 påvirkes kraftig av nedskrivninger. 2024 påvirkes positivt av tilbakeføring/særlige poster og eiendomssalg. 2025 har ingen særlige poster.</p>
+    </article>
+    <article class="card">
+      <h3>Hva jeg justerer mentalt for</h3>
+      <table>
+        <thead><tr><th>År</th><th>Særlige poster</th><th>Min tolkning</th></tr></thead>
+        <tbody>
+          <tr><td>2023</td><td class="bad">-1.775</td><td>Nedskrivning: tidligere inntjenings-/verdiforventninger var for høye.</td></tr>
+          <tr><td>2024</td><td class="good">+472</td><td>Ikke rent normalår. Resultatet løftes av regnskapsmessige effekter og eiendomsgrep.</td></tr>
+          <tr><td>2025</td><td>0</td><td>Renere bilde av underliggende drift, men fortsatt negativ EBIT.</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+
+  <div class="section-title">
+    <div>
+      <h2>5. Produktivitet og struktur</h2>
+      <p>Coop blir mindre i antall butikker, men omsetning per butikk og per FTE øker. Det er typisk i en porteføljeopprydding: svakere enheter lukkes/selges, og gjenværende portefølje blir mer effektiv.</p>
+    </div>
+  </div>
+  <section class="grid two">
+    <article class="card chart-card">
+      <h3>Butikker vs. omsetning per butikk</h3>
+      <div id="productivityChart"></div>
+    </article>
+    <article class="card">
+      <h3>Strukturelle trender jeg ser</h3>
+      <ul>
+        <li><b>Færre butikker:</b> 669 i 2020 → 536 i 2025 i Coop Danmark-koncernen.</li>
+        <li><b>Lavere rapportert omsetning:</b> 35.244 i 2020 → 32.565 i 2025.</li>
+        <li><b>Mer effektiv portefølje:</b> omsetning per butikk øker fra 52,7 til 60,8 mio. DKK.</li>
+        <li><b>Lavere investeringsnivå:</b> capex faller fra 1.326 i 2020 til 575 i 2025.</li>
+      </ul>
+      <p class="note">Dette kan være positivt hvis det skyldes opprydding. Det kan være negativt hvis det går ut over butikkstandard, digitalisering eller kundeopplevelse.</p>
+    </article>
+  </section>
+
+  <div class="section-title">
+    <div>
+      <h2>6. Interaktiv 2026-modell</h2>
+      <p>Her kan du teste hvor følsomt EBIT er for små endringer i vekst, bruttomargin, kostnadsnivå og avskrivninger. Dette er en enkel modell, ikke en fasit.</p>
+    </div>
+  </div>
+  <section class="grid two">
+    <article class="card">
+      <h3>Driftsmotoren</h3>
+      <p><b>EBIT ≈ Omsetning × bruttomargin − kontante driftskostnader − avskrivninger</b></p>
+      <div class="slider-grid">
+        <div class="slider-line"><label>Omsetningsvekst <span id="growthVal"></span></label><input type="range" id="growth" min="1.5" max="2.5" step="0.1" value="2.0"></div>
+        <div class="slider-line"><label>Bruttomargin <span id="gmVal"></span></label><input type="range" id="gm" min="14.4" max="15.5" step="0.1" value="14.8"></div>
+        <div class="slider-line"><label>Kontante driftskostnader / omsetning <span id="costVal"></span></label><input type="range" id="cost" min="12.8" max="14.0" step="0.1" value="13.0"></div>
+        <div class="slider-line"><label>Avskrivninger og amortisering <span id="daVal"></span></label><input type="range" id="da" min="450" max="620" step="10" value="530"></div>
+      </div>
+      <div class="big-result">
+        <div><span>Omsetning 2026</span><b id="modelRevenue"></b></div>
+        <div><span>EBITDA</span><b id="modelEbitda"></b></div>
+        <div><span>EBIT</span><b id="modelEbit"></b></div>
+      </div>
+      <p class="note">Ledelsen guider i 2025-rapporten om 2026-omsetningsvekst på 1,5–2,5 % og positiv EBIT i intervallet 0–150 mio. DKK. Standardverdiene i modellen er lagt nær midten av dette.</p>
+    </article>
+    <article class="card">
+      <h3>Hva modellen viser</h3>
+      <p>Coop har høy resultatfølsomhet. En forbedring på bare 0,3–0,5 prosentpoeng i bruttomargin eller kostnadsnivå kan flytte EBIT med rundt 100–160 mio. DKK.</p>
+      <p>Det betyr at den strategiske kampen ikke bare handler om vekst, men om <b>mikroforbedringer</b> i hver del av verdikjeden: innkjøp, kampanjer, svinn, logistikk, bemanning og butikkmiks.</p>
+      <div class="callout"><strong>Strategisk lesning:</strong> Coop må ikke nødvendigvis vokse mye for å bli bedre. De må først få mer av hver krone i omsetning ned til EBIT.</div>
+    </article>
+  </section>
+
+  <div class="section-title">
+    <div>
+      <h2>7. Femårsutsikt 2026–2030</h2>
+      <p>Tre scenarioer. Bruk knappene for å se hvordan en forsiktig, base og optimistisk utvikling kan se ut.</p>
+    </div>
+    <div class="controls">
+      <button class="scenario active" data-scenario="base">Base</button>
+      <button class="scenario" data-scenario="forsiktig">Forsiktig</button>
+      <button class="scenario" data-scenario="optimistisk">Optimistisk</button>
+    </div>
+  </div>
+
+  <section class="grid two">
+    <article class="card chart-card">
+      <h3 id="forecastTitle">Femårsprognose: Base</h3>
+      <div id="forecastChart"></div>
+      <p class="note">Dette er min enkle framskrivning basert på 2025-status og ledelsens 2026-guiding. Ikke en offisiell prognose.</p>
+    </article>
+    <article class="card">
+      <h3>Min vurdering av neste fem år</h3>
+      <div id="forecastText"></div>
+      <div class="table-wrap" style="margin-top:14px;">
+        <table id="forecastTable"></table>
+      </div>
+    </article>
+  </section>
+
+  <div class="section-title">
+    <div>
+      <h2>8. Datatabell</h2>
+      <p>Brukt som grunnlag for diagrammer og vurderinger. Tallene er hentet fra hoved- og nøgletal i årsrapportene, med den nyeste sammenstillingen der mulig.</p>
+    </div>
+  </div>
+  <section class="card table-wrap">
+    <table id="dataTable"></table>
+  </section>
+
+  <section class="footer">
+    <p><b>Kilder:</b> Coop Danmark A/S årsrapporter 2020, 2021, 2022, 2023, 2024 og 2025. Tallene for 2021–2025 følger primært sammenstillingen i 2025-rapporten. 2020-tallene følger den sammenstilte historikken i 2024-rapporten der nettoomsætning er endret for brennstoffinnregning. Prognoser og scenarioer er analytiske antakelser.</p>
+  </section>
+</main>
+
+<script>
+const DATA = [{"year": 2020, "revenue": 35244, "gross": 5635, "ebitda": null, "ebit_before": 506, "special": 0, "ebit": 506, "net": 355, "assets": 14563, "equity": 2594, "capex": 1326, "stores": 669, "employees": 25020, "fte": 10340, "gross_margin": 15.99, "ebitda_margin": null, "ebit_margin_before": 1.44, "ebit_margin": 1.44, "net_margin": 1.01, "rev_per_store": 52.7, "rev_per_fte": 3.41, "fte_per_store": 15.5}, {"year": 2021, "revenue": 35309, "gross": 5489, "ebitda": 705, "ebit_before": 232, "special": 0, "ebit": 232, "net": 158, "assets": 14835, "equity": 2729, "capex": 1110, "stores": 666, "employees": 25536, "fte": 10502, "gross_margin": 15.55, "ebitda_margin": 2.0, "ebit_margin_before": 0.66, "ebit_margin": 0.66, "net_margin": 0.45, "rev_per_store": 53.0, "rev_per_fte": 3.36, "fte_per_store": 15.8}, {"year": 2022, "revenue": 34836, "gross": 4689, "ebitda": -572, "ebit_before": -722, "special": 0, "ebit": -722, "net": -568, "assets": 13224, "equity": 2230, "capex": 1029, "stores": 632, "employees": 25714, "fte": 10156, "gross_margin": 13.46, "ebitda_margin": -1.64, "ebit_margin_before": -2.07, "ebit_margin": -2.07, "net_margin": -1.63, "rev_per_store": 55.1, "rev_per_fte": 3.43, "fte_per_store": 16.1}, {"year": 2023, "revenue": 34246, "gross": 4643, "ebitda": -418, "ebit_before": -717, "special": -1775, "ebit": -2492, "net": -2471, "assets": 10815, "equity": -357, "capex": 1091, "stores": 601, "employees": 24556, "fte": 9447, "gross_margin": 13.56, "ebitda_margin": -1.22, "ebit_margin_before": -2.09, "ebit_margin": -7.28, "net_margin": -7.22, "rev_per_store": 57.0, "rev_per_fte": 3.63, "fte_per_store": 15.7}, {"year": 2024, "revenue": 33618, "gross": 5088, "ebitda": -37, "ebit_before": 162, "special": 472, "ebit": 634, "net": 818, "assets": 11756, "equity": 2098, "capex": 846, "stores": 569, "employees": 23690, "fte": 8840, "gross_margin": 15.13, "ebitda_margin": -0.11, "ebit_margin_before": 0.48, "ebit_margin": 1.89, "net_margin": 2.43, "rev_per_store": 59.1, "rev_per_fte": 3.8, "fte_per_store": 15.5}, {"year": 2025, "revenue": 32565, "gross": 4728, "ebitda": 313, "ebit_before": -215, "special": 0, "ebit": -215, "net": -232, "assets": 11599, "equity": 1877, "capex": 575, "stores": 536, "employees": 23008, "fte": 8351, "gross_margin": 14.52, "ebitda_margin": 0.96, "ebit_margin_before": -0.66, "ebit_margin": -0.66, "net_margin": -0.71, "rev_per_store": 60.8, "rev_per_fte": 3.9, "fte_per_store": 15.6}];
+const METRICS = {"revenue": {"label": "Nettoomsætning", "unit": "mio. DKK", "type": "money"}, "gross": {"label": "Bruttoresultat", "unit": "mio. DKK", "type": "money"}, "ebitda": {"label": "EBITDA før gevinst ved salg av materielle anlæg", "unit": "mio. DKK", "type": "money"}, "ebit_before": {"label": "EBIT før særlige poster", "unit": "mio. DKK", "type": "money"}, "ebit": {"label": "EBIT etter særlige poster", "unit": "mio. DKK", "type": "money"}, "net": {"label": "Årets resultat", "unit": "mio. DKK", "type": "money"}, "gross_margin": {"label": "Bruttomargin", "unit": "%", "type": "percent"}, "ebitda_margin": {"label": "EBITDA-margin", "unit": "%", "type": "percent"}, "ebit_margin_before": {"label": "EBIT-margin før særlige poster", "unit": "%", "type": "percent"}, "stores": {"label": "Antall butikker", "unit": "stk.", "type": "integer"}, "rev_per_store": {"label": "Omsetning per butikk", "unit": "mio. DKK", "type": "money"}, "rev_per_fte": {"label": "Omsetning per FTE", "unit": "mio. DKK", "type": "money"}};
+const FORECASTS = {"forsiktig": [{"year": 2026, "revenue": 33053, "gross_margin": 14.6, "ebit_margin": 0.0, "ebit": 0, "ebitda": 500}, {"year": 2027, "revenue": 33219, "gross_margin": 14.7, "ebit_margin": 0.15, "ebit": 50, "ebitda": 560}, {"year": 2028, "revenue": 33385, "gross_margin": 14.8, "ebit_margin": 0.25, "ebit": 83, "ebitda": 603}, {"year": 2029, "revenue": 33552, "gross_margin": 14.9, "ebit_margin": 0.35, "ebit": 117, "ebitda": 647}, {"year": 2030, "revenue": 33720, "gross_margin": 15.0, "ebit_margin": 0.45, "ebit": 152, "ebitda": 692}], "base": [{"year": 2026, "revenue": 33216, "gross_margin": 14.8, "ebit_margin": 0.23, "ebit": 76, "ebitda": 606}, {"year": 2027, "revenue": 33615, "gross_margin": 14.9, "ebit_margin": 0.45, "ebit": 151, "ebitda": 691}, {"year": 2028, "revenue": 34052, "gross_margin": 15.0, "ebit_margin": 0.6, "ebit": 204, "ebitda": 754}, {"year": 2029, "revenue": 34529, "gross_margin": 15.1, "ebit_margin": 0.75, "ebit": 259, "ebitda": 819}, {"year": 2030, "revenue": 35047, "gross_margin": 15.2, "ebit_margin": 0.9, "ebit": 315, "ebitda": 885}], "optimistisk": [{"year": 2026, "revenue": 33379, "gross_margin": 14.9, "ebit_margin": 0.45, "ebit": 150, "ebitda": 690}, {"year": 2027, "revenue": 34047, "gross_margin": 15.1, "ebit_margin": 0.7, "ebit": 238, "ebitda": 788}, {"year": 2028, "revenue": 34796, "gross_margin": 15.3, "ebit_margin": 0.9, "ebit": 313, "ebitda": 873}, {"year": 2029, "revenue": 35596, "gross_margin": 15.4, "ebit_margin": 1.05, "ebit": 374, "ebitda": 944}, {"year": 2030, "revenue": 36486, "gross_margin": 15.5, "ebit_margin": 1.2, "ebit": 438, "ebitda": 1018}]};
+const tooltip = document.getElementById('tooltip');
+
+function fmt(v, metric) {
+  if (v === null || v === undefined || Number.isNaN(v)) return 'n/a';
+  const m = METRICS[metric] || {};
+  if (m.type === 'percent') return v.toLocaleString('no-NO', {maximumFractionDigits:2}) + ' %';
+  if (m.type === 'integer') return v.toLocaleString('no-NO', {maximumFractionDigits:0});
+  return v.toLocaleString('no-NO', {maximumFractionDigits:1}) + (m.unit === 'mio. DKK' ? ' mio.' : '');
+}
+function fmtMoney(v) {
+  return v.toLocaleString('no-NO', {maximumFractionDigits:0}) + ' mio.';
+}
+function pct(v) { return v.toLocaleString('no-NO', {maximumFractionDigits:1}) + ' %'; }
+function showTip(evt, html) {
+  tooltip.innerHTML = html;
+  tooltip.style.left = evt.clientX + 'px';
+  tooltip.style.top = evt.clientY + 'px';
+  tooltip.style.opacity = 1;
+}
+function hideTip() { tooltip.style.opacity = 0; }
+
+function kpis() {
+  const last = DATA[DATA.length-1], prev = DATA[DATA.length-2];
+  const k = [
+    ['Nettoomsætning 2025', fmtMoney(last.revenue), (last.revenue-prev.revenue).toLocaleString('no-NO') + ' vs. 2024', 'bad'],
+    ['EBITDA 2025', fmtMoney(last.ebitda), '+' + (last.ebitda-prev.ebitda).toLocaleString('no-NO') + ' vs. 2024', 'good'],
+    ['EBIT før særlige poster', fmtMoney(last.ebit_before), 'Margin ' + pct(last.ebit_margin_before), 'bad'],
+    ['Soliditetsgrad 2025', pct(16.2), '17,8 % i 2024', 'amber']
+  ];
+  document.getElementById('kpis').innerHTML = k.map(x => `
+    <article class="card kpi-card">
+      <div class="label">${x[0]}</div>
+      <div class="value ${x[3]}">${x[1]}</div>
+      <div class="delta">${x[2]}</div>
+    </article>`).join('');
+}
+
+function setupMetricSelect() {
+  const sel = document.getElementById('metricSelect');
+  ['revenue','gross','ebitda','ebit_before','ebit','net','gross_margin','ebitda_margin','ebit_margin_before','stores','rev_per_store','rev_per_fte'].forEach(k => {
+    const o = document.createElement('option');
+    o.value = k; o.textContent = METRICS[k].label;
+    sel.appendChild(o);
+  });
+  sel.value = 'ebitda';
+  sel.addEventListener('change', () => drawTrend(sel.value));
+}
+
+function drawSvgLine(container, rows, key, opts={}) {
+  const el = document.getElementById(container);
+  const w=760,h=315, ml=58,mr=28,mt=24,mb=48;
+  const values = rows.map(r => r[key]).filter(v => v !== null && v !== undefined);
+  let min = Math.min(...values), max = Math.max(...values);
+  if (opts.zero) { min = Math.min(min,0); max = Math.max(max,0); }
+  if (min === max) { min -= 1; max += 1; }
+  const pad = (max-min)*0.15 || 1; min -= pad; max += pad;
+  const x = i => ml + i*(w-ml-mr)/(rows.length-1);
+  const y = v => mt + (max-v)*(h-mt-mb)/(max-min);
+  const zeroY = y(0);
+  const points = rows.map((r,i) => r[key] == null ? null : [x(i),y(r[key]),r]).filter(Boolean);
+  let path = '';
+  points.forEach((p,i) => { path += (i===0?'M':'L') + p[0] + ' ' + p[1] + ' '; });
+  const ticks = 5;
+  let yTicks = '';
+  for (let i=0;i<ticks;i++) {
+    const val = min + (max-min)*i/(ticks-1), yy = y(val);
+    yTicks += `<line x1="${ml}" x2="${w-mr}" y1="${yy}" y2="${yy}" stroke="#eee1dd"/><text x="${ml-10}" y="${yy+4}" text-anchor="end" font-size="11" fill="#777">${opts.percent ? val.toFixed(1)+'%' : Math.round(val).toLocaleString('no-NO')}</text>`;
+  }
+  const circles = points.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="5.5" fill="#c90016" stroke="white" stroke-width="2" data-year="${p[2].year}" data-val="${p[2][key]}"></circle>`).join('');
+  const labels = rows.map((r,i) => `<text x="${x(i)}" y="${h-18}" text-anchor="middle" font-size="12" fill="#555">${r.year}</text>`).join('');
+  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" role="img">
+    <rect x="0" y="0" width="${w}" height="${h}" rx="18" fill="#fff"/>
+    ${yTicks}
+    <line x1="${ml}" x2="${w-mr}" y1="${h-mb}" y2="${h-mb}" stroke="#d6cbc7"/>
+    <line x1="${ml}" x2="${ml}" y1="${mt}" y2="${h-mb}" stroke="#d6cbc7"/>
+    ${min < 0 && max > 0 ? `<line x1="${ml}" x2="${w-mr}" y1="${zeroY}" y2="${zeroY}" stroke="#191919" stroke-dasharray="4 4" opacity=".35"/>` : ''}
+    <path d="${path}" fill="none" stroke="#c90016" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    ${circles}
+    ${labels}
+  </svg>`;
+  el.querySelectorAll('circle').forEach(c => {
+    c.addEventListener('mousemove', e => showTip(e, `<b>${c.dataset.year}</b><br>${Number(c.dataset.val).toLocaleString('no-NO', {maximumFractionDigits:2})}${opts.percent ? ' %' : ' mio. DKK'}`));
+    c.addEventListener('mouseleave', hideTip);
+  });
+}
+
+function drawTrend(metric) {
+  const title = METRICS[metric].label;
+  document.getElementById('trendTitle').textContent = title;
+  document.getElementById('trendTag').textContent = METRICS[metric].unit;
+  drawSvgLine('trendChart', DATA, metric, {zero:true, percent: METRICS[metric].type==='percent'});
+  const comments = {
+    revenue: 'Omsetningen faller gradvis. Noe skyldes butikklukninger/salg og brennstoffvolum, men dette viser også at Coop ikke er i en vekstfase nå.',
+    gross: 'Bruttoresultatet falt kraftig i 2022, bedret seg i 2024, men faller igjen i 2025.',
+    ebitda: 'EBITDA snur fra negativt nivå i 2022–2024 til positivt i 2025. Dette er det tydeligste operative forbedringssignalet.',
+    ebit_before: 'EBIT før særlige poster er fortsatt negativ i 2025. Coop må få mer av EBITDA-forbedringen ned etter avskrivninger.',
+    ebit: 'EBIT etter særlige poster svinger kraftig på grunn av nedskrivninger i 2023 og positive effekter i 2024.',
+    net: 'Årsresultatet viser hvor mye ekstraordinære forhold og finansposter påvirker totalbildet.',
+    gross_margin: 'Bruttomarginen er bedre enn bunnåret 2022, men ikke tilbake på 2020-nivå.',
+    ebitda_margin: 'EBITDA-marginen er positiv, men lav. Det er turnaround, ikke friskmelding.',
+    ebit_margin_before: 'EBIT-margin før særlige poster er fortsatt svak og negativ i 2025.',
+    stores: 'Butikkporteføljen krymper år for år. Det kan være sunn opprydding, men begrenser rapportert vekst.',
+    rev_per_store: 'Omsetning per butikk øker. Det tyder på at porteføljen blir mer produktiv.',
+    rev_per_fte: 'Omsetning per FTE øker, som peker mot bedre produktivitet og/eller inflasjonseffekt.'
+  };
+  document.getElementById('trendComment').textContent = comments[metric] || '';
+}
+
+function drawMultiLine(container, series) {
+  const el=document.getElementById(container);
+  const w=760,h=315,ml=58,mr=28,mt=24,mb=48;
+  const rows=DATA;
+  const vals=[];
+  rows.forEach(r => series.forEach(s => { if (r[s.key] !== null && r[s.key] !== undefined) vals.push(r[s.key]); }));
+  let min=Math.min(...vals,0), max=Math.max(...vals,0), pad=(max-min)*.15 || 1; min-=pad; max+=pad;
+  const x=i => ml+i*(w-ml-mr)/(rows.length-1);
+  const y=v => mt+(max-v)*(h-mt-mb)/(max-min);
+  let grid='';
+  for(let i=0;i<5;i++) { let val=min+(max-min)*i/4, yy=y(val); grid+=`<line x1="${ml}" x2="${w-mr}" y1="${yy}" y2="${yy}" stroke="#eee1dd"/><text x="${ml-10}" y="${yy+4}" text-anchor="end" font-size="11" fill="#777">${val.toFixed(1)}%</text>`; }
+  const colors=['#c90016','#2364aa','#0f7a4f'];
+  let paths='', legend='';
+  series.forEach((s,idx) => {
+    let pts=rows.map((r,i)=>r[s.key]==null?null:[x(i),y(r[s.key]),r]).filter(Boolean);
+    let d=''; pts.forEach((p,i)=>d+=(i?'L':'M')+p[0]+' '+p[1]+' ');
+    paths += `<path d="${d}" fill="none" stroke="${colors[idx]}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+    paths += pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="4.5" fill="${colors[idx]}" stroke="white" stroke-width="2" data-year="${p[2].year}" data-name="${s.name}" data-val="${p[2][s.key]}"></circle>`).join('');
+    legend += `<span style="display:inline-flex;align-items:center;gap:7px;margin-right:14px;"><i style="width:12px;height:12px;border-radius:50%;background:${colors[idx]};display:inline-block;"></i>${s.name}</span>`;
+  });
+  const labels=rows.map((r,i)=>`<text x="${x(i)}" y="${h-18}" text-anchor="middle" font-size="12" fill="#555">${r.year}</text>`).join('');
+  el.innerHTML=`<div style="font-size:13px;margin-bottom:8px;">${legend}</div><svg viewBox="0 0 ${w} ${h}">
+  <rect x="0" y="0" width="${w}" height="${h}" rx="18" fill="#fff"/>
+  ${grid}
+  <line x1="${ml}" x2="${w-mr}" y1="${y(0)}" y2="${y(0)}" stroke="#191919" stroke-dasharray="4 4" opacity=".35"/>
+  ${paths}
+  ${labels}
+  </svg>`;
+  el.querySelectorAll('circle').forEach(c=>{
+    c.addEventListener('mousemove',e=>showTip(e,`<b>${c.dataset.year}</b><br>${c.dataset.name}: ${Number(c.dataset.val).toFixed(2)} %`));
+    c.addEventListener('mouseleave',hideTip);
+  });
+}
+
+function drawBars(container, rows, keys) {
+  const el=document.getElementById(container), w=760,h=315,ml=58,mr=28,mt=24,mb=48;
+  const vals=[]; rows.forEach(r=>keys.forEach(k=>vals.push(r[k.key])));
+  let min=Math.min(...vals,0), max=Math.max(...vals,0), pad=(max-min)*.15 || 1; min-=pad; max+=pad;
+  const y=v=>mt+(max-v)*(h-mt-mb)/(max-min);
+  const x0=ml, plotW=w-ml-mr, groupW=plotW/rows.length, barW=groupW/(keys.length+1.4);
+  const colors=['#2364aa','#c90016'];
+  let grid='', bars='', labels='', legend='';
+  for(let i=0;i<5;i++) { let val=min+(max-min)*i/4, yy=y(val); grid+=`<line x1="${ml}" x2="${w-mr}" y1="${yy}" y2="${yy}" stroke="#eee1dd"/><text x="${ml-10}" y="${yy+4}" text-anchor="end" font-size="11" fill="#777">${Math.round(val).toLocaleString('no-NO')}</text>`; }
+  rows.forEach((r,i)=> {
+    keys.forEach((k,j)=> {
+      const val=r[k.key], x=x0+i*groupW + j*barW + barW*.55, yy=Math.min(y(val),y(0)), hh=Math.abs(y(val)-y(0));
+      bars+=`<rect x="${x}" y="${yy}" width="${barW*.86}" height="${hh}" rx="5" fill="${colors[j]}" data-year="${r.year}" data-name="${k.name}" data-val="${val}"></rect>`;
+    });
+    labels += `<text x="${x0+i*groupW+groupW/2}" y="${h-18}" text-anchor="middle" font-size="12" fill="#555">${r.year}</text>`;
+  });
+  keys.forEach((k,j)=>legend+=`<span style="display:inline-flex;align-items:center;gap:7px;margin-right:14px;"><i style="width:12px;height:12px;border-radius:3px;background:${colors[j]};display:inline-block;"></i>${k.name}</span>`);
+  el.innerHTML=`<div style="font-size:13px;margin-bottom:8px;">${legend}</div><svg viewBox="0 0 ${w} ${h}">
+    <rect x="0" y="0" width="${w}" height="${h}" rx="18" fill="#fff"/>
+    ${grid}
+    <line x1="${ml}" x2="${w-mr}" y1="${y(0)}" y2="${y(0)}" stroke="#191919" stroke-dasharray="4 4" opacity=".35"/>
+    ${bars}${labels}</svg>`;
+  el.querySelectorAll('rect[data-val]').forEach(c=>{
+    c.addEventListener('mousemove',e=>showTip(e,`<b>${c.dataset.year}</b><br>${c.dataset.name}: ${Number(c.dataset.val).toLocaleString('no-NO')} mio. DKK`));
+    c.addEventListener('mouseleave',hideTip);
+  });
+}
+
+function drawProductivity() {
+  // Dual normalized line chart
+  const rows=DATA;
+  const el=document.getElementById('productivityChart');
+  const w=760,h=315,ml=58,mr=28,mt=24,mb=48;
+  const norm = (key) => rows.map(r => (r[key]/rows[0][key])*100);
+  const sets=[{key:'stores',name:'Butikker (indeks)', vals:norm('stores'), color:'#c90016'},{key:'rev_per_store',name:'Omsetning per butikk (indeks)', vals:norm('rev_per_store'), color:'#0f7a4f'}];
+  const vals=sets.flatMap(s=>s.vals); let min=Math.min(...vals)*.95,max=Math.max(...vals)*1.05;
+  const x=i=>ml+i*(w-ml-mr)/(rows.length-1), y=v=>mt+(max-v)*(h-mt-mb)/(max-min);
+  let grid='', paths='', legend='';
+  for(let i=0;i<5;i++) { let val=min+(max-min)*i/4, yy=y(val); grid+=`<line x1="${ml}" x2="${w-mr}" y1="${yy}" y2="${yy}" stroke="#eee1dd"/><text x="${ml-10}" y="${yy+4}" text-anchor="end" font-size="11" fill="#777">${val.toFixed(0)}</text>`; }
+  sets.forEach(s=> {
+    let d=''; s.vals.forEach((v,i)=> d+=(i?'L':'M')+x(i)+' '+y(v)+' ');
+    paths+=`<path d="${d}" fill="none" stroke="${s.color}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+    paths+=s.vals.map((v,i)=>`<circle cx="${x(i)}" cy="${y(v)}" r="4.5" fill="${s.color}" stroke="white" stroke-width="2" data-year="${rows[i].year}" data-name="${s.name}" data-val="${v.toFixed(1)}"></circle>`).join('');
+    legend+=`<span style="display:inline-flex;align-items:center;gap:7px;margin-right:14px;"><i style="width:12px;height:12px;border-radius:50%;background:${s.color};display:inline-block;"></i>${s.name}</span>`;
+  });
+  const labels=rows.map((r,i)=>`<text x="${x(i)}" y="${h-18}" text-anchor="middle" font-size="12" fill="#555">${r.year}</text>`).join('');
+  el.innerHTML=`<div style="font-size:13px;margin-bottom:8px;">${legend}</div><svg viewBox="0 0 ${w} ${h}"><rect x="0" y="0" width="${w}" height="${h}" rx="18" fill="#fff"/>${grid}${paths}${labels}</svg>`;
+  el.querySelectorAll('circle').forEach(c=>{
+    c.addEventListener('mousemove',e=>showTip(e,`<b>${c.dataset.year}</b><br>${c.dataset.name}: ${c.dataset.val}`));
+    c.addEventListener('mouseleave',hideTip);
+  });
+}
+
+function setupTabs() {
+  document.querySelectorAll('.tab').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  }));
+}
+
+function dataTable() {
+  const fields = [
+    ['year','År'],['revenue','Nettoomsætning'],['gross_margin','Bruttomargin %'],['ebitda','EBITDA'],['ebit_before','EBIT før særlige'],['special','Særlige poster'],['ebit','EBIT'],['net','Årets resultat'],['stores','Butikker'],['rev_per_store','Oms. per butikk'],['capex','Capex']
+  ];
+  let html = '<thead><tr>' + fields.map(f=>`<th>${f[1]}</th>`).join('') + '</tr></thead><tbody>';
+  DATA.forEach(r => {
+    html += '<tr>' + fields.map(f => {
+      let v=r[f[0]];
+      if (v===null || v===undefined) v='n/a';
+      else if (String(f[0]).includes('margin')) v=pct(v);
+      else if (f[0]==='year' || f[0]==='stores') v=String(v);
+      else v=Number(v).toLocaleString('no-NO');
+      return `<td>${v}</td>`;
+    }).join('') + '</tr>';
+  });
+  html+='</tbody>';
+  document.getElementById('dataTable').innerHTML=html;
+}
+
+function updateModel() {
+  const growth=Number(document.getElementById('growth').value);
+  const gm=Number(document.getElementById('gm').value);
+  const cost=Number(document.getElementById('cost').value);
+  const da=Number(document.getElementById('da').value);
+  document.getElementById('growthVal').textContent=pct(growth);
+  document.getElementById('gmVal').textContent=pct(gm);
+  document.getElementById('costVal').textContent=pct(cost);
+  document.getElementById('daVal').textContent=fmtMoney(da);
+  const rev=32565*(1+growth/100);
+  const ebitda=rev*(gm-cost)/100;
+  const ebit=ebitda-da;
+  document.getElementById('modelRevenue').textContent=fmtMoney(Math.round(rev));
+  document.getElementById('modelEbitda').textContent=fmtMoney(Math.round(ebitda));
+  const el=document.getElementById('modelEbit');
+  el.textContent=fmtMoney(Math.round(ebit));
+  el.className = ebit >= 0 ? 'good' : 'bad';
+}
+function setupModel() {
+  ['growth','gm','cost','da'].forEach(id => document.getElementById(id).addEventListener('input', updateModel));
+  updateModel();
+}
+
+function drawForecast(scenario='base') {
+  document.querySelectorAll('.scenario').forEach(b=>b.classList.toggle('active', b.dataset.scenario===scenario));
+  document.getElementById('forecastTitle').textContent = 'Femårsprognose: ' + (scenario==='base'?'Base':scenario==='forsiktig'?'Forsiktig':'Optimistisk');
+  const rows=FORECASTS[scenario];
+  drawSvgLine('forecastChart', rows, 'ebit', {zero:true});
+  const txt = {
+    forsiktig: '<p><b>Forsiktig:</b> Coop kommer så vidt i pluss, men marginforbedringen går sakte. Dette kan skje hvis konkurransepress, svinn, lønn/kost og investeringer spiser opp forbedringene.</p><p>Strategisk betyr dette at Coop må prioritere kost og portefølje hardt, ikke brede digitale satsinger med svak payback.</p>',
+    base: '<p><b>Base:</b> 2026 blir et vendepunkt med lav positiv EBIT. Deretter bygger Coop gradvis margin gjennom bedre butikkdrift, portefølje og kostnadsdisiplin.</p><p>Dette er etter min vurdering den mest realistiske banen hvis 2025-forbedringen fortsetter, men uten store vekstmirakler.</p>',
+    optimistisk: '<p><b>Optimistisk:</b> Coop får både positiv sammenlignbar vekst og tydelig marginløft. Da kan EBIT nærme seg 400 mio. DKK rundt 2030.</p><p>Dette krever at 365discount/Brugsen/Kvickly/SuperBrugsen finner tydeligere roller og at investeringer i butikk/digital gir målbar effekt.</p>'
+  }[scenario];
+  document.getElementById('forecastText').innerHTML=txt;
+  let table='<thead><tr><th>År</th><th>Oms.</th><th>EBITDA</th><th>EBIT</th><th>EBIT-margin</th></tr></thead><tbody>';
+  rows.forEach(r=>table+=`<tr><td>${r.year}</td><td>${fmtMoney(r.revenue)}</td><td>${fmtMoney(r.ebitda)}</td><td>${fmtMoney(r.ebit)}</td><td>${pct(r.ebit_margin)}</td></tr>`);
+  table+='</tbody>';
+  document.getElementById('forecastTable').innerHTML=table;
+}
+function setupForecast() {
+  document.querySelectorAll('.scenario').forEach(b=>b.addEventListener('click',()=>drawForecast(b.dataset.scenario)));
+  drawForecast('base');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  kpis();
+  setupMetricSelect();
+  drawTrend('ebitda');
+  drawMultiLine('marginChart', [
+    {key:'gross_margin',name:'Bruttomargin'},
+    {key:'ebitda_margin',name:'EBITDA-margin'},
+    {key:'ebit_margin_before',name:'EBIT-margin før særlige'}
+  ]);
+  drawBars('specialChart', DATA, [
+    {key:'ebit_before', name:'EBIT før særlige'},
+    {key:'ebit', name:'EBIT etter særlige'}
+  ]);
+  drawProductivity();
+  setupTabs();
+  dataTable();
+  setupModel();
+  setupForecast();
+});
+</script>
+</body>
+</html>
