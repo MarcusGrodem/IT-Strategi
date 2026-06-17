@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {2.1}Hovedteori}{9}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Sentrale fagbegreper}{14}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Typiske strategiske virkemidler}{14}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Eksempler og caser}{14}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Eksamensrelevans}{14}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.4}Eksempler og caser}{15}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Eksamensrelevans}{15}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Forelesning 3: \emph {Digitale forretningsmodeller}}{16}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Hovedteori}{16}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Sentrale fagbegreper}{20}{subsection.3.2}%
@@ -81,17 +81,18 @@
 \contentsline {subsection}{\numberline {10.7}TOWS --- fra analyse til handling}{71}{subsection.10.7}%
 \contentsline {subsection}{\numberline {10.8}Verdikjede og verdikjedesystemer (Porter)}{72}{subsection.10.8}%
 \contentsline {subsection}{\numberline {10.9}Five Building Blocks of Digital Transformation (Ross et al.)}{73}{subsection.10.9}%
-\contentsline {subsection}{\numberline {10.10}CVP --- Johnson et al.s forretningsmodellramme}{74}{subsection.10.10}%
-\contentsline {subsection}{\numberline {10.11}Business Model Canvas (Osterwalder)}{75}{subsection.10.11}%
-\contentsline {subsection}{\numberline {10.12}Weill \& Woerner (2018) --- Digital Business Model Framework}{76}{subsection.10.12}%
-\contentsline {subsection}{\numberline {10.13}Network effects (Nettverkseffekter)}{77}{subsection.10.13}%
-\contentsline {subsection}{\numberline {10.14}Allwein et al.\ (2020) --- Platform Business Model Canvas}{78}{subsection.10.14}%
-\contentsline {subsection}{\numberline {10.15}Lubinski et al.\ (2020) --- Platform Business Model Canvas}{79}{subsection.10.15}%
-\contentsline {subsection}{\numberline {10.16}Davis Eisape --- Platform Business Model Canvas}{80}{subsection.10.16}%
-\contentsline {subsection}{\numberline {10.17}Wessel et al.\ --- Digital Transformation vs IT-Enabled Transformation}{81}{subsection.10.17}%
-\contentsline {subsection}{\numberline {10.18}Øyemodellen --- typer disruption}{82}{subsection.10.18}%
-\contentsline {subsection}{\numberline {10.19}Disruption-modellen (tre sirkler)}{83}{subsection.10.19}%
-\contentsline {subsection}{\numberline {10.20}Digital Innovation Strategy + tre kjerneelementer}{84}{subsection.10.20}%
-\contentsline {subsection}{\numberline {10.21}Tawse \& Tabesh --- Strategy Implementation Framework}{85}{subsection.10.21}%
-\contentsline {part}{Del IV --- Ordbank}{87}{part*.3}%
-\contentsline {section}{Ordbank --- Sentrale fagbegrep og teorier}{87}{section*.4}%
+\contentsline {subsection}{\numberline {10.10}Strategy Canvas (Kim \& Mauborgne)}{74}{subsection.10.10}%
+\contentsline {subsection}{\numberline {10.11}CVP --- Johnson et al.s forretningsmodellramme}{75}{subsection.10.11}%
+\contentsline {subsection}{\numberline {10.12}Business Model Canvas (Osterwalder)}{76}{subsection.10.12}%
+\contentsline {subsection}{\numberline {10.13}Weill \& Woerner (2018) --- Digital Business Model Framework}{77}{subsection.10.13}%
+\contentsline {subsection}{\numberline {10.14}Network effects (Nettverkseffekter)}{79}{subsection.10.14}%
+\contentsline {subsection}{\numberline {10.15}Allwein et al.\ (2020) --- Platform Business Model Canvas}{80}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.16}Lubinski et al.\ (2020) --- Platform Business Model Canvas}{81}{subsection.10.16}%
+\contentsline {subsection}{\numberline {10.17}Davis Eisape --- Platform Business Model Canvas}{82}{subsection.10.17}%
+\contentsline {subsection}{\numberline {10.18}Wessel et al.\ --- Digital Transformation vs IT-Enabled Transformation}{83}{subsection.10.18}%
+\contentsline {subsection}{\numberline {10.19}Øyemodellen --- typer disruption}{84}{subsection.10.19}%
+\contentsline {subsection}{\numberline {10.20}Disruption-modellen (tre sirkler)}{85}{subsection.10.20}%
+\contentsline {subsection}{\numberline {10.21}Digital Innovation Strategy + tre kjerneelementer}{86}{subsection.10.21}%
+\contentsline {subsection}{\numberline {10.22}Tawse \& Tabesh --- Strategy Implementation Framework}{87}{subsection.10.22}%
+\contentsline {part}{Del IV --- Ordbank}{89}{part*.3}%
+\contentsline {section}{Ordbank --- Sentrale fagbegrep og teorier}{89}{section*.4}%
