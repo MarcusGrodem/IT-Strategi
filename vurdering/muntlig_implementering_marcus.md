@@ -295,6 +295,112 @@ Hva jeg vil ha klart hvis sensor presser på teknisk gjeld:
 
 ---
 
+## 6.5 Marginpåstanden — DBM som teoretisk forsvar for margingevinst
+
+Hvis sensor spør "hvordan kan dere vise at appen + anbefalingene faktisk øker marginene?", er DBM (Weill & Woerner) det skarpeste teoretiske rammeverket. Dette kapitlet er forsvaret.
+
+**Pensumkoblinger for dette kapitlet:**
+- **DBM (Weill & Woerner):** to akser (kundekjennskap × forretningsdesign), fire arketyper, og det avgjørende skillet *value creation* vs. *value capture*.
+- **DVC (Duus & Cooray):** forklarer mekanismen som flytter Coop oppover DBMs Y-akse.
+- **Porter (5F + verdikjede):** komplementær linse for *hvor i bransjestrukturen* marginen flyttes.
+- **Marginsensitiviteten (regnskap):** 0,3–0,5 pp = 100–160 mio EBIT — "vekslingskursen" mellom DBM-mekanismer og bunnlinje.
+
+### 6.5a Rammeverket og Coops posisjon
+
+DBM plasserer virksomheter langs to akser:
+- **Y-aksen — kundekjennskap:** fra lav (kun transaksjon) til høy (medlem på tvers av kontekster).
+- **X-aksen — forretningsdesign:** fra kontrollert verdikjede til åpent økosystem.
+
+|  | Verdikjede | Økosystem |
+|---|---|---|
+| **Høy kundekjennskap** | **Omnichannel** ← Coop | Ecosystem driver |
+| **Lav kundekjennskap** | Supplier | Modular producer |
+
+**Coops posisjon:** *Omnichannel*. Bevisst valgt og koblet til Wessels IT-Enabled-modus — det former hvordan marginen genereres.
+
+### 6.5b Value creation vs. value capture — kjernen i marginargumentet
+
+Det mest underbrukte verktøyet i pensumet, og det som gjør argumentet skarpt:
+
+- **Value creation:** verdien medlemmet *opplever* (bekvemmelighet, relevans, bonus, spart tid).
+- **Value capture:** verdien Coop *fanger som margin* (frekvens, basket, retail media, lavere kost).
+
+En app kan skape massiv creation uten capture — "engasjementsfellen". MAU vokser, NPS stiger, EBIT rører seg ikke. DBM tvinger oss til å navngi capture-kanalen eksplisitt.
+
+| Value creation (medlemmet) | Value capture (Coop) |
+|---|---|
+| Personalisert tilbud | Mix-styring → bruttomargin ↑ |
+| Scan & Pay → spart tid | Lavere kasse-bemanningskost |
+| Bonus → belønning | Frekvens + retensjon ↑ |
+| Riktig kampanje til riktig tid | Lavere rabatt-lekkasje |
+| Relevant innhold | Lengre sesjon → mer retail media-inventar |
+
+**Designprinsipp:** Vi bygger ingen app-funksjon uten å kunne navngi capture-kanalen.
+
+### 6.5c Y-aksen som marginmultiplikator
+
+Weill & Woerner viser empirisk at bevegelse oppover kundekjennskaps-aksen gir høyere EBIT-margin. Mekanismen for Coop:
+
+1. **Presisjons-kampanjer:** rabatt gis bare der den faktisk endrer adferd — ikke til medlemmer som ville kjøpt uansett. Direkte effekt på bruttomargin.
+2. **Mix-løft:** anbefal høymargin-produkt til medlemmet med høyest sannsynlighet for å akseptere. Skift i produktmiks → bruttomargin ↑.
+3. **Retention-økonomi:** prioriter retention-tiltak der livstidsverdien er høyest.
+
+**Hver av disse måles i pp på driftsmotoren.** 0,3 pp bruttomargin = 100 mio EBIT. Det er DBM-aksen omsatt til kroner.
+
+### 6.5d X-aksen — hvorfor Coop *ikke* skal bli plattform (margin-beskyttelse)
+
+Subtilt poeng som ofte misses muntlig:
+
+- Coop kunne flyttet seg mot *ecosystem driver* ved å åpne Lobyco for konkurrenter.
+- Den arketypen krever at *plattformen selv* fanger verdi (Amazon/Apple-modellen) — store opp-front-investeringer, nettverkseffekter, helt annen kapitalstruktur.
+- Coop har ikke balansen (capex halvert, soliditet 16,2 %) til det.
+- Risikoen er drift mot *modular producer*: høy skala, lav kundekjennskap, *lavere* margin enn omnichannel. Verste utfall.
+
+**Derfor er Lobyco-governance (anbefaling 3) en *margin-beskyttelse*** — den hindrer at Coop sklir ned Y-aksen mens den vokser på X-aksen. DBM brukt som strategisk disiplin, ikke bare analyse.
+
+### 6.5e Multiple revenue streams — DBMs konkrete marginprediksjon
+
+Omnichannel + ecosystem driver-virksomheter har empirisk *flere parallelle inntektsstrømmer*. For Coop konkret:
+
+| Inntektsstrøm | Marginprofil | DBM-akse-kobling |
+|---|---|---|
+| Kjernedrift (varesalg) | Lav margin, høyt volum | Omnichannel-default |
+| Retail media | Høy bidragsmargin | Krever Y-akse |
+| Datadrevet kategoriledelse | Indirekte (innkjøp) | Krever Y-akse |
+| Lobyco eksterne kunder | Plattform-margin | X-akse (kontrollert) |
+| Personaliserte abonnement/medlem | Forutsigbar margin | Krever Y-akse |
+
+Coop har i dag *én* hovedmarginstrøm. DBM forutsier at Y-akse-flyttingen *åpner* nye strømmer med høyere bidragsmargin. Rammeverkets sentrale empiriske påstand, ikke spekulasjon.
+
+### 6.5f DBM vs. DVC — hvordan de spiller sammen
+
+Skarpt skille:
+- **DVC** = produktlinse: *hva i produktet* skaper verdi (outputs, set/situational, relevance, evolution).
+- **DBM** = forretningsmodell-linse: *hvordan firmaet er posisjonert* til å fange verdi.
+
+**Kjeden:** DVC → kundekjennskap → DBM Y-akse → høyere margin.
+
+### 6.5g Setningen muntlig
+
+> "DBM gir oss to ting. Creation/capture-skillet tvinger oss til å bevise capture-kanalen for hver app-funksjon — uten det er vi i engasjementsfellen. Og rammeverket forutsier empirisk at bevegelse oppover kundekjennskaps-aksen gir høyere EBIT-margin, gjennom presisjons-kampanjer, mix-løft og nye parallelle inntektsstrømmer som retail media. Vår strategi er bevisst en bevegelse oppover Y-aksen, ikke utover X-aksen — derfor er Lobyco-governance margin-beskyttelse, ikke vekstbrems."
+
+### 6.5h Forventet motspørsmål
+
+**"Er ikke alle dagligvarekjeder omnichannel i dag? Hva er marginalbidraget av deres anbefalinger innenfor samme arketype?"**
+
+Lidl er teknisk omnichannel, men har lav Y-akse-posisjon (lite medlemsdata, lite personalisering). Coops fortrinn er at vi *kan* flytte oss høyere på Y-aksen enn discounterne fordi vi har medlemsbasen. Det er den bevegelsen som genererer marginutslaget — ikke selve omnichannel-statusen.
+
+**"Hvor stort er marginpotensialet konkret?"**
+
+Pilot-prediksjon for 365discount, 6 mnd:
+- App-styrte personaliserte kampanjer → **+0,2–0,3 pp bruttomargin** (DVC relevance + DBM capture)
+- Scan & Pay → **−0,1–0,2 pp** kasse-kost (verdikjede-effektivitet)
+- Retail media-pilot → **+15–30 mio DKK** direkte (to-sidig marked)
+
+Sum: **≈ 80–150 mio DKK EBIT-bidrag** — innenfor ledelsens 2026-korridor (0–150 mio).
+
+---
+
 ## 7. Organisasjonskultur, endringsledelse og motkrefter — Kulturløken og BASCP
 
 Dette er kulturelle motkrefter sett gjennom Schein & Brown / Johnson et al. sin kulturløk og BASCPs Cultural receptivity-dimensjon.
