@@ -516,3 +516,93 @@ Hvis jeg må velge, vekt slik:
 ---
 
 *Sist oppdatert: 2026-06-16*
+
+---
+
+# Disposisjon — Marcus' 5 minutter: Implementering
+
+## Minutt 0:00–0:45 — Åpning: Hva og hvorfor
+
+**Veien videre — implementering over 4 år**
+
+- **Hva:** Hvordan vi konkret ruller ut KPI-hierarkiet, modulær plattform og Lobyco-governance i Coops miljø.
+- **Hvorfor:** Strategi som ikke kan implementeres er en ønskeliste (Hedman & Bjørn-Andersen). Implementeringsrealisme er der oppgaven står og faller.
+- **Utfordring:** Implementering skjer ikke 1-2-3. Krever **monitorering, feedback og tilpasning** over fire år.
+
+**Kobling Rumelt:**
+- *Diagnose* → den skriftlige analysen (Coops turnaround-i-progresjon).
+- *Guiding policy* → våre tre anbefalinger.
+- *Coherent actions* → implementeringen jeg snakker om nå.
+
+---
+
+## Minutt 0:45–2:00 — Mintzberg + Tawse & Tabesh: rammen for implementeringen
+
+**Deliberate vs. emergent strategi (Mintzberg)**
+- Deliberate: planlagt retning (rekkefølgen på de tre anbefalingene).
+- Emergent: oppdagelses-basert (vi vet ikke alt på forhånd — Coop heller ikke).
+- **Vi designer for læring**, ikke for big bang. Teori øker sjansen, men forutser ikke all motstand.
+
+**Tawse & Tabesh — hva må til for vellykket implementering**
+
+| Lederforutsetninger | Handlinger | Mellomresultater | Mål |
+|---|---|---|---|
+| Managerial Cognition (forstår de hva som må gjøres?) | Structural Actions (struktur, roller, KPI-er) | Competency (folk *kan*) | Strategy Implementation Effectiveness |
+| Managerial Social Capital (har de folk med seg?) | Interpersonal Actions (kommunikasjon, motivasjon) | Commitment (folk *vil*) | **→ Endret adferd** |
+| Managerial Human Capital (har de kompetansen?) | | Coordination (folk gjør det sammen, riktig retning) | |
+
+> **Ultimate goal: endret adferd.** Alt annet er mellomstasjoner.
+
+---
+
+## Minutt 2:00–3:15 — De tre anbefalingene gjennom implementeringslinsen
+
+**Anbefaling 1 — KPI-hierarki (strukturelt implementeringstiltak)**
+- Kobles til *value capture* — vi forplikter oss til å måle EBIT-bidrag, ikke bare engasjement.
+- Attribusjonsproblemet: vi måler ikke appens 100% effekt (urealistisk), men **inkrementell effekt** via:
+  - Geografisk A/B
+  - Før/etter funksjonsutrulling
+
+**Anbefaling 2 — Modulær plattform (value creation, ikke capture)**
+- Skaper ikke direkte verdi i kassa — men gir **høyere personalisering**.
+- **Høyere switching costs → kjøpermakt ned** (Porter).
+- Hver kjede styrer sin egen modul → respekterer kjedeautonomi.
+
+**Anbefaling 3 — Lobyco-governance + retail media (value capture)**
+- Retail media → **leverandørmakt ned**, Coop får bedre forhandlingsmakt → **bedre marginer**.
+- Plattformteori + nettverkseffekter: vi ser potensialet, men **kapper nettverkseffekten bevisst** der den ville eroderet Coops informasjonsasymmetri.
+
+---
+
+## Minutt 3:15–4:30 — Kulturløken: implementering må stemme med kultur
+
+> **Hovedpoeng:** Lag 1–3 beskytter lag 4 (paradigm). Anbefalingene er designet for å treffe hvert lag bevisst.
+
+**Lag 1 — Values**
+Retail media kommuniseres som **medlemsverdi** (bedre, mer relevante tilbud) — ikke som leverandørinntektsstrøm.
+
+**Lag 2 — Beliefs**
+Våre IT-Enabled-anbefalinger **bekrefter** den ubevisste oppfatningen om at "digitalt støtter fysisk drift". Strategien føles riktig før den argumenteres for.
+
+**Lag 3 — Behaviours**
+Modulær plattform = hver kjede kan styre sin del av appen selv. Speiler eksisterende kjedevise P&L-er og beslutningsadferd.
+
+**Lag 4 — Paradigm**
+Den dypeste risikoen: **retail media kolliderer med paradigmet om at "Coop tjener medlemmene, ikke leverandørene"**.
+- Løsning: NPS-styrt volum + transparens. Hvis NPS faller under terskel → bremses retail media automatisk.
+- Bryter vi paradigmet, mister Coop noe som ikke kan kjøpes tilbake.
+
+---
+
+## Minutt 4:30–5:00 — Lukking
+
+> "Implementering er der strategi blir til endret adferd. Vi bruker Mintzberg for å forsvare pilot-tilnærmingen, Tawse & Tabesh for å sikre at folk *kan, vil og koordinerer*, og kulturløken for å beskytte paradigmet mens lag 1–3 jobber for oss. Det er ikke forsiktighet — det er epistemisk realisme."
+
+---
+
+## I bakhånd til Q&A
+
+- Marginsensitivitet: 0,3–0,5 pp = 100–160 mio EBIT.
+- Pilot på 365discount, 6 mnd: +0,2–0,3 pp bruttomargin + Scan & Pay −0,1–0,2 pp kost + retail media 15–30 mio ≈ **80–150 mio EBIT** — innenfor 2026-korridoren.
+- IT-Enabled (Wessel) bevisst valgt fremfor Digital Transformation — Coops økonomi tillater ikke DT-modus.
+- Coop App = sustaining innovation (Christensen) → integrert implementering, ikke skunkworks.
